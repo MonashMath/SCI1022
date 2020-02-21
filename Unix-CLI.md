@@ -984,7 +984,7 @@ The most common use of `grep` is just to search for a *substring* in a file. For
 
 ```
 $ grep Kingdom don_quixote.txt
-plains of Extremadura to pass over into the Kingdom of Portugal.
+plains of Estremadura to pass over into the Kingdom of Portugal.
 Barbary, and those of Granada Mudéjares; but in the Kingdom of Fez they
 ```
 
@@ -1010,7 +1010,7 @@ The `grep` command becomes **extremely powerful** when combined with the so-call
 ----
 > *__Exercise 41:__*
 > * Search for “line number” in the manual page of `grep`. Construct a command to find the line numbers in `don_quixote.txt` where the string “Kingdom” appears.
-> * You should find that the last occurrence of “Kingdom” is on line XXX. Figure out how to go directly to this line when running `less don_quixote.txt`. *Hint*: if you type `1G` in `less`, you go to line 1. Similarly, `17G` goes to line 17, etc.
+> * You should find that the last occurrence of “Kingdom” is on line 17356. Figure out how to go directly to this line when running `less don_quixote.txt`. *Hint*: if you type `1G` in `less`, you go to line 1. Similarly, `17G` goes to line 17, etc.
 > * By piping the output of `grep` to `head`, print out the first (and **only** the first) line in `don_quixote.txt` containing “Kingdom”.
 ----
 
