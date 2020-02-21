@@ -2,7 +2,7 @@
 
 <!-- TOC -->
 
-- [1. Introduction to the Unix command-line (5h?)](#1-introduction-to-the-unix-command-line-5h)
+- [1. Introduction to the Unix command-line (5h)](#1-introduction-to-the-unix-command-line-5h)
     - [1.1. The basics](#11-the-basics)
         - [1.1.1. Unix and its command-line](#111-unix-and-its-command-line)
         - [1.1.2. Running a terminal](#112-running-a-terminal)
