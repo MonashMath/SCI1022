@@ -38,7 +38,7 @@
 <!-- /TOC -->
 
 
-# 1. Introduction to the [Unix](https://en.wikipedia.org/wiki/Unix) command-line (5h?)
+# 1. Introduction to the [Unix](https://en.wikipedia.org/wiki/Unix) command-line (5h)
 <a id="markdown-introduction-to-the-unix-command-line-5h" name="introduction-to-the-unix-command-line-5h"></a>
 
 This tutorial provides an introduction to the [Unix](https://en.wikipedia.org/wiki/Unix) command-line. The workshop can be considered as a first step for those who are interested in learning the Unix way of using and developing scientific software, i.e., those who will use scientific software packages and/or collaborate with scientific software developers, and those who aspire to become developers themselves. The tutorial is designed for complete beginners. All you need is a minimum of general computer fluency, i.e., how to execute an application, to surf the web (using, e.g., [Chrome](https://www.google.com.au/chrome/), or any other web browser), [touch typing](https://en.wikipedia.org/wiki/Touch_typing), etc. In fact, the tutorial does not even assume that you know what [Unix](https://en.wikipedia.org/wiki/Unix) or the [command-line](https://en.wikipedia.org/wiki/Command-line_interface) are, so if you find yourself struggling with the title, no problem, you are in the right place.
