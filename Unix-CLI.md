@@ -278,9 +278,9 @@ One of the simplest ways of creating a new file is by using a feature of the she
 ```bash
 $ echo "Arrived compass prepare an on as." > sentences.txt
 ```
-A new file of name `sentences.txt` is created on the current directory if it did not already exist; otherwise it is **overwritten**. 
+A new file of name `sentences.txt` is created in the current directory if it did not already exist; otherwise the existing one is **overwritten** with the new file.
 
-> *__Note:__* You can avoid typing the sentence yourself by copying it from the web browser, and then pasting it into the Cygwin terminal. In order to do so, once you have copied the sentence, you have to Right click on the top bar of the Cygwin terminal window, and select `Edit->Paste` from the drop down list. In any case, we strongly encourage you to avoid copy & paste as a general rule, but to type the commands yourself to facilitate that they are burned in your mind as soon as possible. 
+> *__Note:__* You can avoid typing the sentence yourself by copying it from the web browser, and then pasting it into the Cygwin terminal. In order to do so, once you have copied the sentence, you have to Right click on the top bar of the Cygwin terminal window, and select `Edit->Paste` from the drop down list. In any case, we strongly encourage you to avoid copy & paste as a general rule, but to type the commands yourself in order to better familiarise yourself with them. 
 
 > *__Note:__* If you are using the light version of MoVE, copy & paste is a bit more involved. See [MoVE users' manual](https://www.monash.edu/__data/assets/pdf_file/0003/1480665/MoVE-student-and-staff-access-guide-2019.pdf) for more details.  
 
@@ -289,16 +289,16 @@ We can inspect the contents of the new file using the `cat` command as follows:
 $ cat sentences.txt
 Arrived compass prepare an on as.
 ```
-Although `cat` is not (by far) the most suitable way for inspecting the content of a file (we will cover more advanced ones in [Section 1.5](#15-advanced-file-inspection)), you will frequently find it useful as a fast and simple way of getting the contents of a file printed on screen. `cat` is indeed one of the most frequently typed commands.
+Although `cat` is not (by far) the most suitable way for inspecting the content of a file (we will cover more advanced ones in [Section 1.5](#15-advanced-file-inspection)), you will often find it useful as a fast and simple way of getting the contents of a file printed on screen. `cat` is indeed one of the most frequently typed commands.
 
-Imagine that now you want to add the second sentence of [Figure 12](#fig_random_text) into `sentences.txt`. You can do it by using a feature known as output appending, i.e., the message to be printed is appended to an existing file starting from the end. Output appending is referred to by means of the `>>` operator.
-Our goal is achieved by means of the following command:
+Imagine that you now want to add the second sentence of [Figure 12](#fig_random_text) into `sentences.txt`. You can do it by using a feature known as output appending, i.e., the message to be printed is appended to an existing file starting from the end. Output appending is referred to by means of the `>>` operator.
+We do this by means of the following command:
 
 ```bash
 $ echo "Reasonable particular on my it in sympathize." >> sentences.txt
 ```
 
-that, as expected,  transforms the file such that it now contains the first two sentences: 
+that, as expected, modifies the file such that it now contains the first two sentences: 
 
 ```bash
 $ cat sentences.txt
@@ -306,7 +306,7 @@ Arrived compass prepare an on as.
 Reasonable particular on my it in sympathize.
 ```
 
-By the way, to get this command typed, we expect you to have used the up arrow key in order to avoid typing `cat sentences.txt` once again. If you did, you are getting what this  story is about. If not, not a  problem, you will soon get this ability when suffering from how time consuming retyping commands (particularly the large ones) can be.
+By the way, to get this command, you may use the up arrow key in order to avoid typing `cat sentences.txt` all over again. If you did this, well done! If not, don't worry, you will soon learn to, after some gentle suffering from how time consuming retyping commands (particularly large ones) can be.
 
 ### 1.2.2. Input redirection
 <a id="markdown-input-redirection" name="input-redirection"></a>
