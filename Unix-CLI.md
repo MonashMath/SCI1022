@@ -182,20 +182,20 @@ In all cases, the solution is the same: to hit "`Ctrl-C`". If this technique sti
 > *__Exercise 2:__* Run the commands in [Figure 8](#fig_list_commands), one after the other, and confirm that you can cancel them and get out of trouble by hitting "`Ctrl-C`".
 ------
 
-The shell includes a very useful (yet rather cryptic) command to get comprehensive help about other commands. The name of this command is `man` (abbreviation for "manual"). It takes as an argument the name of the command we want help about. For example, the result of running `man echo` is shown in [Figure 9](#fig_echo_command_output).
+The shell includes a very useful command to get comprehensive information about other commands. The name of this command is `man` (short for "manual"). It takes as an argument the name of the command we want help about. For example, the result of running `man echo` is shown in [Figure 9](#fig_echo_command_output).
 
 
 
 <a name="fig_echo_command_output"></a> ![fig:echo_command_output](figures/echo_command_output.png)
 Figure 9. The output of `man echo` as displayed in the Cygwin terminal.
 
-The output of `man` is such that you can go through it using, e.g., the down arrow key or the space key. These let you access to the rest of the manual one line  and one page at a time, respectively. The current line of the manual in which we are positioned is indicated in the message at the bottom of [Figure 9](#fig_echo_command_output), along with other useful information. As stated by this message, pressing the key labeled as `Q` in the keyboard lets you exit from the manual page, while pressing the one labeled as `H`, you go to a help page with all navigation options explained. The navigation of man pages is actually managed under the hood by another command, named `less`, that we later explore in [Section 1.5.4](#154-paging-output-with-less).
+It is possible to scroll down through the output of `man` using the down arrow key or the space bar. These let you access to the rest of the manual one line and one page at a time, respectively. The current line of the manual in which we are positioned is indicated in the message at the bottom of [Figure 9](#fig_echo_command_output), along with other useful information. As stated by this message, pressing the key labeled as `Q` in the keyboard lets you exit from the manual page, while pressing the one labeled `H`, takes you to a help page with all navigation options explained. The navigation of man pages is actually managed internally by another command, named `less`, that we later explore in [Section 1.5.4](#154-paging-output-with-less).
 
-`man` itself is a command. Then, it makes sense to invoke `man man`. The manual page of the `man` command is illustrated in [Figure 10](#fig_man_command_output). There you may check that things get much more complicated. For example, anyone in its own right would say that the synopsis of `man` is quite cryptic:
+`man` itself is a command. Then, it makes sense to invoke `man man`. The manual page of the `man` command is illustrated in [Figure 10](#fig_man_command_output). There you may see that things get much more complicated. For example, we see that the synopsis of `man` is quite cryptic:
 
 ```man  [-C  file] [-d] [-D] [--warnings[=warnings]] [-R encoding] [-L locale] [-m system[,...]] ... ```
 
-Indeed, in many cases, and in particular as a beginner, you may find man pages very difficult to understand, if not impossible sometimes. However, being able to navigate a man page, and understand the most of it is a very valuable skill that pays off acquiring. To improve this skill, we recommend that you go over the manual page of each new command that you want to explore even if the details are not entirely grasped. 
+Indeed, in many cases, and in particular as a beginner, you may find man pages difficult to understand. However, being able to navigate a man page, and understand what it is telling you about a given command is often very helpful. To better familiarise yourself with UNIX commands, we recommend that you go over the manual page of each new command that you want to explore even if the details are not completely legible at this stage. 
 
 <a name="fig_man_command_output"></a> ![fig:echo_command_output](figures/man_command_output.png)
 Figure 10. The output of `man man` as displayed in the Cygwin terminal.
