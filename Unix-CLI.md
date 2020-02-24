@@ -103,7 +103,7 @@ The example in [Figure 1](#fig_command_example) includes all the components of a
 <a name="fig_components_command_line"></a> ![fig:components_command_line](figures/components_command_line.png)
 Figure 6. The command-line in [Figure 1](#fig_command_example) dissected into its different components.
 
-> *__Note:__* The prompt typically ends with the `$` sign, and may be preceded by information that depends on the details of the system you are using. For example, in [Figure 6](#fig_components_command_line), the prompt is composed by the concatenation of the following strings: (1) the name of the user: `amar0078`; (2) the `@` sign; (3) the name of the machine: `MVAZ1STUL01004`; (5) a space character; and (6) the directory of the file system in which one is currently located; the `~` symbol is just an alias for the home directory of the user. This latter concept (i.e., user home directory) will be introduced later in [Section 1.3.1](#131-directory-structure).
+> *__Note:__* The prompt typically ends with the `$` sign, and may be preceded by information that depends on the details of the system you are using. For example, in [Figure 6](#fig_components_command_line), the prompt is composed by the concatenation of the following strings: (1) the name of the user: `amar0078`; (2) the `@` sign; (3) the name of the machine: `MVAZ1STUL01004`; (5) a space character; and (6) the directory of the file system in which one is currently located; the `~` symbol is an alias for the home directory of the user. This latter concept (i.e., user home directory) will be introduced later in [Section 1.3.1](#131-directory-structure).
 
 ------
 > *__Exercise 1:__* Taking as a reference [Figure 6](#fig_components_command_line), identify the *prompt*, *command*, *flag* (if any), *argument* (if any), and *cursor* of the command-line commands shown in [Figure 7](#fig_exercise_prompt). *Hint:* the cursor is only shown on the current line, i.e., the line in which we are about to introduce the next command of the terminal session. 
@@ -115,7 +115,7 @@ Figure 7. A series of Unix command-line commands.
 ### 1.1.3. Typing our first commands. Looking for help using `man`
 <a id="markdown-typing-our-first-commands-looking-for-help-using-man" name="typing-our-first-commands-looking-for-help-using-man"></a>
 
-We are now ready to run our first command, in particular, one that simply prints a message (a message is nothing but a sequence of characters, also known as string of characters, or simply *string*) on screen. The place where this message is printed is called "standard output". By default, commands are set up such that the standard output is connected to the user's screen, but it is possible to modify such default behaviour in order to redirect messages, e.g., to an output file or even a printer. The name of the command in charge of printing messages to standard output is `echo`, and it gets as an argument the message that you want to print. For example, if you want to print the message "hi!", just type "echo hi!" at the prompt (without the leading and trailing double quotation marks) and press the Return key of the keyboard (also referred as to Enter key):
+We are now ready to run our first command, in particular, one that simply prints a message (a message is nothing but a sequence of characters, also known as string of characters, or simply a *string*) on screen. The place where this message is printed is called "standard output". By default, commands are set up such that the standard output is connected to the user's screen, but it is possible to modify such default behaviour in order to redirect messages, e.g., to an output file or even a printer. The name of the command in charge of printing messages to standard output is `echo`, and it gets as an argument the message that you want to print. For example, if you want to print the message "hi!", just type "echo hi!" at the prompt (without the leading and trailing double quotation marks) and press the Return key of the keyboard (also referred as to Enter key):
 
 ```bash
 $ echo hi!
@@ -123,7 +123,7 @@ hi!
 $
 ```
 
-You can observe that, as expected, `echo hi!` prints the message "hi!" on screen, and then gives us the control again by returning a prompt. From now own, in the seek of conciseness, we will assume that the prompt is just the `$` character.
+You can observe that, as expected, `echo hi!` prints the message "hi!" on screen, and then gives us the control again by returning a prompt. From now own, for the sake of brevity, we will assume that the prompt is just the `$` character.
 
 The argument of the `echo` command can be wrapped around single or double quotation marks, with the output being equivalent as without quotation marks:
 
@@ -136,7 +136,7 @@ $ echo 'byebye'     #message within single quotation marks
 byebye
 ```
 
-However, if the string to be printed has spaces in it, putting or not putting quotation marks makes a high difference:
+However, if the string to be printed has spaces in it, putting or not putting quotation marks makes a big difference:
 
 ```bash
 $ echo bye    bye
@@ -145,7 +145,7 @@ $ echo "bye    bye"
 bye    bye
 ```
 
-In the first case, we are actually passing two arguments to `echo`, i.e., the string "bye" as first and second arguments. If more than one argument is present, then `echo` concatenates all the arguments in a single string, separating them by spaces. This justifies why `echo bye    bye` results in the string "bye bye" printed to screen. 
+In the first case, we are actually passing two arguments to `echo`, i.e., the string "bye" as both the first and second arguments. If more than one argument is present, then `echo` concatenates all the arguments in a single string, separating them by spaces. This is why `echo bye    bye` results in the string "bye bye" printed to screen. 
 In the second case, we are passing just a single argument, i.e., the string "bye&nbsp; &nbsp; &nbsp; &nbsp; bye" with a bunch of spaces in the middle, which are thus printed on screen. This behaviour applies not only to `echo` but all of the Unix command-line commands.
 
 A frequently undesired effect arises when one uses quotation marks and presses the Return key without closing the quotation mark:
@@ -154,7 +154,7 @@ A frequently undesired effect arises when one uses quotation marks and presses t
 $ echo 'bye bye
 > 
 ```
-At this point, we seem to be stuck. Although in this particular situation there is a way to solve the dilemma (indeed, the solution is as simple as typing the closing quotation mark and then pressing the Return key; please note that in such a case the end of line character is part of the string to be printed as well), it is very convenient that you familiarize as soon as possible with a technique that lets you abort a command if you get into trouble. This strategy is called "`Ctrl-C`", which stands for "**While holding pressed** the `Ctrl` keyboard key, press the keyboard key labelled `C`".  Please note that `C` does not actually refer to capital letter C, but to the key labelled `C`, so that you should not press the key labelled as `Shift` in between `Ctrl` and `C` keys. There are a number of commands that can prevent or hinder entering further commands, such as, e.g., those listed in [Figure 8](#fig_list_commands).
+At this point, we seem to be stuck. Although in this particular situation there is a way to solve the dilemma (indeed, the solution is as simple as typing the closing quotation mark and then pressing the Return key; note that in such a case the end of line character is part of the string to be printed as well), it is important to familiarize yourself with a way to abort a command if you get into trouble. This strategy is called "`Ctrl-C`", which stands for "**While holding pressed** the `Ctrl` keyboard key, press the keyboard key labelled `C`".  Please note that `C` does not actually refer to capital letter C, but to the key labelled `C`, so that you should not press the key labelled as `Shift` in between `Ctrl` and `C` keys. There are a number of commands that can prevent or hinder entering further commands, such as, e.g., those listed in [Figure 8](#fig_list_commands).
 
 
 ```bash 
