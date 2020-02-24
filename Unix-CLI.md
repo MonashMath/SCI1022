@@ -50,28 +50,28 @@ Finally, if you have ever used the Unix command-line, or even if you have famili
 ### 1.1.1. Unix and its command-line
 <a id="markdown-unix-and-its-command-line" name="unix-and-its-command-line"></a>
 
-The term **Unix** is used to refer to a family of different (but related) Operating System (OS) software. An OS is a cornerstone layer of software between the user (actually between programs executed by the user) and the computer hardware that simplifies computer usage by hiding its extremely complex underlying organization. It, e.g., takes care of files, screen output, keyboard input, and makes sure that multiple users and their programs can coexist without clashes in a single system.
+The term **Unix** is used to refer to a family of different (but related) Operating System (OS) software. An OS is a cornerstone layer of software between the user (actually between programs executed by the user) and the computer hardware that simplifies computer usage by hiding its extremely complex underlying organization. It manages files, screen output, keyboard input, and makes sure that multiple users and their programs can coexist without clashes in a single system, among other things.
 There are primary two base versions of UNIX around: System V and Berkeley Software Distribution (BSD).
-Apple has Darwin which is close to BSD. IBM and HP have their own versions of Unix based on System V, namely HP-UX and AIX, respectively.  Linux is just another, remarkably [*open source software*](https://opensource.com/resources/what-open-source), variant. Within Linux, there are in turn several Linux distributions such as [Red Hat](https://www.redhat.com/en/topics/linux) or [Ubuntu Linux](https://ubuntu.com/). Most of this tutorial will most probably work on any Unix-like system. The [differences](https://opensource.com/article/18/5/differences-between-linux-and-unix) among these are quite deep down and subtle, and following this tutorial in different systems should not make such a big difference.
+Apple has Darwin which is close to BSD. IBM and HP have their own versions of Unix based on System V, namely HP-UX and AIX, respectively.  Linux is an [*open source software*](https://opensource.com/resources/what-open-source), variant of UNIX, meaning it is free to use and modify. Within Linux, there are in turn several Linux distributions such as [Red Hat](https://www.redhat.com/en/topics/linux) or [Ubuntu Linux](https://ubuntu.com/). Most of this tutorial will most probably work on any Unix-like system. The [differences](https://opensource.com/article/18/5/differences-between-linux-and-unix) among these are subtle, and following this tutorial in different systems should not make such a big difference.
 
 Today, most OSs come with a Graphical User Interface (GUI). Microsoft Windows, Apple macOS, or even Linux have one. While a GUI dramatically simplifies computer usage, we note that in the beginning of computer history there were no GUIs around; the only way for the user to interact with the computer was through a **Command-Line Interface** (CLI). In such an interface, the user types *commands* that tell the computer what to do.
-These commands can be combined in a wide range of different ways to achieve different outcomes. An special program, referred to as *the shell*, is in charge of continuously reading and executing the commands interactively typed by the user in a [Read-Eval-Print Loop (REPL)](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop). Most of the time you are using a Unix-like system, you are typing commands on a CLI.
+These commands can be combined in a wide range of different ways to achieve different outcomes. A special program, referred to as *the shell*, is in charge of continuously reading and executing the commands interactively typed by the user in a [Read-Eval-Print Loop (REPL)](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop). Most of the time you are using a Unix-like system, you are typing commands on a CLI.
 An example of such a command is provided in [Figure 1](#fig_command_example).
 
 <a name="fig_command_example"></a> ![fig:command_example](figures/command_example.png)
 Figure 1. An example of a Unix command-line command.
 
-While Unix-type OSs are not that ubiquitous in desktop or laptop computers, they however dominate the landscape of scientific computing. As an example,  [Linux runs on all](https://itsfoss.com/linux-runs-top-supercomputers/) of the [Top500 List](https://www.top500.org/) computers (a rank of the most powerful supercomputers all over the world), as per the report of June, 2019. The figures are similar for lower scale computing systems (e.g., a University, department or research group computing platform). No matter you like or you don't like, it is very likely that you will have to face a Unix CLI at some point if you want to do serious scientific computations. Indeed, if you look at the desktop of an experienced scientific developer, even in a Unix-type OS equipped with a GUI, such as Ubuntu Linux, you are likely to find a large number of "terminal" windows, each running an instance of the shell.
+While Unix-type OSs are not ubiquitous in desktop or laptop computers, they however dominate the landscape of scientific computing. As an example,  [Linux runs on all](https://itsfoss.com/linux-runs-top-supercomputers/) of the [Top500 List](https://www.top500.org/) computers (a rank of the most powerful supercomputers all over the world), as per the report of June, 2019. The figures are similar for lower scale computing systems (e.g., a University, department or research group computing platform). Whether you like it or not, it is very likely that you will have to face a Unix CLI at some point if you want to do serious scientific computations. Indeed, if you look at the desktop of an experienced scientific developer, even in a Unix-type OS equipped with a GUI, such as Ubuntu Linux, you are likely to find a large number of "terminal" windows, each running an instance of the shell.
 
 <a name="fig_typical_desktop_experienced_user"></a>![fig:typical_desktop_experienced_user](figures/terminal_windows_desktop.png)
 Figure 2. A typical desktop of an experienced scientific software developer with two terminal windows on Ubuntu Linux.
 
-There are a few Unix shells available. Many commands are common to the various shells available, but some of their syntax may still differ to a large extent. In this workshop we will assume that you are using the (yet the most commonly used) [`bash`](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) shell. Other possible shells include the [*ksh*](https://en.wikipedia.org/wiki/KornShell), [*zsh*](https://en.wikipedia.org/wiki/Z_shell), [*csh*](https://en.wikipedia.org/wiki/C_shell), or [*tcsh*](https://en.wikipedia.org/wiki/Tcsh) shells.
+There are a few Unix shells available. Many commands are common to the various shells available, but some of their syntax may still differ to a large extent. In this workshop we will assume that you are using the (most commonly used) [`bash`](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) shell. Other possible shells include the [*ksh*](https://en.wikipedia.org/wiki/KornShell), [*zsh*](https://en.wikipedia.org/wiki/Z_shell), [*csh*](https://en.wikipedia.org/wiki/C_shell), or [*tcsh*](https://en.wikipedia.org/wiki/Tcsh) shells.
 
 ### 1.1.2. Running a terminal
 <a id="markdown-running-a-terminal" name="running-a-terminal"></a>
 
-In order to run command-line commands, we first need to execute a **_terminal_**. A terminal is a program that gives us a command line by executing an instance of the shell; see, e.g., [Figure 2](#fig_typical_desktop_experienced_user). The way in which a terminal is opened depends on the particular Unix-type OS at hand. For example, on macOS, a terminal window can be simply opened by typing "terminal" in the [Spotlight Search bar](https://support.apple.com/en-us/HT204014),
+In order to run command-line commands, we first need to execute a **_terminal_**. A terminal is a program that gives us a command line by executing an instance of the shell; see, e.g., [Figure 2](#fig_typical_desktop_experienced_user). The way in which a terminal is opened depends on the particular Unix-type OS at hand. For example, on macOS, a terminal window can be found by typing "terminal" in the [Spotlight Search bar](https://support.apple.com/en-us/HT204014),
 while in Ubuntu Linux, you can click on the terminal icon at the Ubuntu Dock, i.e., the bar on the left-hand side of the screen which is used to pin and access installed applications; see [Figure 3](#fig_ubuntu_linux_dock).
 
 <a name="fig_ubuntu_linux_dock"></a>![fig:ubuntu_linux_dock](figures/terminal_icon_ubuntu_dock.png)
@@ -79,7 +79,7 @@ Figure 3. The terminal icon in Ubuntu's Linux Dock.
 
 In this tutorial, however, we assume that you are working on your own desktop, laptop, or tablet, and **_that you do not necessarily have an installed working version of a Unix-type OS_** such as, e.g., macOS or Ubuntu Linux. To bypass the need for specialized software installed on your device, we will use the [Monash Virtual Environment (MoVE)](https://www.monash.edu/learning-teaching/innovation/educational-technologies/move) platform instead in order to run a terminal.
 
-> *__Note:__* At this point, we strongly encourage you to carefully read the [MoVE users' guide](https://www.monash.edu/__data/assets/pdf_file/0003/1480665/MoVE-student-and-staff-access-guide-2019.pdf) if it is your first experience with MoVE and/or you find any trouble while following the steps in the sequel. We recommend that you configure your device in order to run the [full version](https://www.monash.edu/__data/assets/pdf_file/0003/1480665/MoVE-student-and-staff-access-guide-2019.pdf) of MoVE as it generally provides an smoother experience than the [light](https://www.monash.edu/__data/assets/pdf_file/0003/1480665/MoVE-student-and-staff-access-guide-2019.pdf) version. In any case, the tutorial may be followed as well with the light version.
+> *__Note:__* At this point, we strongly encourage you to carefully read the [MoVE users' guide](https://www.monash.edu/__data/assets/pdf_file/0003/1480665/MoVE-student-and-staff-access-guide-2019.pdf) if it is your first experience with MoVE and/or you find any trouble while following the proceeding steps. We recommend that you configure your device in order to run the [full version](https://www.monash.edu/__data/assets/pdf_file/0003/1480665/MoVE-student-and-staff-access-guide-2019.pdf) of MoVE as it generally provides an smoother experience than the [light](https://www.monash.edu/__data/assets/pdf_file/0003/1480665/MoVE-student-and-staff-access-guide-2019.pdf) version. In any case, the tutorial may be followed as well with the light version.
 
 In order to open a terminal within this environment you have to:
 
@@ -96,14 +96,14 @@ If these steps succeed, then a new stand-alone window (or a new web browser tab 
 <a name="fig_cygwin_terminal"></a> ![fig:cygwin_terminal](figures/cygwin-terminal.png)
 Figure 5. Cygwin terminal window.
 
-> *__Note:__*  At this point, you might be wondering what [Cygwin](https://www.cygwin.com/) is.  In a nutshell, Cygwin is a software that provides similar functionality to that of a Linux distribution on Microsoft Windows. It is **not** a full-blown Unix-type OS. While Cygwin is a tool that will let us introduce you to the Unix command-line, and its perfectly fine for that purpose, for a number of reasons that are not that easy to understand at this stage, we would not recommend it as the most appropriate environment for users and developers of scientific software, but a full-blown Linux distribution or macOS instead. As an alternative to Cygwin, Windows users may still avoid installing a Linux distribution on its device by running a *virtual machine* (a simulator of a computer); [VirtualBox](https://www.virtualbox.org/) is a free software that is perfect for [such purposes](https://www.virtualbox.org/attachment/wiki/Screenshots/Ubuntu_14.04_on_Windows_7.png). In any case, we won't explore this possibility in this tutorial, nor require from you to be able to set up a virtual machine on your Windows device. 
+> *__Note:__*  At this point, you might be wondering what [Cygwin](https://www.cygwin.com/) is.  In a nutshell, Cygwin is a software that provides similar functionality to that of a Linux distribution on Microsoft Windows. It is **not** a full-blown Unix-type OS. While Cygwin is a tool that will let us introduce you to the Unix command-line, and its perfectly fine for that purpose, for a number of reasons that are not that easy to understand at this stage, we would not recommend it as the most appropriate environment for users and developers of scientific software, but a full-blown Linux distribution or macOS instead. As an alternative to Cygwin, Windows users may still avoid installing a Linux distribution on their device by running a *virtual machine* (a simulator of a computer); [VirtualBox](https://www.virtualbox.org/) is a free software that is perfect for [such purposes](https://www.virtualbox.org/attachment/wiki/Screenshots/Ubuntu_14.04_on_Windows_7.png). In any case, we won't explore this possibility in this tutorial, nor require from you to be able to set up a virtual machine on your Windows device. 
 
-The example in [Figure 1](#fig_command_example) includes all the components of a typical command-line, as dissected in [Figure 6](#fig_cygwin_terminal). Every command-line usually starts with some symbols that call us for "action", i.e., that encourage us to type a new command. These symbols are referred to as the **_prompt_**. The prompt is followed by a **command** and, *in this particular example*, a single **_option_** (also known as flag), and a single **_argument_**. Depending on the particular command at hand, and our purposes while using that command, we may not pass neither an option nor an argument to the command, or even  we may pass several flags and several arguments to it, as will be explored later on in the examples in this section. Finally, we have the cursor that marks the position of the next character to be introduced. 
+The example in [Figure 1](#fig_command_example) includes all the components of a typical command-line, as dissected in [Figure 6](#fig_cygwin_terminal). Every command-line usually starts with some symbols that prompt us for "action", i.e., that encourage us to type a new command. These symbols are referred to as the **_prompt_**. The prompt is followed by a **command** and, *in this particular example*, a single **_option_** (also known as flag), and a single **_argument_**. Depending on the command, it may require one or more flags or arguments, or even none at all. We will explore a variety of different commands later in this section. Finally, we have the cursor that marks the position of the next character to be introduced. 
 
 <a name="fig_components_command_line"></a> ![fig:components_command_line](figures/components_command_line.png)
 Figure 6. The command-line in [Figure 1](#fig_command_example) dissected into its different components.
 
-> *__Note:__* The prompt typically ends with the `$` sign, and may be preceded by information that depends on the details of the system you are sitting in. For example, in [Figure 6](#fig_components_command_line), the prompt is composed by the concatenation of the following strings: (1) the name of the user: `amar0078`; (2) the `@` sign; (3) the name of the machine: `MVAZ1STUL01004`; (5) a space character; and (6) the directory of the file system in which one is currently located; the `~` symbol is just an alias for the home directory of the user. This latter concept (i.e., user home directory) will be introduced later in [Section 1.3.1](#131-directory-structure).
+> *__Note:__* The prompt typically ends with the `$` sign, and may be preceded by information that depends on the details of the system you are using. For example, in [Figure 6](#fig_components_command_line), the prompt is composed by the concatenation of the following strings: (1) the name of the user: `amar0078`; (2) the `@` sign; (3) the name of the machine: `MVAZ1STUL01004`; (5) a space character; and (6) the directory of the file system in which one is currently located; the `~` symbol is an alias for the home directory of the user. This latter concept (i.e., user home directory) will be introduced later in [Section 1.3.1](#131-directory-structure).
 
 ------
 > *__Exercise 1:__* Taking as a reference [Figure 6](#fig_components_command_line), identify the *prompt*, *command*, *flag* (if any), *argument* (if any), and *cursor* of the command-line commands shown in [Figure 7](#fig_exercise_prompt). *Hint:* the cursor is only shown on the current line, i.e., the line in which we are about to introduce the next command of the terminal session. 
@@ -115,7 +115,7 @@ Figure 7. A series of Unix command-line commands.
 ### 1.1.3. Typing our first commands. Looking for help using `man`
 <a id="markdown-typing-our-first-commands-looking-for-help-using-man" name="typing-our-first-commands-looking-for-help-using-man"></a>
 
-We are now ready to run our first command, in particular, one that simply prints a message (a message is nothing but a sequence of characters, also known as string of characters, or simply *string*) on screen. The place where this message is printed is called "standard output". By default, commands are set up such that the standard output is connected to the user's screen, but it is possible to modify such default behaviour in order to redirect messages, e.g., to an output file or even a printer. The name of the command in charge of printing messages to standard output is `echo`, and it gets as an argument the message that you want to print. For example, if you want to print the message "hi!", just type "echo hi!" at the prompt (without the leading and trailing double quotation marks) and press the Return key of the keyboard (also referred as to Enter key):
+We are now ready to run our first command, in particular, one that simply prints a message (a message is nothing but a sequence of characters, also known as string of characters, or simply a *string*) on screen. The place where this message is printed is called "standard output". By default, commands are set up such that the standard output is connected to the user's screen, but it is possible to modify such default behaviour in order to redirect messages, e.g., to an output file or even a printer. The name of the command in charge of printing messages to standard output is `echo`, and it gets as an argument the message that you want to print. For example, if you want to print the message "hi!", just type "echo hi!" at the prompt (without the leading and trailing double quotation marks) and press the Return key of the keyboard (also referred as to Enter key):
 
 ```bash
 $ echo hi!
@@ -123,7 +123,7 @@ hi!
 $
 ```
 
-You can observe that, as expected, `echo hi!` prints the message "hi!" on screen, and then gives us the control again by returning a prompt. From now own, in the seek of conciseness, we will assume that the prompt is just the `$` character.
+You can observe that, as expected, `echo hi!` prints the message "hi!" on screen, and then gives us the control again by returning a prompt. From now own, for the sake of brevity, we will assume that the prompt is just the `$` character.
 
 The argument of the `echo` command can be wrapped around single or double quotation marks, with the output being equivalent as without quotation marks:
 
@@ -136,7 +136,7 @@ $ echo 'byebye'     #message within single quotation marks
 byebye
 ```
 
-However, if the string to be printed has spaces in it, putting or not putting quotation marks makes a high difference:
+However, if the string to be printed has spaces in it, putting or not putting quotation marks makes a big difference:
 
 ```bash
 $ echo bye    bye
@@ -145,7 +145,7 @@ $ echo "bye    bye"
 bye    bye
 ```
 
-In the first case, we are actually passing two arguments to `echo`, i.e., the string "bye" as first and second arguments. If more than one argument is present, then `echo` concatenates all the arguments in a single string, separating them by spaces. This justifies why `echo bye    bye` results in the string "bye bye" printed to screen. 
+In the first case, we are actually passing two arguments to `echo`, i.e., the string "bye" as both the first and second arguments. If more than one argument is present, then `echo` concatenates all the arguments in a single string, separating them by spaces. This is why `echo bye    bye` results in the string "bye bye" printed to screen. 
 In the second case, we are passing just a single argument, i.e., the string "bye&nbsp; &nbsp; &nbsp; &nbsp; bye" with a bunch of spaces in the middle, which are thus printed on screen. This behaviour applies not only to `echo` but all of the Unix command-line commands.
 
 A frequently undesired effect arises when one uses quotation marks and presses the Return key without closing the quotation mark:
@@ -154,7 +154,7 @@ A frequently undesired effect arises when one uses quotation marks and presses t
 $ echo 'bye bye
 > 
 ```
-At this point, we seem to be stuck. Although in this particular situation there is a way to solve the dilemma (indeed, the solution is as simple as typing the closing quotation mark and then pressing the Return key; please note that in such a case the end of line character is part of the string to be printed as well), it is very convenient that you familiarize as soon as possible with a technique that lets you abort a command if you get into trouble. This strategy is called "`Ctrl-C`", which stands for "**While holding pressed** the `Ctrl` keyboard key, press the keyboard key labelled `C`".  Please note that `C` does not actually refer to capital letter C, but to the key labelled `C`, so that you should not press the key labelled as `Shift` in between `Ctrl` and `C` keys. There are a number of commands that can prevent or hinder entering further commands, such as, e.g., those listed in [Figure 8](#fig_list_commands).
+At this point, we seem to be stuck. Although in this particular situation there is a way to solve the dilemma (indeed, the solution is as simple as typing the closing quotation mark and then pressing the Return key; note that in such a case the end of line character is part of the string to be printed as well), it is important to familiarize yourself with a way to abort a command if you get into trouble. This strategy is called "`Ctrl-C`", which stands for "**While holding pressed** the `Ctrl` keyboard key, press the keyboard key labelled `C`".  Please note that `C` does not actually refer to capital letter C, but to the key labelled `C`, so that you should not press the key labelled as `Shift` in between `Ctrl` and `C` keys. There are a number of commands that can prevent or hinder entering further commands, such as, e.g., those listed in [Figure 8](#fig_list_commands).
 
 
 ```bash 
@@ -182,20 +182,20 @@ In all cases, the solution is the same: to hit "`Ctrl-C`". If this technique sti
 > *__Exercise 2:__* Run the commands in [Figure 8](#fig_list_commands), one after the other, and confirm that you can cancel them and get out of trouble by hitting "`Ctrl-C`".
 ------
 
-The shell includes a very useful (yet rather cryptic) command to get comprehensive help about other commands. The name of this command is `man` (abbreviation for "manual"). It takes as an argument the name of the command we want help about. For example, the result of running `man echo` is shown in [Figure 9](#fig_echo_command_output).
+The shell includes a very useful command to get comprehensive information about other commands. The name of this command is `man` (short for "manual"). It takes as an argument the name of the command we want help about. For example, the result of running `man echo` is shown in [Figure 9](#fig_echo_command_output).
 
 
 
 <a name="fig_echo_command_output"></a> ![fig:echo_command_output](figures/echo_command_output.png)
 Figure 9. The output of `man echo` as displayed in the Cygwin terminal.
 
-The output of `man` is such that you can go through it using, e.g., the down arrow key or the space key. These let you access to the rest of the manual one line  and one page at a time, respectively. The current line of the manual in which we are positioned is indicated in the message at the bottom of [Figure 9](#fig_echo_command_output), along with other useful information. As stated by this message, pressing the key labeled as `Q` in the keyboard lets you exit from the manual page, while pressing the one labeled as `H`, you go to a help page with all navigation options explained. The navigation of man pages is actually managed under the hood by another command, named `less`, that we later explore in [Section 1.5.4](#154-paging-output-with-less).
+It is possible to scroll down through the output of `man` using the down arrow key or the space bar. These let you access to the rest of the manual one line and one page at a time, respectively. The current line of the manual in which we are positioned is indicated in the message at the bottom of [Figure 9](#fig_echo_command_output), along with other useful information. As stated by this message, pressing the key labeled as `Q` in the keyboard lets you exit from the manual page, while pressing the one labeled `H`, takes you to a help page with all navigation options explained. The navigation of man pages is actually managed internally by another command, named `less`, that we later explore in [Section 1.5.4](#154-paging-output-with-less).
 
-`man` itself is a command. Then, it makes sense to invoke `man man`. The manual page of the `man` command is illustrated in [Figure 10](#fig_man_command_output). There you may check that things get much more complicated. For example, anyone in its own right would say that the synopsis of `man` is quite cryptic:
+`man` itself is a command. Then, it makes sense to invoke `man man`. The manual page of the `man` command is illustrated in [Figure 10](#fig_man_command_output). There you may see that things get much more complicated. For example, we see that the synopsis of `man` is quite cryptic:
 
 ```man  [-C  file] [-d] [-D] [--warnings[=warnings]] [-R encoding] [-L locale] [-m system[,...]] ... ```
 
-Indeed, in many cases, and in particular as a beginner, you may find man pages very difficult to understand, if not impossible sometimes. However, being able to navigate a man page, and understand the most of it is a very valuable skill that pays off acquiring. To improve this skill, we recommend that you go over the manual page of each new command that you want to explore even if the details are not entirely grasped. 
+Indeed, in many cases, and in particular as a beginner, you may find man pages difficult to understand. However, being able to navigate a man page, and understand what it is telling you about a given command is often very helpful. To better familiarise yourself with UNIX commands, we recommend that you go over the manual page of each new command that you want to explore even if the details are not completely legible at this stage. 
 
 <a name="fig_man_command_output"></a> ![fig:echo_command_output](figures/man_command_output.png)
 Figure 10. The output of `man man` as displayed in the Cygwin terminal.
@@ -207,9 +207,9 @@ Figure 10. The output of `man man` as displayed in the Cygwin terminal.
 ### 1.1.4. Editing the current line
 <a id="markdown-editing-the-current-line" name="editing-the-current-line"></a>
 
-The shell (recall that we are using the `bash` shell) provides several features that let you become more productive in command-line typing. These include repeating previously introduced commands, basic editing and quick navigation over the current command-line. Hitting the up arrow key, i.e., the one labeled as &#8593;, one can retrieve the previously introduced command. Pressing it multiple times, we can navigate upwards the history of commands introduced so far. On the other hand, with the down arrow key &#8595;, we navigate the history the other way round towards the latest introduced command. 
+The shell (recall that we are using the `bash` shell) provides several features that let you become more efficient at command-line typing. These include repeating previously introduced commands, basic editing and quick navigation over the current command-line. Hitting the up arrow key, i.e., the one labeled as &#8593;, one can retrieve the previous command. Pressing it multiple times, we can navigate up through the history of commands used so far. On the other hand, with the down arrow key &#8595;, we navigate the history the other way towards the latest introduced command. 
 
-The control key, usually written as `Ctrl` or `^` (this is the notation that we will use hereafter to refer to it), is the first key to be hit in order to access to a bunch of navigation and editing options. For example, when we are typing a command, or dealing with a previously typed one, it is very useful to be able to navigate across the line, i.e., to move the cursor to the desired position. Assume that we typed
+The control key, usually written as `Ctrl` or `^` (this is the notation that we will use hereafter to refer to it), allows us to access to a collection of navigation and editing options. For example, when we are typing a command, or dealing with a previously typed one, it is very useful to be able to navigate across the line, i.e., to move the cursor to the desired position. Assume that we typed
 
 ```bash
 $ byebye
@@ -220,14 +220,14 @@ but we forgot to type the `echo` command before the message to be printed. One c
 ------
 > *__Exercise 4:__* Use the up arrow in order to print the messages “cold”, “cord”, “word”,  “ward”, "hard" without retyping `echo` each time.
 
-> *__Exercise 5:__* Go over the man page of the `bash` command (i.e., the shell), and identify the section of the manual where the keyboard key combinations for navigation across the command-line are presented. In order to do so, after executing `man bash`, you can type `/`, followed by the string "Commands for Moving" string (without double quotation marks), and finally press the Return key. This should let you quickly move to the section of the manual which we are interested in (the forward slash character `/` is indeed the feature that lets you search a particular string within a man page). In this section, identify the two key combinations that let you move forward and backward a whole word at a time through the command line. Hint: in the man page, `M-` stands for hold pressed the key labelled as `Alt` while hitting the following key. Type four words separated by spaces on the command line, e.g., "word1 word2 word3 word4" and play around with these key combinations, and the `^A`, `^E`, and `^U` covered above.
+> *__Exercise 5:__* Go over the man page of the `bash` command (i.e., the shell), and identify the section of the manual where the keyboard key combinations for navigation across the command-line are presented. In order to do so, after executing `man bash`, you can type `/`, followed by the string "Commands for Moving" string (without double quotation marks), and finally press the Return key. This should let you quickly move to the section of the manual which we are interested in (the forward slash character `/` is a feature that lets you search a particular string within a man page). In this section, identify the two key combinations that let you move forward and backward a whole word at a time through the command line. Hint: in the man page, `M-` stands for hold pressed the key labelled as `Alt` while hitting the following key. Type four words separated by spaces on the command line, e.g., "word1 word2 word3 word4" and play around with these key combinations, and the `^A`, `^E`, and `^U` covered above.
 ------
 
 
 ### 1.1.5. Clearing screen
 <a id="markdown-clearing-screen" name="clearing-screen"></a>
 
-The `clear` command can be used in order   to clean up the output so far up to the bottom of the window by clearing the terminal screen. This can be useful, e.g., if you have been experimenting with a command, with a number of error messages in the path towards understanding it, and you then want to give it a clean new try. A key combination with the same result as `clear` is `⌃L`. 
+The `clear` command can be used in order to clean up the output down to the bottom of the window by clearing the terminal screen. This can be useful, e.g., if you have been experimenting with a command, with a number of error messages in the path towards understanding it, and you then want to give it a clean new try. A key combination with the same result as `clear` is `⌃L`. 
 
 On the other hand, when we are done with a terminal window and you feel ready to end the current session, you can use the `exit` command or the `⌃D` key combination.
 
@@ -238,13 +238,13 @@ On the other hand, when we are done with a terminal window and you feel ready to
 ### 1.1.6. The Unix file system
 <a id="markdown-the-unix-file-system" name="the-unix-file-system"></a>
 
-Along the tutorial we will learn basic commands for manipulating **files** (create, display, edit, remove, etc.) and **directories** (create, list, rename, navigate, etc.). Files and directories are the basic building blocks of the **Unix file system**. The Unix file system is a recursive tree-like structure rooted at the so-called root directory, which is referred to by the forward slash character `/`. The root directory is in turn composed by files (which are terminal/leaf nodes of the tree) and directories. Each directory is in turn the root of a subtree of the whole file system. See [Figure 11](#fig_unix_file_system). In contrast to Windows OSs, where one has different units, such as, e.g., unit `C:\`, `D:\`, etc., each with its own recursive directory tree, in any Unix OS there is **always a single** directory tree. This does not mean that one cannot have in a Unix system multiple storage devices (e.g., an USB stick or an external USB hard disk) connected to the system. In Unix, the file system rooted at these storage devices becomes a subtree of the whole file system. The directory of the whole file system which is mapped  to the root of the file system of the storage device is referred to as the **mount point** of the device, and we say that the device is **mounted** on that directory.
+In this tutorial we will learn basic commands for manipulating **files** (create, display, edit, remove, etc.) and **directories** (create, list, rename, navigate, etc.). Files and directories are the basic building blocks of the **Unix file system**. The Unix file system is a tree-like structure with its base at the so-called root directory, which is referred to by the forward slash character `/`. The root directory is in turn composed by files (which are leaf nodes of the tree) and directories. Each directory is in turn the root of a subtree of the whole file system. See [Figure 11](#fig_unix_file_system). In contrast to Windows OSs, where one has different units, such as, e.g., unit `C:\`, `D:\`, etc., each with its own recursive directory tree, in any Unix OS there is **always a single** directory tree. This does not mean that one cannot have in a Unix system multiple storage devices (e.g., a USB stick or an external USB hard drive) connected to the system. In Unix, the file system rooted at these storage devices becomes a subtree of the whole file system. The directory of the whole file system which is mapped to the root of the file system of the storage device is referred to as the **mount point** of the device, and we say that the device is **mounted** on that directory.
 
 <a name="fig_unix_file_system"></a> 
 ![fig:unix_file_system](figures/unix_file_system.png)<br>
-Figure 11. Illustration of the Unix file system. Terminal nodes (also known as leaves) are either files (e.g., `cp`, `ksh`, or `passwd`) or directories (e.g., `lib`). Terminal directories are void directories, i.e., directories without files and (sub)directories. Later on we will learn commands that will let us distinguish whether, e.g., a given item of the file system is actually a file or a directory, or to check whether a directory is empty or not.
+Figure 11. Illustration of the Unix file system. Terminal nodes (also known as leaves) are either files (e.g., `cp`, `ksh`, or `passwd`) or directories (e.g., `lib`). Terminal directories are void directories, i.e., directories without files and (sub)directories. Later on we will learn commands that will let us distinguish whether a given item of the file system is actually a file or a directory, or to check whether a directory is empty or not.
 
-> *__Note:__* the `tree` command outputs on screen the directory tree which is  rooted at the current directory. Run the command to check it. If you do not understand the output by now, no problem, you will definitely at the end of this tutorial.
+> *__Note:__* the `tree` command outputs on screen the directory tree which is rooted at the current directory. Run the command to check it. If you do not understand the output right now, no problem, you will at the end of this tutorial.
 
 ## 1.2. Files
 <a id="markdown-files" name="files"></a>
@@ -278,9 +278,9 @@ One of the simplest ways of creating a new file is by using a feature of the she
 ```bash
 $ echo "Arrived compass prepare an on as." > sentences.txt
 ```
-A new file of name `sentences.txt` is created on the current directory if it did not already exist; otherwise it is **overwritten**. 
+A new file of name `sentences.txt` is created in the current directory if it did not already exist; otherwise the existing one is **overwritten** with the new file.
 
-> *__Note:__* You can avoid typing the sentence yourself by copying it from the web browser, and then pasting it into the Cygwin terminal. In order to do so, once you have copied the sentence, you have to Right click on the top bar of the Cygwin terminal window, and select `Edit->Paste` from the drop down list. In any case, we strongly encourage you to avoid copy & paste as a general rule, but to type the commands yourself to facilitate that they are burned in your mind as soon as possible. 
+> *__Note:__* You can avoid typing the sentence yourself by copying it from the web browser, and then pasting it into the Cygwin terminal. In order to do so, once you have copied the sentence, you have to Right click on the top bar of the Cygwin terminal window, and select `Edit->Paste` from the drop down list. In any case, we strongly encourage you to avoid copy & paste as a general rule, but to type the commands yourself in order to better familiarise yourself with them. 
 
 > *__Note:__* If you are using the light version of MoVE, copy & paste is a bit more involved. See [MoVE users' manual](https://www.monash.edu/__data/assets/pdf_file/0003/1480665/MoVE-student-and-staff-access-guide-2019.pdf) for more details.  
 
@@ -289,16 +289,16 @@ We can inspect the contents of the new file using the `cat` command as follows:
 $ cat sentences.txt
 Arrived compass prepare an on as.
 ```
-Although `cat` is not (by far) the most suitable way for inspecting the content of a file (we will cover more advanced ones in [Section 1.5](#15-advanced-file-inspection)), you will frequently find it useful as a fast and simple way of getting the contents of a file printed on screen. `cat` is indeed one of the most frequently typed commands.
+Although `cat` is not (by far) the most suitable way for inspecting the content of a file (we will cover more advanced ones in [Section 1.5](#15-advanced-file-inspection)), you will often find it useful as a fast and simple way of getting the contents of a file printed on screen. `cat` is indeed one of the most frequently typed commands.
 
-Imagine that now you want to add the second sentence of [Figure 12](#fig_random_text) into `sentences.txt`. You can do it by using a feature known as output appending, i.e., the message to be printed is appended to an existing file starting from the end. Output appending is referred to by means of the `>>` operator.
-Our goal is achieved by means of the following command:
+Imagine that you now want to add the second sentence of [Figure 12](#fig_random_text) into `sentences.txt`. You can do it by using a feature known as output appending, i.e., the message to be printed is appended to an existing file starting from the end. Output appending is referred to by means of the `>>` operator.
+We do this by means of the following command:
 
 ```bash
 $ echo "Reasonable particular on my it in sympathize." >> sentences.txt
 ```
 
-that, as expected,  transforms the file such that it now contains the first two sentences: 
+that, as expected, modifies the file such that it now contains the first two sentences: 
 
 ```bash
 $ cat sentences.txt
@@ -306,7 +306,7 @@ Arrived compass prepare an on as.
 Reasonable particular on my it in sympathize.
 ```
 
-By the way, to get this command typed, we expect you to have used the up arrow key in order to avoid typing `cat sentences.txt` once again. If you did, you are getting what this  story is about. If not, not a  problem, you will soon get this ability when suffering from how time consuming retyping commands (particularly the large ones) can be.
+By the way, to get this command, you may use the up arrow key in order to avoid typing `cat sentences.txt` all over again. If you did this, well done! If not, don't worry, you will soon learn to, after some gentle suffering from how time consuming retyping commands (particularly large ones) can be.
 
 ### 1.2.2. Input redirection
 <a id="markdown-input-redirection" name="input-redirection"></a>
@@ -317,10 +317,9 @@ Many commands that print to standard output (e.g., `cat`, or `echo`) get the inf
 $ cat
 ```
 
-then `cat` enters in a state in which it is expecting that you introduce the contents of the file to be printed from the keyboard. It in particular prints to the standard output the whole text introduced so far each time that you press the Return key. Once you have finished writing, you can hit `^D` (as always, this means hold pressed the `Ctrl` key followed by the key labelled as `D`), that tells `cat` that you do not want to enter additional characters. At this point, try to type (or copy & paste), e.g.,
-the first sentence of our reference text, and then hit `^D` to see what we are talking about.
+then `cat` enters in a state in which it is expecting that you introduce the contents of the file to be printed from the keyboard. It in particular prints to the standard output the whole text introduced so far each time that you press the Return key. Once you have finished writing, you can hit `^D` (as always, this means hold pressed the `Ctrl` key followed by the key labelled as `D`), that tells `cat` that you do not want to enter additional characters. At this point, try to type (or copy & paste) the first sentence of our reference text, and then hit `^D` to see what we are talking about.
 
-**Input redirection** is a feature of the shell that lets you unplug the standard input of a command from the keyboard, and plug it into a file. In other words, the contents that the command would expect from the keyboard are read from the contents of a file instead. Input redirection is denoted by `<`. An example of it that uses the `sentences.txt` file generated above is as follows:
+**Input redirection** is a feature of the shell that lets you unplug the standard input of a command from the keyboard, and plug it into a file. In other words, the contents that the command would expect from the keyboard are read from the contents of a file instead. Input redirection is denoted by `<`. An example of input redirection using the `sentences.txt` file generated above is as follows:
 
 ```bash
 $ cat < sentences.txt
@@ -365,7 +364,7 @@ $ ls sentence*
 sentence_1.txt  sentence_2.txt  sentences.txt  sentences_backup.txt  sentences_reversed.txt
 ```
 
-> *__Note:__* It is cornerstone that you understand that `ls` does not get `sentence*` as an argument. It gets the result of the shell expanding it. If you want to explicitly pass `sentence*` as an argument to the current command, you have to prepend the escape character `\` right before `*`
+> *__Note:__* It is important to understand that `ls` does not get `sentence*` as an argument. It gets the result of the shell expanding it. If you want to explicitly pass `sentence*` as an argument to the current command, you have to prepend the escape character `\` right before `*`
 
 ----
 > *__Exercise 8:__*
@@ -415,7 +414,7 @@ Use `ls -a` on the current directory. Can you observe any hidden files? What are
 ### 1.2.5. "Touching" files
 <a id="markdown-touching-files" name="touching-files"></a>
 
-The `touch` command can be used in order to create an **empty** new file. It gets as an argument the name of the file to be created. If the specified name already exists, then the `touch` command updates both the [access and modification timestamps](https://linuxize.com/post/linux-touch-command/) of the file to the current time, i.e., the last time a file was accessed/opened by some command and the last time the file's content was modified, respectively.
+The `touch` command can be used in order to create an **empty** new file. It takes as an argument the name of the file to be created. If the specified name already exists, then the `touch` command updates both the [access and modification timestamps](https://linuxize.com/post/linux-touch-command/) of the file to the current time, i.e., the last time a file was accessed/opened by some command and the last time the file's content was modified, respectively.
 
 ----
 > *__Exercise 10:__*
@@ -431,7 +430,7 @@ The `cp` command can be used to copy a file. In particular,
 $ cp file1 file2
 ```
 
-makes a copy of the contents of `file1` into a new file named `file2`. If `file2` already exists, you will get an error message (check it!).
+makes a copy of the contents of `file1` into a new file named `file2`. Note that if `file2` already exists, it will be overwritten by `file1` (so be careful!).
 
 ----
 > *__Exercise 11:__*
@@ -440,31 +439,31 @@ What happens with the contents of the copy if you change the original file after
 ----
 
 A file can be renamed with `mv`, which is an abbreviation for "move".
-This name comes from the fact that the command is used, in the most general case, to move one file from a source  to a target directory, possibly changing its name at the target directory. In the degenerated case in which the source and target directory are equivalent, then the command falls back to file renaming.
+This name comes from the fact that the command is used, in the most general case, to move one file from a source to a target directory, possibly changing its name at the target directory. In the degenerated case in which the source and target directory are equivalent, then the command falls back to file renaming.
 
 ----
 > *__Exercise 12:__*
-Rename `sentences.txt` as `first_two_sentences.txt`. Check that command succeeded. Try to rename a file as an existing file. Which behaviour do you observe? 
+Rename `sentences.txt` as `first_two_sentences.txt`. Check that the command succeeded. Try to rename a file as an existing file. What behaviour do you observe? 
 ----
 
-Finally, files are deleted with `rm`. **Burn the following in your mind:** this command is highly dangerous, there is **NO UNDO**.
+Finally, files are deleted with `rm`. **Be careful!:** this command is highly dangerous, there is **NO UNDO**.
 
 ----
 > *__Exercise 13:__*
 Delete the  `first_two_sentences.txt` file. Confirm that the command has the desired effect.
 ----
 
-> *__Note:__* A major goal of this subject (actually of its [second module](Git.md)) is that you start using a distributed version control system on a daily basis in order to systematically trace the changes that you perform into your files (e.g., source codes in a computer programming language, documents, reports, articles, figures, etc.). Such kind of systems let you, among others, to keep a mirror (clone) of your files on the Cloud (e.g., [GitHub](https://www.github.com) or [GitLab](https://www.gitlab.com)). Although it is still possible to loose data using version control, the probability and amount of data loss are minimized if one keeps a systematic and appropriate workflow while using the tool.
+> *__Note:__* A major goal of this subject (actually of its [second module](Git.md)) is that you start using a distributed version control system on a daily basis in order to systematically trace the changes that you perform into your files (e.g., source codes in a computer programming language, documents, reports, articles, figures, etc.). Such systems allow you to keep a mirror (clone) of your files on the Cloud (e.g., [GitHub](https://www.github.com) or [GitLab](https://www.gitlab.com)). Although it is still possible to loose data using version control, the probability and amount of data loss are minimized if one keeps to a systematic and appropriate workflow.
 
 ## 1.3. Directories
 <a id="markdown-directories" name="directories"></a>
 
-In the previous section, we learned some basic commands in order to deal with files. In this section, we will learn those that let us handle **directories**, also referred to as **folders**. 
+In the previous section, we learned some basic commands in order to deal with files. In this section, we will become acquainted with additional commands that allow us to handle **directories**, also referred to as **folders**. 
 
 ### 1.3.1. Directory structure
 <a id="markdown-directory-structure" name="directory-structure"></a>
 
-Recall from [Section 1.1.6](#116-the-unix-file-system) that the Unix file system is a tree of directories, where a directory is in turn a container of files and/or more directories. The root of the tree is indicated with a forward slash character, i.e.,  `/`. Any directory or file of the system can be uniquely identified by an *absolute path*. An absolute path is nothing but the full path from the root of the tree to the particular directory or file at hand, where the name of each directory in this path is separated using the forward slash character, i.e.,  `/`. For example, in [Figure 11](#fig_unix_file_system), the *absolute path* for the `ls` file, the `mthomas` folder, and the `bin` folder are `/bin/ls`, `/home/mthomas`,  and `/usr/bin`, respectively.
+Recall from [Section 1.1.6](#116-the-unix-file-system) that the Unix file system is a tree of directories, where a directory is in turn a container of files and/or more directories. The root of the tree is indicated with a forward slash character, `/`. Any directory or file of the system can be uniquely identified by an *absolute path*. An absolute path is the full path from the root of the tree to the particular directory or file at hand, where the name of each directory in this path is separated using the forward slash character `/`. For example, in [Figure 11](#fig_unix_file_system), the *absolute path* for the `ls` file, the `mthomas` folder, and the `bin` folder are `/bin/ls`, `/home/mthomas`,  and `/usr/bin`, respectively.
 
 Using the absolute path of a directory one can list its contents using the `ls` command. For example, we can see the contents of the root directory as follows (the particular output in your system might vary):
 
@@ -475,31 +474,31 @@ bin/  cygdrive/  Cygwin.bat*  Cygwin.ico  Cygwin-Terminal.ico  dev/  etc/  home/
 
 ----
 > *__Exercise 14:__*
-Try to figure out from the output of the previous command how many directories and files there are inside the root folder. Pick arbitrarily one of the directories that the root folder contains and list its contents with the `ls` command using the **absolute path** of the directory selected.
+Try to figure out from the output of the previous command how many directories and files there are inside the root folder. Randonly choose one of the directories contained in the root folder and list its contents with the `ls` command using the **absolute path** of the directory selected.
 *Hint*: in the Cygwin environment installed within MoVE, the `ls` command denotes the directories with their names followed by a forward slash character.
 ----
 
-The most important directory for a particular user is its **home directory**. The home directory is typically located at the `/home` folder, and its name matches the name of the user that is working with the system. For example, `amar0078` is the name of the user we worked with while preparing this material, and its home directory is `/home/amar0078`. The name of the user you are working with can be obtained with the `whoami` command.
+The most important directory for a particular user is their **home directory**. The home directory is typically located at the `/home` folder, and its name matches the name of the user that is working with the system. For example, `amar0078` is the name of the user we worked with while preparing this material, and its home directory is `/home/amar0078`. The name of the user you are working with can be obtained with the `whoami` command.
 
 ----
 > *__Exercise 15:__*
 Determine the absolute path of your user's home directory and list its contents with the `ls` command.
 ----
 
-The home directory can also be denoted the short way using the tilde character `~`. This character is typed pressing the key located right at the left of the key labeled with the number 1 while holding pressed the `Shift` key. 
+The home directory can also be denoted in an abreviated fashion using the tilde character `~`. This character is typed by pressing the key located right at the left of the key labeled with the number 1 while holding pressed the `Shift` key. 
 
 ----
 > *__Exercise 16:__*
-List the contents of your user's home directory using the `ls` command and the `~` character. Check that the output matches the one of the previous exercise. Use the tilde character to list the contents of a folder located at your user's home directory.
+List the contents of your user's home directory using the `ls` command and the `~` character. Check that the output matches the one of the previous exercise. Use the tilde character `~` to list the contents of a folder located at your user's home directory.
 
 > *__Exercise 17:__*
 Assume that your user name is `amar0078`. How do `/home/amar0078/Documents` and `~/Documents` differ (if they differ at all)? Check it replacing `amar0078` with your actual user's name.
 ----
 
-> *__Note:__* You might have observed that the contents of the home directory vary among different Cygwin terminal sessions, e.g., when you close a terminal and open a new one. This is not the general behaviour of  Unix systems, but to have a home folder with contents consistent among terminal sessions. **This behaviour that you are experiencing is only particular to the Cygwin installation at MoVE.** If you want the files and directories to be consistent among terminal sessions, you have to place them at the  `~/Documents` folder.
-Your Monash user's storage space is mounted on this folder. Indeed, you will see that the files which you create with other MoVE apps, such as, e.g.,  MATLAB or Mathematica, are accessible as well from that folder at the Cygwin terminal.
+> *__Note:__* You might have observed that the contents of the home directory vary among different Cygwin terminal sessions, e.g., when you close a terminal and open a new one. This is not the general behaviour of Unix systems. The usual behaviour is to have a home folder with contents consistent among terminal sessions. **This behaviour that you are experiencing is only particular to the Cygwin installation at MoVE.** If you want the files and directories to be consistent among terminal sessions, you have to place them at the  `~/Documents` folder.
+Your Monash user's storage space is mounted on this folder. Indeed, you will see that the files which you create with other MoVE apps, such as MATLAB or Mathematica, are accessible as well from that folder at the Cygwin terminal.
 
-In addition to user directories, every Unix system has **system directories** such as, e.g., `/etc`, `/usr/bin`, `/usr/lib`.  These directories are essential for the normal operation of the computer. Therefore, modifying  their contents requires special privileges. These are only granted to an special user referred to as *super-user*, also called the `root` user. (Please note that this usage of the term "root" to refer to a particular user has nothing to do with the root directory of the file system.)
+In addition to user directories, every Unix system has **system directories** such as, e.g., `/etc`, `/usr/bin`, `/usr/lib`.  These directories are essential for the normal operation of the computer. Therefore, modifying  their contents requires special privileges. These are only granted to a special user referred to as *super-user*, also called the `root` user. (Please note that this usage of the term "root" to refer to a particular user has nothing to do with the root directory of the file system.)
 
 ----
 > *__Exercise 18:__*
@@ -509,13 +508,13 @@ Try to create a void text file with name, say, `test.txt` in the `/etc` director
 ### 1.3.2. Creating directories
 <a id="markdown-creating-directories" name="creating-directories"></a>
 
-In [Section 1.2](#12-files), we created (and removed) a bunch of text files. We are now about to create a directory to contain them. Although most modern OSs include a GUI in order to perform this task, the Unix command-line way to do such a thing is with the `mkdir` command:
+In [Section 1.2](#12-files), we created (and removed) a collection of text files. We will now create a directory to contain them. Although most modern OSs include a GUI in order to perform this task, the Unix command-line way to do this is with the `mkdir` command:
 
 ```
 $ mkdir txt_files
 ```
 
-Once the directory has been created, we can move inside all text files created in [Section 1.2](#12-files) as follows (note the usage of the wildcard character; see [Section 1.2.3](#123-listing-files-the-ls-command)):
+Once the directory has been created, we can move all the text files created in [Section 1.2](#12-files) inside as follows (note the usage of the wildcard character; see [Section 1.2.3](#123-listing-files-the-ls-command)):
 
 ```bash
 $ mv *.txt txt_files/
@@ -563,7 +562,7 @@ These last two steps of typing `pwd` to confirm the current working directory, a
  
 ----
 > *__Exercise 19:__*
- Find in the manual page of `mkdir` for a flag that lets one achieve the following goal: given a directory's absolute path as an argument, create all intermediate folders which are required in order to complete such an absolute path in **a single command**. For example,  assuming that `~/dir1` does not exist, create `~/dir1`, `~/dir1/dir2`, and  `~/dir1/dir2/dir3` in a single command by providing the `~/dir1/dir2/dir3` absolute path as an argument. Confirm that the selected flag works with this example.
+Search the manual page of `mkdir` for a flag to do the following: given a directory's absolute path as an argument, create all intermediate folders which are required in order to complete such an absolute path in **a single command**. For example,  assuming that `~/dir1` does not exist, create `~/dir1`, `~/dir1/dir2`, and  `~/dir1/dir2/dir3` in a single command by providing the `~/dir1/dir2/dir3` absolute path as an argument. Confirm that the selected flag works with this example.
 ----
 
 ### 1.3.3. Navigating over the file system
@@ -579,12 +578,12 @@ At the end of the previous section, we introduced the concept of **current worki
  Explore how the prompt changes as you change the directory with the `cd` command. Infer which information the prompt is showing right before the `$` character.
 ----
 
-Recall from [Section 1.3.1](#131-directory-structure), that a file or directory can be uniquely identified by its absolute path. However, the Unix command-line accepts an alternative way of referring to the location of a file or directory within the file system tree using the so-called **relative paths**. A relative path is one that does not start at the root `/` folder. For example, `perl5/5.26/x86_64-cygwin-threads` or `Documents/lu.m` are relative paths.
+Recall from [Section 1.3.1](#131-directory-structure), that a file or directory can be uniquely identified by its absolute path. However, the Unix command-line accepts an alternative way of referring to the location of a file or directory within the file system tree using so-called **relative paths**. A relative path is one that does not start at the root `/` folder. For example, `perl5/5.26/x86_64-cygwin-threads` or `Documents/lu.m` are relative paths.
 If relative paths do not start from the root directory, then, where do they start? *From the current working directory.*
 
 ----
 > *__Exercise 22:__*
- Change the current work directory to your home directory. Type the `ls -l bin/file` command. What do you get on screen? Why? Repeat the same operation with the root directory and answer the same questions.
+ Change the current work directory to your home directory. Type the `ls -l bin/file` command. What do you get on screen? Why? Repeat the same operation with the root directory and compare to the previous results.
 ----
 
 There are a pair of special ways of navigating across the file system that are worth mentioning. The first is changing to the **parent** directory of the current working directory, which is denoted as `..` (two dots):
@@ -646,7 +645,7 @@ $ cd -
 /home/amar0078/txt_files
 ```
 
-The usage of `cd -` is particularly useful when you have to alternate work on two directories, and you want to avoid typing the paths of these back and forth.
+The usage of `cd -` is particularly useful when you have to alternate work betweeen two directories, and you want to avoid typing the paths of these back and forth.
 
 ----
 > *__Exercise 24:__*
