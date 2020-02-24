@@ -317,10 +317,9 @@ Many commands that print to standard output (e.g., `cat`, or `echo`) get the inf
 $ cat
 ```
 
-then `cat` enters in a state in which it is expecting that you introduce the contents of the file to be printed from the keyboard. It in particular prints to the standard output the whole text introduced so far each time that you press the Return key. Once you have finished writing, you can hit `^D` (as always, this means hold pressed the `Ctrl` key followed by the key labelled as `D`), that tells `cat` that you do not want to enter additional characters. At this point, try to type (or copy & paste), e.g.,
-the first sentence of our reference text, and then hit `^D` to see what we are talking about.
+then `cat` enters in a state in which it is expecting that you introduce the contents of the file to be printed from the keyboard. It in particular prints to the standard output the whole text introduced so far each time that you press the Return key. Once you have finished writing, you can hit `^D` (as always, this means hold pressed the `Ctrl` key followed by the key labelled as `D`), that tells `cat` that you do not want to enter additional characters. At this point, try to type (or copy & paste) the first sentence of our reference text, and then hit `^D` to see what we are talking about.
 
-**Input redirection** is a feature of the shell that lets you unplug the standard input of a command from the keyboard, and plug it into a file. In other words, the contents that the command would expect from the keyboard are read from the contents of a file instead. Input redirection is denoted by `<`. An example of it that uses the `sentences.txt` file generated above is as follows:
+**Input redirection** is a feature of the shell that lets you unplug the standard input of a command from the keyboard, and plug it into a file. In other words, the contents that the command would expect from the keyboard are read from the contents of a file instead. Input redirection is denoted by `<`. An example of input redirection using the `sentences.txt` file generated above is as follows:
 
 ```bash
 $ cat < sentences.txt
@@ -365,7 +364,7 @@ $ ls sentence*
 sentence_1.txt  sentence_2.txt  sentences.txt  sentences_backup.txt  sentences_reversed.txt
 ```
 
-> *__Note:__* It is cornerstone that you understand that `ls` does not get `sentence*` as an argument. It gets the result of the shell expanding it. If you want to explicitly pass `sentence*` as an argument to the current command, you have to prepend the escape character `\` right before `*`
+> *__Note:__* It is important to understand that `ls` does not get `sentence*` as an argument. It gets the result of the shell expanding it. If you want to explicitly pass `sentence*` as an argument to the current command, you have to prepend the escape character `\` right before `*`
 
 ----
 > *__Exercise 8:__*
@@ -415,7 +414,7 @@ Use `ls -a` on the current directory. Can you observe any hidden files? What are
 ### 1.2.5. "Touching" files
 <a id="markdown-touching-files" name="touching-files"></a>
 
-The `touch` command can be used in order to create an **empty** new file. It gets as an argument the name of the file to be created. If the specified name already exists, then the `touch` command updates both the [access and modification timestamps](https://linuxize.com/post/linux-touch-command/) of the file to the current time, i.e., the last time a file was accessed/opened by some command and the last time the file's content was modified, respectively.
+The `touch` command can be used in order to create an **empty** new file. It takes as an argument the name of the file to be created. If the specified name already exists, then the `touch` command updates both the [access and modification timestamps](https://linuxize.com/post/linux-touch-command/) of the file to the current time, i.e., the last time a file was accessed/opened by some command and the last time the file's content was modified, respectively.
 
 ----
 > *__Exercise 10:__*
@@ -431,7 +430,7 @@ The `cp` command can be used to copy a file. In particular,
 $ cp file1 file2
 ```
 
-makes a copy of the contents of `file1` into a new file named `file2`. If `file2` already exists, you will get an error message (check it!).
+makes a copy of the contents of `file1` into a new file named `file2`. Note that if `file2` already exists, it will be overwritten by `file1` (so be careful!).
 
 ----
 > *__Exercise 11:__*
@@ -440,31 +439,31 @@ What happens with the contents of the copy if you change the original file after
 ----
 
 A file can be renamed with `mv`, which is an abbreviation for "move".
-This name comes from the fact that the command is used, in the most general case, to move one file from a source  to a target directory, possibly changing its name at the target directory. In the degenerated case in which the source and target directory are equivalent, then the command falls back to file renaming.
+This name comes from the fact that the command is used, in the most general case, to move one file from a source to a target directory, possibly changing its name at the target directory. In the degenerated case in which the source and target directory are equivalent, then the command falls back to file renaming.
 
 ----
 > *__Exercise 12:__*
-Rename `sentences.txt` as `first_two_sentences.txt`. Check that command succeeded. Try to rename a file as an existing file. Which behaviour do you observe? 
+Rename `sentences.txt` as `first_two_sentences.txt`. Check that the command succeeded. Try to rename a file as an existing file. What behaviour do you observe? 
 ----
 
-Finally, files are deleted with `rm`. **Burn the following in your mind:** this command is highly dangerous, there is **NO UNDO**.
+Finally, files are deleted with `rm`. **Be careful!:** this command is highly dangerous, there is **NO UNDO**.
 
 ----
 > *__Exercise 13:__*
 Delete the  `first_two_sentences.txt` file. Confirm that the command has the desired effect.
 ----
 
-> *__Note:__* A major goal of this subject (actually of its [second module](Git.md)) is that you start using a distributed version control system on a daily basis in order to systematically trace the changes that you perform into your files (e.g., source codes in a computer programming language, documents, reports, articles, figures, etc.). Such kind of systems let you, among others, to keep a mirror (clone) of your files on the Cloud (e.g., [GitHub](https://www.github.com) or [GitLab](https://www.gitlab.com)). Although it is still possible to loose data using version control, the probability and amount of data loss are minimized if one keeps a systematic and appropriate workflow while using the tool.
+> *__Note:__* A major goal of this subject (actually of its [second module](Git.md)) is that you start using a distributed version control system on a daily basis in order to systematically trace the changes that you perform into your files (e.g., source codes in a computer programming language, documents, reports, articles, figures, etc.). Such systems allow you to keep a mirror (clone) of your files on the Cloud (e.g., [GitHub](https://www.github.com) or [GitLab](https://www.gitlab.com)). Although it is still possible to loose data using version control, the probability and amount of data loss are minimized if one keeps to a systematic and appropriate workflow.
 
 ## 1.3. Directories
 <a id="markdown-directories" name="directories"></a>
 
-In the previous section, we learned some basic commands in order to deal with files. In this section, we will learn those that let us handle **directories**, also referred to as **folders**. 
+In the previous section, we learned some basic commands in order to deal with files. In this section, we will become acquainted with additional commands that allow us to handle **directories**, also referred to as **folders**. 
 
 ### 1.3.1. Directory structure
 <a id="markdown-directory-structure" name="directory-structure"></a>
 
-Recall from [Section 1.1.6](#116-the-unix-file-system) that the Unix file system is a tree of directories, where a directory is in turn a container of files and/or more directories. The root of the tree is indicated with a forward slash character, i.e.,  `/`. Any directory or file of the system can be uniquely identified by an *absolute path*. An absolute path is nothing but the full path from the root of the tree to the particular directory or file at hand, where the name of each directory in this path is separated using the forward slash character, i.e.,  `/`. For example, in [Figure 11](#fig_unix_file_system), the *absolute path* for the `ls` file, the `mthomas` folder, and the `bin` folder are `/bin/ls`, `/home/mthomas`,  and `/usr/bin`, respectively.
+Recall from [Section 1.1.6](#116-the-unix-file-system) that the Unix file system is a tree of directories, where a directory is in turn a container of files and/or more directories. The root of the tree is indicated with a forward slash character, `/`. Any directory or file of the system can be uniquely identified by an *absolute path*. An absolute path is the full path from the root of the tree to the particular directory or file at hand, where the name of each directory in this path is separated using the forward slash character `/`. For example, in [Figure 11](#fig_unix_file_system), the *absolute path* for the `ls` file, the `mthomas` folder, and the `bin` folder are `/bin/ls`, `/home/mthomas`,  and `/usr/bin`, respectively.
 
 Using the absolute path of a directory one can list its contents using the `ls` command. For example, we can see the contents of the root directory as follows (the particular output in your system might vary):
 
@@ -475,31 +474,31 @@ bin/  cygdrive/  Cygwin.bat*  Cygwin.ico  Cygwin-Terminal.ico  dev/  etc/  home/
 
 ----
 > *__Exercise 14:__*
-Try to figure out from the output of the previous command how many directories and files there are inside the root folder. Pick arbitrarily one of the directories that the root folder contains and list its contents with the `ls` command using the **absolute path** of the directory selected.
+Try to figure out from the output of the previous command how many directories and files there are inside the root folder. Randonly choose one of the directories contained in the root folder and list its contents with the `ls` command using the **absolute path** of the directory selected.
 *Hint*: in the Cygwin environment installed within MoVE, the `ls` command denotes the directories with their names followed by a forward slash character.
 ----
 
-The most important directory for a particular user is its **home directory**. The home directory is typically located at the `/home` folder, and its name matches the name of the user that is working with the system. For example, `amar0078` is the name of the user we worked with while preparing this material, and its home directory is `/home/amar0078`. The name of the user you are working with can be obtained with the `whoami` command.
+The most important directory for a particular user is their **home directory**. The home directory is typically located at the `/home` folder, and its name matches the name of the user that is working with the system. For example, `amar0078` is the name of the user we worked with while preparing this material, and its home directory is `/home/amar0078`. The name of the user you are working with can be obtained with the `whoami` command.
 
 ----
 > *__Exercise 15:__*
 Determine the absolute path of your user's home directory and list its contents with the `ls` command.
 ----
 
-The home directory can also be denoted the short way using the tilde character `~`. This character is typed pressing the key located right at the left of the key labeled with the number 1 while holding pressed the `Shift` key. 
+The home directory can also be denoted in an abreviated fashion using the tilde character `~`. This character is typed by pressing the key located right at the left of the key labeled with the number 1 while holding pressed the `Shift` key. 
 
 ----
 > *__Exercise 16:__*
-List the contents of your user's home directory using the `ls` command and the `~` character. Check that the output matches the one of the previous exercise. Use the tilde character to list the contents of a folder located at your user's home directory.
+List the contents of your user's home directory using the `ls` command and the `~` character. Check that the output matches the one of the previous exercise. Use the tilde character `~` to list the contents of a folder located at your user's home directory.
 
 > *__Exercise 17:__*
 Assume that your user name is `amar0078`. How do `/home/amar0078/Documents` and `~/Documents` differ (if they differ at all)? Check it replacing `amar0078` with your actual user's name.
 ----
 
-> *__Note:__* You might have observed that the contents of the home directory vary among different Cygwin terminal sessions, e.g., when you close a terminal and open a new one. This is not the general behaviour of  Unix systems, but to have a home folder with contents consistent among terminal sessions. **This behaviour that you are experiencing is only particular to the Cygwin installation at MoVE.** If you want the files and directories to be consistent among terminal sessions, you have to place them at the  `~/Documents` folder.
-Your Monash user's storage space is mounted on this folder. Indeed, you will see that the files which you create with other MoVE apps, such as, e.g.,  MATLAB or Mathematica, are accessible as well from that folder at the Cygwin terminal.
+> *__Note:__* You might have observed that the contents of the home directory vary among different Cygwin terminal sessions, e.g., when you close a terminal and open a new one. This is not the general behaviour of Unix systems. The usual behaviour is to have a home folder with contents consistent among terminal sessions. **This behaviour that you are experiencing is only particular to the Cygwin installation at MoVE.** If you want the files and directories to be consistent among terminal sessions, you have to place them at the  `~/Documents` folder.
+Your Monash user's storage space is mounted on this folder. Indeed, you will see that the files which you create with other MoVE apps, such as MATLAB or Mathematica, are accessible as well from that folder at the Cygwin terminal.
 
-In addition to user directories, every Unix system has **system directories** such as, e.g., `/etc`, `/usr/bin`, `/usr/lib`.  These directories are essential for the normal operation of the computer. Therefore, modifying  their contents requires special privileges. These are only granted to an special user referred to as *super-user*, also called the `root` user. (Please note that this usage of the term "root" to refer to a particular user has nothing to do with the root directory of the file system.)
+In addition to user directories, every Unix system has **system directories** such as, e.g., `/etc`, `/usr/bin`, `/usr/lib`.  These directories are essential for the normal operation of the computer. Therefore, modifying  their contents requires special privileges. These are only granted to a special user referred to as *super-user*, also called the `root` user. (Please note that this usage of the term "root" to refer to a particular user has nothing to do with the root directory of the file system.)
 
 ----
 > *__Exercise 18:__*
@@ -509,13 +508,13 @@ Try to create a void text file with name, say, `test.txt` in the `/etc` director
 ### 1.3.2. Creating directories
 <a id="markdown-creating-directories" name="creating-directories"></a>
 
-In [Section 1.2](#12-files), we created (and removed) a bunch of text files. We are now about to create a directory to contain them. Although most modern OSs include a GUI in order to perform this task, the Unix command-line way to do such a thing is with the `mkdir` command:
+In [Section 1.2](#12-files), we created (and removed) a collection of text files. We will now create a directory to contain them. Although most modern OSs include a GUI in order to perform this task, the Unix command-line way to do this is with the `mkdir` command:
 
 ```
 $ mkdir txt_files
 ```
 
-Once the directory has been created, we can move inside all text files created in [Section 1.2](#12-files) as follows (note the usage of the wildcard character; see [Section 1.2.3](#123-listing-files-the-ls-command)):
+Once the directory has been created, we can move all the text files created in [Section 1.2](#12-files) inside as follows (note the usage of the wildcard character; see [Section 1.2.3](#123-listing-files-the-ls-command)):
 
 ```bash
 $ mv *.txt txt_files/
@@ -563,7 +562,7 @@ These last two steps of typing `pwd` to confirm the current working directory, a
  
 ----
 > *__Exercise 19:__*
- Find in the manual page of `mkdir` for a flag that lets one achieve the following goal: given a directory's absolute path as an argument, create all intermediate folders which are required in order to complete such an absolute path in **a single command**. For example,  assuming that `~/dir1` does not exist, create `~/dir1`, `~/dir1/dir2`, and  `~/dir1/dir2/dir3` in a single command by providing the `~/dir1/dir2/dir3` absolute path as an argument. Confirm that the selected flag works with this example.
+Search the manual page of `mkdir` for a flag to do the following: given a directory's absolute path as an argument, create all intermediate folders which are required in order to complete such an absolute path in **a single command**. For example,  assuming that `~/dir1` does not exist, create `~/dir1`, `~/dir1/dir2`, and  `~/dir1/dir2/dir3` in a single command by providing the `~/dir1/dir2/dir3` absolute path as an argument. Confirm that the selected flag works with this example.
 ----
 
 ### 1.3.3. Navigating over the file system
@@ -579,12 +578,12 @@ At the end of the previous section, we introduced the concept of **current worki
  Explore how the prompt changes as you change the directory with the `cd` command. Infer which information the prompt is showing right before the `$` character.
 ----
 
-Recall from [Section 1.3.1](#131-directory-structure), that a file or directory can be uniquely identified by its absolute path. However, the Unix command-line accepts an alternative way of referring to the location of a file or directory within the file system tree using the so-called **relative paths**. A relative path is one that does not start at the root `/` folder. For example, `perl5/5.26/x86_64-cygwin-threads` or `Documents/lu.m` are relative paths.
+Recall from [Section 1.3.1](#131-directory-structure), that a file or directory can be uniquely identified by its absolute path. However, the Unix command-line accepts an alternative way of referring to the location of a file or directory within the file system tree using so-called **relative paths**. A relative path is one that does not start at the root `/` folder. For example, `perl5/5.26/x86_64-cygwin-threads` or `Documents/lu.m` are relative paths.
 If relative paths do not start from the root directory, then, where do they start? *From the current working directory.*
 
 ----
 > *__Exercise 22:__*
- Change the current work directory to your home directory. Type the `ls -l bin/file` command. What do you get on screen? Why? Repeat the same operation with the root directory and answer the same questions.
+ Change the current work directory to your home directory. Type the `ls -l bin/file` command. What do you get on screen? Why? Repeat the same operation with the root directory and compare to the previous results.
 ----
 
 There are a pair of special ways of navigating across the file system that are worth mentioning. The first is changing to the **parent** directory of the current working directory, which is denoted as `..` (two dots):
@@ -646,7 +645,7 @@ $ cd -
 /home/amar0078/txt_files
 ```
 
-The usage of `cd -` is particularly useful when you have to alternate work on two directories, and you want to avoid typing the paths of these back and forth.
+The usage of `cd -` is particularly useful when you have to alternate work betweeen two directories, and you want to avoid typing the paths of these back and forth.
 
 ----
 > *__Exercise 24:__*
