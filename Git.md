@@ -21,7 +21,119 @@ our introduction to the Unix command-line, so that they can sometimes cryptic an
 In this tutorial we do not pretend to be too comprehensive. The advanced features of Git are tricky to learn, and are based to a large extent on theory concepts that are hard to grasp and thus pretty too much for an introductory tutorial. Instead, we will cover the very minimal set of features and associated commands that let you start becoming productive with such a sophisticated tool. Right at the end of the tutorial, we will point you to a set of further references that you can use to expand your Git skills much further.
 
 
+Misc git commands
 
+$ git config --global user.name "My name"
+$ git config --global user.email "myname@monash.edu"
+$ git config --list --show-origin
 
+$ cd Documents/
+$ mkdir myproject
+$ cd myproject/
+$ git init
+Initialized empty Git repository in /home/amar0078/Documents/myproject/.git/
+$ nano README.md
+$ cat README.md
+This is an **example** README.md file
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ git add README.md
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   README.md
+
+git commit -m "First commit of myproject with a preliminary version of a README.md file"
+[master (root-commit) 057083a] First commit of myproject with a preliminary version of a README.md file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+$ git log
+commit 057083ac5d9e2718626854c90b2ba6226e6f57f2 (HEAD -> master)
+Author: My name <myname@monash.edu>
+Date:   Mon Feb 24 21:28:03 2020 +1100
+
+    First commit of myproject with a preliminary version of a README.md file
+
+$ git remote add origin git@github.com:amartinhuertas/repository4sci1022.git
+$ git remote -v
+origin  git@github.com:amartinhuertas/repository4sci1022.git (fetch)
+origin  git@github.com:amartinhuertas/repository4sci1022.git (push)
+$ git push -u origin master
+
+amar0078@MVAZ1STUL01023 ~/Documents$ ssh-keygen -t rsa -b 4096 -C "myname@monash.edu"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/amar0078/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/amar0078/.ssh/id_rsa.
+Your public key has been saved in /home/amar0078/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:Y+JdoPfWm/AJIc1oQnkvWVhwVPiT3M75f9nh7ggIeug myname@monash.edu
+The key's randomart image is:
++---[RSA 4096]----+
+|        .o+o.    |
+|       . +.      |
+|      o + .o o   |
+|     . o O  = .  |
+|      +.S *  + . |
+|     .oB.*.o  +. |
+|     o....=.. ..+|
+|    . .  . +.+.o+|
+|     E      =.oo+|
++----[SHA256]-----+
+amar0078@MVAZ1STUL01023 ~/Documents$ ls -l ~/.ssh
+total 9
+-rw-------+ 1 amar0078 Domain Users 3434 Feb 24 21:53 id_rsa
+-rw-r--r--+ 1 amar0078 Domain Users  743 Feb 24 21:53 id_rsa.pub
+-rw-rw-r--+ 1 amar0078 Domain Users  404 Feb 24 21:43 known_hosts
+
+amar0078@MVAZ1STUL01023 ~/Documents$ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDPZc7IIUvIlcGWgh7/jQLFYIryLk7Zs9XSk60CTllD6NmAjJKKoPBVdT21I2yEryEhAQA+EQmwb8xSlmkcOskSLTsoXdXVZe1blajHIA3CdhaBXpGiw5oDGeVInaOlcqq2faXwZttw3FD4Unf+OFtqCKR0e9uIFcMjpyQklE3z3SdIFKX+aXGrweqaVq8ByxwXSQIjvXibcxBsvCuMvL8VfcsgMDu+1Z1TzEG9NKnDOqp2lTrF6QvSqAmlJ7OtSBsmVIHje1egDyPQD5JY04tV8ETSSqZpOFg3UZ6vBS4ZXpFixNXrvOo5HBrwh9E566tmJfnoBPWLdV6orHETQHjsRMI2FsWOhPQ/GEuZw66PlirjIechPdVrmKFhthwgYSlyXydxrfpPInCe51sTs1J2Ix0lZUdioyLn4RycfhBSVvcU49FxmxA8c3qBIXVSFFIyRdLlOJYgLhCqzvdZTqNMeIaR8LzUeitexQfyUFhknkJghjBp1+i7BOFJvLQ/55gIfLXd3nTtDflCV9Lj0joAVcTmiirlBg29iqX9q2LHI6jBhlOBL1SsDOaHfeIMuJvLzEmE80GBNkk6CsdilwdTFx7jlBUeU4//6G6aRIycZ5jsoTXfFiwp6ogvpZ3Gc7ag48rmENF1NgQRrSDkfYfhoNc+NckDbt8O+Diqy8LDhQ== myname@monash.edu
+
+amar0078@MVAZ1STUL01023 ~/Documents/myproject$ git push -u origin master
+Warning: Permanently added the RSA host key for IP address '13.236.229.21' to the list of known hosts.
+Enter passphrase for key '/home/amar0078/.ssh/id_rsa':
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 290 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:amartinhuertas/repository4sci1022.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+~/Documents$ rm -Rf myproject/
+
+amar0078@MVAZ1STUL01023 ~/Documents$ git clone git@github.com:amartinhuertas/repository4sci1022.git
+Cloning into 'repository4sci1022'...
+Enter passphrase for key '/home/amar0078/.ssh/id_rsa':
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+amar0078@MVAZ1STUL01023 ~/Documents$ cd repository4sci1022/
+amar0078@MVAZ1STUL01023 ~/Documents/repository4sci1022$ cat README.md
+This is an **example** README.md file
+amar0078@MVAZ1STUL01023 ~/Documents/repository4sci1022$ git log
+commit 057083ac5d9e2718626854c90b2ba6226e6f57f2 (HEAD -> master, origin/master, origin/HEAD)
+Author: My name <myname@monash.edu>
+Date:   Mon Feb 24 21:28:03 2020 +1100
+
+    First commit of myproject with a preliminary version of a README.md file
 
 
