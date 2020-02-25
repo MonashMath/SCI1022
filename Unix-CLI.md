@@ -781,7 +781,7 @@ Determine the user and group owner of all files/directories within the root dire
 ### 1.4.2. Permissions
 <a id="markdown-permissions" name="permissions"></a>
 
-Unix files and folders have **permissions**. The permissions of a file or directory indicate *who can do what with such file or folder *. Actions that can be performed on a file or folder fall into three main categories:
+Unix files and folders have **permissions**. The permissions of a file or directory indicate **who can do what with such file or folder**. Actions that can be performed on a file or folder fall into three main categories:
 - reading `r`: any access to a file or folder  that does not change it (e.g., displaying).
 - writing `w`: access to a file or folder that changes its content, or even its metadata, as e.g., its timestamps (i.e., last modified date and time).
 - executing `x`: in the case of files, whether it is allowed to execute the file. In the case of folders, whether it is allowed to change the current working directory to the folder.
@@ -820,7 +820,7 @@ The permissions are shown in the first column of the output of `ls -l`. The nine
 
 
 For instance, `rw-r--r--` means that the owner can read and write a file, 
-and that the owner’s group and everyone else can only read. 
+and that the owner’s group and everyone else can only read. Note that the list of permissions is preceeded by either a `d` or a `-`. This character is not a permission, but rather signifies whether the permissions are for a directory, `d`, or a file, `-`.
 
 ----
 > *__Exercise 29:__*
@@ -832,7 +832,7 @@ Finally, you can modify the permissions of a file or folder by means of the `chm
 ```bash
 $ chmod g+w file      # give owner group write permission
 $ chmod g=rx file     # set owner group permissions to `r-x`
-$ chod o-w file       # take away write permission from others
+$ chmod o-w file      # take away write permission from others
 $ chmod o= file       # take away all permissions from others
 $ chmod g+r,o-x file  # give group read permission
 ```
@@ -859,7 +859,7 @@ Create a new directory `new_dir` on your home folder. Determine which are the pe
 ## 1.5. Advanced file inspection
 <a id="markdown-advanced-file-inspection" name="advanced-file-inspection"></a>
 
-In this section, we will introduce you to the usage of more advanced file inspection commands than those covered so far. For example, in [Section 1.2.1](#121-output-redirection-and-appending), we introduced the `cat` command as a quick and a fast way to display the contents of a file. However, `cat` does not work properly for long files as their contents may not fit in full into your screen. In this section we will study, among others,  how we can bypass this drawback of `cat`.
+In this section, we will introduce you to the usage of more advanced file inspection commands than those covered so far. For example, in [Section 1.2.1](#121-output-redirection-and-appending), we introduced the `cat` command as a quick way to display the contents of a file. However, `cat` does not work properly for long files as their contents may not fit in full onto your screen. In this section we will study how we can bypass this drawback of `cat`.
 
 
 ### 1.5.1. Downloading files
@@ -875,7 +875,7 @@ Although `curl` is not part of the core Unix command-line set, it is widely avai
 Use `which` to determine the location of the `curl` command in your system. 
 ----
 
-We will in particular download a text version of the [Project Gutenberg's](https://www.gutenberg.org/) eBook of [The History of Don Quixote](https://en.wikipedia.org/wiki/Don_Quixote) by [Miguel de Cervantes](https://en.wikipedia.org/wiki/Miguel_de_Cervantes), originally translated into English by [John Ormsby](https://en.wikipedia.org/wiki/John_Ormsby_(translator)). To this end, we have to execute the following command (don't type it!, copy & paste better!):
+We will in particular download a text version of the [Project Gutenberg's](https://www.gutenberg.org/) eBook of [The History of Don Quixote](https://en.wikipedia.org/wiki/Don_Quixote) by [Miguel de Cervantes](https://en.wikipedia.org/wiki/Miguel_de_Cervantes), originally translated into English by [John Ormsby](https://en.wikipedia.org/wiki/John_Ormsby_(translator)). To this end, we have to execute the following command (don't type it!, copy & paste is faster!):
 
 ```bash
 $ curl http://www.gutenberg.org/files/996/996-0.txt -o don_quixote.txt
@@ -884,8 +884,7 @@ $ curl http://www.gutenberg.org/files/996/996-0.txt -o don_quixote.txt
 100 2334k  100 2334k    0     0   466k      0  0:00:05  0:00:05 --:--:--  555k
 ```
 
-The result of running this command is `don_quixote.txt`, a file containing the aforementioned eBook in text format. This file contains 43281 lines!, i.e., **too many to fit on the screen**. (Type `cat don_quixote` and you will definitely understand what we are talking about.) The goal of the rest of the section is to learn commands that will let us easy inspection of files.
-Among others, we will learn how to automatically count lines in files, without having to count them all manually.
+The result of running this command is `don_quixote.txt`, a file containing the aforementioned eBook in text format. This file contains 43281 lines!, i.e., **too many to fit on the screen**. (Type `cat don_quixote` and you will definitely understand what we are talking about.) The goal of the rest of the section is to learn commands that will let us inspect files more easily. Among other things, we will learn how to automatically count lines in files, without having to count them all manually.
 
 > *__Note:__* 
 If you want to learn more about the `curl` command, you can type `curl -h`.
@@ -920,8 +919,7 @@ $ wc don_quixote.txt
 
 The three numbers printed by `wc` on screen are the number of lines, words, and bytes there are in the file. Therefore, there are 43281 lines, 430267 words, and 2390850 bytes.
 
-We are now in a position to determine how many lines 
-`head` outputs by default without having to count the lines manually. In particular, we can redirect the output of `head` to a file, and then run `wc` on it:
+We are now in a position to determine how many lines `head` outputs by default without having to count the lines manually. In particular, we can redirect the output of `head` to a file, and then run `wc` on it:
 
 ```
 $ head don_quixote.txt > head_don_quixote.txt
@@ -936,14 +934,14 @@ We see that there are 10 lines in `head_don_quixote.txt` (and 64 words and 378 b
 > Determine how many lines, words, and bytes there are at the last 10 lines of `don_quixote.txt`.
 ----
 
-On the other hand, you might have the impression that it is quite unpractical to generate a temporary file each time that we want to run `wc` on the output generated by another command such as, e.g., `head` or `tail`. Indeed, it is. A feature of the shell referred to as **command pipelining**, or just **pipes**, is designed precisely to avoid this in mind. The following example illustrates the usage of pipes:
+On the other hand, you might have the impression that it is impractical to generate a temporary file each time that we want to run `wc` on the output generated by another command such as, e.g., `head` or `tail`. A feature of the shell referred to as **command pipelining**, or just **pipes**, is designed precisely to avoid this in mind. The following example illustrates the usage of pipes:
 
 ```
 $ head don_quixote.txt | wc
      10      64     378
 ```
 
-This command runs `head don_quixote.txt` and then *pipes* the result through `wc` using the pipe symbol `|`. Recall from [Section 1.2.2](#122-input-redirection), that many Unix commands take its input from the standard input, i.e., the keyboard by default, when they are called without arguments. Using the pipe, we modify this default behaviour such that the standard output of the command before the pipe is redirected as standard input to the command after the pipe. This justifies why the command above generates the same output we had above with `wc head_don_quixote.txt`.
+This command runs `head don_quixote.txt` and then **pipes** the result through `wc` using the pipe symbol `|`. Recall from [Section 1.2.2](#122-input-redirection), that many Unix commands take their input from the standard input, i.e., the keyboard by default, when they are called without arguments. Using the pipe, we modify this default behaviour such that the standard output of the command before the pipe is redirected as standard input to the command after the pipe. This justifies why the command above generates the same output we had above with `wc head_don_quixote.txt`.
 
 ----
 > *__Exercise 37:__*
@@ -959,16 +957,16 @@ This command runs `head don_quixote.txt` and then *pipes* the result through `wc
 ### 1.5.4. Paging output with `less`
 <a id="markdown-paging-output-with-less" name="paging-output-with-less"></a>
 
-The Unix command-line provides a very powerful tool for inspecting a file beyond its head and tail. Such command is called `less`. In particular, it lets you navigate through the file in several useful ways, such as moving one line up or down with the arrow keys, pressing space bar to move a page down, pressing `⌃F` to move forward a page (i.e., the same as spacebar), `⌃B` to move back a page, `g` to go to the beginning of the file, `G` to the end of the file, etc. To quit `less`, type `q`.
+The Unix command-line provides a very powerful tool for inspecting a file beyond its head and tail. This command is called `less`. In particular, it lets you navigate through the file in several useful ways, such as moving one line up or down with the arrow keys, pressing space bar to move a page down, pressing `⌃F` to move forward a page (i.e., the same as spacebar), `⌃B` to move back a page, `g` to go to the beginning of the file, `G` to the end of the file, etc. To quit `less`, type `q`.
 
 ----
 > *__Exercise 38:__*
 > Run `less` on `don_quixote.txt`. Go down three pages and then back up three pages. Go to the end of the file, then to the beginning, then quit.
 ----
 
-Perhaps the most powerful aspect of `less` is the forward slash key `/`, for searching through the file from beginning to end. For example, suppose we want to search the “Gutenberg” word through `don_quixote.txt`. The way to do this with `less` is to type `/` followed by the word to be searched. The result of pressing the Return key after typing `/Gutenberg` is to highlight the first occurrence of “Gutenberg” in the file. You can then press `n` to navigate to the next match, or `N` to navigate to the previous match.
+Perhaps the most powerful aspect of `less` is the forward slash key `/`, which is used for searching through the entire file for a particular string of text. For example, suppose we want to search the “Gutenberg” word through `don_quixote.txt`. The way to do this with `less` is to type `/` followed by the word to be searched. The result of pressing the Return key after typing `/Gutenberg` is to highlight the first occurrence of “Gutenberg” in the file. You can then press `n` to navigate to the next match, or `N` to navigate to the previous match.
 
-The ones covered so far are the most useful navigational commands of `less`. But there is much more. At this point, if you are curious, you can find a longer list of commands at the [Wikipedia page of `less`](https://en.wikipedia.org/wiki/Less_(Unix)). We strongly encourage you to use `less` as **the tool** for looking at the contents of a file. Recall from [Section 1.1.3](#113-typing-our-first-commands-looking-for-help-using-man) that the navigation of man pages is actually managed under the hood by `less`. Thus, any familiarity that you gain with `less` automatically applies to the navigation of `man` pages as well.
+Above we have covered the most useful navigational commands of `less`, but there are many others. At this point, if you are curious, you can find a longer list of commands at the [Wikipedia page of `less`](https://en.wikipedia.org/wiki/Less_(Unix)). We strongly encourage you to use `less` as **the tool** for looking at the contents of a file. Recall from [Section 1.1.3](#113-typing-our-first-commands-looking-for-help-using-man) that the navigation of man pages is actually managed under the hood by `less`. Thus, any familiarity that you gain with `less` automatically applies to the navigation of `man` pages as well.
 
 ----
 > *__Exercise 39:__*
@@ -995,11 +993,11 @@ $ grep Kingdom don_quixote.txt | wc
 ```
 
 The output of the command reports that there are 2 lines containing the string "Kingdom". If there was an occurrence of, say, "Kingdoms", 
-in a different line, the result of the previous command would be 3 instead of 2. **This is because `grep` does not actually search for whole words, but for occurrences in the file of the characters of the input string in a row.** In other words, there is match even if the provided string is a *substring* of a larger string in the file.
+in a different line, the result of the previous command would be 3 instead of 2. **This is because `grep` does not actually search for whole words, but for occurrences in the file of the characters of the input string in a row.** In other words, there is a match even if the string provided is a *substring* of a larger string in the file.
 
 ----
 > *__Exercise 40:__*
->* Search for occurrences of the substring “the” using `grep` and pipe the result to `less`. Then, check using `less` search options, that, e.g., lines containing the superstring "these" are also output by `grep`.
+>* Search for occurrences of the substring “the” using `grep` and pipe the result to `less`. Then, check using `less` search options, that lines containing the superstring "these" are also output by `grep`.
 >* Count the number of lines in which the substring “kingdom” and "kingdoms" appear. Why the first number is larger than the second?
 >* By comparing the output of `grep Kingdom don_quixote.txt | wc -l` and  `grep kingdom don_quixote.txt | wc -l` one may readily confirm that `grep` is **case-sensitive**. Look at the manual page of `grep` and search for an option that lets you perform case-insensitive matching. Count the number of case-insensitive appearances of "kingdom" and check that the result is nothing but the sum of the one provided by the previous two commands.
 ----
