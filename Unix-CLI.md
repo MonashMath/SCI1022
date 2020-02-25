@@ -1150,6 +1150,7 @@ After entering the “WriteOut” (`^O`) command, `nano` will display a prompt o
 ----
 > *__Exercise 44:__*
 > Open `TODO.txt` and add manually the date of today in `dd/mm/yyyy` format to the top of the file and save the file. Exit `nano`, and check using `cat` that you successfully edited the file.
+----
 
 That is probably enough to get you started. If you would like to get more information about using `nano`, you can type `^G`, and access to the help that it provides. There is comprehensive Documentation on `nano` as well available on the Internet, such as: [nano-editor](https://www.nano-editor.org/docs.php), and [Ubuntu help](https://help.ubuntu.com/community/Nano?action=show&redirect=NanoHowto).
 
