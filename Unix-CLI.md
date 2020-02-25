@@ -820,7 +820,7 @@ The permissions are shown in the first column of the output of `ls -l`. The nine
 
 
 For instance, `rw-r--r--` means that the owner can read and write a file, 
-and that the owner’s group and everyone else can only read. 
+and that the owner’s group and everyone else can only read. Note that the list of permissions is preceeded by either a `d` or a `-`. This character is not a permission, but rather signifies whether the permissions are for a directory, `d`, or a file, `-`.
 
 ----
 > *__Exercise 29:__*
