@@ -586,7 +586,7 @@ If relative paths do not start from the root directory, then, where do they star
  Change the current work directory to your home directory. Type the `ls -l bin/file` command. What do you get on screen? Why? Repeat the same operation with the root directory and compare to the previous results.
 ----
 
-There are a pair of special ways of navigating across the file system that are worth mentioning. The first is changing to the **parent** directory of the current working directory, which is denoted as `..` (two dots):
+There are two special ways of navigating across the file system that are worth mentioning. The first is changing to the **parent** directory of the current working directory, which is denoted as `..` (two dots):
 
 
 ```bash
@@ -657,7 +657,7 @@ The usage of `cd -` is particularly useful when you have to alternate work betwe
 ### 1.3.4. Copying, renaming, and deleting folders
 <a id="markdown-copying-renaming-and-deleting-folders" name="copying-renaming-and-deleting-folders"></a>
 
-The commands for renaming, copying, and deleting folders very much resemble those for files (see [Section 1.2.6](#126-copying-renaming-and-deleting-files)). There are, however, some worth noting subtle differences.  The most resemblant command is `mv`, which works the same way as it does for files:
+The commands for renaming, copying, and deleting folders resemble those for files (see [Section 1.2.6](#126-copying-renaming-and-deleting-files)). There are, however, some subtle differences worth noting.  The most similar command is `mv`, which works the same way as it does for files:
 
 ```bash
 $ mkdir dir1
@@ -675,7 +675,7 @@ $ mv dir2 dir1
 $ cd dir1
 ```
 
-However, with `cp`, the trailing slashes **do make a worth noting difference**. This difference is indeed the source of much confusion. In particular, when copying directories, the behavior that we usually want is to copy the directory contents *including* the directory itself, which is achieved leaving off the trailing slash. When copying files, you also need to include the `-r` option (for “recursive”). For example, to copy the whole directory tree rooted at `txt_files` (including it) to a new directory called `dir`, we can do the following:
+However, with `cp`, the trailing slashes **do make a difference worth noting**. This difference is indeed the source of much confusion. In particular, when copying directories, the behavior that we usually want is to copy the directory contents *including* the directory itself, which is achieved leaving off the trailing slash. When copying files, you also need to include the `-r` option (for “recursive”). For example, to copy the whole directory tree rooted at `txt_files` (including itself) to a new directory called `dir`, we can do the following:
 
 ```bash
 $ cd
@@ -713,7 +713,7 @@ $ rmdir dir2
 rmdir: failed to remove 'dir2': Directory not empty
 ```
 
-The error message here is triggered as `rmdir` requires the directory to be empty. One may of course remove it by hand (using a much likely long sequence of `cd`, `rm`, and `rmdir` commands), but this is time-consuming. An alternative is to use the more powerful but **evil** “remove recursive force” command `rm -rf`, which removes a directory, its files, and any subdirectories recursively **without any confirmation**.
+The error message here is triggered as `rmdir` requires the directory to be empty. One may of course remove it by hand (using a much likely long sequence of `cd`, `rm`, and `rmdir` commands), but this is time-consuming. An alternative is to use the more powerful but **dangerous** “remove recursive force” command `rm -rf`, which removes a directory, its files, and any subdirectories recursively **without any confirmation**.
 
 ```bash
 $ rm -rf dir2/
@@ -725,7 +725,7 @@ As the error message from `ls` indicates, our use of `rm -rf` made the whole dir
 
 ----
 > *__Exercise 25:__*
-Explain why you should **never** type the command `rm -rf ~` into a terminal window, not even as a joke.
+Explain why you should **NEVER** type the command `rm -rf ~` into a terminal window, not even as a joke.
 
 > *__Exercise 26:__*
 > 1. Make a directory `test` with a subdirectory `test_child`, then rename the latter as `test_descendent`.
@@ -744,7 +744,7 @@ In this section you will learn how to give users on your system
 ### 1.4.1. Users and groups
 <a id="markdown-users-and-groups" name="users-and-groups"></a>
 
-Unix is a **multi-user** OS. Thus, even if you use it on your own personal Desktop or Laptop, you are a user with an account and you may occasionally have to type in your username and password. If you are on your personal machine, you may be the only user logged in. However, e.g., on a university-level machine or on a computing cluster, there will often be other users. Some commands related to users are:
+Unix is a **multi-user** OS. Thus, even if you use it on your own personal Desktop or Laptop, you are a user with an account and you may occasionally have to type in your username and password. If you are on your personal machine, you may be the only user logged in. However on a university-level machine or on a computing cluster, or other large computing platform, there will often be other users. Some commands related to users are:
 
 - `whoami`: show your user name. 
 - `who`: show the other users currently logged in the system.
@@ -753,9 +753,9 @@ Unix is a **multi-user** OS. Thus, even if you use it on your own personal Deskt
 - `uptime`: how long has the system been turned on since the last reboot?
 
 > *__Note:__* 
-Recall that the Cygwin environment within MoVE is not actually a full-blown Unix OS. Thus, you will, e.g., observe that `who` returns nothing on screen, as there are actually no other users connected to the system. Some of the commands above, are not even available in Cygwin. However, these will be on an actual Unix system.
+Recall that the Cygwin environment within MoVE is not actually a full-blown Unix OS. Thus, you will observe for example that `who` returns nothing on screen, as there are actually no other users connected to the system. Some of the commands above, are not even available in Cygwin. However, these will be on an actual Unix system.
 
-Apart from the concept of **users** (those who use the system), in Unix-type OSs there also exists the concept of **groups**, which is basically a logical mechanism to manage a collection of users. In a nutshell, groups make it easy to manage users with same security and access privileges. For example, this allows you to open up files to your close collaborators (i.e., those who belong to the same group you belong to), while leaving them protected from the rest of users. See next section for additional details.
+Apart from the concept of **users** (those who use the system), in Unix-type OSs there also exists the concept of **groups**, which is basically a way to manage a collection of users. In a nutshell, groups make it easy to manage users with the same security and access privileges. For example, this lets you give your collaborators access to a specificed set of your own files (i.e., those users who belong to the same group you belong to), while leaving those same files protected from other users. See next section for additional details.
 
 A user can belong to different groups. When a new user account is created, the system administrator assigns the newly created user to one or more groups. Any user of the system can print on screen the groups to which he/she belongs to with the `groups` command. 
 
