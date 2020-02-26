@@ -84,9 +84,10 @@ In this tutorial, however, we assume that you are working on your own desktop, l
 In order to open a terminal within this environment you have to:
 
 1. [Access MoVE](https://move.monash.edu/) using your Monash account details to log in. 
-2. Click on the Cygwin APP by clicking on the icon depicted in [Figure 4](#fig_cygwin_icon).  This should download a Citrix client file (e.g., `TW92ZVByb2RDb250cm9sbGVycy5DeWd3aW4-.ica`).
-3. Run the file downloaded in Step 2. by clicking on it. 
-
+2. On the top bar, click on the "Apps" icon. This leads you to a page in which all MoVE apps are listed; see [Figure 4](#fig_cygwin_icon). 
+3. Click on the Cygwin APP by clicking on the icon depicted in [Figure 4](#fig_cygwin_icon). A drop-down box appears right below the icon. 
+4. On this box, at the left side, click on the "Open" link.  
+5. Finally, on the window that is spawned as a result of step 4., click on the "Open xdg-open" button.
 
 <a name="fig_cygwin_icon"></a> ![fig:cygwin_icon](figures/cygwin-icon.png)
 Figure 4. The Cygwin APP icon pointed by a red arrow.
