@@ -244,7 +244,7 @@ In this tutorial we will learn basic commands for manipulating **files** (create
 ![fig:unix_file_system](figures/unix_file_system.png)<br>
 Figure 11. Illustration of the Unix file system. Terminal nodes (also known as leaves) are either files (e.g., `cp`, `ksh`, or `passwd`) or directories (e.g., `lib`). Terminal directories are void directories, i.e., directories without files and (sub)directories. Later on we will learn commands that will let us distinguish whether a given item of the file system is actually a file or a directory, or to check whether a directory is empty or not.
 
-> *__Note:__* the `tree` command outputs on screen the directory tree which is rooted at the current directory. Run the command to check it. If you do not understand the output right now, no problem, you will at the end of this tutorial.
+> *__Note:__* the `tree` command outputs on screen the directory tree which is rooted at the current working directory. Run the command to check it. If you do not understand the output right now, no problem, you will at the end of this tutorial.
 
 ## 1.2. Files
 <a id="markdown-files" name="files"></a>
