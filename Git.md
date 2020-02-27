@@ -14,6 +14,7 @@
         - [1.8.2. Connecting to GitHub with SSH keys](#182-connecting-to-github-with-ssh-keys)
         - [1.8.3. Creating a new GitHub project (and associated Git repository)](#183-creating-a-new-github-project-and-associated-git-repository)
         - [1.8.4. Pushing into the remote Git repository at GitHub](#184-pushing-into-the-remote-git-repository-at-github)
+    - [1.9. Cloning a remote repository](#19-cloning-a-remote-repository)
 
 <!-- /TOC -->
 
@@ -139,7 +140,7 @@ Although the `myproject` directory is void, it can be already converted to a **G
 ```bash
 $ cd myproject/
 $ git init
-Initialized empty Git repository in /home/amar0078/Documents/myproject/.
+Initialized empty Git repository in /home/amar0078/Documents/myproject/.git/
 ```
 This command creates a special hidden directory where Git stores the project history, i.e., the information it needs to track changes performed on the project files and directories.
 
@@ -324,7 +325,7 @@ that is, there are actually two different of sets of changes into `README.md` wi
 >
 > *__Exercise 4:__*
 > If we run `git diff commit_hash`, where `commit_hash` is the hash of a commit in the past, then Git reports the differences among the version of the file corresponding to the commit with commit hash `commit_hash` and the version of the file that includes both unstaged and staged changes. 
-Retrieve the commit's hash of the unique commit that we performed so far using `git log`, and use `git diff commit_hash` to confirm that behaviour of this latter command.
+Retrieve the commit's hash of the last commit that we performed so far using `git log`, and use `git diff commit_hash` to confirm that behaviour of this latter command.
 ----
 
 At this point we are faced with two options (that are indeed pointed out by the very helfpul output of `git status`). We can either discard unstaged changes, or add them to the staging area. We will opt for the first option. In order to do so, we have to use the `git checkout` Git command as follows:
@@ -337,14 +338,16 @@ Changes to be committed:
 
         modified:   README.md
 
-amar0078@MVAZ1STUL01006 ~/Documents/repository4sci1022$ cat README.md
+$ cat README.md
 This is an **example** README.md file
 ```
 
-Note that, after using `git checkout`, there are no unstaged changes anymore, i.e., the second line that we added to `README.md` is no longer there. We finish this section by creating a new commit included the only change that we finally included in the staging area, i.e., to put "example" in bold face:
+Note that, after using `git checkout`, there are no unstaged changes anymore, i.e., the second line that we added to `README.md` is no longer there. We finish this section by creating a new commit includinggit c the only change that we finally included in the staging area, i.e., to put "example" in bold face:
 
 ```bash
 $ git commit # As always, use nano to write an intention revealing message
+[master 25ab4de] [README.md] Put example in boldface
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 $
 ```
 
@@ -362,7 +365,7 @@ If you do not have already a GitHub account linked to your Monash e-mail, please
 ### 1.8.2. Connecting to GitHub with SSH keys
 <a id="markdown-connecting-to-github-with-ssh-keys" name="connecting-to-github-with-ssh-keys"></a>
 
-Once you have signed up for GitHub, you have to generate a [public/private pair](https://en.wikipedia.org/wiki/Public-key_cryptography) of [SSH](https://en.wikipedia.org/wiki/Secure_Shell) keys, and then, to link the public SSH key  just generated with your account. In a nutshell, a public/private SSH key pair lets you authenticate against GitHub without having to introduce your GitHub's account password each time that you need to interact with GitHub from the command-line. To this end, we have to execute the following command and follow the instructions (essentially press the Return key twice):
+Once you have signed up for GitHub, you have to generate a [public/private pair](https://en.wikipedia.org/wiki/Public-key_cryptography) of [SSH](https://en.wikipedia.org/wiki/Secure_Shell) keys, and then, to link the public SSH key  just generated with your account. In a nutshell, a public/private SSH key pair lets you authenticate against GitHub without having to introduce your GitHub's account password each time that you need to interact with GitHub from the command-line. To this end, we have to execute the following command and follow the instructions (essentially press the Return key three times):
 
 ```bash
 $ ssh-keygen -t rsa -b 4096 -C "myname@monash.edu"
@@ -395,14 +398,15 @@ In any case, even with a passphrase, one can avoid Git asking it using the so-ca
 If the command suceeded, there should be (at least) two different files in the `~/.ssh/` folder named `id_rsa` and `id_rsa.pub`:
 
 ```
-amar0078@MVAZ1STUL01023 ~/Documents$ ls -l ~/.ssh
+$ ls -l ~/.ssh
 total 9
 -rw-------+ 1 amar0078 Domain Users 3434 Feb 24 21:53 id_rsa
 -rw-r--r--+ 1 amar0078 Domain Users  743 Feb 24 21:53 id_rsa.pub
--rw-rw-r--+ 1 amar0078 Domain Users  404 Feb 24 21:43 known_hosts
 ```
 
 The former file (`id_rsa`) contains the private key, while the latter (`id_rsa.pub`) the public one.  **You should never expose nor send to anyone the private key** (note indeed its very restricive file permissions). On the other hand, the public key can be shared with anyone, i.e., GitHub in our case. 
+
+> *__Note:__* In the event that the permissions of `id_rsa` do not look like in the previous listing, you **MUST** force them manually using, e.g., the following command: `chmod og-rwx ~/.ssh/id_rsa`. See [Section 1.4.2](./Unix-CLI.md#142-permissions).
 
 Once we have created the SSH keys, we have to associate the public key to your GitHub profile. To this end, you have to [login into GitHub](https://github.com/login) using your GitHub's user e-mail and password. Once you are logged in, in the upper-right corner of any page, click on your profile photo, and then on the drop-down list, click on "Settings". Then, on the left frame, click on "SSH and GPG keys". You should arrive to the screen shown in [Figure 1](fig:ssh_keys).
 
@@ -419,19 +423,23 @@ Then, you have to click on the "New SSH key" green button at the top right of [F
 <a name="fig_ssh_keys_2"></a> ![fig:ssh_keys_2](figures/add_ssh_key_step2.png)
 Figure 2. Linking your public SSH key with your GitHub account. (Step 2)
 
-In [Figure 2](fig:ssh_keys_2), you have to fill two text boxes, the one labelled as "Title", and the one labelled as "Key". First, in the one labelled as "Title" you can put whatever (intention revealing) name you like to your key. In this case, we put "Public Key at MVAZ1STUL01023's Cygwin node", where `MVAZ1STUL01023` is the name of the MoVE compute node that is hosting the public key (you can retrieve it from `bash` shell prompt or typing the `hostname` command.) Second, in the one labelled as "Key" you have to put your public SSH key, that is, the contents of the previously generated `id_rsa.pub` file. To this end, you can display on screen the contents of the file:
+In [Figure 2](fig:ssh_keys_2), you have to fill two text boxes, the one labelled as "Title", and the one labelled as "Key". First, in the one labelled as "Title" you can put whatever (intention revealing) name you like to your key. In this case, we put "Public Key at MVAZ1STUL01023's Cygwin node", where `MVAZ1STUL01023` is the name of the MoVE compute node that is hosting the public key (you can retrieve it from the shell prompt or typing the `hostname` command.) Second, in the one labelled as "Key" you have to put your public SSH key, that is, the contents of the previously generated `id_rsa.pub` file. To this end, you can display on screen the contents of the file:
 
 ```bash
-cat ~/.ssh/id_rsa.pub
+$ cat ~/.ssh/id_rsa.pub
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDPZc7IIUvIlcGWgh7/jQLFYIryLk7Zs9XSk60CTllD6NmAjJKKoPBVdT21I2yEryEhAQA+EQmwb8xSlmkcOskSLTsoXdXVZe1blajHIA3CdhaBXpGiw5oDGeVInaOlcqq2faXwZttw3FD4Unf+OFtqCKR0e9uIFcMjpyQklE3z3SdIFKX+aXGrweqaVq8ByxwXSQIjvXibcxBsvCuMvL8VfcsgMDu+1Z1TzEG9NKnDOqp2lTrF6QvSqAmlJ7OtSBsmVIHje1egDyPQD5JY04tV8ETSSqZpOFg3UZ6vBS4ZXpFixNXrvOo5HBrwh9E566tmJfnoBPWLdV6orHETQHjsRMI2FsWOhPQ/GEuZw66PlirjIechPdVrmKFhthwgYSlyXydxrfpPInCe51sTs1J2Ix0lZUdioyLn4RycfhBSVvcU49FxmxA8c3qBIXVSFFIyRdLlOJYgLhCqzvdZTqNMeIaR8LzUeitexQfyUFhknkJghjBp1+i7BOFJvLQ/55gIfLXd3nTtDflCV9Lj0joAVcTmiirlBg29iqX9q2LHI6jBhlOBL1SsDOaHfeIMuJvLzEmE80GBNkk6CsdilwdTFx7jlBUeU4//6G6aRIycZ5jsoTXfFiwp6ogvpZ3Gc7ag48rmENF1NgQRrSDkfYfhoNc+NckDbt8O+Diqy8LDhQ== myname@monash.edu
 ```
 and then copy & paste its contents from the command-line to the "Key" text box. Finally, you have to click on the "Add SSH key" button in [Figure 2](fig:ssh_keys_2). This should reach the screen in [Figure 3](fig:ssh_keys_3), where your key is already listed.
+
+> *__Note:__*  In order to copy text from the Cygwin terminal into the Clipboard, you have to left-click at the beginning of the text you want to highlight and hold it pressed. While holding the left mouse button, drag the cursor to the end of the text and release the mouse button. Once completed, all text from the beginning to the end should be highlighted.
+Finally, you have to Right click on the top bar of the Cygwin terminal window, and select `Edit->Copy` from the drop down list.
 
 <a name="fig_ssh_keys_3"></a> ![fig:ssh_keys_3](figures/add_ssh_key_step3.png)
 Figure 3. Linking your public SSH key with your GitHub account. (Step 3)
 
 
-> *__Note:__* In general, the process so far with the SSH keys is a one-time process per computer, user on that computer, and GitHub account.
+
+ > *__Note:__* In general, the process so far with the SSH keys is a one-time process per computer, user on that computer, and GitHub account.
 However, as already mentioned several times before, the contents of the home directory might vary among different Cygwin terminal sessions, e.g., when you close a terminal and open a new one. In the particular case of Git, the consequence of this behaviour is that the SSH keys that you have generated on the `~/.ssh/` folder in a given session might not available in a different (future) session. In such a case, you have to generate a new pair of SSH keys and link the new public SSH key with your GitHub user again. 
 
 ### 1.8.3. Creating a new GitHub project (and associated Git repository)
@@ -448,7 +456,7 @@ Click on "Start a project". You will be redirected to the page in [Figure 5](fig
 <a name="fig_github_new_repo"></a> ![fig:github_new_repo](figures/create_new_repo_github.png)
 Figure 5. GitHub's "Create a new repository" page.
 
-After this process, our GitHub repository has been already created. It can be accessed from a web browser using the following URL: `https://github.com/github_username/repository4sci1022`, where obviously you have to replace `github_username` by your GitHub's user name. When you visit that page, you will get an screen similar to that shown in [Figure 6](fig:github_repo_quick_setup).
+After this process, our GitHub repository has been already created. It can be accessed from a web browser using the following URL: `https://github.com/your_github_username/repository4sci1022`, where obviously you have to replace `your_github_username` by your GitHub's user name. When you visit that page, you will get an screen similar to that shown in [Figure 6](fig:github_repo_quick_setup).
 
 <a name="fig_github_repo_quick_setup"></a> ![fig:github_repo_quick_setup](figures/github_repo_quick_setup.png)
 Figure 6. A just created GitHub project.
@@ -458,56 +466,77 @@ Essentially the page in [Figure 6](fig:github_new_repo) is informing us that the
 ### 1.8.4. Pushing into the remote Git repository at GitHub
 <a id="markdown-pushing-into-the-remote-git-repository-at-github" name="pushing-into-the-remote-git-repository-at-github"></a>
 
-We want to populate our fresh Git repository at GitHub with the contents of the **local** Git repository that we created from the Cygwin terminal in [Section 1.5](). In order to do so, we have to execute the commands shown under the "... or push an existing repository from the command line" header in [Figure 6](fig:github_new_repo) in the Cygwin terminal. That is, we want to push our local repository up to GitHub. The exact commands will be tailored to your personal account name. In our case, the commands to be executed are:
+We want to populate our fresh Git repository at GitHub with the contents of the **local** Git repository that we created from the Cygwin terminal in [Section 1.5](). In order to do so, we have to execute in the Cygwin terminal the commands shown under the *"... or push an existing repository from the command line"* header in [Figure 6](fig:github_new_repo) . That is, we want to push our local repository up to GitHub. The exact commands will be tailored to your personal account name. In our case, the commands to be executed are:
 
 ```bash
 $ git remote add origin git@github.com:amartinhuertas/repository4sci1022.git
 $ git push -u origin master
-Warning: Permanently added the RSA host key for IP address '13.236.229.21' to the list of known hosts.
-Enumerating objects: 3, done.
-Counting objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 290 bytes | 0 bytes/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
+Warning: Permanently added the RSA host key for IP address '13.237.44.5' to the list of known hosts.
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (12/12), 1.08 KiB | 0 bytes/s, done.
+Total 12 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
 To github.com:amartinhuertas/repository4sci1022.git
  * [new branch]      master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
-Of course, you should replace `amartinhuertas` by your Github actual username. These two commands set GitHub as the **origin** remote repository of the local Git repository and then push the full (local) repository there, respectively. The **origin** is the default remote repository that one interacts with when you do not explicitly specify a remote repository in a git command. We note that a local repository might be connected to several remote repositories.  The `-u` option to `git push` sets GitHub as the upstream repository, which
+Of course, you should replace `amartinhuertas` by your Github actual username. These two commands set GitHub as the **origin** remote repository of the local Git repository and then push the full (local) repository there, respectively. The **origin** is the default remote repository that one interacts with when you do not explicitly specify a remote repository in a git command. (We note that a local repository might be connected to several remote repositories.)  The `-u` option to `git push` sets GitHub as the upstream repository, which
 means that we will be able to download any changes automatically when we run `git pull`. Do not worry about these details, though; you will almost always copy such commands from GitHub and probably will not ever have to figure them out on your own.
 
+If pushing suceeded, then, after re-loading `https://github.com/your_github_username/repository4sci1022` on your web browser, you should be able to see an screen similar to that shown in [Figure 7](fig:github_after_push).
+
+<a name="fig_github_after_push"></a> ![fig:github_after_push](figures/github_after_push.png)
+Figure 7. The GitHub repository home page after pushing from the local Git repository created in the Cygwin terminal. 
+
 ----
-> *__Exercise 5:__* 
+> *__Exercise 5:__*
+> * On the GitHub page for your project, click on the link labeled as “4 Commits” (see [Figure 7](fig:github_after_push)) to see a list of your commits. Confirm that this list matches the one that you get with  `git log` executed on the Cygwin terminal.
+> * At GitHub, click on the commit in which you put the word example in **bold face**. Verify that the `diff` for the commit that you get in the web browser agrees with the one that we obtained above on the Cygwin terminal with `git diff`.
 ----
 
+## 1.9. Cloning a remote repository
+<a id="markdown-cloning-a-remote-repository" name="cloning-a-remote-repository"></a>
 
+The first step to start contributing to a project (e.g., [a scientific computing software package](https://github.com/nschloe/awesome-scientific-computing)) hosted on a Cloud service such as GitHub,  consists on performing an operation referred to as "cloning a remote repository". This is achieved by means of the `git clone` command. This operation **fully copies all files and folders and project history stored in a remote repository into a new directory on the local file system**. This new directory becomes itself a full repository. (Recall, from [Section XXX](), that Git is a distributed VCS.) 
+
+One of the most useful features of Git is its ability to let us recover from errors that would otherwise be **catastrophic**. Perhaps the most serious mess that one can make is to (unintentionally) remove the local folder containing the Git repository. In our particular scenario, as we do not have local changes to be staged, changes stagged, nor commits pending to be pushed to the remote repository at GitHub, this would not lead to lost work, as we can clone the remote version of the repository from GitHub. Therefore, let us (intentionally) remove our project's local Git repository (because of obvious reasons, **please be extremelly careful** to ensure that you type exactly the commands in the next box, and **not**, e.g, `rm -Rf ~/`):
 
 ```
-~/Documents$ rm -Rf myproject/
+$ cd ~/Documents/
+$ rm -Rf myproject
 ```
 
-```
-amar0078@MVAZ1STUL01023 ~/Documents$ git clone git@github.com:amartinhuertas/repository4sci1022.git
+If we did not have a copy of the local repository on GitHub, there would be no hope of recovering the contents of the `myproject/` folder. Fortunately, we have it, and we can clone the remote repository into the local file system as:
+
+```bash
+$ cd ~/Documents/
+$ git clone git@github.com:amartinhuertas/repository4sci1022.git
 Cloning into 'repository4sci1022'...
-Enter passphrase for key '/home/amar0078/.ssh/id_rsa':
-remote: Enumerating objects: 3, done.
-remote: Counting objects: 100% (3/3), done.
-remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
-Receiving objects: 100% (3/3), done.
-```
-
-
-```
-amar0078@MVAZ1STUL01023 ~/Documents$ cd repository4sci1022/
-amar0078@MVAZ1STUL01023 ~/Documents/repository4sci1022$ cat README.md
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 12 (delta 1), reused 12 (delta 1), pack-reused 0
+Receiving objects: 100% (12/12), done.
+Resolving deltas: 100% (1/1), done.
+$ ls
+'$RECYCLE.BIN'/   desktop.ini*   MATLAB/   repository4sci1022/
+$ cd repository4sci1022/
+$ cat README.md
 This is an **example** README.md file
-```
+``` 
 
-```
-amar0078@MVAZ1STUL01023 ~/Documents/repository4sci1022$ git log
-commit 057083ac5d9e2718626854c90b2ba6226e6f57f2 (HEAD -> master, origin/master, origin/HEAD)
-Author: My name <myname@monash.edu>
-Date:   Mon Feb 24 21:28:03 2020 +1100
+The first argument to the `git clone` is the clone URL (yours will difer, replace `amartinhuertas` by your GitHub username). The clone URL of a project in GitHub can be obtained from the home page of the project, as shown in [Figure 8](fig:github_clone_url).  
 
-    First commit of myproject with a preliminary version of a README.md file
-```
+<a name="fig_github_clone_url"></a> ![fig:github_clone_url](figures/github_clone_url.png) 
+Figure 8. Obtaining the clone URL from the GitHub's repository home page. 
 
+By default, `git clone` uses the repository name for the local folder that it creates in order to hold the repository data, i.e., `repository4sci1022` in our case. This default behaviour can be overrided if one provides a second argument to `git clone` with the name desired for the local folder to be created as part of the cloning process.
+
+----
+> *__Exercise 6:__*
+> * Clone the GitHub's repository available [here](https://github.com/gridap/Gridap.jl) on a folder named `GRIDAP` at the user's home directory. *Hint*: you have to use `GRIDAP` as the second argument to `git clone`. Besides, for the first argument, you have to figure out the Clone URL of this GitHub repository.
+> * Navigate over the contents of the `README.md` file of the cloned repository using `less`, and compare them with those that you can see on the  [GitHub's repository page](https://github.com/gridap/Gridap.jl).
+----

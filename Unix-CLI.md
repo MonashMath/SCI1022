@@ -850,7 +850,6 @@ Create a file `file` and do `chmod u-r file`. Can you now inspect its contents? 
 > echo Hello world!
 >```
 >This is a minimal [`bash` shell script](https://en.wikibooks.org/wiki/Bash_Shell_Scripting#What_is_shell_scripting?). Type `./script.sh` (This is a command that one can use in order to try to execute the script.) Can you execute it? Why? Make it user-executable. Can you now execute it? Why?
-----
 
 > *__Exercise 32:__*
 Create a new directory `new_dir` on your home folder. Determine which are the permissions of this new folder using `ls -ltd new_dir`. Take away execution permission from your user. Confirm that you actually took away that permission. Try to change current directory to `new_dir`. Does it work? If not, why not?
@@ -1175,7 +1174,7 @@ The Internet is plenty of excellent resources related to the Unix command-line t
 Indeed this tutorial itself has borrowed many ideas from the excellent material available on the literature. A (by no means comprehensive) list of further references is the following:
 
 - [Learn enough command-line to be dangerous](https://www.learnenough.com/command-line-tutorial/basics) tutorial by [Michael Hart](https://www.michaelhartl.com/)
-- [Conquering the Command-line](http://conqueringthecommandline.com/book) book by Mark Bates.
+- [Conquering the Command-line](http://conqueringthecommandline.com/book) book by Mark Bates
 - [The Unix Shell workshop](https://swcarpentry.github.io/shell-novice/) by  Software Carpentry
 - [Extra Unix Shell Material](https://carpentries-incubator.github.io/shell-extras/) by Software Carpentry
 - Chapter 20 (Unix intro) of ["Introduction to High Performance Scientific Computing"](http://pages.tacc.utexas.edu/~eijkhout/istc/istc.html) book by Victor Eijkhout
