@@ -1088,7 +1088,7 @@ Another very useful feature of the shell is that it keeps a record of the comman
    ```
   This feature is especially useful when the desired command last happened many commands ago, so that we avoid pressing the up arrow a cumbersome number of times.
 
-- Each command in the history is uniquely identified by a positive integer number. The `history` command shows that identifier right at the beginning of each line printed on screen. To repeat the command with identifier `i` one can use `!i`, as in the following example:
+- Each command in the history is uniquely identified by a positive integer number. The `history` command shows that identifier right at the beginning of each line printed on screen. To repeat the command with (integer) identifier `i` one can use `!i`, as in the following example:
 
   ```bash
   $ history
@@ -1128,9 +1128,9 @@ Another very useful feature of the shell is that it keeps a record of the comman
 
 In the previous sections, we have been able to do a lot of work with files that already exist (e.g., an eBook in plain text format that we downloaded from the Internet), or even generate new simple files, e.g., using `touch` or output redirection. But what can we do if we need to create a new file and fill it with contents or edit an existing text file **in a more flexible way**? We can use a command-line text editor.
 
-In this tutorial, we will briefly introduce the [GNU `nano`](https://en.wikipedia.org/wiki/GNU_nano) command-line text editor. This is not the unique text editor available in Unix systems. There are some others such as, e.g., [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor)), or [Emacs](https://en.wikipedia.org/wiki/Emacs), but these have a much steeper learning curve associated with them. In contrast to these, `nano` is relatively easy to learn. The editor is entirely operated from the keyboard, you cannot use the mouse, which means you will have to learn some simple keyboard commands.
+In this tutorial, we will briefly introduce the [GNU `nano`](https://en.wikipedia.org/wiki/GNU_nano) command-line text editor. This is not the only text editor available in Unix systems. There are some others such as, e.g., [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor)), or [Emacs](https://en.wikipedia.org/wiki/Emacs), but these have a much steeper learning curves associated with them. In contrast, `nano` is relatively easy to learn. The editor is entirely operated from the keyboard, you cannot use the mouse, which means you will have to learn some simple keyboard commands.
 
-> *__Note:__*  When we say “text editor” we really do mean “text”. In other words, `nano` can only work with plain character data, not tables, images, or any other human-friendly media. Because of this trait, `nano` may not be powerful enough or flexible enough for the kind of work which is required in order to use or develop scientific software in a proficient way. On Unix systems, many scientific software programmers noway days use GUI-based software editors such as, e.g., [Atom](https://atom.io/), or [Visual Studio Code](https://code.visualstudio.com/
+> *__Note:__*  When we say “text editor” we really do mean “text”. In other words, `nano` can only work with plain character data, not tables, images, or any other human-friendly media. Because of this, `nano` may not be powerful enough or flexible enough for the kind of work which is required in order to use or develop scientific software in a proficient way. On Unix systems, many scientific software programmers noway days use GUI-based software editors such as, e.g., [Atom](https://atom.io/), or [Visual Studio Code](https://code.visualstudio.com/
 ).
 
 Let us assume that we want to create a file `TODO.txt`, where we want to list all those features of the Unix command-line that we would like to learn in the future. To this end, we type `nano TODO.txt`, and hit the Return key.  After pressing the Return key, the nano editor appears (see [Figure 12](#fig_nano_start_page)). Notice the following elements:
@@ -1142,7 +1142,7 @@ Let us assume that we want to create a file `TODO.txt`, where we want to list al
 <a name="fig_nano_start_page"></a> ![fig:nano_start_page](figures/nano_start_page.png)
 Figure 12. The GNU `nano` editor window right after opening a new file called `TODO.txt`.
 
-At this point you can type the contents of the file. Enter the text exactly as you see in [Figure 13](#fig_nano_editing). Notice that, after your first keystroke, the word “Modified” appears in the upper-right corner; this shows that you have changed the contents of your file but it has not been written to the file system yet. Once you have entered all the text, save the file by pressing `Ctrl+O` (look at the penultimate row, the second command is `^O` which means to “Write Out” the file to the file system).
+At this point you can type the contents of the file. Enter the text exactly as you see in [Figure 13](#fig_nano_editing). Notice that, after your first keystroke, the word “Modified” appears in the upper-right corner; this shows that you have changed the contents of your file but it has not been written to the file system yet. Once you have entered all the text, save the file by pressing `Ctrl+O` (look at the second-last row, the second command is `^O` which means to “Write Out” the file to the file system).
 
 <a name="fig_nano_editing"></a> ![fig:nano_editing](figures/nano_text_editing.png)
 Figure 13. Contents introduced in the `TODO.txt` file using `nano`.
@@ -1160,19 +1160,19 @@ That is probably enough to get you started. If you would like to get more inform
 ## 1.8. Conclusions and further references
 <a id="markdown-conclusions-and-further-references" name="conclusions-and-further-references"></a>
 
-We expect that, after completing this tutorial, you have acquired  fluency with the Unix command-line, and that you have grasped to a large extent the basic concepts underlying it. 
+We expect that, after completing this tutorial, you have acquired a basic fluency with the Unix command-line, and that you have grasped to a large extent the underlying concepts. 
 You might feel that the Unix command-line is something old, deprecated, cryptic, and prone to extinction, but nothing could be further from the truth. The reality is that the Unix shell is older than most of the people who use it. And not by chance. It has survived so long because it is one of the most productive task automation environments ever created.
 **People that master it are able to automate their work**. Graphical user interfaces may be better at the first, but the shell is still unbeaten at the second.
 
-As a general rule towards command-line excellence, we encourage you to continuously evaluate when working with the Unix command-line how much time a given task is taking. If you feel too much viscosity, i.e., that it is taking too much time because you repeat the same action over and over again, it is much probably because there are ways to automate the task, via, e.g., an smarter command or a suitable written shell script.
+As a general rule towards command-line excellence, we encourage you to continuously evaluate how much time a given task is taking when working with the Unix command-line. If you feel that it is taking too much time because you repeat the same action over and over again, there are probably ways to automate the task, via a smarter command or a suitable written shell script.
 This is what mastering the Unix command-line is mostly about.
 
-Of course, this tutorial is only the first step on a long journey towards command-line excellence and scientific coding proficiency. As you proceed on this journey, you will probably discover that learning computer technology is exciting and empowering, but it can also be **hard**. 
-Acquiring maturity with computers can be compared to a large extent with
+Of course, this tutorial is only the first step on a long journey towards command-line fluency and scientific coding proficiency. As you proceed on this journey, you will probably discover that learning computer technology is exciting and empowering, but it can also be **hard**. 
+Acquiring maturity with computers can be compared with
 *mathematical maturity*, which consists of the experience and general sophistication needed to understand and write mathematical proofs.
-These skills are hard to teach directly, so that you should always be ready to proactively exploit the opportunities given to you in order to improve your computer skills. Over time, the cumulative effect will be that you will have the seemingly magical ability to drive computers towards doing whatever you want them to do.
+These skills are hard to teach directly, so you should always be ready to proactively exploit the opportunities given to you in order to improve your computer skills. Over time, the cumulative effect will be that you will have the seemingly magical ability to drive computers towards doing whatever you want them to do.
 
-The Internet is plenty of excellent resources related to the Unix command-line that you can use in order to expand your current skills. 
+The Internet has plenty of excellent resources related to the Unix command-line that you can use in order to expand your skills. 
 Indeed this tutorial itself has borrowed many ideas from the excellent material available on the literature. A (by no means comprehensive) list of further references is the following:
 
 - [Learn enough command-line to be dangerous](https://www.learnenough.com/command-line-tutorial/basics) tutorial by [Michael Hart](https://www.michaelhartl.com/)
