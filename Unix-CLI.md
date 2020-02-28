@@ -477,7 +477,7 @@ bin/  cygdrive/  Cygwin.bat*  Cygwin.ico  Cygwin-Terminal.ico  dev/  etc/  home/
 
 ----
 > *__Exercise 14:__*
-Try to figure out from the output of the previous command how many directories and files there are inside the root folder. Randonly choose one of the directories contained in the root folder and list its contents with the `ls` command using the **absolute path** of the directory selected.
+Try to figure out from the output of the previous command how many directories and files there are inside the root folder. Randomly choose one of the directories contained in the root folder and list its contents with the `ls` command using the **absolute path** of the directory selected.
 *Hint*: in the Cygwin environment installed within MoVE, the `ls` command denotes the directories with their names followed by a forward slash character.
 ----
 
@@ -488,7 +488,7 @@ The most important directory for a particular user is their **home directory**. 
 Determine the absolute path of your user's home directory and list its contents with the `ls` command.
 ----
 
-The home directory can also be denoted in an abreviated fashion using the tilde character `~`. This character is typed by pressing the key located right at the left of the key labeled with the number 1 while holding pressed the `Shift` key. 
+The home directory can also be denoted in an abbreviated fashion using the tilde character `~`. This character is typed by pressing the key located right at the left of the key labeled with the number 1 while holding pressed the `Shift` key. 
 
 ----
 > *__Exercise 16:__*
@@ -648,7 +648,7 @@ $ cd -
 /home/amar0078/txt_files
 ```
 
-The usage of `cd -` is particularly useful when you have to alternate work betweeen two directories, and you want to avoid typing the paths of these back and forth.
+The usage of `cd -` is particularly useful when you have to alternate work between two directories, and you want to avoid typing the paths of these back and forth.
 
 ----
 > *__Exercise 24:__*
@@ -758,7 +758,7 @@ Unix is a **multi-user** OS. Thus, even if you use it on your own personal Deskt
 > *__Note:__* 
 Recall that the Cygwin environment within MoVE is not actually a full-blown Unix OS. Thus, you will observe for example that `who` returns nothing on screen, as there are actually no other users connected to the system. Some of the commands above, are not even available in Cygwin. However, these will be on an actual Unix system.
 
-Apart from the concept of **users** (those who use the system), in Unix-type OSs there also exists the concept of **groups**, which is basically a way to manage a collection of users. In a nutshell, groups make it easy to manage users with the same security and access privileges. For example, this lets you give your collaborators access to a specificed set of your own files (i.e., those users who belong to the same group you belong to), while leaving those same files protected from other users. See next section for additional details.
+Apart from the concept of **users** (those who use the system), in Unix-type OSs there also exists the concept of **groups**, which is basically a way to manage a collection of users. In a nutshell, groups make it easy to manage users with the same security and access privileges. For example, this lets you give your collaborators access to a specified set of your own files (i.e., those users who belong to the same group you belong to), while leaving those same files protected from other users. See next section for additional details.
 
 A user can belong to different groups. When a new user account is created, the system administrator assigns the newly created user to one or more groups. Any user of the system can print on screen the groups to which he/she belongs to with the `groups` command. 
 
@@ -823,7 +823,7 @@ The permissions are shown in the first column of the output of `ls -l`. The nine
 
 
 For instance, `rw-r--r--` means that the owner can read and write a file, 
-and that the owner’s group and everyone else can only read. Note that the list of permissions is preceeded by either a `d` or a `-`. This character is not a permission, but rather signifies whether the permissions are for a directory, `d`, or a file, `-`.
+and that the owner’s group and everyone else can only read. Note that the list of permissions is preceded by either a `d` or a `-`. This character is not a permission, but rather signifies whether the permissions are for a directory, `d`, or a file, `-`.
 
 ----
 > *__Exercise 29:__*
