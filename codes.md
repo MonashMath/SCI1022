@@ -61,7 +61,7 @@ packages in almost any discipline.
 
 # Matlab
 
-*Matlab* is a commercial numerical computing environment that is easy to learn and use, 
+Matlab is a commercial numerical computing environment that is easy to learn and use, 
 and is a very popular at undegraduate university programmes, especially in mathematics 
 and some engineering disciplines. It might be easier for beginners. However, it is a 
 propietary language. The basic package comes with algebra, data processing and plotting tools.
