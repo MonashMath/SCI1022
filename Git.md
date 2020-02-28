@@ -52,7 +52,7 @@ VCSs have evolved considerably over the years, and still nowadays, there are a n
 ## 1.2. Why Git?
 <a id="markdown-why-git" name="why-git"></a>
 
-There are a number of reasons ([some of them quite technical](https://git-scm.com/about) to be enterely grasped at this point), but the most important are perhaps the following ones. Git achieves **a sound balance** among speed, efficiency, reliability, and ease-of-use. Indeed, this hallmark of Git has positioned it to be undoubtedly the de-facto standard VCS  used in ([open source](https://opensource.com/resources/what-open-source)) scientific (and not necessarily scientific) software projects. Git was originally developed in 2005 by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the same individual who created the Linux OS, i.e., an open source variant of Unix.  Therefore, it is also (as could not be otherwise) **[free and open source](https://git-scm.com/about/free-and-open-source)**. Since then, its popularity has increased significantly, mostly due to the development of repository hosting services in the Cloud such as  [GitHub](https://github.com/), [Gitlab](https://about.gitlab.com/), or [BitBucket](https://en.wikipedia.org/wiki/Bitbucket). Indeed, **virtually the whole state-of-the-art in open source (scientific and not necessarily scientific) software is available at these Git repository hosting services**. Finally, it is worth mentioning that Git is available on multiple platforms, including Microsoft Windows, Linux, or macOS, among others.
+There are a number of reasons ([some of them quite technical](https://git-scm.com/about) to be entirely grasped at this point), but the most important are perhaps the following ones. Git achieves **a sound balance** among speed, efficiency, reliability, and ease-of-use. Indeed, this hallmark of Git has positioned it to be undoubtedly the de-facto standard VCS  used in ([open source](https://opensource.com/resources/what-open-source)) scientific (and not necessarily scientific) software projects. Git was originally developed in 2005 by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the same individual who created the Linux OS, i.e., an open source variant of Unix.  Therefore, it is also (as could not be otherwise) **[free and open source](https://git-scm.com/about/free-and-open-source)**. Since then, its popularity has increased significantly, mostly due to the development of repository hosting services in the Cloud such as  [GitHub](https://github.com/), [Gitlab](https://about.gitlab.com/), or [BitBucket](https://en.wikipedia.org/wiki/Bitbucket). Indeed, **virtually the whole state-of-the-art in open source (scientific and not necessarily scientific) software is available at these Git repository hosting services**. Finally, it is worth mentioning that Git is available on multiple platforms, including Microsoft Windows, Linux, or macOS, among others.
 
 Git is what professionals use to keep track of what they have done and to collaborate with other people. Large software development projects rely on it, and most programmers use it for their small jobs as well. And it is not just for software: books, papers, reports, small data sets, and anything that changes over time and/or needs to be shared **should be** stored in a Git repository. Indeed, we used Git in order to track the different versions of this tutorial.
 
@@ -117,7 +117,7 @@ command. For example, `git help add` shows details regarding the `git add` comma
 ## 1.4. Initial configuration options
 <a id="markdown-initial-configuration-options" name="initial-configuration-options"></a>
 
-When we use Git on a new computer for the first time, we need to set up a few one-time initial configuration options. The very minimal one-time options to be set up to start using Git are: our name, our email address, and our preferred comand-line text editor. This is achieved by means of the following three Git commands, respectively:
+When we use Git on a new computer for the first time, we need to set up a few one-time initial configuration options. The very minimal one-time options to be set up to start using Git are: our name, our email address, and our preferred command-line text editor. This is achieved by means of the following three Git commands, respectively:
 
 ```
 $ git config --global user.name "Given name(s) Family name"
@@ -125,8 +125,8 @@ $ git config --global user.email "myname@monash.edu"
 $ git config --global core.editor "nano"
 ````
 
-where you have to replace "`Given name(s) Family name`" by your own names, and `"myname@monash.edu"` by your actual Monash e-mail address. The values provided to the `user.name` and `user.email` options are used by Git in order to identify the changes that you perform on the repository files by your name and e-mail address. Indeed, as we will see in [Section XXX](), each time that you save a set of changes, i.e., each time that you create a new "commit", your name and e-mail address will be associated to these changes. This becomes especially helpful when you are collaborating with others. Later on in this tutorial, we will be interacting with GitHub. Therefore, **the email address provided should ideally be the same as we will use later in order to set up your GitHub account, e.g., your Monash e-mail address**. We note that the provided names and e-mail address will be viewable in any projects that you ship to the public, e.g., in GitHub, so please do not accidentally expose any information that you would rather like to keep private.
-On the other hand, the value provided to the `core.editor` tells Git which command-line editor to be used. In particular, the editor is called by Git whenever it requires that you associate a message to a newly created commit; see [Section XXX](). In the command above, we are telling Git to use the GNU `nano` editor, which we covered in the [previous tutorial](./Unix-CLI.md#brief-introduction-to-the-gnu-nano-command-line-text-editor). Finally, it is important to mention that the three commands we just ran only need to be run once: the flag `--global` tells Git to use the settings for every project, in your user account, on this computer. You can change your configuration as many times as you want: use the same commands to choose another editor or update your email address.
+where you have to replace "`Given name(s) Family name`" by your own names, and `"myname@monash.edu"` by your actual Monash e-mail address. The values provided to the `user.name` and `user.email` options are used by Git in order to identify the changes that you perform on the repository files by your name and e-mail address. Indeed, as we will see in [Section 1.6](#16-the-concept-of-staging-area-creating-our-first-commit), each time that you save a set of changes, i.e., each time that you create a new "commit", your name and e-mail address will be associated to these changes. This becomes especially helpful when you are collaborating with others. Later on in this tutorial, we will be interacting with GitHub. Therefore, **the email address provided should ideally be the same as we will use later in order to set up your GitHub account, e.g., your Monash e-mail address**. We note that the provided names and e-mail address will be viewable in any projects that you ship to the public, e.g., in GitHub, so please do not accidentally expose any information that you would rather like to keep private.
+On the other hand, the value provided to the `core.editor` tells Git which command-line editor to be used. In particular, the editor is called by Git whenever it requires that you associate a message to a newly created commit; see [Section 1.6](#16-the-concept-of-staging-area-creating-our-first-commit). In the command above, we are telling Git to use the GNU `nano` editor, which we covered in the [previous tutorial](./Unix-CLI.md#brief-introduction-to-the-gnu-nano-command-line-text-editor). Finally, it is important to mention that the three commands we just ran only need to be run once: the flag `--global` tells Git to use the settings for every project, in your user account, on this computer. You can change your configuration as many times as you want: use the same commands to choose another editor or update your email address.
 
 > *__Note:__* As mentioned in the [previous tutorial](./Unix-CLI.md#directory-structure), the contents of the home directory might vary among different Cygwin terminal sessions, e.g., when you close a terminal and open a new one. In the particular case of Git, the consequence of this behaviour is that the Git options that we have set during a terminal session might not be available for a different session. In order to check whether the configuration we are interested in is in effect in the current session, we can type `git config --list --show-origin`. If the output of this command does not show the `user.name`, `user.email`, and `core.editor` options and their associated values, then **we have to run the three commands above again such that they become active in the current session**.
 
@@ -239,11 +239,11 @@ to **uniquely** identify each commit. In the example above, the hash is
 ----
 > *__Exercise 2:__*
 > * Create a pair of new files called `file1.txt` and `file2.txt` within the repository directory with whatever method and contents you like.
-> * Add `file1.txt` to staging area. Confirm that you suceeded using `git  status`.
+> * Add `file1.txt` to staging area. Confirm that you succeeded using `git  status`.
 > * Commit `file1.txt` using `git commit -m` and an appropriate message.
-> * Add `file2.txt` to staging area. Confirm that you suceeded using `git  status`.
-> * Now run `git commit` **without the `-m` option**. A GNU nano editor will be run in order to let you edit the commit's message. Use your `nano` skills to add an appropiate message, save, and quit.
-> * Use `git log` to confirm that you suceeded creating the previous two commits.
+> * Add `file2.txt` to staging area. Confirm that you succeeded using `git  status`.
+> * Now run `git commit` **without the `-m` option**. A GNU nano editor will be run in order to let you edit the commit's message. Use your `nano` skills to add an appropriate message, save, and quit.
+> * Use `git log` to confirm that you succeeded creating the previous two commits.
 ----
 
 ## 1.7. Modifying an already tracked file. Viewing the diff
@@ -338,7 +338,7 @@ that is, there are actually two different of sets of changes into `README.md` wi
 Retrieve the commit's hash of the last commit that we performed so far using `git log`, and use `git diff commit_hash` to confirm that behaviour of this latter command.
 ----
 
-At this point we are faced with two options (that are indeed pointed out by the very helfpul output of `git status`). We can either discard unstaged changes, or add them to the staging area. We will opt for the first option. In order to do so, we have to use the `git checkout` Git command as follows:
+At this point we are faced with two options (that are indeed pointed out by the very helpful output of `git status`). We can either discard unstaged changes, or add them to the staging area. We will opt for the first option. In order to do so, we have to use the `git checkout` Git command as follows:
 
 ```bash 
 $ git checkout -- README.md
@@ -352,7 +352,7 @@ $ cat README.md
 This is an **example** README.md file
 ```
 
-Note that, after using `git checkout`, there are no unstaged changes anymore, i.e., the second line that we added to `README.md` is no longer there. We finish this section by creating a new commit includinggit c the only change that we finally included in the staging area, i.e., to put "example" in bold face:
+Note that, after using `git checkout`, there are no unstaged changes anymore, i.e., the second line that we added to `README.md` is no longer there. We finish this section by creating a new commit including git c the only change that we finally included in the staging area, i.e., to put "example" in bold face:
 
 ```bash
 $ git commit # As always, use nano to write an intention revealing message
@@ -370,7 +370,7 @@ In this section we are going to back up your local repository on GitHub and ship
 ### 1.8.1. Creating an account on GitHub
 <a id="markdown-creating-an-account-on-github" name="creating-an-account-on-github"></a>
 
-If you do not have already a GitHub account linked to your Monash e-mail, please open a new one by visiting the [GitHub signup page](https://github.com/join). Use preferably the same e-mail address that you previously used in [Section XXX](), e.g., your Monash e-mail address. This is not actually mandatory, but highly recommended, as this set up will allow GitHub to link your Git activity (e.g., commits) to your GitHub user.
+If you do not have already a GitHub account linked to your Monash e-mail, please open a new one by visiting the [GitHub signup page](https://github.com/join). Use preferably the same e-mail address that you previously used in [Section 1.6](#16-the-concept-of-staging-area-creating-our-first-commit), e.g., your Monash e-mail address. This is not actually mandatory, but highly recommended, as this set up will allow GitHub to link your Git activity (e.g., commits) to your GitHub user.
 
 ### 1.8.2. Connecting to GitHub with SSH keys
 <a id="markdown-connecting-to-github-with-ssh-keys" name="connecting-to-github-with-ssh-keys"></a>
@@ -400,12 +400,12 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-> *__Note:__* In the likely case you do not fully understand what the `ssh-keygen` command does, nor what do their flags and arguments mean, that is ok, even if you are not 100% sure of what you are doing. It is important that you adquire the ability to follow a list of commands even without completely understanding them. If you are interested, you can read more about SSH keys [here](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh). 
+> *__Note:__* In the likely case you do not fully understand what the `ssh-keygen` command does, nor what do their flags and arguments mean, that is ok, even if you are not 100% sure of what you are doing. It is important that you acquire the ability to follow a list of commands even without completely understanding them. If you are interested, you can read more about SSH keys [here](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh). 
 
-> *__Note:__* When generating the private key above, we did not actually provide any passphrase, we just hit the Return key, which means no passphrase. However, it is, in general, **highly recommended** to have a  passphrase. The passphrase is used as an additional protection of your private key in case it is stolen. In particular, it is used to cypher the contents of the private key before storing it into the `id_rsa` file. We did not actually use it for simplicity, i.e., in order to avoid Git asking it in the command-line each time that we have to interact with GitHub.
+> *__Note:__* When generating the private key above, we did not actually provide any passphrase, we just hit the Return key, which means no passphrase. However, it is, in general, **highly recommended** to have a  passphrase. The passphrase is used as an additional protection of your private key in case it is stolen. In particular, it is used to cipher the contents of the private key before storing it into the `id_rsa` file. We did not actually use it for simplicity, i.e., in order to avoid Git asking it in the command-line each time that we have to interact with GitHub.
 In any case, even with a passphrase, one can avoid Git asking it using the so-called [SSH Agent](https://en.wikipedia.org/wiki/Ssh-agent). The usage of SSH Agent is, however, out of the scope of this tutorial.
 
-If the command suceeded, there should be (at least) two different files in the `~/.ssh/` folder named `id_rsa` and `id_rsa.pub`:
+If the command succeeded, there should be (at least) two different files in the `~/.ssh/` folder named `id_rsa` and `id_rsa.pub`:
 
 ```
 $ ls -l ~/.ssh
@@ -414,7 +414,7 @@ total 9
 -rw-r--r--+ 1 amar0078 Domain Users  743 Feb 24 21:53 id_rsa.pub
 ```
 
-The former file (`id_rsa`) contains the private key, while the latter (`id_rsa.pub`) the public one.  **You should never expose nor send to anyone the private key** (note indeed its very restricive file permissions). On the other hand, the public key can be shared with anyone, i.e., GitHub in our case. 
+The former file (`id_rsa`) contains the private key, while the latter (`id_rsa.pub`) the public one.  **You should never expose nor send to anyone the private key** (note indeed its very restrictive file permissions). On the other hand, the public key can be shared with anyone, i.e., GitHub in our case. 
 
 > *__Note:__* In the event that the permissions of `id_rsa` do not look like in the previous listing, you **MUST** force them manually using, e.g., the following command: `chmod og-rwx ~/.ssh/id_rsa`. See [Section 1.4.2](./Unix-CLI.md#142-permissions).
 
@@ -476,7 +476,7 @@ Essentially the page in [Figure 6](fig:github_new_repo) is informing us that the
 ### 1.8.4. Pushing into the remote Git repository at GitHub
 <a id="markdown-pushing-into-the-remote-git-repository-at-github" name="pushing-into-the-remote-git-repository-at-github"></a>
 
-We want to populate our fresh Git repository at GitHub with the contents of the **local** Git repository that we created from the Cygwin terminal in [Section 1.5](). In order to do so, we have to execute in the Cygwin terminal the commands shown under the *"... or push an existing repository from the command line"* header in [Figure 6](fig:github_new_repo) . That is, we want to push our local repository up to GitHub. The exact commands will be tailored to your personal account name. In our case, the commands to be executed are:
+We want to populate our fresh Git repository at GitHub with the contents of the **local** Git repository that we created from the Cygwin terminal in [Section 1.5](#15-creating-a-local-git-repository). In order to do so, we have to execute in the Cygwin terminal the commands shown under the *"... or push an existing repository from the command line"* header in [Figure 6](fig:github_new_repo) . That is, we want to push our local repository up to GitHub. The exact commands will be tailored to your personal account name. In our case, the commands to be executed are:
 
 ```bash
 $ git remote add origin git@github.com:amartinhuertas/repository4sci1022.git
@@ -496,7 +496,7 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 Of course, you should replace `amartinhuertas` by your GitHub actual username. These two commands set GitHub as the **origin** remote repository of the local Git repository and then push the full (local) repository there, respectively. The **origin** is the default remote repository that one interacts with when you do not explicitly specify a remote repository in a git command. (We note that a local repository might be connected to several remote repositories.)  The `-u` option to `git push` sets GitHub as the upstream repository, which
 means that we will be able to download any changes automatically when we run `git pull`. Do not worry about these details, though; you will almost always copy such commands from GitHub and probably will not ever have to figure them out on your own.
 
-If pushing suceeded, then, after re-loading `https://github.com/your_github_username/repository4sci1022` on your web browser, you should be able to see an screen similar to that shown in [Figure 7](fig:github_after_push).
+If pushing succeeded, then, after re-loading `https://github.com/your_github_username/repository4sci1022` on your web browser, you should be able to see an screen similar to that shown in [Figure 7](fig:github_after_push).
 
 <a name="fig_github_after_push"></a> ![fig:github_after_push](figures/github_after_push.png)
 Figure 7. The GitHub repository home page after pushing from the local Git repository created in the Cygwin terminal. 
@@ -510,9 +510,9 @@ Figure 7. The GitHub repository home page after pushing from the local Git repos
 ## 1.9. Cloning a remote repository
 <a id="markdown-cloning-a-remote-repository" name="cloning-a-remote-repository"></a>
 
-The first step to start contributing to a project (e.g., [a scientific computing software package](https://github.com/nschloe/awesome-scientific-computing)) hosted on a Cloud service such as GitHub,  consists on performing an operation referred to as "cloning a remote repository". This is achieved by means of the `git clone` command. This operation **fully copies all files and folders and project history stored in a remote repository into a new directory on the local file system**. This new directory becomes itself a full repository. (Recall, from [Section XXX](), that Git is a distributed VCS.) 
+The first step to start contributing to a project (e.g., [a scientific computing software package](https://github.com/nschloe/awesome-scientific-computing)) hosted on a Cloud service such as GitHub,  consists on performing an operation referred to as "cloning a remote repository". This is achieved by means of the `git clone` command. This operation **fully copies all files and folders and project history stored in a remote repository into a new directory on the local file system**. This new directory becomes itself a full repository. (Recall, from [Section 1.1](#11-version-control-in-a-nutshell), that Git is a distributed VCS.) 
 
-One of the most useful features of Git is its ability to let us recover from errors that would otherwise be **catastrophic**. Perhaps the most serious mess that one can make is to (unintentionally) remove the local folder containing the Git repository. In our particular scenario, as we do not have local changes to be staged, changes stagged, nor commits pending to be pushed to the remote repository at GitHub, this would not lead to lost work, as we can clone the remote version of the repository from GitHub. Therefore, let us (intentionally) remove our project's local Git repository (because of obvious reasons, **please be extremelly careful** to ensure that you type exactly the commands in the next box, and **not**, e.g, `rm -Rf ~/`):
+One of the most useful features of Git is its ability to let us recover from errors that would otherwise be **catastrophic**. Perhaps the most serious mess that one can make is to (unintentionally) remove the local folder containing the Git repository. In our particular scenario, as we do not have local changes to be staged, changes stagged, nor commits pending to be pushed to the remote repository at GitHub, this would not lead to lost work, as we can clone the remote version of the repository from GitHub. Therefore, let us (intentionally) remove our project's local Git repository (because of obvious reasons, **please be extremely careful** to ensure that you type exactly the commands in the next box, and **not**, e.g, `rm -Rf ~/`):
 
 ```
 $ cd ~/Documents/
@@ -538,12 +538,12 @@ $ cat README.md
 This is an **example** README.md file
 ``` 
 
-The first argument to the `git clone` is the clone URL (yours will difer, replace `amartinhuertas` by your GitHub username). The clone URL of a project in GitHub can be obtained from the home page of the project, as shown in [Figure 8](fig:github_clone_url).  
+The first argument to the `git clone` is the clone URL (yours will differ, replace `amartinhuertas` by your GitHub username). The clone URL of a project in GitHub can be obtained from the home page of the project, as shown in [Figure 8](fig:github_clone_url).  
 
 <a name="fig_github_clone_url"></a> ![fig:github_clone_url](figures/github_clone_url.png) 
 Figure 8. Obtaining the clone URL from the GitHub's repository home page. 
 
-By default, `git clone` uses the repository name for the local folder that it creates in order to hold the repository data, i.e., `repository4sci1022` in our case. This default behaviour can be overrided if one provides a second argument to `git clone` with the name desired for the local folder to be created as part of the cloning process.
+By default, `git clone` uses the repository name for the local folder that it creates in order to hold the repository data, i.e., `repository4sci1022` in our case. This default behaviour can be overridden if one provides a second argument to `git clone` with the name desired for the local folder to be created as part of the cloning process.
 
 ----
 > *__Exercise 6:__*
@@ -554,7 +554,7 @@ By default, `git clone` uses the repository name for the local folder that it cr
 ## 1.10. Working alone. The commit+push cycle
 <a id="markdown-working-alone-the-commitpush-cycle" name="working-alone-the-commitpush-cycle"></a>
 
-If you are working alone in your project, it is recommended your Git workflow to be based on the commit+push cycle. Essentially, you do some local work, you commit that work (e.g., when you have reached a natural stop, or when you have made enough changes to start worrying about losing them), and then push that commit to **origin**, i.e., the (default) remote repository to which your local repository is linked with.  If you want some advice redarding to the "when to make a commit" dilemma, we recommend, e.g., [this article](https://medium.com/walmartlabs/check-out-these-5-git-tips-before-your-next-commit-c1c7a5ae34d1), although there are many other articles with best practices related to this topic that you may easily find using Google.
+If you are working alone in your project, it is recommended your Git workflow to be based on the commit+push cycle. Essentially, you do some local work, you commit that work (e.g., when you have reached a natural stop, or when you have made enough changes to start worrying about losing them), and then push that commit to **origin**, i.e., the (default) remote repository to which your local repository is linked with.  If you want some advice regarding to the "when to make a commit" dilemma, we recommend, e.g., [this article](https://medium.com/walmartlabs/check-out-these-5-git-tips-before-your-next-commit-c1c7a5ae34d1), although there are many other articles with best practices related to this topic that you may easily find using Google.
 
 To illustrate the commit+push cycle, let us perform a pair of cycle iterations. In particular, let us add to the `README.md` file an image containing a portrait of [William Shakespeare](https://en.wikipedia.org/wiki/William_Shakespeare) that we will borrow from Wikipedia. To this end, we will create a new folder, , called `figures`, in the ls
 local Git repository where we will store the image with the portrait.  Then, we will add a link  to that image in the `README.md` file.  We will split this work into two commits, in the first we will add the folder and the image and, in the second, we will modify the `README.md` file. After each commit, we will be invoking `git push` to send our progress to the remote repository at GitHub.  
@@ -584,7 +584,7 @@ To github.com:amartinhuertas/repository4sci1022.git
    25ab4de..6f9a119  master -> master
 ```
 
-In the last command, we explicitly tell `git push` to push the new commit to the **origin** remote repository. However, as mentioned before, origin is the default remository one interacts with if no remote repository is specified. Thus, if we replaced the `git push origin` by `git push` in the previous box we would be achieving exactly the same result. 
+In the last command, we explicitly tell `git push` to push the new commit to the **origin** remote repository. However, as mentioned before, origin is the default repository one interacts with if no remote repository is specified. Thus, if we replaced the `git push origin` by `git push` in the previous box we would be achieving exactly the same result. 
 
 
 > *__Exercise 7:__*
@@ -616,7 +616,7 @@ of Shakespeare's portrait on the home page of the project.
 ### 1.11.1. Branching
 <a id="markdown-branching" name="branching"></a>
 
-One of the most powerful features of Git is its ability to make **branches**, which you can think of as complete self-contained copies of the project data. With a branch you can make your changes to the project in isolation from the main version of the project, and then merge your changes in only when they are done (see [Section XXX]()). This is especially helpful when collaborating with other users; having a separate branch lets you make changes independently from other contributors, reducing the risk of accidental conflicts. Besides, for obvious reasons, when you collaborate in a third-party project, **it is very unlikely that you are allowed to directly push into the master version of the project**.  In the previous section we were allowed to do that only because we were project owners. 
+One of the most powerful features of Git is its ability to make **branches**, which you can think of as complete self-contained copies of the project data. With a branch you can make your changes to the project in isolation from the main version of the project, and then merge your changes in only when they are done. This is especially helpful when collaborating with other users; having a separate branch lets you make changes independently from other contributors, reducing the risk of accidental conflicts. Besides, for obvious reasons, when you collaborate in a third-party project, **it is very unlikely that you are allowed to directly push into the master version of the project**.  In the previous section we were allowed to do that only because we were project owners. 
 
 We will use the addition of a second image to the `README.md` file as an example of how to use Git branches. Our first step is to use `git checkout` with the `-b` option, which makes a
 new branch and checks it out at the same time:
@@ -700,7 +700,7 @@ Figure 8. The GitHub project home page right after pushing the `add_shakespeare_
 > On the GitHub page for your project, click on the "Branch: master" drop-down list, and select the  `add_shakespeare_sonnets` branch. Confirm that this branch has an additional commit compared to `master`, and the presence of the cover from the 1609's edition of Shake-Speares Sonnets on the home page of the project.
 ----
 
-> *__Note:__* While we are following these steps using a single GitHub account, we ask you to make the effort to think as if these steps where followed by a collaborator of us that wants to add new contents to the main page of our project or, otherwise, ourselves adding content to the `README.md` file corresponding to the project of our collabotor.
+> *__Note:__* While we are following these steps using a single GitHub account, we ask you to make the effort to think as if these steps where followed by a collaborator of us that wants to add new contents to the main page of our project or, otherwise, ourselves adding content to the `README.md` file corresponding to the project of our collaborator.
 
 
 ### 1.11.3. Create a Pull Request
@@ -720,7 +720,7 @@ Figure 10. The PR page.
 You will see a big green button at the bottom that says "Merge pull request". Clicking this will merge your changes into the `master` branch. Sometimes you will be a co-owner or the sole owner of a Git repository, in which case you may not need to create a PR to merge your changes. However, it is still a best practice to make one so you can keep a more complete history of your updates and to make sure you always create a new branch when making changes.
 
 > *__Note:__* Sometimes it is not possible to automatically merge the PR. This means you are faced with a **merge conflict**. This happens when someone has made changes in the target branch of the PR (the `master` branch in our case) that conflict with your changes. In such an scenario, Git cannot figure out automatically which version to use. Therefore, you will have to manually tell Git which version to use.
-[Section XXX]() introduces the solution of conflicting changes.
+[Section 1.11.6](#1116-conflicting-changes) introduces the solution of conflicting changes.
 
 
 ### 1.11.4. Merge a Pull Request
@@ -750,7 +750,7 @@ Your branch is up to date with 'origin/master'.
 
 ----
 > *__Exercise 12:__*
-> Use `git log` to check that the commit history for the branch `master` on the local repository does not include the lastest ones that can be nevertheless seen in the GitHub page for your project.
+> Use `git log` to check that the commit history for the branch `master` on the local repository does not include the latest ones that can be nevertheless seen in the GitHub page for your project.
 ----
 
 
@@ -828,13 +828,13 @@ In the meantime, a collaborator of yours that **is not project owner**, is not h
 > 1. Clone the GitHub repository in a different folder, e.g., in `repository4sci1022_collaborator`
 > 2. Create a local branch in your collaborator's copy of the GitHub repository, named, say, `set_example_in_italics_at_readme_file`.
 > 3. Edit the `README.md` file using `nano`, and replace "\*\*example\*\*" by "\*example\*", i.e., boldface by italics.
-> 4. Add changes to the stagging area and create a new commit into the  `set_example_in_italics_at_readme_file` branch.
+> 4. Add changes to the staging area and create a new commit into the  `set_example_in_italics_at_readme_file` branch.
 > 5. Push the branch to the remote repository at GitHub, create a PR from `set_example_in_italics_at_readme_file` to `master` at GitHub, and merge this PR at GitHub.
 >
 > Before executing step 5, can you advance whether there will be *merge conflict* in this scenario? Why? Why not? *Hint*: at the beginning of the section, we performed local changes and registered them into a new local commit, but **we did not actually push into `master`**.
 ----
 
-Now move to the original local copy of the remote GitHub repository (we will no longer play the role of your collaborator). If you completed succesfully the steps in Exercise 15, you should obverse the following after pulling the latest changes into `master` from the remote repository:
+Now move to the original local copy of the remote GitHub repository (we will no longer play the role of your collaborator). If you completed successfully the steps in Exercise 15, you should obverse the following after pulling the latest changes into `master` from the remote repository:
 
 ```
 $ git pull origin master
