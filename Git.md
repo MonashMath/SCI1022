@@ -25,7 +25,7 @@
         - [1.11.4. Merge a Pull Request](#1114-merge-a-pull-request)
         - [1.11.5. Pulling changes from the remote repository](#1115-pulling-changes-from-the-remote-repository)
         - [1.11.6. Conflicting changes](#1116-conflicting-changes)
-
+    - [1.12. Conclusions and further references](#112-conclusions-references)
 <!-- /TOC -->
 
 # 1. Introduction to [Version control](https://en.wikipedia.org/wiki/Version_control) using [Git](https://git-scm.com/) (2h 40min).
@@ -864,13 +864,14 @@ Figure 11. The file `README.md` with the merge conflict solved.
 After saving the file, we can commit the file with the conflict resolved, and, at this point, we are ready to push in to `master` (check it!).
 The local `master` branch in the local copy of the repository of our collaborator does not actually reflect this change. Therefore, the last step in our collaborator's workflow would be a `git pull origin master` command. 
 
+
 ----
 > *__Final exercise:__*
 > Create a PR in the GitHub repository available at the following URL: . The PR should include a single commit with a version of the `README.md` file containing a link to the GitHub repository you have created along the session. The line to add should be of the form: "Given Name(s) Family name GitHub repository is available [here](URL of your repo goes here)". This link will allow us evaluate your progress with the tutorial.
-
-
+----
 
 ## 1.12. Conclusions and further references
+<a id="markdown-conclusions-references" name="conclusions-references"></a>
 
 After completing this workshop, we expect you, at the very least, to be able to understand **why Git has to become an absolute must-use tool in your daily workflow**. Indeed, we highly encourage that you use Git to track the code that you will develop during the rest of modules in this subject, and more importantly, along your whole career. There is a lot more to learn. For example, we did not cover most of **error-recovery** techniques of Git. One of the most useful features of Git is its ability to let us recover from errors that would otherwise be catastrophic.
 You can learn more about this topic [here](https://medium.com/@i_AnkurBiswas/common-git-mistakes-and-how-to-fix-them-10184cd5fa77) and [here](https://www.git-tower.com/blog/surviving-with-git-videos/).
