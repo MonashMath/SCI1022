@@ -1,3 +1,5 @@
+**Authors**: [Alberto F. Martin](https://research.monash.edu/en/persons/alberto-f-martin), [Santiago Badia](https://research.monash.edu/en/persons/santiago-badia-rodriguez)
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 <!-- TOC -->
 
@@ -23,7 +25,6 @@
         - [1.11.4. Merge a Pull Request](#1114-merge-a-pull-request)
         - [1.11.5. Pulling changes from the remote repository](#1115-pulling-changes-from-the-remote-repository)
         - [1.11.6. Conflicting changes](#1116-conflicting-changes)
-    - [1.12. Conclusions and further references](#112-conclusions-and-further-references)
 
 <!-- /TOC -->
 
@@ -51,7 +52,7 @@ VCSs have evolved considerably over the years, and still nowadays, there are a n
 ## 1.2. Why Git?
 <a id="markdown-why-git" name="why-git"></a>
 
-There are a number of reasons ([some of them quite technical](https://git-scm.com/about) to be enterely grasped at this point), but the most important are perhaps the following ones. Git achieves **a sound balance** among speed, efficiency, reliability, and ease-of-use. Indeed, this hallmark of Git has positioned it to be undoubtedly the de-facto standard VCS  used in ([open source](https://opensource.com/resources/what-open-source)) scientific (and not necessarily scientific) software projects. Git was originally developed in 2005 by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the same individual who created the Linux OS, i.e., an open source variant of Unix.  Therefore, it is also (as could not be otherwise) **[free and open source](https://git-scm.com/about/free-and-open-source)**. Since then, its popularity has increased significantly, mostly due to the development of repository hosting services in the Cloud such as  [Github](https://github.com/), [Gitlab](https://about.gitlab.com/), or [BitBucket](https://en.wikipedia.org/wiki/Bitbucket). Indeed, **virtually the whole state-of-the-art in open source (scientific and not necessarily scientific) software is available at these Git repository hosting services**. Finally, it is worth mentioning that Git is available on multiple platforms, including Microsoft Windows, Linux, or macOS, among others.
+There are a number of reasons ([some of them quite technical](https://git-scm.com/about) to be enterely grasped at this point), but the most important are perhaps the following ones. Git achieves **a sound balance** among speed, efficiency, reliability, and ease-of-use. Indeed, this hallmark of Git has positioned it to be undoubtedly the de-facto standard VCS  used in ([open source](https://opensource.com/resources/what-open-source)) scientific (and not necessarily scientific) software projects. Git was originally developed in 2005 by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the same individual who created the Linux OS, i.e., an open source variant of Unix.  Therefore, it is also (as could not be otherwise) **[free and open source](https://git-scm.com/about/free-and-open-source)**. Since then, its popularity has increased significantly, mostly due to the development of repository hosting services in the Cloud such as  [GitHub](https://github.com/), [Gitlab](https://about.gitlab.com/), or [BitBucket](https://en.wikipedia.org/wiki/Bitbucket). Indeed, **virtually the whole state-of-the-art in open source (scientific and not necessarily scientific) software is available at these Git repository hosting services**. Finally, it is worth mentioning that Git is available on multiple platforms, including Microsoft Windows, Linux, or macOS, among others.
 
 Git is what professionals use to keep track of what they have done and to collaborate with other people. Large software development projects rely on it, and most programmers use it for their small jobs as well. And it is not just for software: books, papers, reports, small data sets, and anything that changes over time and/or needs to be shared **should be** stored in a Git repository. Indeed, we used Git in order to track the different versions of this tutorial.
 
@@ -133,7 +134,7 @@ On the other hand, the value provided to the `core.editor` tells Git which comma
 <a id="markdown-creating-a-local-git-repository" name="creating-a-local-git-repository"></a>
 
 Let us start a new project and put it under version control with Git.
-We will just create a single `README.md` file written in the [*Markdown language*](https://en.wikipedia.org/wiki/Markdown). Markdown is used by GitHub as a very simple way to format text on the web. We will only use the very basic features of Markdown, such as formatting words as bold or italic, adding images, and creating lists. The 3-minute tutorial available [here](https://guides.github.com/features/mastering-markdown/) is helpful in order to get started Github Markdown.
+We will just create a single `README.md` file written in the [*Markdown language*](https://en.wikipedia.org/wiki/Markdown). Markdown is used by GitHub as a very simple way to format text on the web. We will only use the very basic features of Markdown, such as formatting words as bold or italic, adding images, and creating lists. The 3-minute tutorial available [here](https://guides.github.com/features/mastering-markdown/) is helpful in order to get started GitHub Markdown.
 
 We start by creating an empty directory with the generic name `myproject`, but please note that, in a real case scenario, it is best to give the directory an intention revealing name. We will create the directory within the `~/Documents` folder:
 
@@ -492,7 +493,7 @@ To github.com:amartinhuertas/repository4sci1022.git
  * [new branch]      master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
-Of course, you should replace `amartinhuertas` by your Github actual username. These two commands set GitHub as the **origin** remote repository of the local Git repository and then push the full (local) repository there, respectively. The **origin** is the default remote repository that one interacts with when you do not explicitly specify a remote repository in a git command. (We note that a local repository might be connected to several remote repositories.)  The `-u` option to `git push` sets GitHub as the upstream repository, which
+Of course, you should replace `amartinhuertas` by your GitHub actual username. These two commands set GitHub as the **origin** remote repository of the local Git repository and then push the full (local) repository there, respectively. The **origin** is the default remote repository that one interacts with when you do not explicitly specify a remote repository in a git command. (We note that a local repository might be connected to several remote repositories.)  The `-u` option to `git push` sets GitHub as the upstream repository, which
 means that we will be able to download any changes automatically when we run `git pull`. Do not worry about these details, though; you will almost always copy such commands from GitHub and probably will not ever have to figure them out on your own.
 
 If pushing suceeded, then, after re-loading `https://github.com/your_github_username/repository4sci1022` on your web browser, you should be able to see an screen similar to that shown in [Figure 7](fig:github_after_push).
@@ -796,7 +797,7 @@ Deleted branch add_shakespeare_sonnets (was 87919f2).
 ### 1.11.6. Conflicting changes
 <a id="markdown-conflicting-changes" name="conflicting-changes"></a>
 
-Even though Git merge algorithms can often automatically figure out how to combine changes from different collaborators, sometimes there is no way of avoiding a conflict. Let us illustrate the concept of conflicting changes and how to resolve them with an example. Let us assume that we are not happy with the current status of the `README.md`. In particular, we would like to change the format of the "example" word, and remove from it the boldface. To this end, we edit the `README.md` and remove the trailing and leading `**` from the word "example", and then we commit this change but we forget to push:
+Even though Git merge algorithms can often automatically figure out how to combine changes from different collaborators, sometimes there is no way of avoiding a conflict. Let us illustrate the concept of conflicting changes and how to resolve them with an example. Let us assume that we are not happy with the current status of the `README.md`. In particular, we would like to change the format of the "example" word, and remove from it the boldface. To this end, we edit the `README.md` and remove the trailing and leading `**` from the word "example", and then we commit this change **but we do not push right after the commit**:
 
 ```bash
 $ nano README.md
@@ -807,32 +808,78 @@ This is an example README.md file
 
 Figure 1. The Chandos portrait (held by the National Portrait Gallery, London)
 
-
 ![fig:shakespeare_sonnets](figures/shakespeare_sonnets.jpg)
 
 Figure 2. Title page from 1609 edition of Shake-Speares Sonnets.
+```
+```
 $ git add README.md
 $ git commit -m "The word example no longer in boldface at README.md"
 [master 183ac79] The word example no longer in boldface at README.md
  1 file changed, 2 insertions(+), 2 deletions(-)
 ```
 
+In the meantime, a collaborator of yours that **is not project owner**, is not happy either with the "example" word in boldface. He prefers it to be in italics. As he is not project owner, he is forced to propose the change the PR way. 
 
+----
+> *__Exercise 15:__*
+> Mimic the workflow that your collaborator will follow in order to propose the aforementioned change via a PR. This workflow is composed of the following 5 steps:
+>
+> 1. Clone the GitHub repository in a different folder, e.g., in `repository4sci1022_collaborator`
+> 2. Create a local branch in your collaborator's copy of the GitHub repository, named, say, `set_example_in_italics_at_readme_file`.
+> 3. Edit the `README.md` file using `nano`, and replace "\*\*example\*\*" by "\*example\*", i.e., boldface by italics.
+> 4. Add changes to the stagging area and create a new commit into the  `set_example_in_italics_at_readme_file` branch.
+> 5. Push the branch to the remote repository at GitHub, create a PR from `set_example_in_italics_at_readme_file` to `master` at GitHub, and merge this PR at GitHub.
+>
+> Before executing step 5, can you advance whether there will be *merge conflict* in this scenario? Why? Why not? *Hint*: at the beginning of the section, we performed local changes and registered them into a new local commit, but **we did not actually push into `master`**.
+----
 
+Now move to the original local copy of the remote GitHub repository (we will no longer play the role of your collaborator). If you completed succesfully the steps in Exercise 15, you should obverse the following after pulling the latest changes into `master` from the remote repository:
 
+```
+$ git pull origin master
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:amartinhuertas/repository4sci1022
+ * branch            master     -> FETCH_HEAD
+   ef9f5c1..cebc330  master     -> origin/master
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+```
 
+As indicated in the penultimate line, Git has detected a merge conflict after the pull. The set of files with merge conflicts still to be resolved can be printed on screen using `git status`. We can see the effect of this conflict by viewing the file `README.md` in `nano`, as shown in [Figure 11](fig:nano_conflict). 
 
+<a name="fig_nano_conflict"></a> ![fig:nano_conflict](figures/nano_conflict.png) 
+Figure 11. A file with a merge conflict highlighted.
+
+The highlighted text in [Figure 11](fig:nano_conflict) states that there are two conflicting versions of the first line of `README.md`. In the first, i.e., `HEAD` (our local version), the "example" word appears with no special format. In the second, i.e., the one corresponding to our collaborator's commit with hash `cebc330 ...` ,  the "example" word appears in italics. We prefer the word with no format, so that we manually solve the conflict by editing the `README.md` file, with the result shown in [Figure 12](fig:nano_conflict_solved). 
+
+<a name="fig_nano_conflict_solved"></a> ![fig:nano_conflict_solved](figures/nano_conflict_solved.png) 
+Figure 11. The file `README.md` with the merge conflict solved.
+
+After saving the file, we can commit the file with the conflict resolved, and, at this point, we are ready to push in to `master` (check it!).
+The local `master` branch in the local copy of the repository of our collaborator does not actually reflect this change. Therefore, the last step in our collaborator's workflow would be a `git pull origin master` command. 
+
+----
+> *__Final exercise:__*
+> Create a PR in the GitHub repository available at the following URL: . The PR should include a single commit with a version of the `README.md` file containing a link to the GitHub repository you have created along the session. The line to add should be of the form: "Given Name(s) Family name GitHub repository is available [here](URL of your repo goes here)". This link will allow us evaluate your progress with the tutorial.
 
 
 
 ## 1.12. Conclusions and further references
-<a id="markdown-conclusions-and-further-references" name="conclusions-and-further-references"></a>
 
+After completing this workshop, we expect you, at the very least, to be able to understand **why Git has to become an absolute must-use tool in your daily workflow**. Indeed, we highly encourage that you use Git to track the code that you will develop during the rest of modules in this subject, and more importantly, along your whole career. There is a lot more to learn. For example, we did not cover most of **error-recovery** techniques of Git. One of the most useful features of Git is its ability to let us recover from errors that would otherwise be catastrophic.
+You can learn more about this topic [here](https://medium.com/@i_AnkurBiswas/common-git-mistakes-and-how-to-fix-them-10184cd5fa77) and [here](https://www.git-tower.com/blog/surviving-with-git-videos/).
+If you continue down this technical path you will keep getting better at using Git for years to come.
 
+We recommend seeking out additional resources. The Internet is plenty of excellent resources related to Git that you can use in order to expand your current skills. Here are some suggestions:
 
-* https://www.learnenough.com/git-tutorial/getting_started
-* https://swcarpentry.github.io/git-novice/
-
-* Pro Git book by Scott Chacon and Ben Straub https://git-scm.com/book/en/v2
-* Git tutorials by Atlassian  https://www.atlassian.com/git/tutorials
-* Tower Git tutorials https://www.git-tower.com/learn/
+* [Learn enough Git to be dangerous](https://www.learnenough.com/git-tutorial/getting_started) tutorial by [Michael Hart](https://www.michaelhartl.com/)
+* [Version Control with Git](https://swcarpentry.github.io/shell-novice/) workshop by [Software Carpentry](https://software-carpentry.org/lessons/index.html)
+* Free [Pro Git book](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub 
+* [Git tutorials](https://www.atlassian.com/git/tutorials) by Atlassian  ([BitBucket](https://bitbucket.org/) developers)
+* [Tower Git tutorials](https://www.git-tower.com/learn/)
