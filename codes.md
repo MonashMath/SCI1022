@@ -29,9 +29,24 @@ machine code to create an executable program. Compilers can exploit
 different types of optimisation to generate highly efficient code.
 Thus, static languages are used in the industry and academy when 
 performance is a requirement, e.g., when implementing computationally
-intensive algorithms. The most important static languages are `C`, `C++` and `FORTRAN`.
+intensive algorithms. The most important static languages are `C`, `C++` and `FORTRAN`. 
 
+However, this performance comes with a price. To develop code in static languages is a complicated task. The learning curve is very steep and the productivity of developers can be very low. First, the compilation step can take a considerable amount of time, and second, the need to declare all types and interfaces makes the code development quite tedious.
 
+On the other side, we have the *dynamic languages*. Dynamic languages often do not require type declaration and do not involve a pre-compilation step. Instead, the code is interpreted at run-time using a `eval` function. One could write the previous `C` code in `Python` as
+```python
+age1 = 10
+age2 = 20
+diff(num1,num2) = num1-num2
+diff(age2,age1)
+```
+These languages are more expressive, drastically increasing the productivity of developers. The price to pay is a (in many cases unacceptable) performance hit.
+
+In this unit, we will focus in dynamic languages, since the performance hit is not an issue, in general, in undergraduate scientific projects. In any case, one can combine the productivity of dynamic languages with the performance of static languages by using pre-compiled external libraries (written in `C`, `C++`, or `FORTRAN`) for the computationally intensive parts of the code. One obiquitous approach is to combine `Python` code with the `C` library [NumPy]{https://numpy.org/} for array computations. In order for this approach to work, `Python` code must involve vectorisation, e.g., operations are applied to whole arrays instead of individual entries.
+
+The static vs. dynamic paradigms, code productivity and performance are serious issues to be considered when creating scientific software projects. There is no *the best* alternative, since it is very case-dependent. Analogously, it is hard to decice which is *the best* static or dynamic programming language, since it depends on the type of work to be performed. In fact, new programming languages are created all the time to solve the drawbacks of existing approaches. [Julia]{julialang.org} deserves special mention in the frame of numerical coding. It is a dynamic language that started in 2011 at MIT that does not suffer the performance hit.
+
+For all these reason, SCI1022 includes four different workshops on three dynamically-typed languages, namely, `Python`, `Matlab`, `R` and an untyped language, `Mathematica`. Below, we provide a description of the four different languages that would help students to pick the ones that better fit their requirements.
 
 # Python
 
