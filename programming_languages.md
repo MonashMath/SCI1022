@@ -53,4 +53,4 @@ Extra functionality is provided by Mathworks through toolkits (at an extra cost)
 
 # `Mathematica`
 
-`Wolfram Mathematica` is a propietary program which is particularly well-suited for symbolic computations. It can be of interest for undergraduate students in mathematics that require to make intensive use of symbolic computation. Mathematica is much less common in scientific computing and data science fields. On the downside, Mathematica licenses are very expensive and it is a unityped language.
+`Wolfram Mathematica` is a propietary program which is particularly well-suited for symbolic computations. It can be of interest for undergraduate students in mathematics that require to make intensive use of symbolic computation. `Mathematica` is much less common in scientific computing and data science fields. On the downside, `Mathematica` licenses are very expensive and it is a unityped language.
