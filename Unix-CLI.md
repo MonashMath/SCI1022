@@ -886,7 +886,7 @@ $ curl http://www.gutenberg.org/files/996/996-0.txt -o don_quixote.txt
 100 2334k  100 2334k    0     0   466k      0  0:00:05  0:00:05 --:--:--  555k
 ```
 
-The result of running this command is `don_quixote.txt`, a file containing the aforementioned eBook in text format. This file contains 43281 lines!, i.e., **too many to fit on the screen**. (Type `cat don_quixote` and you will definitely understand what we are talking about.) The goal of the rest of the section is to learn commands that will let us inspect files more easily. Among other things, we will learn how to automatically count lines in files, without having to count them all manually.
+The result of running this command is `don_quixote.txt`, a file containing the aforementioned eBook in text format. This file contains 43281 lines!, i.e., **too many to fit on the screen**. (Type `cat don_quixote.txt` and you will definitely understand what we are talking about.) The goal of the rest of the section is to learn commands that will let us inspect files more easily. Among other things, we will learn how to automatically count lines in files, without having to count them all manually.
 
 > *__Note:__* 
 If you want to learn more about the `curl` command, you can type `curl -h`.
