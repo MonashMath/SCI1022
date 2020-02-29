@@ -1,6 +1,6 @@
 # Static vs dynamic languages
 
-A programming language consist of instructions for computers. They allow us to implement algorithms. There are different adjectives that can be used together with a programming language. A language can be either *static* or *dynamic*. A *static* language compels the developer to declare the type of any variable. E.g., if we want to declare integer variables in our `C` code we would write:
+A programming language consists of instructions for computers. They allow us to implement algorithms. There are different adjectives that can be used together with a programming language. A language can be either *static* or *dynamic*. A *static* language compels the developer to declare the type of any variable. E.g., if we want to declare integer variables in our `C` code we would write:
 ```c
 int age1;
 int age2;
@@ -12,11 +12,11 @@ diff = substract(age2,age1);
 ```
 When one declares a function, e.g., `substract` in the previous code, the type of all arguments and the type of the output must also be explicitly declared
 ```c
-int subtract(int num1, int num2)
+int substract(int num1, int num2)
 {
-   int result
+   int result;
    result = num1-num2;
-   return result
+   return result;
 }    
 ```
 All this information is used by a static compiler. Once you have finished your code, you must compile it. Compilers transform the code written in a static language into machine code to create an executable program. Compilers can exploit different types of optimisation to generate highly efficient code. Thus, static languages are used in the industry and academy when performance is a requirement, e.g., when implementing computationally intensive algorithms. The most important static languages are `C`, `C++` and `FORTRAN`; `FORTRAN` was the first commercially available programming language, developed from inception for mathematical computations, but its usage is continuously decaying. 
@@ -27,12 +27,12 @@ On the other side of the spectrum, we have the *dynamic languages*. Dynamic lang
 ```python
 age1 = 10
 age2 = 20
-diff(num1,num2) = num1-num2
+def diff(num1,num2): return num1-num2
 diff(age2,age1)
 ```
 These languages are more expressive, drastically increasing the productivity of developers. The price to pay is a (in many cases unacceptable) performance hit that can easily be of the order of hundreds.
 
-In this unit, we will focus on dynamic languages, since the performance hit is not an issue, in general, in undergraduate scientific projects and some scientific tasks. In any case, one can combine the productivity of dynamic languages with the performance of static languages by using pre-compiled external libraries (written in `C`, `C++`, or `FORTRAN`) for the computationally intensive kernels. One obiquitous approach is to combine `Python` code with the `C` library [NumPy]{https://numpy.org/} for array computations. In order for this approach to work, `Python` code must involve vectorisation, e.g., operations are applied to whole arrays instead of individual entries.
+In this unit, we will focus on dynamic languages, since the performance hit is not an issue, in general, in undergraduate scientific projects and some scientific tasks. In any case, one can combine the productivity of dynamic languages with the performance of static languages by using pre-compiled external libraries (written in `C`, `C++`, or `FORTRAN`) for the computationally intensive kernels. One obiquitous approach is to combine `Python` code with the `C` library [NumPy](https://numpy.org/) for array computations. In order for this approach to work, `Python` code must involve vectorisation, e.g., operations are applied to whole arrays instead of individual entries.
 
 The static vs. dynamic paradigms, code productivity and performance are serious issues to be considered when creating scientific software projects. There is no *the best* alternative, since it is very case-dependent. Analogously, it is hard to decice which is *the best* static or dynamic programming language, since it depends on the type of work to be performed. In fact, new programming languages are created all the time to solve the drawbacks of existing approaches. [Julia]{julialang.org} deserves special mention in the frame of scientific coding. It is a dynamic language originated in 2011 at MIT that does not suffer the performance hit.
 
