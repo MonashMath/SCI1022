@@ -32,9 +32,9 @@ diff(age2,age1)
 ```
 These languages are more expressive, drastically increasing the productivity of developers. The price to pay is a (in many cases unacceptable) performance hit that can easily be of the order of hundreds.
 
-In this unit, we will focus on dynamic languages, since the performance hit is not an issue, in general, in undergraduate scientific projects and some scientific tasks. In any case, one can combine the productivity of dynamic languages with the performance of static languages by using pre-compiled external libraries (written in `C`, `C++`, or `FORTRAN`) for the computationally intensive kernels. One obiquitous approach is to combine `Python` code with the `C` library [NumPy](https://numpy.org/) for array computations. In order for this approach to work, `Python` code must involve vectorisation, e.g., operations are applied to whole arrays instead of individual entries.
+In this unit, we will focus on dynamic languages, since the performance hit is not an issue, in general, in undergraduate scientific projects and some scientific tasks. In any case, one can combine the productivity of dynamic languages with the performance of static languages by using pre-compiled external libraries (written in `C`, `C++`, or `FORTRAN`) for the computationally intensive kernels. One ubiquitous approach is to combine `Python` code with the `C` library [NumPy](https://numpy.org/) for array computations. In order for this approach to work, `Python` code must involve vectorisation, e.g., operations are applied to whole arrays instead of individual entries.
 
-The static vs. dynamic paradigms, code productivity and performance are serious issues to be considered when creating scientific software projects. There is no *the best* alternative, since it is very case-dependent. Analogously, it is hard to decice which is *the best* static or dynamic programming language, since it depends on the type of work to be performed. In fact, new programming languages are created all the time to solve the drawbacks of existing approaches. [Julia]{julialang.org} deserves special mention in the frame of scientific coding. It is a dynamic language originated in 2011 at MIT that does not suffer the performance hit.
+The static vs. dynamic paradigms, code productivity and performance are serious issues to be considered when creating scientific software projects. There is no *the best* alternative, since it is very case-dependent. Analogously, it is hard to decide which is *the best* static or dynamic programming language, since it depends on the type of work to be performed. In fact, new programming languages are created all the time to solve the drawbacks of existing approaches. [Julia]{julialang.org} deserves special mention in the frame of scientific coding. It is a dynamic language originated in 2011 at MIT that does not suffer the performance hit.
 
 For all these reason, SCI1022 includes four different workshops on three dynamically-typed languages, namely, `Python`, `Matlab`, `R` and an untyped language, `Mathematica`. Below, we provide a description of the four different languages that would help students to pick the ones that better fit their requirements.
 
@@ -44,7 +44,7 @@ For all these reason, SCI1022 includes four different workshops on three dynamic
 
 # `Matlab`
 
-`Matlab` is a commercial numerical computing environment that is easy to learn and use, and is a very popular at undegraduate university programmes, especially in mathematics and some engineering disciplines. It might be easier for beginners. However, it is a propietary language. The basic package comes with algebra, data processing and plotting tools.
+`Matlab` is a commercial numerical computing environment that is easy to learn and use, and is a very popular at undergraduate university programmes, especially in mathematics and some engineering disciplines. It might be easier for beginners. However, it is a proprietary language. The basic package comes with algebra, data processing and plotting tools.
 Extra functionality is provided by Mathworks through toolkits (at an extra cost).
 
 # `R`
@@ -53,4 +53,4 @@ Extra functionality is provided by Mathworks through toolkits (at an extra cost)
 
 # `Mathematica`
 
-`Wolfram Mathematica` is a propietary program which is particularly well-suited for symbolic computations. It can be of interest for undergraduate students in mathematics that require to make intensive use of symbolic computation. `Mathematica` is much less common in scientific computing and data science fields. On the downside, `Mathematica` licenses are very expensive and it is a unityped language.
+`Wolfram Mathematica` is a proprietary program which is particularly well-suited for symbolic computations. It can be of interest for undergraduate students in mathematics that require to make intensive use of symbolic computation. `Mathematica` is much less common in scientific computing and data science fields. On the downside, `Mathematica` licenses are very expensive and it is a untyped language.
