@@ -81,7 +81,7 @@ Figure 3. The terminal icon in Ubuntu's Linux Dock.
 
 In this tutorial, however, we assume that you are working on your own desktop, laptop, or tablet, and **_that you do not necessarily have an installed working version of a Unix-type OS_** such as, e.g., macOS or Ubuntu Linux. To bypass the need for specialized software installed on your device, we will use the [Monash Virtual Environment (MoVE)](https://www.monash.edu/learning-teaching/innovation/educational-technologies/move) platform instead in order to run a terminal.
 
-> *__Note:__* At this point, we strongly encourage you to carefully read the [MoVE users' guide](https://www.monash.edu/__data/assets/pdf_file/0003/1480665/MoVE-student-and-staff-access-guide-2019.pdf) if it is your first experience with MoVE and/or you find any trouble while following the proceeding steps. We recommend that you configure your device in order to run the [full version](https://www.monash.edu/__data/assets/pdf_file/0003/1480665/MoVE-student-and-staff-access-guide-2019.pdf) of MoVE as it generally provides an smoother experience than the [light](https://www.monash.edu/__data/assets/pdf_file/0003/1480665/MoVE-student-and-staff-access-guide-2019.pdf) version. In any case, the tutorial may be followed as well with the light version.
+> *__Note:__* At this point, we strongly encourage you to carefully read the [MoVE users' guide](https://www.monash.edu/learning-teaching/innovation/user-guides/move-user-guide) if it is your first experience with MoVE and/or you find any trouble while following the proceeding steps. We recommend that you configure your device in order to run the [full version](https://www.monash.edu/learning-teaching/innovation/user-guides/move-user-guide) of MoVE as it generally provides an smoother experience than the [light](https://www.monash.edu/learning-teaching/innovation/user-guides/move-user-guide) version. In any case, the tutorial may be followed as well with the light version.
 
 In order to open a terminal within this environment you have to:
 
@@ -94,7 +94,7 @@ In order to open a terminal within this environment you have to:
 <a name="fig_cygwin_icon"></a> ![fig:cygwin_icon](figures/cygwin-icon.png)
 Figure 4. The Cygwin APP icon pointed by a red arrow.
 
-If these steps succeed, then a new stand-alone window (or a new web browser tab if you are using the [light version](https://www.monash.edu/__data/assets/pdf_file/0003/1480665/MoVE-student-and-staff-access-guide-2019.pdf) of MoVE) containing a Cygwin terminal should be opened. This newly created window should look similar to the one depicted in [Figure 5](#fig_cygwin_terminal).
+If these steps succeed, then a new stand-alone window (or a new web browser tab if you are using the [light version](https://www.monash.edu/learning-teaching/innovation/user-guides/move-user-guide) of MoVE) containing a Cygwin terminal should be opened. This newly created window should look similar to the one depicted in [Figure 5](#fig_cygwin_terminal).
 
 <a name="fig_cygwin_terminal"></a> ![fig:cygwin_terminal](figures/cygwin-terminal.png)
 Figure 5. Cygwin terminal window.
@@ -285,7 +285,7 @@ A new file of name `sentences.txt` is created in the current directory if it did
 
 > *__Note:__* You can avoid typing the sentence yourself by copying it from the web browser, and then pasting it into the Cygwin terminal. In order to do so, once you have copied the sentence, you have to Right click on the top bar of the Cygwin terminal window, and select `Edit->Paste` from the drop down list. In any case, we strongly encourage you to avoid copy & paste as a general rule, but to type the commands yourself in order to better familiarise yourself with them. 
 
-> *__Note:__* If you are using the light version of MoVE, copy & paste is a bit more involved. See [MoVE users' manual](https://www.monash.edu/__data/assets/pdf_file/0003/1480665/MoVE-student-and-staff-access-guide-2019.pdf) for more details.  
+> *__Note:__* If you are using the light version of MoVE, copy & paste is a bit more involved. See [MoVE users' manual](https://www.monash.edu/learning-teaching/innovation/user-guides/move-user-guide) for more details.  
 
 We can inspect the contents of the new file using the `cat` command as follows:
 ```bash
