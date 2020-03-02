@@ -16,9 +16,9 @@ Material for the initial mandatory workshops (8 hours of computer lab in total).
 
 ## Lectures Schedule (initial mandatory workshops)
 
-* 09/03/2020  (2h) - Complete [1.](./programming_languages.md) (~20 min). Start with [2.]() (~1h 40min)
+* 09/03/2020  (2h) - Complete [1.](./programming_languages.md) (~20 min). Start with [2.](./Unix-CLI.md) (~1h 40min)
 * 10/03/2020 (2h) - Continue with [2.](./Unix-CLI.md) (2h)
-* 16/03/2020 (2h) - Complete [2.](./Unix-CLI.md) (~1h 20min). Start with [3.]() (~40min)
+* 16/03/2020 (2h) - Complete [2.](./Unix-CLI.md) (~1h 20min). Start with [3.](./Git.md) (~40min)
 * 17/03/2020 (2h) - Finish [3.](./Git.md) (2h)
 
 
