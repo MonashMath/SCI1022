@@ -3,7 +3,7 @@
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 <!-- TOC -->
 
-- [1. Introduction to Version control](https://en.wikipedia.org/wiki/Versioncontrol) using [Git (2h 40min).](#1-introduction-to-version-controlhttpsenwikipediaorgwikiversioncontrol-using-git-2h-40min)
+- [1. Introduction to Version control](https://en.wikipedia.org/wiki/Versioncontrol) using [Git (*2h 40min*).](#1-introduction-to-version-controlhttpsenwikipediaorgwikiversioncontrol-using-git-2h-40min)
     - [1.1. Version Control in a nutshell](#11-version-control-in-a-nutshell)
     - [1.2. Why Git?](#12-why-git)
     - [1.3. Accessing Git and our first Git command](#13-accessing-git-and-our-first-git-command)
@@ -28,7 +28,7 @@
     - [1.12. Conclusions and further references](#112-conclusions-references)
 <!-- /TOC -->
 
-# 1. Introduction to [Version control](https://en.wikipedia.org/wiki/Version_control) using [Git](https://git-scm.com/) (2h 40min).
+# 1. Introduction to [Version control](https://en.wikipedia.org/wiki/Version_control) using [Git](https://git-scm.com/) (*2h 40min*).
 <a id="markdown-introduction-to-version-controlhttpsenwikipediaorgwikiversioncontrol-using-git-2h-40min" name="introduction-to-version-controlhttpsenwikipediaorgwikiversioncontrol-using-git-2h-40min"></a>
 
 This tutorial provides an introduction to Version Control using a particular software tool called [Git](https://en.wikipedia.org/wiki/Git). 
