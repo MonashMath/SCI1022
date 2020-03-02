@@ -72,7 +72,7 @@ For all these reasons, SCI1022 includes four different workshops on three dynami
 ### 1.2.2. `MATLAB`
 <a id="markdown-matlab" name="matlab"></a>
 
-[`MATLAB`](https://en.wikipedia.org/wiki/MATLAB) is a commercial numerical computing environment that is easy to learn and use. It is a very popular at undergraduate university programmes, especially in mathematics and some engineering disciplines. It might be easier for beginners. However, it is a proprietary language. The basic package comes with linear algebra, data processing and plotting tools.
+[`MATLAB`](https://en.wikipedia.org/wiki/MATLAB) is a commercial numerical computing environment that is easy to learn and use. It is very popular at undergraduate university programmes, especially in mathematics and some engineering disciplines. It might be easier for beginners. However, it is a proprietary language. The basic package comes with linear algebra, data processing and plotting tools.
 Extra functionality is provided by Mathworks through toolkits (at an extra cost).
 
 ### 1.2.3. `R`
