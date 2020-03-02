@@ -134,18 +134,18 @@ On the other hand, the value provided to the `core.editor` tells Git which comma
 <a id="markdown-creating-a-local-git-repository" name="creating-a-local-git-repository"></a>
 
 Let us start a new project and put it under version control with Git.
-We will just create a single `README.md` file written in the [*Markdown language*](https://en.wikipedia.org/wiki/Markdown). Markdown is used by GitHub as a very simple way to format text on the web. We will only use the very basic features of Markdown, such as formatting words as bold or italic, adding images, and creating lists. The 3-minute tutorial available [here](https://guides.github.com/features/mastering-markdown/) is helpful in order to get started GitHub Markdown.
+We will just create a single `README.md` file written in the [*Markdown language*](https://en.wikipedia.org/wiki/Markdown). Markdown is used by GitHub as a very simple way to format text on the web. We will only use the very basic features of Markdown, such as formatting words as bold or italic, adding images, and creating lists. The 3-minute tutorial available [here](https://guides.github.com/features/mastering-markdown/) is helpful in order to get started with GitHub Markdown.
 
-We start by creating an empty directory with the generic name `myproject`, but please note that, in a real case scenario, it is best to give the directory an intention revealing name. We will create the directory within the `~/Documents` folder:
+We start by creating an empty directory with the generic name `myproject`, but please note that, in a real case scenario, it is best to give the directory a more descriptive name. We will create the directory within the `~/Documents` folder:
 
 ```bash
 $ cd ~/Documents/
 $ mkdir myproject
 ```
 
-> *__Note:__* Recall that, because of reasons made clear in the [previous tutorial](./Unix-CLI.md#directory-structure), if you want the files and directories to be consistent among Cygwin terminal sessions, you have to place them at the `~/Documents/` folder.
+> *__Note:__* Recall that, because of reasons discussed in the [previous tutorial](./Unix-CLI.md#directory-structure), if you want the files and directories to be consistent among Cygwin terminal sessions, you have to place them at the `~/Documents/` folder.
 
-Although the `myproject` directory is void, it can be already converted to a **Git repository**, which you may conceive as a sort of enhanced folder able to track changes made within the folder. The Git command in charge of making the *current working directory* (i.e., `~/Documents/myproject`) a new repository is ` git init`:
+Although the `myproject` directory is void, it can be already converted to a **Git repository**, which you may think of as a sort of enhanced folder able to track changes made within the folder. The Git command in charge of making the *current working directory* (i.e., `~/Documents/myproject`) a new repository is ` git init`:
 
 ```bash
 $ cd myproject/
@@ -163,7 +163,7 @@ Determine the name of the *hidden* directory that Git creates right after callin
 ## 1.6. The concept of staging area. Creating our first commit
 <a id="markdown-the-concept-of-staging-area-creating-our-first-commit" name="the-concept-of-staging-area-creating-our-first-commit"></a>
 
-Git does not actually allow to complete the creation of a Git repository while it is void, so we need to make a change to the current directory and **explicitly register it**, i.e., to create our first commit. To this end, we will use the GNU `nano` editor to create a new `README.md` file, with the following contents:
+Git does not actually allow us to complete the creation of a Git repository while it is void, so we need to make a change to the current directory and **explicitly register it**, i.e., to create our first commit. To this end, we will use the GNU `nano` editor to create a new `README.md` file, with the following contents:
 
 ```bash
 $ nano README.md # Use nano here to add the contents to README.md shown below 
@@ -186,7 +186,7 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
-The “untracked files” message means that there is a file in the `myproject` directory that is not under the control of Git, i.e., that is not being tracked by Git.  At this point is when the concept of **staging area** (also referred to as **index**) enters the scene. One of the most confusing parts when you are starting with Git is this concept of staging area and how it relates to a commit. **A commit is a record of what files you have changed since the last time you made a commit, and the changes that you performed in these files.** Essentially, you make changes to your repository (e.g., adding a file or modifying an existing one) and then tell Git to register those changes into a commit. Commits make up the essence of your project and allow you to go back to the state of a project at any point in the timeline. Therefore, how do we tell Git which changes to put into a commit? 
+The “untracked files” message means that there is a file in the `myproject` directory that is not under the control of Git, i.e., that is not being tracked by Git.  We will now introduce the idea of a **staging area** (also referred to as an **index**). One of the most confusing aspects when you are starting with Git is this concept of staging area and how it relates to a commit. **A commit is a record of what files you have changed since the last time you made a commit, and the changes that you performed in these files.** Essentially, you make changes to your repository (e.g., adding a file or modifying an existing one) and then tell Git to register those changes into a commit. Commits make up the essence of your project and allow you to go back to the state of a project at any point in the timeline. Therefore, how do we tell Git which changes to put into a commit? 
 
 To add a new file to a commit, and/or the changes made to a file already being tracked by Git, **you first need to add them to the staging environment**. To this end, you can use the `git add filename` command.
 Once you have "prepared your commit", i.e., once you have used the `git add` command to add all changes to the staging environment, you can then tell Git to package them into a commit using `git commit`. Therefore, in our particular scenario, we have to add the new file to the staging area: 
@@ -213,7 +213,7 @@ git commit -m "First commit of myproject with a preliminary version of a README.
  create mode 100644 README.md
 ```
 
-The message associated to the commit (i.e., the string of characters passed as an argument to the `-m` flag) should be ideally intention revealing, i.e., something that accurately describes what the commit contains, e.g., a new feature, a bug fix, or just fixing a typo. Do not use messages like "AAAAA" or "adfjdkfjdkfj". (The reference available [here](https://medium.com/better-programming/stop-writing-bad-commit-messages-8df79517177d) provides some tips on how commit messages should be written.)
+The message associated to the commit (i.e., the string of characters passed as an argument to the `-m` flag) should be descriptive, i.e., something that accurately describes what the commit contains, e.g., a new feature, a bug fix, or just fixing a typo. Do not use messages like "AAAAA" or "adfjdkfjdkfj". (The reference available [here](https://medium.com/better-programming/stop-writing-bad-commit-messages-8df79517177d) provides some tips on how commit messages should be written.)
 
 If we now run `git status`:
 
@@ -223,7 +223,7 @@ On branch master
 nothing to commit, working directory clean
 ```
 
-the output reflects that there are no new files nor changes in existing files that can be potentially staged. At this point, we can ask Git to print on screen the project's history using `git log`:
+the output reflects that there are no new files or changes in existing files that can be potentially staged. At this point, we can ask Git to print to the screen the project's history using `git log`:
 ```
 $ git log
 commit 057083ac5d9e2718626854c90b2ba6226e6f57f2 (HEAD -> master)
@@ -232,9 +232,8 @@ Date:   Mon Feb 24 21:28:03 2020 +1100
 
     First commit of myproject with a preliminary version of a README.md file
 ```
-that lists all commits made to a repository in reverse chronological order. The list for each commit includes the commit's hash (to be introduced in the sequel), commit’s author, when it was created, and the log message Git was given when the commit was created, i.e., the string provided above to the `-m` flag. The commit's hash is an automatically generated sequence of letters and numbers that Git uses in order to 
-to **uniquely** identify each commit. In the example above, the hash is  
-`057083ac5d9e2718626854c90b2ba6226e6f57f2`, but your result will differ since **each commit has a unique hash**. Some advanced Git commands require that you explicitly refer to a commit using the commit's hash as an argument. We will put the commit hash in action in the next section.
+that lists all commits made to a repository in reverse chronological order. The list for each commit includes the commit's hash (to be introduced in the next section), commit’s author, when it was created, and the log message Git was given when the commit was created, i.e., the string provided above to the `-m` flag. The commit's hash is an automatically generated sequence of letters and numbers that Git uses in order to **uniquely** identify each commit. In the example above, the hash is  
+`057083ac5d9e2718626854c90b2ba6226e6f57f2`, but your result will differ since **each commit has a unique hash**. Some advanced Git commands require that you explicitly refer to a commit using the commit's hash as an argument. We will put the commit hash into action in the next section.
 
 ----
 > *__Exercise 2:__*
