@@ -18,7 +18,7 @@
 for page in "programming_languages" "Unix-CLI" "Git"
 do
   pandoc "$page".md --from=gfm -t html --output "$page".html
-  wkhtmltopdf --footer-right "Page [page] of [toPage]" "$page".html "$page".pdf 
+  wkhtmltopdf --disable-smart-shrinking --footer-right "Page [page] of [toPage]" "$page".html "$page".pdf 
   rm -f "$page".html
 done
 #pandoc programming_languages.md --from=gfm --pdf-engine=wkhtmltopdf --output programming_languages.pdf
