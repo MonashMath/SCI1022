@@ -15,11 +15,11 @@
 #amartin@MU00192564:~$ wkhtmltopdf --version
 #wkhtmltopdf 0.12.5
 
-for page in "programming_languages.md Unix-CLI.md Git.md"
+for page in "programming_languages" "Unix-CLI" "Git"
 do
-  pandoc $page.md --from=gfm -t html --output $page.html
-  wkhtmltopdf --footer-right "Page [page] of [toPage]" $page.html $page.pdf 
-  rm -f $page.html
+  pandoc "$page".md --from=gfm -t html --output "$page".html
+  wkhtmltopdf --footer-right "Page [page] of [toPage]" "$page".html "$page".pdf 
+  rm -f "$page".html
 done
 #pandoc programming_languages.md --from=gfm --pdf-engine=wkhtmltopdf --output programming_languages.pdf
 #pandoc Unix-CLI.md --from=gfm --pdf-engine=wkhtmltopdf --output Unix-CLI.pdf
