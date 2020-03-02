@@ -4,9 +4,7 @@ This unit will teach the fundamental principles of writing and developing scient
 
 This repository includes the material for the first two weeks (Unix command-line and Git version-control system). The workshop material can be found in the corresponding Monash Moodle web page.
 
-## Schedule
-
-## Lectures
+## Material
 
 Material for the initial 2x workshops (8 hours of computer lab in total).
 
@@ -14,6 +12,14 @@ Material for the initial 2x workshops (8 hours of computer lab in total).
 2. Introduction to the [Unix](https://en.wikipedia.org/wiki/Unix) command-line (*5h*).<br> 
 [[HTML]](./Unix-CLI.md)
 3. Introduction to [Version control](https://en.wikipedia.org/wiki/Version_control) using [Git](https://git-scm.com/) (*2h 40min*). <br>[[HTML]](./Git.md)
+
+
+## Lectures Schedule
+
+* 09/03/2020  (2h) - Complete [1.](./programming_languages.md) (~20 min). Start with [2.]() (~1h 40min)
+* 10/03/2020 (2h) - Continue with [2.](./Unix-CLI.md) (2h)
+* 16/03/2020 (2h) - Complete [2.](./Unix-CLI.md) (~1h 20min). Start with [3.]() (~40min)
+* 17/03/2020 (2h) - Finish [3.](./Git.md) (2h)
 
 
 
