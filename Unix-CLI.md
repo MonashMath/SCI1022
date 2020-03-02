@@ -671,7 +671,7 @@ bash: cd: dir1/: No such file or directory
 $ cd dir2/
 ```
 
-Here the error message indicates that the `mv` command worked as there is no file or directory called `dir1` after renaming. In the case of the `mv` command, the trailing slashes in the relative or absolute paths provided as arguments to the command are optional (i.e., the presence or absence of the trailing slashes makes no difference):
+Here the error message indicates that the `mv` command worked as there is no file or directory called `dir1` after renaming. The trailing slashes in the relative or absolute paths provided as arguments to the `mv` command are optional (i.e., the presence or absence of the trailing slashes makes no difference):
 
 ```bash
 $ cd
@@ -679,7 +679,7 @@ $ mv dir2 dir1
 $ cd dir1
 ```
 
-However, with `cp`, the trailing slashes **do make a difference worth noting**. This difference is indeed the source of much confusion. In particular, when copying directories, the behavior that we usually want is to copy the directory contents *including* the directory itself, which is achieved leaving off the trailing slash. When copying files, you also need to include the `-r` option (for “recursive”). For example, to copy the whole directory tree rooted at `txt_files` (including itself) to a new directory called `dir`, we can do the following:
+In Linux-based systems, the presence or absence of the trailing slashes makes no difference as well when copying directories. (It does, however, on e.g., MacOS systems; for simplicity, we restrict ourselves to Linux-based OSs.) The behavior that we get is to copy the directory contents *including* the directory itself, i.e.,
 
 ```bash
 $ cd
@@ -690,24 +690,13 @@ $ ls
 txt_files
 ```
 
-Note the **lack** of a trailing slash in the `cp` command above. If we included it, we would get instead the following behaviour:
-
-
+If you want to copy only the contents of the directory, you can use the star operator, as in:
 ```bash
-$ cd
-$ mkdir dir2
-$ cd dir2
-$ cp -r ../txt_files/ .
+$ cp -r ../txt_files/* .
 $ ls
  sentence_1.txt  sentence_2.txt  sentences_backup.txt  sentences_reversed.txt
 ```
-
 Do you see the difference? (Only the contents of `txt_files` were copied, but not `txt_files` itself.)
-As a result, a useful recommendation is that you always omit the trailing slash with `cp`. If you want to copy only the contents of the directory, you can be more explicit using the star operator, as in:
-
-```bash
-$ cp -r ../txt_files/* .
-```
 
 Finally, in order to remove directories, there is a dedicated command called `rmdir`. However, it rarely works, as seen here:
 
