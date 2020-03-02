@@ -8,10 +8,10 @@ This repository includes the material for the first two weeks (Unix command-line
 
 Material for the initial mandatory workshops (8 hours of computer lab in total).
 
-1. A brief overview of programming languages and the elective modules: [`R`](https://en.wikipedia.org/wiki/R_(programming_language)), [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)), [`MATLAB`](https://en.wikipedia.org/wiki/MATLAB) and [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica) (*20 min*).<br>[[HTML]](./programming_languages.md)
+1. A brief overview of programming languages and the elective modules: [`R`](https://en.wikipedia.org/wiki/R_(programming_language)), [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)), [`MATLAB`](https://en.wikipedia.org/wiki/MATLAB) and [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica) (*20 min*).<br>[[HTML]](./programming_languages.md) [[PDF]](./programming_languages.pdf)
 2. Introduction to the [Unix](https://en.wikipedia.org/wiki/Unix) command-line (*5h*).<br> 
-[[HTML]](./Unix-CLI.md)
-3. Introduction to [Version control](https://en.wikipedia.org/wiki/Version_control) using [Git](https://git-scm.com/) (*2h 40min*). <br>[[HTML]](./Git.md)
+[[HTML]](./Unix-CLI.md) [[PDF]](./Unix-CLI.pdf)
+3. Introduction to [Version control](https://en.wikipedia.org/wiki/Version_control) using [Git](https://git-scm.com/) (*2h 40min*). <br>[[HTML]](./Git.md) [[PDF]](/Git.pdf)
 
 
 ## Lectures Schedule (initial mandatory workshops)
