@@ -60,12 +60,13 @@ Today, most OSs come with a Graphical User Interface (GUI). Microsoft Windows, A
 These commands can be combined in a wide range of different ways to achieve different outcomes. A special program, referred to as *the shell*, is in charge of continuously reading and executing the commands interactively typed by the user in a [Read-Eval-Print Loop (REPL)](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop). Most of the time you are using a Unix-like system, you are typing commands on a CLI.
 An example of such a command is provided in [Figure 1](#fig_command_example).
 
-<a name="fig_command_example"></a> ![fig:command_example](figures/command_example.png)
+<a name="fig_command_example"></a> <img src="figures/command_example.png" alt="" width="100%"/><br>
 Figure 1. An example of a Unix command-line command.
+
 
 While Unix-type OSs are not ubiquitous in desktop or laptop computers, they however dominate the landscape of scientific computing. As an example,  [Linux runs on all](https://itsfoss.com/linux-runs-top-supercomputers/) of the [Top500 List](https://www.top500.org/) computers (a rank of the most powerful supercomputers all over the world), as per the report of June, 2019. The figures are similar for lower scale computing systems (e.g., a University, department or research group computing platform). Whether you like it or not, it is very likely that you will have to face a Unix CLI at some point if you want to do serious scientific computations. Indeed, if you look at the desktop of an experienced scientific developer, even in a Unix-type OS equipped with a GUI, such as Ubuntu Linux, you are likely to find a large number of "terminal" windows, each running an instance of the shell.
 
-<a name="fig_typical_desktop_experienced_user"></a>![fig:typical_desktop_experienced_user](figures/terminal_windows_desktop.png)
+<a name="fig_typical_desktop_experienced_user"></a>![fig:typical_desktop_experienced_user](figures/terminal_windows_desktop.png)<br>
 Figure 2. A typical desktop of an experienced scientific software developer with two terminal windows on Ubuntu Linux.
 
 There are a few Unix shells available. Many commands are common to the various shells available, but some of their syntax may still differ to a large extent. In this workshop we will assume that you are using the (most commonly used) [`bash`](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) shell. Other possible shells include the [*ksh*](https://en.wikipedia.org/wiki/KornShell), [*zsh*](https://en.wikipedia.org/wiki/Z_shell), [*csh*](https://en.wikipedia.org/wiki/C_shell), or [*tcsh*](https://en.wikipedia.org/wiki/Tcsh) shells.
@@ -76,7 +77,7 @@ There are a few Unix shells available. Many commands are common to the various s
 In order to run command-line commands, we first need to execute a **_terminal_**. A terminal is a program that gives us a command line by executing an instance of the shell; see, e.g., [Figure 2](#fig_typical_desktop_experienced_user). The way in which a terminal is opened depends on the particular Unix-type OS at hand. For example, on macOS, a terminal window can be found by typing "terminal" in the [Spotlight Search bar](https://support.apple.com/en-us/HT204014),
 while in Ubuntu Linux, you can click on the terminal icon at the Ubuntu Dock, i.e., the bar on the left-hand side of the screen which is used to pin and access installed applications; see [Figure 3](#fig_ubuntu_linux_dock).
 
-<a name="fig_ubuntu_linux_dock"></a>![fig:ubuntu_linux_dock](figures/terminal_icon_ubuntu_dock.png)
+<a name="fig_ubuntu_linux_dock"></a>![fig:ubuntu_linux_dock](figures/terminal_icon_ubuntu_dock.png)<br>
 Figure 3. The terminal icon in Ubuntu's Linux Dock.
 
 In this tutorial, however, we assume that you are working on your own desktop, laptop, or tablet, and **_that you do not necessarily have an installed working version of a Unix-type OS_** such as, e.g., macOS or Ubuntu Linux. To bypass the need for specialized software installed on your device, we will use the [Monash Virtual Environment (MoVE)](https://www.monash.edu/learning-teaching/innovation/educational-technologies/move) platform instead in order to run a terminal.
@@ -91,19 +92,19 @@ In order to open a terminal within this environment you have to:
 4. On this box, at the left side, click on the "Open" link.  
 5. Finally, on the window that is spawned as a result of step 4., click on the "Open xdg-open" button.
 
-<a name="fig_cygwin_icon"></a> ![fig:cygwin_icon](figures/cygwin-icon.png)
+<a name="fig_cygwin_icon"></a> ![fig:cygwin_icon](figures/cygwin-icon.png)<br>
 Figure 4. The Cygwin APP icon pointed by a red arrow.
 
 If these steps succeed, then a new stand-alone window (or a new web browser tab if you are using the [light version](https://www.monash.edu/learning-teaching/innovation/user-guides/move-user-guide) of MoVE) containing a Cygwin terminal should be opened. This newly created window should look similar to the one depicted in [Figure 5](#fig_cygwin_terminal).
 
-<a name="fig_cygwin_terminal"></a> ![fig:cygwin_terminal](figures/cygwin-terminal.png)
+<a name="fig_cygwin_terminal"></a> ![fig:cygwin_terminal](figures/cygwin-terminal.png)<br>
 Figure 5. Cygwin terminal window.
 
 > *__Note:__*  At this point, you might be wondering what [Cygwin](https://www.cygwin.com/) is.  In a nutshell, Cygwin is a software that provides similar functionality to that of a Linux distribution on Microsoft Windows. It is **not** a full-blown Unix-type OS. While Cygwin is a tool that will let us introduce you to the Unix command-line, and its perfectly fine for that purpose, for a number of reasons that are not that easy to understand at this stage, we would not recommend it as the most appropriate environment for users and developers of scientific software, but a full-blown Linux distribution or macOS instead. As an alternative to Cygwin, Windows users may still avoid installing a Linux distribution on their device by running a *virtual machine* (a simulator of a computer); [VirtualBox](https://www.virtualbox.org/) is a free software that is perfect for [such purposes](https://www.virtualbox.org/attachment/wiki/Screenshots/Ubuntu_14.04_on_Windows_7.png). In any case, we won't explore this possibility in this tutorial, nor require from you to be able to set up a virtual machine on your Windows device. 
 
 The example in [Figure 1](#fig_command_example) includes all the components of a typical command-line, as dissected in [Figure 6](#fig_cygwin_terminal). Every command-line usually starts with some symbols that prompt us for "action", i.e., that encourage us to type a new command. These symbols are referred to as the **_prompt_**. The prompt is followed by a **command** and, *in this particular example*, a single **_option_** (also known as flag), and a single **_argument_**. Depending on the command, it may require one or more flags or arguments, or even none at all. We will explore a variety of different commands later in this section. Finally, we have the cursor that marks the position of the next character to be introduced. 
 
-<a name="fig_components_command_line"></a> ![fig:components_command_line](figures/components_command_line.png)
+<a name="fig_components_command_line"></a> ![fig:components_command_line](figures/components_command_line.png)<br>
 Figure 6. The command-line in [Figure 1](#fig_command_example) dissected into its different components.
 
 > *__Note:__* The prompt typically ends with the `$` sign, and may be preceded by information that depends on the details of the system you are using. For example, in [Figure 6](#fig_components_command_line), the prompt is composed by the concatenation of the following strings: (1) the name of the user: `amar0078`; (2) the `@` sign; (3) the name of the machine: `MVAZ1STUL01004`; (5) a space character; and (6) the directory of the file system in which one is currently located; the `~` symbol is an alias for the home directory of the user. This latter concept (i.e., user home directory) will be introduced later in [Section 1.3.1](#131-directory-structure).
@@ -112,7 +113,7 @@ Figure 6. The command-line in [Figure 1](#fig_command_example) dissected into it
 > *__Exercise 1:__* Taking as a reference [Figure 6](#fig_components_command_line), identify the *prompt*, *command*, *flag* (if any), *argument* (if any), and *cursor* of the command-line commands shown in [Figure 7](#fig_exercise_prompt). *Hint:* the cursor is only shown on the current line, i.e., the line in which we are about to introduce the next command of the terminal session. 
 ------
 
-<a name="fig_exercise_prompt"></a> ![fig:exercise_prompt](figures/exercise_prompt.png)
+<a name="fig_exercise_prompt"></a> ![fig:exercise_prompt](figures/exercise_prompt.png)<br>
 Figure 7. A series of Unix command-line commands. 
 
 ### 1.1.3. Typing our first commands. Looking for help using `man`
@@ -189,7 +190,7 @@ The shell includes a very useful command to get comprehensive information about 
 
 
 
-<a name="fig_echo_command_output"></a> ![fig:echo_command_output](figures/echo_command_output.png)
+<a name="fig_echo_command_output"></a> ![fig:echo_command_output](figures/echo_command_output.png)<br>
 Figure 9. The output of `man echo` as displayed in the Cygwin terminal.
 
 It is possible to scroll down through the output of `man` using the down arrow key or the space bar. These let you access to the rest of the manual one line and one page at a time, respectively. The current line of the manual in which we are positioned is indicated in the message at the bottom of [Figure 9](#fig_echo_command_output), along with other useful information. As stated by this message, pressing the key labeled as `Q` in the keyboard lets you exit from the manual page, while pressing the one labeled `H`, takes you to a help page with all navigation options explained. The navigation of man pages is actually managed internally by another command, named `less`, that we later explore in [Section 1.5.4](#154-paging-output-with-less).
@@ -200,7 +201,7 @@ It is possible to scroll down through the output of `man` using the down arrow k
 
 Indeed, in many cases, and in particular as a beginner, you may find man pages difficult to understand. However, being able to navigate a man page, and understand what it is telling you about a given command is often very helpful. To better familiarise yourself with UNIX commands, we recommend that you go over the manual page of each new command that you want to explore even if the details are not completely legible at this stage. 
 
-<a name="fig_man_command_output"></a> ![fig:echo_command_output](figures/man_command_output.png)
+<a name="fig_man_command_output"></a> ![fig:echo_command_output](figures/man_command_output.png)<br>
 Figure 10. The output of `man man` as displayed in the Cygwin terminal.
 
 ------
@@ -1139,12 +1140,12 @@ Let us assume that we want to create a file `TODO.txt`, where we want to list al
 * The 3rd line from the bottom indicates the status of the file you're editing; in the image below it shows that `TODO.txt` is a “New File”.
 * The last two lines of the screen present a menu of useful keyboard commands. For example, `^X` means that pressing `Ctrl+X` will exit the `nano` text editor. These are not the only commands available, to see an entire list of commands enter `Ctrl+G`, which will bring up the help window.
 
-<a name="fig_nano_start_page"></a> ![fig:nano_start_page](figures/nano_start_page.png)
+<a name="fig_nano_start_page"></a> ![fig:nano_start_page](figures/nano_start_page.png)<br>
 Figure 12. The GNU `nano` editor window right after opening a new file called `TODO.txt`.
 
 At this point you can type the contents of the file. Enter the text exactly as you see in [Figure 13](#fig_nano_editing). Notice that, after your first keystroke, the word “Modified” appears in the upper-right corner; this shows that you have changed the contents of your file but it has not been written to the file system yet. Once you have entered all the text, save the file by pressing `Ctrl+O` (look at the second-last row, the second command is `^O` which means to “Write Out” the file to the file system).
 
-<a name="fig_nano_editing"></a> ![fig:nano_editing](figures/nano_text_editing.png)
+<a name="fig_nano_editing"></a> ![fig:nano_editing](figures/nano_text_editing.png)<br>
 Figure 13. Contents introduced in the `TODO.txt` file using `nano`.
 
 After entering the “WriteOut” (`^O`) command, `nano` will display a prompt on the status line to verify that you really want to write the file contents to the file system. Go ahead and press the `Enter` key, and `nano` will tell you how many lines of text it wrote on the status line. Notice also that the “Modified” indicator in the upper-right corner has disappeared because the file has been saved. At this point you can exit the nano program (`^X`) to go back to the shell prompt.  Now you have written a file, you can take a look at it with `less` or `cat`, or open it up again and edit it with `nano`.

@@ -420,7 +420,7 @@ The former file (`id_rsa`) contains the private key, while the latter (`id_rsa.p
 
 Once we have created the SSH keys, we have to associate the public key to your GitHub profile. To this end, you have to [login into GitHub](https://github.com/login) using your GitHub's user e-mail and password. Once you are logged in, in the upper-right corner of any page, click on your profile photo, and then on the drop-down list, click on "Settings". Then, on the left frame, click on "SSH and GPG keys". You should arrive to the screen shown in [Figure 1](fig:ssh_keys).
 
-<a name="fig_ssh_keys_1"></a> ![fig:ssh_keys_1](figures/add_ssh_key_step1.png)
+<a name="fig_ssh_keys_1"></a> ![fig:ssh_keys_1](figures/add_ssh_key_step1.png)<br>
 Figure 1. Linking your public SSH key with your GitHub account. (Step 1)
 
 
@@ -430,7 +430,7 @@ Figure 1. Linking your public SSH key with your GitHub account. (Step 1)
 
 Then, you have to click on the "New SSH key" green button at the top right of [Figure 1](fig:ssh_keys). You will then arrive to the screen in [Figure 2](fig:ssh_keys_2).
 
-<a name="fig_ssh_keys_2"></a> ![fig:ssh_keys_2](figures/add_ssh_key_step2.png)
+<a name="fig_ssh_keys_2"></a> ![fig:ssh_keys_2](figures/add_ssh_key_step2.png)<br>
 Figure 2. Linking your public SSH key with your GitHub account. (Step 2)
 
 In [Figure 2](fig:ssh_keys_2), you have to fill two text boxes, the one labelled as "Title", and the one labelled as "Key". First, in the one labelled as "Title" you can put whatever (intention revealing) name you like to your key. In this case, we put "Public Key at MVAZ1STUL01023's Cygwin node", where `MVAZ1STUL01023` is the name of the MoVE compute node that is hosting the public key (you can retrieve it from the shell prompt or typing the `hostname` command.) Second, in the one labelled as "Key" you have to put your public SSH key, that is, the contents of the previously generated `id_rsa.pub` file. To this end, you can display on screen the contents of the file:
@@ -444,7 +444,7 @@ and then copy & paste its contents from the command-line to the "Key" text box. 
 > *__Note:__*  In order to copy text from the Cygwin terminal into the Clipboard, you have to left-click at the beginning of the text you want to highlight and hold it pressed. While holding the left mouse button, drag the cursor to the end of the text and release the mouse button. Once completed, all text from the beginning to the end should be highlighted.
 Finally, you have to Right click on the top bar of the Cygwin terminal window, and select `Edit->Copy` from the drop down list.
 
-<a name="fig_ssh_keys_3"></a> ![fig:ssh_keys_3](figures/add_ssh_key_step3.png)
+<a name="fig_ssh_keys_3"></a> ![fig:ssh_keys_3](figures/add_ssh_key_step3.png)<br>
 Figure 3. Linking your public SSH key with your GitHub account. (Step 3)
 
 
@@ -458,17 +458,17 @@ However, as already mentioned several times before, the contents of the home dir
 To create a new project in GitHub (and an associated Git repository on the Cloud), log in and go to the GitHub user's home page (if you do not find it, then just insert https://github.com/ on the browser once you are logged in). You should see a similar screen to that in [Figure 4](#fig:github_home). 
 
 
-<a name="fig_github_home"></a> ![fig:github_home](figures/start_a_project_github.png)
+<a name="fig_github_home"></a> ![fig:github_home](figures/start_a_project_github.png)<br>
 Figure 4. GitHub user's home page.
 
 Click on "Start a project". You will be redirected to the page in [Figure 5](fig:github_new_repo). There, you have to provide a name for your GitHub Git repository (let us call it `repository4sci1022`), a Description (let us put "This is my first repository for the SCI1022 Introduction to Version Control using Git"), and finally whether we want our repository to be Public or Private. As we want to ship our project to the wide world, we will use Public in this case. Finally, we have to click on the "Create Repository" button in [Figure 5](fig:github_new_repo).
 
-<a name="fig_github_new_repo"></a> ![fig:github_new_repo](figures/create_new_repo_github.png)
+<a name="fig_github_new_repo"></a> ![fig:github_new_repo](figures/create_new_repo_github.png)<br>
 Figure 5. GitHub's "Create a new repository" page.
 
 After this process, our GitHub repository has been already created. It can be accessed from a web browser using the following URL: `https://github.com/your_github_username/repository4sci1022`, where obviously you have to replace `your_github_username` by your GitHub's user name. When you visit that page, you will get an screen similar to that shown in [Figure 6](fig:github_repo_quick_setup).
 
-<a name="fig_github_repo_quick_setup"></a> ![fig:github_repo_quick_setup](figures/github_repo_quick_setup.png)
+<a name="fig_github_repo_quick_setup"></a> ![fig:github_repo_quick_setup](figures/github_repo_quick_setup.png)<br>
 Figure 6. A just created GitHub project.
 
 Essentially the page in [Figure 6](fig:github_new_repo) is informing us that the GitHub Git repo is void. Besides, it offers us several possibilities in order to populate it. 
@@ -498,7 +498,7 @@ means that we will be able to download any changes automatically when we run `gi
 
 If pushing succeeded, then, after re-loading `https://github.com/your_github_username/repository4sci1022` on your web browser, you should be able to see an screen similar to that shown in [Figure 7](fig:github_after_push).
 
-<a name="fig_github_after_push"></a> ![fig:github_after_push](figures/github_after_push.png)
+<a name="fig_github_after_push"></a> ![fig:github_after_push](figures/github_after_push.png)<br>
 Figure 7. The GitHub repository home page after pushing from the local Git repository created in the Cygwin terminal. 
 
 ----
@@ -540,7 +540,7 @@ This is an **example** README.md file
 
 The first argument to the `git clone` is the clone URL (yours will differ, replace `amartinhuertas` by your GitHub username). The clone URL of a project in GitHub can be obtained from the home page of the project, as shown in [Figure 8](fig:github_clone_url).  
 
-<a name="fig_github_clone_url"></a> ![fig:github_clone_url](figures/github_clone_url.png) 
+<a name="fig_github_clone_url"></a> ![fig:github_clone_url](figures/github_clone_url.png)<br> 
 Figure 8. Obtaining the clone URL from the GitHub's repository home page. 
 
 By default, `git clone` uses the repository name for the local folder that it creates in order to hold the repository data, i.e., `repository4sci1022` in our case. This default behaviour can be overridden if one provides a second argument to `git clone` with the name desired for the local folder to be created as part of the cloning process.
@@ -691,7 +691,7 @@ To github.com:amartinhuertas/repository4sci1022.git
 As a result, the branch is automatically created on the remote repository.
 If you refresh the GitHub page at your browser, you will see a note saying that a branch has just been pushed into the repository. You can also click the "2 branches" link to see your branch listed there. See [Figure 8](fig:fig_branch_pushed).
 
-<a name="fig_branch_pushed"></a> ![fig:fig_branch_pushed](figures/branch_pushed.png) 
+<a name="fig_branch_pushed"></a> ![fig:fig_branch_pushed](figures/branch_pushed.png)<br> 
 Figure 8. The GitHub project home page right after pushing the `add_shakespeare_sonnets` branch.
 
 
@@ -706,15 +706,15 @@ Figure 8. The GitHub project home page right after pushing the `add_shakespeare_
 ### 1.11.3. Create a Pull Request
 <a id="markdown-create-a-pull-request" name="create-a-pull-request"></a>
 
-A pull request (PR) is a way to alert the GitHub repository owner(s) that you want to make some changes to their project. It allows them to **review the changes proposed** and make sure that they look the way they should before before merging them on the `master` branch.
+A pull request (PR) is a way to alert the GitHub repository owner(s) that you want to make some changes to their project. It allows them to **review the changes proposed** and make sure that they look the way they should before before merging themqgiq on the `master` branch.
 In order to create a PR, click on the "Compare & pull request" green button shown in [Figure 8](fig:fig_branch_pushed). This leads to the page shown in [Figure 9](fig:fig_pr_create)
 
-<a name="fig_pr_create"></a> ![fig:fig_pr_create](figures/github_create_pr.png) 
+<a name="fig_pr_create"></a> ![fig:fig_pr_create](figures/github_create_pr.png)<br> 
 Figure 9. The create PR page.
 
 In general, it is desirable to write a thorough report of the changes to be merged. We, nevertheless, skip this step, as the title suggested by GitHub is already an accurate description of the PR. In order to create the PR, we have to click on the "Create pull request" button. This leads you to the page shown in [Figure 10](fig:fig_pr).
 
-<a name="fig_pr"></a> ![fig:fig_pr](figures/pr_page.png) 
+<a name="fig_pr"></a> ![fig:fig_pr](figures/pr_page.png)<br> 
 Figure 10. The PR page.
 
 You will see a big green button at the bottom that says "Merge pull request". Clicking this will merge your changes into the `master` branch. Sometimes you will be a co-owner or the sole owner of a Git repository, in which case you may not need to create a PR to merge your changes. However, it is still a best practice to make one so you can keep a more complete history of your updates and to make sure you always create a new branch when making changes.
@@ -853,12 +853,12 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 As indicated in the penultimate line, Git has detected a merge conflict after the pull. The set of files with merge conflicts still to be resolved can be printed on screen using `git status`. We can see the effect of this conflict by viewing the file `README.md` in `nano`, as shown in [Figure 11](fig:nano_conflict). 
 
-<a name="fig_nano_conflict"></a> ![fig:nano_conflict](figures/nano_conflict.png) 
+<a name="fig_nano_conflict"></a> ![fig:nano_conflict](figures/nano_conflict.png)<br> 
 Figure 11. A file with a merge conflict highlighted.
 
 The highlighted text in [Figure 11](fig:nano_conflict) states that there are two conflicting versions of the first line of `README.md`. In the first, i.e., `HEAD` (our local version), the "example" word appears with no special format. In the second, i.e., the one corresponding to our collaborator's commit with hash `cebc330 ...` ,  the "example" word appears in italics. We prefer the word with no format, so that we manually solve the conflict by editing the `README.md` file, with the result shown in [Figure 12](fig:nano_conflict_solved). 
 
-<a name="fig_nano_conflict_solved"></a> ![fig:nano_conflict_solved](figures/nano_conflict_solved.png) 
+<a name="fig_nano_conflict_solved"></a> ![fig:nano_conflict_solved](figures/nano_conflict_solved.png)<br> 
 Figure 11. The file `README.md` with the merge conflict solved.
 
 After saving the file, we can commit the file with the conflict resolved, and, at this point, we are ready to push in to `master` (check it!).
