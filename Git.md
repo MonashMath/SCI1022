@@ -351,7 +351,7 @@ $ cat README.md
 This is an **example** README.md file
 ```
 
-Note that, after using `git checkout`, there are no unstaged changes anymore, i.e., the second line that we added to `README.md` is no longer there. We finish this section by creating a new commit including git c the only change that we finally included in the staging area, i.e., to put "example" in bold face:
+Note that, after using `git checkout`, there are no unstaged changes anymore, i.e., the second line that we added to `README.md` is no longer there. We finish this section by creating a new commit including only the change that we just made in the staging area, i.e., to put "example" in bold face:
 
 ```bash
 $ git commit # As always, use nano to write an intention revealing message
