@@ -50,4 +50,4 @@ Therefore, do not assume in your answer that the current working directory is `~
 >   $ cd ~ 
 >   $ touch file.txt
 > ```
-even if the home folder is typically the current working directory when you just open a new terminal session.
+> even if the home folder is typically the current working directory when you just open a new terminal session.
