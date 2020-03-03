@@ -248,7 +248,7 @@ that lists all commits made to a repository in reverse chronological order. The 
 ## 1.7. Modifying an already tracked file. Viewing the diff
 <a id="markdown-modifying-an-already-tracked-file-viewing-the-diff" name="modifying-an-already-tracked-file-viewing-the-diff"></a>
 
-So far we have created 3 commits on our **local** repository. Each of these three commits added a single **new** file, i.e., `README.md`, `file1.txt`, and `file2.txt`, respectively. However, we also want to modify the contents of files which are already tracked by Git. When we do that, it is often very useful to be able to see the changes that we have performed on a file (set of files) before adding them to the staging area, i.e., before preparing Git for a new commit. To see how does it work, let's put the word "example" in the `README.md` file in boldface using Markdown as follows (note that we just added `**` before and after the word "example"):
+So far we have created 3 commits on our **local** repository. Each of these three commits added a single **new** file, i.e., `README.md`, `file1.txt`, and `file2.txt`, respectively. However, we may also want to modify the contents of files which are already tracked by Git. When we do so, it is often useful to be able to see the changes that we have performed on a file (or set of files) before adding them to the staging area, i.e., before preparing Git for a new commit. As an example, let's put the word "example" in the `README.md` file in boldface using Markdown as follows (note that we just added `**` before and after the word "example"):
 
 ```bash
 $ nano README.md # Use nano to modify the contents of README.md as shown below 
@@ -286,7 +286,7 @@ $ git diff
 $ 
 ```
 
-**We can see that now the output `git diff` is empty**. This is because there is no difference among the unstaged version of `README.md` and the staged version of it. To be more precise, there are actually no unstaged changes pending to be added to the staging area. To see the difference among the staged changes and the previous version of the repository, i.e., the previous commit, we can use the following command:
+**We can see that now the output `git diff` is empty**. This is because there is no difference between the unstaged version of `README.md` and the staged version. To be more precise, there are actually no unstaged changes pending to be added to the staging area. To see the difference between the staged changes and the previous version of the repository, i.e., the previous commit, we can use the following command:
 
 ```bash
 $ git diff --staged
@@ -330,11 +330,11 @@ that is, there are actually two different of sets of changes into `README.md` wi
 
 ----
 > *__Exercise 3:__*
-> Recall that `git diff` returns by default the difference between the staged version of a file and the version of the file with those changes that are yet unstaged. According to this, can you advance what will `git diff` output in the current scenario? Why? Run `git diff` and check whether your conclusion matches the actual result. Repeat the same exercise with `git diff --staged`.
+> Recall that `git diff` returns by default the difference between the staged version of a file and the version of the file with those changes that are yet unstaged. According to this, can you predict what will `git diff` output in the current scenario? Why? Run `git diff` and check whether your conclusion matches the actual result. Repeat the same exercise with `git diff --staged`.
 >
 > *__Exercise 4:__*
 > If we run `git diff commit_hash`, where `commit_hash` is the hash of a commit in the past, then Git reports the differences among the version of the file corresponding to the commit with commit hash `commit_hash` and the version of the file that includes both unstaged and staged changes. 
-Retrieve the commit's hash of the last commit that we performed so far using `git log`, and use `git diff commit_hash` to confirm that behaviour of this latter command.
+Retrieve the commit's hash of the last commit that we performed using `git log`, and use `git diff commit_hash` to confirm that behaviour of this latter command.
 ----
 
 At this point we are faced with two options (that are indeed pointed out by the very helpful output of `git status`). We can either discard unstaged changes, or add them to the staging area. We will opt for the first option. In order to do so, we have to use the `git checkout` Git command as follows:
