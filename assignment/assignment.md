@@ -38,7 +38,7 @@ We recommend a workflow based on three Gygwin terminal windows. In the first ter
 
 2. Change the current working directory to `/usr/lib`. Write two different commands in order to output on screen the size in bytes and the permissions of `hamlet.txt`. The first command must use an absolute path, while the second a relative one (with respect to the current working directory, i.e.,  `/usr/lib`). *Hint 1:* Use the `ls` command with an appropriate flag. *Hint 2:* run `pwd` with the current working directory located at your home directory in order to grasp the structure of its absolute path.
 
-3. Print the number of lines, words and bytes in `hamlet.txt` on screen. Check that the latter figure matches the one that you obtained in task #3.
+3. Print the number of lines, words and bytes in `hamlet.txt` on screen. Check that the latter figure matches the one that you obtained in task #2.
 
 4.  Write **a single-line** command that outputs line #3447 of `hamlet.txt`. *Hint:* use `head`, `tail`, command pipelining, and the appropriate flags.
 
