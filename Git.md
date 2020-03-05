@@ -364,12 +364,12 @@ $
 <a id="markdown-backing-up-and-shipping-the-local-repository-on-github" name="backing-up-and-shipping-the-local-repository-on-github"></a>
 
 
-In this section we are going to back up your local repository on GitHub and ship it to the public, i.e., anyone with an Internet connection is going to be able to access to its contents (and the project's history). Recall that one of the hallmarks of Git is that it allows shipping your work to others, and work collaboratively with them. While shipping means exposing your work (also to those which are going to be critic with it), it is the first step towards finding collaborators. 
+In this section we are going to back up your local repository on GitHub and ship it to the public, i.e., anyone with an Internet connection is going to be able to access to its contents (and the project's history). Recall that one of the hallmarks of Git is that it allows you to ship your work to others, and to work collaboratively with them. While shipping means exposing your work (including to those who are going to be critical of it), it is the first step towards building collaborations. 
 
 ### 1.8.1. Creating an account on GitHub
 <a id="markdown-creating-an-account-on-github" name="creating-an-account-on-github"></a>
 
-If you do not have already a GitHub account linked to your Monash e-mail, please open a new one by visiting the [GitHub signup page](https://github.com/join). Use preferably the same e-mail address that you previously used in [Section 1.6](#16-the-concept-of-staging-area-creating-our-first-commit), e.g., your Monash e-mail address. This is not actually mandatory, but highly recommended, as this set up will allow GitHub to link your Git activity (e.g., commits) to your GitHub user.
+If you do not have already a GitHub account linked to your Monash e-mail, please open a new one by visiting the [GitHub signup page](https://github.com/join). Preferably use the same e-mail address that you previously used in [Section 1.6](#16-the-concept-of-staging-area-creating-our-first-commit), e.g., your Monash e-mail address. This is not actually mandatory, but recommended doing so, as this set up will allow GitHub to link your Git activity (e.g., commits) to your GitHub user.
 
 ### 1.8.2. Connecting to GitHub with SSH keys
 <a id="markdown-connecting-to-github-with-ssh-keys" name="connecting-to-github-with-ssh-keys"></a>
@@ -399,10 +399,10 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-> *__Note:__* In the likely case you do not fully understand what the `ssh-keygen` command does, nor what do their flags and arguments mean, that is ok, even if you are not 100% sure of what you are doing. It is important that you acquire the ability to follow a list of commands even without completely understanding them. If you are interested, you can read more about SSH keys [here](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh). 
+> *__Note:__* In the likely case you do not fully understand what the `ssh-keygen` command does, nor what do their flags and arguments mean, don't worry. It is important that you acquire the ability to follow a list of commands even without completely understanding them. If you are interested, you can read more about SSH keys [here](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh). 
 
-> *__Note:__* When generating the private key above, we did not actually provide any passphrase, we just hit the Return key, which means no passphrase. However, it is, in general, **highly recommended** to have a  passphrase. The passphrase is used as an additional protection of your private key in case it is stolen. In particular, it is used to cipher the contents of the private key before storing it into the `id_rsa` file. We did not actually use it for simplicity, i.e., in order to avoid Git asking it in the command-line each time that we have to interact with GitHub.
-In any case, even with a passphrase, one can avoid Git asking it using the so-called [SSH Agent](https://en.wikipedia.org/wiki/Ssh-agent). The usage of SSH Agent is, however, out of the scope of this tutorial.
+> *__Note:__* When generating the private key above, we did not actually provide any passphrase, we just hit the Return key, which means no passphrase was supplied. However in general it is **highly recommended** to have a  passphrase. The passphrase is used as an additional protection of your private key in case it is stolen. In particular, it is used to cipher the contents of the private key before storing it into the `id_rsa` file. We did not actually use it for simplicity, i.e., in order to avoid Git prompting us for the passphrase in the command-line each time that we have to interact with GitHub.
+In any case, even with a passphrase, one can prevent Git from asking for it using the so-called [SSH Agent](https://en.wikipedia.org/wiki/Ssh-agent). The usage of SSH Agent is, however, out of the scope of this tutorial.
 
 If the command succeeded, there should be (at least) two different files in the `~/.ssh/` folder named `id_rsa` and `id_rsa.pub`:
 
@@ -413,18 +413,18 @@ total 9
 -rw-r--r--+ 1 amar0078 Domain Users  743 Feb 24 21:53 id_rsa.pub
 ```
 
-The former file (`id_rsa`) contains the private key, while the latter (`id_rsa.pub`) the public one.  **You should never expose nor send to anyone the private key** (note indeed its very restrictive file permissions). On the other hand, the public key can be shared with anyone, i.e., GitHub in our case. 
+The first file (`id_rsa`) contains the private key, while the second (`id_rsa.pub`) contains the public one.  **You should never expose nor send to anyone the private key** (note its very restrictive file permissions). On the other hand, the public key can be shared with anyone, i.e., GitHub in our case. 
 
-> *__Note:__* In the event that the permissions of `id_rsa` do not look like in the previous listing, you **MUST** force them manually using, e.g., the following command: `chmod og-rwx ~/.ssh/id_rsa`. See [Section 1.4.2](./Unix-CLI.md#142-permissions).
+> *__Note:__* In the event that the permissions of `id_rsa` do not look like in the previous listing, you **MUST** force them manually using the following command: `chmod og-rwx ~/.ssh/id_rsa`. See [Section 1.4.2](./Unix-CLI.md#142-permissions).
 
-Once we have created the SSH keys, we have to associate the public key to your GitHub profile. To this end, you have to [login into GitHub](https://github.com/login) using your GitHub's user e-mail and password. Once you are logged in, in the upper-right corner of any page, click on your profile photo, and then on the drop-down list, click on "Settings". Then, on the left frame, click on "SSH and GPG keys". You should arrive to the screen shown in [Figure 1](#fig_ssh_keys_1).
+Once we have created the SSH keys, we have to associate the public key to your GitHub profile. To do so you have to [login into GitHub](https://github.com/login) using your GitHub's user e-mail and password. Once you are logged in, in the upper-right corner of any page, click on your profile picture, and then on the drop-down list, click on "Settings". Then, on the left frame, click on "SSH and GPG keys". You should arrive to the screen shown in [Figure 1](#fig_ssh_keys_1).
 
 <a name="fig_ssh_keys_1"></a> <img src="figures/add_ssh_key_step1.png" alt="" width="100%"/><br>
 Figure 1. Linking your public SSH key with your GitHub account. (Step 1)
 
 
-> *__Note:__*  GitHub actively develops its user interface, so
-[Figure 1](#fig_ssh_keys_1) and other GitHub screenshots shown along the section may not match the ones that you are observing in your browser exactly, but this is not a cause for concern. We expect you to be able to resolve any discrepancies on your own.
+> *__Note:__*  GitHub often revises its user interface, so
+[Figure 1](#fig_ssh_keys_1) and other GitHub screenshots shown in this section may not exactly match the ones that you see in your browser, so don't worry. We expect you to be able to resolve any discrepancies on your own.
 
 
 Then, you have to click on the "New SSH key" green button at the top right of [Figure 1](#fig_ssh_keys_1). You will then arrive to the screen in [Figure 2](#fig_ssh_keys_2).
@@ -432,7 +432,7 @@ Then, you have to click on the "New SSH key" green button at the top right of [F
 <a name="fig_ssh_keys_2"></a> <img src="figures/add_ssh_key_step2.png" alt="" width="100%"/><br>
 Figure 2. Linking your public SSH key with your GitHub account. (Step 2)
 
-In [Figure 2](#fig_ssh_keys_2), you have to fill two text boxes, the one labelled as "Title", and the one labelled as "Key". First, in the one labelled as "Title" you can put whatever (intention revealing) name you like to your key. In this case, we put "Public Key at MVAZ1STUL01023's Cygwin node", where `MVAZ1STUL01023` is the name of the MoVE compute node that is hosting the public key (you can retrieve it from the shell prompt or typing the `hostname` command.) Second, in the one labelled as "Key" you have to put your public SSH key, that is, the contents of the previously generated `id_rsa.pub` file. To this end, you can display on screen the contents of the file:
+In [Figure 2](#fig_ssh_keys_2), you have to fill two text boxes, the one labelled as "Title", and the one labelled as "Key". First, in the one labelled as "Title" you can put whatever (meaningfully descriptive) name you like for your key. In this case, we put "Public Key at MVAZ1STUL01023's Cygwin node", where `MVAZ1STUL01023` is the name of the MoVE compute node that is hosting the public key (you can retrieve it from the shell prompt or typing the `hostname` command.) Second, in the one labelled as "Key" you have to put your public SSH key, that is, the contents of the previously generated `id_rsa.pub` file. To this end, you can display on screen the contents of the file:
 
 ```bash
 $ cat ~/.ssh/id_rsa.pub
