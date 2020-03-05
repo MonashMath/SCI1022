@@ -558,10 +558,7 @@ If you are working alone in your project, it is recommended that your Git workfl
 To illustrate the commit+push cycle, let us perform a pair of cycle iterations. In particular, let us add to the `README.md` file an image containing a portrait of [William Shakespeare](https://en.wikipedia.org/wiki/William_Shakespeare) that we will borrow from Wikipedia. To this end, we will create a new folder called `figures`, in the ls
 local Git repository where we will store the image with the portrait.  Then, we will add a link  to that image in the `README.md` file.  We will split this work into two commits, in the first we will add the folder and the image and, in the second, we will modify the `README.md` file. After each commit, we will be invoking `git push` to send our progress to the remote repository at GitHub.  
 
-The commands required to carry out the first iteration are (i.e., create the `figures` folder, download the image from the Internet into the new folder, add the whole folder to the staging area, commit, and push):
-
-We note that it is not strictly necessary to follow the commit+push cycle. You can, e.g., perform 10 consecutive local commits, and then push them in one shot using a single `git push` command. However, we believe it is a good idea to get in the habit of pushing up to the remote repository frequently, as it serves as a guaranteed backup of the project while also allowing collaborators to "pull" in any
-changes, as we will see in the next section.
+The commands required to carry out the first steps (i.e., create the `figures` folder, download the image from the Internet into the new folder, add the whole folder to the staging area, commit, and push) are:
 
 ```bash
 $ cd ~/Documents/repository4sci1022
@@ -583,13 +580,16 @@ To github.com:amartinhuertas/repository4sci1022.git
    25ab4de..6f9a119  master -> master
 ```
 
+ > *__Note:__* It is not strictly necessary to follow the commit+push cycle. You can, for example, perform 10 consecutive local commits, and then push them in one shot using a single `git push` command. However, we believe it is a good idea to get in the habit of pushing up to the remote repository frequently, as it serves as a guaranteed backup of the project while also allowing collaborators to "pull" in any
+changes, as we will see in the next section.
+
 In the last command, we explicitly tell `git push` to push the new commit to the **origin** remote repository. However, as mentioned before, origin is the default repository one interacts with if no remote repository is specified. Thus, if we replaced the `git push origin` by `git push` in the previous box we would be achieving exactly the same result. 
 
 
 > *__Exercise 7:__*
 By refreshing the GitHub repository in your browser, confirm the presence of the new file by clicking on the `figures` directory link, and then on the `shakespeare_portrait.jpg` image file.
 
-The commands required to carry out the second iteration are (i.e., edit the `README.md` file as shown below, add the changes to the index, commit, and push):
+The commands required to carry out the second steps (i.e., edit the `README.md` file as shown below, add the changes to the index, commit, and push) are:
 
 ```bash
 $ cd ~/Documents/repository4sci1022
