@@ -460,12 +460,12 @@ To create a new project in GitHub (and an associated Git repository on the Cloud
 <a name="fig_github_home"></a> <img src="figures/start_a_project_github.png" alt="" width="100%"/><br>
 Figure 4. GitHub user's home page.
 
-Click on "Start a project". You will be redirected to the page in [Figure 5](#fig_github_new_repo). There, you have to provide a name for your GitHub Git repository (let us call it `repository4sci1022`), a Description (let us put "This is my first repository for the SCI1022 Introduction to Version Control using Git"), and finally whether we want our repository to be Public or Private. As we want to ship our project to the wide world, we will use Public in this case. Finally, we have to click on the "Create Repository" button in [Figure 5](#fig_github_new_repo).
+Click on "Start a project". You will be redirected to the page in [Figure 5](#fig_github_new_repo). There, you have to provide a name for your GitHub Git repository (let us call it `repository4sci1022`), a description (let us put "This is my first repository for the SCI1022 Introduction to Version Control using Git"), and finally whether we want our repository to be Public or Private. As we want to ship our project to the wide world, we will use Public in this case. Finally, we have to click on the "Create Repository" button in [Figure 5](#fig_github_new_repo).
 
 <a name="fig_github_new_repo"></a> <img src="figures/create_new_repo_github.png" alt="" width="100%"/><br>
 Figure 5. GitHub's "Create a new repository" page.
 
-After this process, our GitHub repository has been already created. It can be accessed from a web browser using the following URL: `https://github.com/your_github_username/repository4sci1022`, where obviously you have to replace `your_github_username` by your GitHub's user name. When you visit that page, you will get an screen similar to that shown in [Figure 6](#fig_github_repo_quick_setup).
+After this process, our GitHub repository has been created. It can now be accessed from a web browser using the following URL: `https://github.com/your_github_username/repository4sci1022`, where you have to replace `your_github_username` by your GitHub account user name. When you visit that page, you will get a screen similar to that shown in [Figure 6](#fig_github_repo_quick_setup).
 
 <a name="fig_github_repo_quick_setup"></a> <img src="figures/github_repo_quick_setup.png" alt="" width="100%"/><br>
 Figure 6. A just created GitHub project.
@@ -492,7 +492,7 @@ To github.com:amartinhuertas/repository4sci1022.git
  * [new branch]      master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
-Of course, you should replace `amartinhuertas` by your GitHub actual username. These two commands set GitHub as the **origin** remote repository of the local Git repository and then push the full (local) repository there, respectively. The **origin** is the default remote repository that one interacts with when you do not explicitly specify a remote repository in a git command. (We note that a local repository might be connected to several remote repositories.)  The `-u` option to `git push` sets GitHub as the upstream repository, which
+Of course, you should replace `amartinhuertas` by your own GitHub username. These two commands set GitHub as the **origin** remote repository of the local Git repository and then push the full (local) repository there, respectively. The **origin** is the default remote repository that one interacts with when you do not explicitly specify a remote repository in a git command. (We note that a local repository might be connected to several remote repositories.)  The `-u` option to `git push` sets GitHub as the upstream repository, which
 means that we will be able to download any changes automatically when we run `git pull`. Do not worry about these details, though; you will almost always copy such commands from GitHub and probably will not ever have to figure them out on your own.
 
 If pushing succeeded, then, after re-loading `https://github.com/your_github_username/repository4sci1022` on your web browser, you should be able to see an screen similar to that shown in [Figure 7](#fig_github_after_push).
@@ -511,14 +511,14 @@ Figure 7. The GitHub repository home page after pushing from the local Git repos
 
 The first step to start contributing to a project (e.g., [a scientific computing software package](https://github.com/nschloe/awesome-scientific-computing)) hosted on a Cloud service such as GitHub,  consists on performing an operation referred to as "cloning a remote repository". This is achieved by means of the `git clone` command. This operation **fully copies all files and folders and project history stored in a remote repository into a new directory on the local file system**. This new directory becomes itself a full repository. (Recall, from [Section 1.1](#11-version-control-in-a-nutshell), that Git is a distributed VCS.) 
 
-One of the most useful features of Git is its ability to let us recover from errors that would otherwise be **catastrophic**. Perhaps the most serious mess that one can make is to (unintentionally) remove the local folder containing the Git repository. In our particular scenario, as we do not have local changes to be staged, changes stagged, nor commits pending to be pushed to the remote repository at GitHub, this would not lead to lost work, as we can clone the remote version of the repository from GitHub. Therefore, let us (intentionally) remove our project's local Git repository (because of obvious reasons, **please be extremely careful** to ensure that you type exactly the commands in the next box, and **not**, e.g, `rm -Rf ~/`):
+One of the most useful features of Git is its ability to let us recover from errors that would otherwise be **catastrophic**. Perhaps the most serious mess that one can make is to (unintentionally) remove the local folder containing the Git repository. In our particular scenario, as we do not have local changes to be staged, staged changes, nor commits pending to be pushed to the remote repository at GitHub, this would not lead to lost work, as we can clone the remote version of the repository from GitHub. Therefore, let us (intentionally) remove our project's local Git repository (because of obvious reasons, **please be extremely careful** to ensure that you type exactly the commands in the next box):
 
 ```
 $ cd ~/Documents/
 $ rm -Rf myproject
 ```
 
-If we did not have a copy of the local repository on GitHub, there would be no hope of recovering the contents of the `myproject/` folder. Fortunately, we have it, and we can clone the remote repository into the local file system as:
+If we did not have a copy of the local repository on GitHub, there would be no hope of recovering the contents of the `myproject/` folder. Fortunately, since we do, we can clone the remote repository into the local file system as:
 
 ```bash
 $ cd ~/Documents/
@@ -537,7 +537,7 @@ $ cat README.md
 This is an **example** README.md file
 ``` 
 
-The first argument to the `git clone` is the clone URL (yours will differ, replace `amartinhuertas` by your GitHub username). The clone URL of a project in GitHub can be obtained from the home page of the project, as shown in [Figure 8](#fig_github_clone_url).  
+The first argument to the `git clone` command is the clone URL (yours will differ, replace `amartinhuertas` by your GitHub username). The clone URL of a project in GitHub can be obtained from the home page of the project, as shown in [Figure 8](#fig_github_clone_url).  
 
 <a name="fig_github_clone_url"></a> <img src="figures/github_clone_url.png" alt="" width="100%"/><br> 
 Figure 8. Obtaining the clone URL from the GitHub's repository home page. 
@@ -553,9 +553,9 @@ By default, `git clone` uses the repository name for the local folder that it cr
 ## 1.10. Working alone. The commit+push cycle
 <a id="markdown-working-alone-the-commitpush-cycle" name="working-alone-the-commitpush-cycle"></a>
 
-If you are working alone in your project, it is recommended your Git workflow to be based on the commit+push cycle. Essentially, you do some local work, you commit that work (e.g., when you have reached a natural stop, or when you have made enough changes to start worrying about losing them), and then push that commit to **origin**, i.e., the (default) remote repository to which your local repository is linked with.  If you want some advice regarding to the "when to make a commit" dilemma, we recommend, e.g., [this article](https://medium.com/walmartlabs/check-out-these-5-git-tips-before-your-next-commit-c1c7a5ae34d1), although there are many other articles with best practices related to this topic that you may easily find using Google.
+If you are working alone in your project, it is recommended that your Git workflow to be based on the commit+push cycle. Essentially, you do some local work, you commit that work (e.g., when you have made enough changes to start worrying about losing them), and then push that commit to **origin**, i.e., the (default) remote repository to which your local repository is linked with.  If you want some advice regarding the "when to make a commit" dilemma, we recommend, e.g., [this article](https://medium.com/walmartlabs/check-out-these-5-git-tips-before-your-next-commit-c1c7a5ae34d1), although there are many other articles discussing best practices related to this topic that you may easily find using Google.
 
-To illustrate the commit+push cycle, let us perform a pair of cycle iterations. In particular, let us add to the `README.md` file an image containing a portrait of [William Shakespeare](https://en.wikipedia.org/wiki/William_Shakespeare) that we will borrow from Wikipedia. To this end, we will create a new folder, , called `figures`, in the ls
+To illustrate the commit+push cycle, let us perform a pair of cycle iterations. In particular, let us add to the `README.md` file an image containing a portrait of [William Shakespeare](https://en.wikipedia.org/wiki/William_Shakespeare) that we will borrow from Wikipedia. To this end, we will create a new folder called `figures`, in the ls
 local Git repository where we will store the image with the portrait.  Then, we will add a link  to that image in the `README.md` file.  We will split this work into two commits, in the first we will add the folder and the image and, in the second, we will modify the `README.md` file. After each commit, we will be invoking `git push` to send our progress to the remote repository at GitHub.  
 
 The commands required to carry out the first iteration are (i.e., create the `figures` folder, download the image from the Internet into the new folder, add the whole folder to the staging area, commit, and push):
