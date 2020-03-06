@@ -699,7 +699,7 @@ Figure 8. The GitHub project home page right after pushing the `add_shakespeare_
 > On the GitHub page for your project, click on the "Branch: master" drop-down list, and select the  `add_shakespeare_sonnets` branch. Confirm that this branch has an additional commit compared to `master`, and the presence of the cover from the 1609's edition of Shake-Speares Sonnets on the home page of the project.
 ----
 
-> *__Note:__* While we are following these steps using a single GitHub account, we ask you to imagine that these steps where followed by one of our collaborators that wants to add new contents to the main page of our project. Alternatively, we could also imagine ourselves adding content to the `README.md` file corresponding to the project of our collaborator.
+> *__Note:__* While we are following these steps using a single GitHub account, we ask you to imagine that these steps were followed by one of our collaborators that wants to add new contents to the main page of our project. Alternatively, we could also imagine ourselves adding content to the `README.md` file corresponding to the project of our collaborator.
 
 
 ### 1.11.3. Create a Pull Request
