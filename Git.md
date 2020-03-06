@@ -638,7 +638,7 @@ we can list all branches currently defined on the **local Git repository**. The 
 > *__Exercise 9:__* Download the image at hand from the Internet into the `figures/` folder, edit the `README.md` file to include the image downloaded in the previous step, add the new image and the changes of `README.md` to the staging area, and create a new commit.
 *Hint*: the image to be added is available at the following URL: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Sonnets1609titlepage.jpg/220px-Sonnets1609titlepage.jpg
 
-After this commit, the `add_shakespeare_sonnets` has diverged from `master`. The former branch contains a commit that the latter branch does not.  We finished making changes, so we are ready to merge the  `add_shakespeare_sonnets` branch back into the `master` branch. Before merging, we can see the whole set of changes performed using `git diff`. 
+After this commit, the `add_shakespeare_sonnets` branch has diverged from `master`. The former branch contains a commit that the latter branch does not.  Since we have finished making changes, so we are ready to merge the  `add_shakespeare_sonnets` branch back into the `master` branch. Before merging, we can see the whole set of changes performed using `git diff`. 
 We saw in [Section 1.7](#17-modifying-an-already-tracked-file-viewing-the-diff) that this command can be used to see the difference between the unstaged and the staged version of a file, but the same command can be
 used to show differences between branches. This particular command is of  the form `git diff branch-1 branch-2`, but if you leave the branch unspecified Git automatically reports the differences against the current branch. This means we can compare `add_shakespeare_sonnets` and `master` as follows:
 
@@ -699,19 +699,19 @@ Figure 8. The GitHub project home page right after pushing the `add_shakespeare_
 > On the GitHub page for your project, click on the "Branch: master" drop-down list, and select the  `add_shakespeare_sonnets` branch. Confirm that this branch has an additional commit compared to `master`, and the presence of the cover from the 1609's edition of Shake-Speares Sonnets on the home page of the project.
 ----
 
-> *__Note:__* While we are following these steps using a single GitHub account, we ask you to make the effort to think as if these steps where followed by a collaborator of us that wants to add new contents to the main page of our project or, otherwise, ourselves adding content to the `README.md` file corresponding to the project of our collaborator.
+> *__Note:__* While we are following these steps using a single GitHub account, we ask you to imagine that these steps where followed by one of our collaborators that wants to add new contents to the main page of our project. Alternatively, we could also imagine ourselves adding content to the `README.md` file corresponding to the project of our collaborator.
 
 
 ### 1.11.3. Create a Pull Request
 <a id="markdown-create-a-pull-request" name="create-a-pull-request"></a>
 
-A pull request (PR) is a way to alert the GitHub repository owner(s) that you want to make some changes to their project. It allows them to **review the changes proposed** and make sure that they look the way they should before before merging themqgiq on the `master` branch.
+A pull request (PR) is a way to alert the GitHub repository owner(s) that you want to make some changes to their project. It allows them to **review the changes proposed** and make sure that they are correct before before merging them to the `master` branch.
 In order to create a PR, click on the "Compare & pull request" green button shown in [Figure 8](#fig_branch_pushed). This leads to the page shown in [Figure 9](#fig_pr_create)
 
 <a name="fig_pr_create"></a> <img src="figures/github_create_pr.png" alt="" width="100%"/><br>
 Figure 9. The create PR page.
 
-In general, it is desirable to write a thorough report of the changes to be merged. We, nevertheless, skip this step, as the title suggested by GitHub is already an accurate description of the PR. In order to create the PR, we have to click on the "Create pull request" button. This leads you to the page shown in [Figure 10](#fig_pr).
+In general, it is desirable to write a thorough report of the changes to be merged. Here we will skip this step, as the title suggested by GitHub is already an accurate description of the PR. In order to create the PR, we have to click on the "Create pull request" button. This leads you to the page shown in [Figure 10](#fig_pr).
 
 <a name="fig_pr"></a> <img src="figures/pr_page.png" alt="" width="100%"/><br>
 Figure 10. The PR page.
@@ -725,7 +725,7 @@ You will see a big green button at the bottom that says "Merge pull request". Cl
 ### 1.11.4. Merge a Pull Request
 <a id="markdown-merge-a-pull-request" name="merge-a-pull-request"></a>
 
-Go ahead and click the green "Merge pull request" button. This will merge your changes into the `master` branch. When you are done, I recommend deleting your branch (too many branches can become messy), so hit the grey "Delete branch" button as well.
+Go ahead and click the green "Merge pull request" button. This will merge your changes into the `master` branch. When you are done, we recommend deleting your branch (too many branches can become messy), so hit the grey "Delete branch" button as well.
 
 ----
 > *__Exercise 11:__*
@@ -736,7 +736,7 @@ Go ahead and click the green "Merge pull request" button. This will merge your c
 ### 1.11.5. Pulling changes from the remote repository
 <a id="markdown-pulling-changes-from-the-remote-repository" name="pulling-changes-from-the-remote-repository"></a>
 
-Right now, the remote repository on GitHub looks a little different than the local one that is available on the Cygwin terminal. For example, the commit we made in  `add_shakespeare_sonnets` branch and merged into the `master` branch does not exist in the `master` branch of the local repository. Besides, the `add_shakespeare_sonnets` does no longer exist in the GitHub repository, but it does on the local one.
+Right now, the remote repository on GitHub looks a little different than the local one that is available on the Cygwin terminal. For example, the commit we made in the `add_shakespeare_sonnets` branch and merged into the `master` branch does not exist in the `master` branch of the local repository. Besides, the `add_shakespeare_sonnets` no longer exists in the GitHub repository, but it does on the local one.
 
 As the `add_shakespeare_sonnets` branch does not exist on the GitHub repository, it is reasonable that we first checkout the local `master` branch. This is achieved as follows:
 
@@ -779,7 +779,7 @@ The output of the command shows all the files that have changed and how they hav
 > Use `git log` to confirm that the commit history for the branch `master` on the local repository **now** matches the one that can be seen in the GitHub page for your project.
 ----
 
-If you type `git branch`, then you will observe that the `add_shakespeare_sonnets` already exists in the local Git repository.
+If you type `git branch`, then you will observe that the `add_shakespeare_sonnets` branch already exists in the local Git repository.
 We can delete this local branch as well. To this end, we can execute the following command:
 
 ```bash
@@ -818,7 +818,7 @@ $ git commit -m "The word example no longer in boldface at README.md"
  1 file changed, 2 insertions(+), 2 deletions(-)
 ```
 
-In the meantime, a collaborator of yours that **is not project owner**, is not happy either with the "example" word in boldface. He prefers it to be in italics. As he is not project owner, he is forced to propose the change the PR way. 
+In the meantime, a collaborator of yours that **is not project owner**, is not happy either with the "example" word in boldface. He prefers it to be in italics. As he is not project owner, he is forced to propose the change as a pull-request (PR). 
 
 ----
 > *__Exercise 15:__*
@@ -830,10 +830,10 @@ In the meantime, a collaborator of yours that **is not project owner**, is not h
 > 4. Add changes to the staging area and create a new commit into the  `set_example_in_italics_at_readme_file` branch.
 > 5. Push the branch to the remote repository at GitHub, create a PR from `set_example_in_italics_at_readme_file` to `master` at GitHub, and merge this PR at GitHub.
 >
-> Before executing step 5, can you advance whether there will be *merge conflict* in this scenario? Why? Why not? *Hint*: at the beginning of the section, we performed local changes and registered them into a new local commit, but **we did not actually push into `master`**.
+> Before executing step 5, can you predict whether there will be *merge conflict* in this scenario? Why? Why not? *Hint*: at the beginning of the section, we performed local changes and registered them into a new local commit, but **we did not actually push into `master`**.
 ----
 
-Now move to the original local copy of the remote GitHub repository (we will no longer play the role of your collaborator). If you completed successfully the steps in Exercise 15, you should obverse the following after pulling the latest changes into `master` from the remote repository:
+Now move to the original local copy of the remote GitHub repository (we will no longer play the role of your collaborator). If you successfully completed the steps in Exercise 15, you should obverse the following after pulling the latest changes into `master` from the remote repository:
 
 ```
 $ git pull origin master
@@ -866,13 +866,13 @@ The local `master` branch in the local copy of the repository of our collaborato
 
 ----
 > *__Final exercise:__*
-> Create a PR in the GitHub repository available at the following URL: https://github.com/amartinhuertas/SCI1022_git_final_exercise. The PR should include a single commit with a version of the `README.md` file containing a link to the GitHub repository you have created along the session. The line to add should be of the form: "Given Name(s) Family name GitHub repository is available [here](URL of your repo goes here)". This link will allow us evaluate your progress with the tutorial.
+> Create a PR in the GitHub repository available at the following URL: https://github.com/amartinhuertas/SCI1022_git_final_exercise. The PR should include a single commit with a version of the `README.md` file containing a link to the GitHub repository you have created along the session. The line to add should be of the form: "Given name family name's GitHub repository is available [here](URL of your repo goes here)", where "Given name family name" is replaced with your actual name. This link will allow us evaluate your progress with the tutorial.
 ----
 
 ## 1.12. Conclusions and further references
 <a id="markdown-conclusions-references" name="conclusions-references"></a>
 
-After completing this workshop, we expect you, at the very least, to be able to understand **why Git has to become an absolute must-use tool in your daily workflow**. Indeed, we highly encourage that you use Git to track the code that you will develop during the rest of modules in this subject, and more importantly, along your whole career. There is a lot more to learn. For example, we did not cover most of **error-recovery** techniques of Git. One of the most useful features of Git is its ability to let us recover from errors that would otherwise be catastrophic.
+After completing this workshop, we expect you, at the very least, to be able to understand **why Git has to become an absolute must-use tool in your daily workflow**. Indeed, we highly encourage that you use Git to track the code that you will develop during the rest of the modules in this subject, and more importantly, along your whole career. There is a lot more to learn. For example, we did not cover most of the **error-recovery** techniques of Git. One of the most useful features of Git is its ability to let us recover from errors that would otherwise be catastrophic.
 You can learn more about this topic [here](https://medium.com/@i_AnkurBiswas/common-git-mistakes-and-how-to-fix-them-10184cd5fa77) and [here](https://www.git-tower.com/blog/surviving-with-git-videos/).
 If you continue down this technical path you will keep getting better at using Git for years to come.
 
