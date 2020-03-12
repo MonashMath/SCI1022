@@ -7,7 +7,7 @@
 ## Submission instructions
 
 Write an e-mail with the following structure:
- * **To**: `XXX@monash.edu`
+ * **To**: `davidr.lee@monash.edu`
  * **Subject**: Assignment Unix shell and Git Intro
  * **Body**: 
     ```
