@@ -31,8 +31,8 @@
 # 1. Introduction to [Version control](https://en.wikipedia.org/wiki/Version_control) using [Git](https://git-scm.com/) (*2h 40min*).
 <a id="markdown-introduction-to-version-controlhttpsenwikipediaorgwikiversioncontrol-using-git-2h-40min" name="introduction-to-version-controlhttpsenwikipediaorgwikiversioncontrol-using-git-2h-40min"></a>
 
-This tutorial provides an introduction to Version Control using a particular software tool called [Git](https://en.wikipedia.org/wiki/Git). 
-Git belongs to a **crucial class** of tools in the scientific coding workflow referred to as [Version Control Systems](https://en.wikipedia.org/wiki/Version_control) (VCSs). We begin by assuming that you do not know what VCSs and, in particular, Git are (or even have ever heard about them!). All you need is some basic familiarity with the Unix command-line, as Git comes in the form of a Unix-like command. Recall that in the [previous tutorial](Unix-CLI.md) we introduced you to the Unix command-line. Fortunately, this introduction is more than you need to start using Git from the command-line.
+This tutorial provides an introduction to Version Control using a particular software tool called [Git](https://en.wikipedia.org/wiki/Git).
+Git belongs to a crucial class of tools in the scientific coding workflow referred to as [Version Control Systems](https://en.wikipedia.org/wiki/Version_control) (VCSs). We begin by assuming that you do not know what VCSs and, in particular, Git are (or even have ever heard about them!). All you need is some basic familiarity with the Unix command-line, as Git comes in the form of a Unix-like command. Recall that in the [previous tutorial](Unix-CLI.md) we introduced you to the Unix command-line. Fortunately, this introduction is more than you need to start using Git from the command-line.
 While there are [some great GUI-based tools](https://git-scm.com/downloads/guis/) that can be used on top of Git, it is more convenient to learn Git using git-specific commands first and then to try out a GUI-based format once you are more comfortable with the command.
 
 In this tutorial we will not be too comprehensive. The advanced features of Git are tricky to learn, and are based to a large extent on theoretical concepts that are too advanced for an introductory tutorial. Instead, we will cover a minimal set of features and associated commands that let you start becoming productive with this sophisticated tool. Right at the end of the tutorial, we will point you to a set of further references that you can use to further expand your Git skills.
@@ -40,27 +40,29 @@ In this tutorial we will not be too comprehensive. The advanced features of Git 
 ## 1.1. Version Control in a nutshell
 <a id="markdown-version-control-in-a-nutshell" name="version-control-in-a-nutshell"></a>
 
-A VCS is an special program that provides an **automatic and effective** way to track changes in your project files and directories. It allows you to effectively “save your work" (referred to as *"commit your work"* in VCS parlance) at selected points in the development timeline, and to view/retrieve the files and directories in the status corresponding to any of these past save points as desired.  VCSs provide an excellent automated solution to the still (surprisingly) widely-used **bad practice** of manual tracking of changes based on cumbersome file naming conventions. This is better illustrated graphically with the "notFinal.doc" comic by Jorge Cham available [here](http://phdcomics.com/comics/archive.php?comicid=1531). It is clearly not practical to have multiple nearly-identical versions of the same document with such cumbersome file names. Nowadays, applications like
+A VCS is an special program that provides an automatic and effective way to **keep track of changes** in your project files and directories. It allows you to effectively “save your work" (referred to as *"commit your work"* in VCS parlance) at selected points in the development timeline, and to view/retrieve the files and directories in the status corresponding to any of these past save points as desired.  VCSs provide an excellent automated solution to the still (surprisingly) widely-used bad practice of manual tracking of changes based on cumbersome file naming conventions. This is better illustrated graphically with the "notFinal.doc" comic by Jorge Cham available [here](http://phdcomics.com/comics/archive.php?comicid=1531). It is clearly not practical to have multiple nearly-identical versions of the same document with such cumbersome file names. Nowadays, applications like
 [Microsoft Word](https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a), [Google Docs](https://support.google.com/docs/answer/190843?hl=en), or [LibreOffice](https://help.libreoffice.org/Common/Recording_and_Displaying_Changes) do offer built-in version tracking, but such features are tightly coupled to the underlying application and are not useful for other document types.
 
-Beyond this, modern VCSs allow you to **develop disruptive, speculative features** without affecting the main development trunk. Besides, with a VCS, you can keep **remote, offsite backups** of your project files and history, e.g., using a repository hosting service in the Cloud such as [GitHub](https://github.com/). You have perhaps had the unhappy experience of **losing work**, e.g., by accidentally removing it, due to corrupted hard-drives, etc. Although it is still possible to loose data using a VCS, the probability and amount of data loss are minimized if one keeps a systematic and appropriate workflow while using the tool. Last but not least, a VCS lets you **collaborate easily and conveniently** with others, and to **ship your product**, i.e., to expose your work to the **public domain**. However, teams are not the only ones to benefit from version control. If you are working alone on a project, say a class assignment, you can benefit immensely as well. 
-Keeping track of what was changed, when, and why, is extremely helpful if you interrupt the project development and return to it later on, when most probably your memory has become fuzzy and unreliable.  
+Besides, with a VCS, you can keep **remote, offsite backups** of your project files and history, e.g., using a repository hosting service in the Cloud such as [GitHub](https://github.com/). You have perhaps had the unhappy experience of *losing work*, e.g., by accidentally removing it, due to corrupted hard-drives, etc. Although it is still possible to loose data using a VCS, the probability and amount of data loss are minimized if one keeps a systematic and appropriate workflow while using the tool. Last but not least, a VCS lets you **collaborate easily and conveniently** with others, and to **ship your product**, i.e., to expose your work to the *public domain*. VCS tries to automatically *merge* files that have been modified by different users at the same time. However, in some situations, e.g., when different users have made changes at the same line of a text file, the automatic merge is not possible, leading to *conflicts* that users have to solve manually.
 
-VCSs have evolved considerably over the years, and still nowadays, there are a number of alternatives to [Git](https://git-scm.com/). [Wikipedia](https://en.wikipedia.org/wiki/Template:Version_control_software) provides a pretty comprehensive picture of the (overwhelming) variety of past and present VCSs.  The family line leading to Git includes [RCS](https://en.wikipedia.org/wiki/Revision_Control_System), [CVS](https://en.wikipedia.org/wiki/Concurrent_Versions_System), and [SVN](https://en.wikipedia.org/wiki/Apache_Subversion), although there are timely alternatives to Git as well, such as, e.g., [Mercurial](https://en.wikipedia.org/wiki/Mercurial), or [Bazaar](https://en.wikipedia.org/wiki/GNU_Bazaar), to name a few. In contrast to RCS, CVS, SVN, which are considered nowadays outdated technology, modern VCSs, such as Git or Mercurial, are [**distributed VCSs**](https://git-scm.com/about/distributed), meaning that they do not need a centralized server to host the repository. **Every local copy of a remote repository (referred to as a "clone" in the Git parlance) is a fully working copy.** In case there is a problem with the computer originally hosting the remote repository (e.g., it becomes corrupted or lost), any local copy can recreate the full history. On the contrary, in a centralized VCS, there is a unique server that contains all changes in the project and the local copies are just light versions of it. If the server goes down, you lose all the history. 
+However, teams are not the only ones to benefit from version control. If you are working alone on a project, say a class assignment, you can benefit immensely as well.
+Keeping track of what was changed, when, and why, is extremely helpful if you interrupt the project development and return to it later on, when most probably your memory has become fuzzy and unreliable.
+
+VCSs have evolved considerably over the years, and still nowadays, there are a number of alternatives to [Git](https://git-scm.com/). [Wikipedia](https://en.wikipedia.org/wiki/Template:Version_control_software) provides a pretty comprehensive picture of the (overwhelming) variety of past and present VCSs.  The family line leading to Git includes [RCS](https://en.wikipedia.org/wiki/Revision_Control_System), [CVS](https://en.wikipedia.org/wiki/Concurrent_Versions_System), and [SVN](https://en.wikipedia.org/wiki/Apache_Subversion), although there are timely alternatives to Git as well, such as, e.g., [Mercurial](https://en.wikipedia.org/wiki/Mercurial), or [Bazaar](https://en.wikipedia.org/wiki/GNU_Bazaar), to name a few. In contrast to RCS, CVS, SVN, which are considered nowadays outdated technology, modern VCSs, such as Git or Mercurial, are [**distributed VCSs**](https://git-scm.com/about/distributed), meaning that they do not need a centralized server to host the repository. **Every local copy of a remote repository (referred to as a "clone" in the Git parlance) is a fully working copy.** In case there is a problem with the computer originally hosting the remote repository (e.g., it becomes corrupted or lost), any local copy can recreate the full history. On the contrary, in a centralized VCS, there is a unique server that contains all changes in the project and the local copies are just light versions of it. If the server goes down, you lose all the history.
 
 
 ## 1.2. Why Git?
 <a id="markdown-why-git" name="why-git"></a>
 
-There are a number of reasons ([some of them too technical](https://git-scm.com/about) to be entirely grasped at this point), but the most important are perhaps the following. Git achieves **a sound balance** among speed, efficiency, reliability, and ease-of-use. Indeed, this hallmark of Git has positioned it as undoubtedly the de-facto standard VCS  used in ([open source](https://opensource.com/resources/what-open-source)) scientific (and not necessarily scientific) software projects. Git was originally developed in 2005 by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the same individual who created the Linux OS, i.e., an open source variant of Unix.  Therefore, it is also (as could not be otherwise) **[free and open source](https://git-scm.com/about/free-and-open-source)**. Since then, its popularity has increased significantly, mostly due to the development of repository hosting services in the Cloud such as  [GitHub](https://github.com/), [Gitlab](https://about.gitlab.com/), or [BitBucket](https://en.wikipedia.org/wiki/Bitbucket). Indeed, **virtually the whole state-of-the-art in open source (scientific and not necessarily scientific) software is available at these Git repository hosting services**. Finally, it is worth mentioning that Git is available on multiple platforms, including Microsoft Windows, Linux, and macOS, among others.
+There are a number of reasons ([some of them too technical](https://git-scm.com/about) to be entirely grasped at this point), but the most important are perhaps the following. Git achieves a sound balance among **speed, efficiency, reliability, and ease-of-use.** Indeed, this hallmark of Git has positioned it as undoubtedly the de-facto standard VCS  used in ([open source](https://opensource.com/resources/what-open-source)) scientific (and not necessarily scientific) software projects. Git was originally developed in 2005 by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the same individual who created the Linux OS, i.e., an open source variant of Unix.  Therefore, it is also (as could not be otherwise) **[free and open source](https://git-scm.com/about/free-and-open-source)**. Since then, its popularity has increased significantly, mostly due to the development of repository hosting services in the Cloud such as **[GitHub](https://github.com/), [Gitlab](https://about.gitlab.com/), or [BitBucket](https://en.wikipedia.org/wiki/Bitbucket)**. Indeed, **virtually the whole state-of-the-art in open source (scientific and not necessarily scientific) software is available at these Git repository hosting services**. Finally, it is worth mentioning that Git is available on multiple platforms, including Microsoft Windows, Linux, and macOS, among others.
 
 Git is what professionals use to keep track of what they have done and to collaborate with other people. Large software development projects rely on it, and most programmers use it for their small jobs as well. And it is not just for software: books, papers, reports, small data sets, and anything that changes over time and/or needs to be shared **should be** stored in a Git repository. Indeed, we used Git in order to track the different versions of this tutorial.
 
 ## 1.3. Accessing Git and our first Git command
 <a id="markdown-accessing-git-and-our-first-git-command" name="accessing-git-and-our-first-git-command"></a>
 
-In this tutorial we will use the Git version that is already installed along with [Cygwin](https://www.cygwin.com/) at [MoVE](https://www.monash.edu/learning-teaching/innovation/educational-technologies/move), so that we do not assume any installation prerequisite on your Laptop or Desktop. 
-See instructions [available here](./Unix-CLI.md#112-running-a-terminal) in order to launch a Cygwin terminal. In any case, if you wish to install Git on your system, you can follow the instructions available [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). 
+In this tutorial we will use the Git version that is already installed along with [Cygwin](https://www.cygwin.com/) at [MoVE](https://www.monash.edu/learning-teaching/innovation/educational-technologies/move), so that we do not assume any installation prerequisite on your Laptop or Desktop.
+See instructions [available here](./Unix-CLI.md#112-running-a-terminal) in order to launch a Cygwin terminal. In any case, if you wish to install Git on your system, you can follow the instructions available [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 All Git commands are of the form `git command [arguments]`, where `command` is the git command to be executed, i.e., what we actually want to do, and `arguments` is an (optional) list of arguments which may be needed for the particular `command` at hand. That said, let us type our first command. In particular, `git help`, which by itself is quite helpful as it gives general guidelines on Git usage:
 
@@ -166,7 +168,7 @@ Determine the name of the *hidden* directory that Git creates right after callin
 Git does not actually allow us to complete the creation of a Git repository while it is void, so we need to make a change to the current directory and **explicitly register it**, i.e., to create our first commit. To this end, we will use the GNU `nano` editor to create a new `README.md` file, with the following contents:
 
 ```bash
-$ nano README.md # Use nano here to add the contents to README.md shown below 
+$ nano README.md # Use nano here to add the contents to README.md shown below
 $ cat README.md
 This is an example README.md file
 ```
@@ -186,10 +188,10 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
-The “untracked files” message means that there is a file in the `myproject` directory that is not under the control of Git, i.e., that is not being tracked by Git.  We will now introduce the idea of a **staging area** (also referred to as an **index**). One of the most confusing aspects when you are starting with Git is this concept of staging area and how it relates to a commit. **A commit is a record of what files you have changed since the last time you made a commit, and the changes that you performed in these files.** Essentially, you make changes to your repository (e.g., adding a file or modifying an existing one) and then tell Git to register those changes into a commit. Commits make up the essence of your project and allow you to go back to the state of a project at any point in the timeline. Therefore, how do we tell Git which changes to put into a commit? 
+The “untracked files” message means that there is a file in the `myproject` directory that is not under the control of Git, i.e., that is not being tracked by Git.  We will now introduce the idea of a **staging area** (also referred to as an **index**). One of the most confusing aspects when you are starting with Git is this concept of staging area and how it relates to a commit. **A commit is a record of what files you have changed since the last time you made a commit, and the changes that you performed in these files.** Essentially, you make changes to your repository (e.g., adding a file or modifying an existing one) and then tell Git to register those changes into a commit. Commits make up the essence of your project and allow you to go back to the state of a project at any point in the timeline. Therefore, how do we tell Git which changes to put into a commit?
 
 To add a new file to a commit, and/or the changes made to a file already being tracked by Git, **you first need to add them to the staging environment**. To this end, you can use the `git add filename` command.
-Once you have "prepared your commit", i.e., once you have used the `git add` command to add all changes to the staging environment, you can then tell Git to package them into a commit using `git commit`. Therefore, in our particular scenario, we have to add the new file to the staging area: 
+Once you have "prepared your commit", i.e., once you have used the `git add` command to add all changes to the staging environment, you can then tell Git to package them into a commit using `git commit`. Therefore, in our particular scenario, we have to add the new file to the staging area:
 
 ```bash
 $ git add README.md
@@ -232,7 +234,7 @@ Date:   Mon Feb 24 21:28:03 2020 +1100
 
     First commit of myproject with a preliminary version of a README.md file
 ```
-that lists all commits made to a repository in reverse chronological order. The list for each commit includes the commit's hash (to be introduced in the next section), commit’s author, when it was created, and the log message Git was given when the commit was created, i.e., the string provided above to the `-m` flag. The commit's hash is an automatically generated sequence of letters and numbers that Git uses in order to **uniquely** identify each commit. In the example above, the hash is  
+that lists all commits made to a repository in reverse chronological order. The list for each commit includes the commit's hash (to be introduced in the next section), commit’s author, when it was created, and the log message Git was given when the commit was created, i.e., the string provided above to the `-m` flag. The commit's hash is an automatically generated sequence of letters and numbers that Git uses in order to **uniquely** identify each commit. In the example above, the hash is
 `057083ac5d9e2718626854c90b2ba6226e6f57f2`, but your result will differ since **each commit has a unique hash**. Some advanced Git commands require that you explicitly refer to a commit using the commit's hash as an argument. We will put the commit hash into action in the next section.
 
 ----
@@ -251,7 +253,7 @@ that lists all commits made to a repository in reverse chronological order. The 
 So far we have created 3 commits on our **local** repository. Each of these three commits added a single **new** file, i.e., `README.md`, `file1.txt`, and `file2.txt`, respectively. However, we may also want to modify the contents of files which are already tracked by Git. When we do so, it is often useful to be able to see the changes that we have performed on a file (or set of files) before adding them to the staging area, i.e., before preparing Git for a new commit. As an example, let's put the word "example" in the `README.md` file in boldface using Markdown as follows (note that we just added `**` before and after the word "example"):
 
 ```bash
-$ nano README.md # Use nano to modify the contents of README.md as shown below 
+$ nano README.md # Use nano to modify the contents of README.md as shown below
 $ cat README.md
 This is an **example** README.md file
 $ git status
@@ -266,7 +268,7 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-The `git diff` command, **by default** (i.e., when called without additional arguments), shows **the difference between the staged version of a file and the version of the file with those changes that are yet unstaged**. As we did not yet add any change to the staging area, the staged version of the file and the version corresponding the last commit are equivalent. Thus, `git diff` shows the differences among the unstaged version of the file and the version of the file corresponding the last commit: 
+The `git diff` command, **by default** (i.e., when called without additional arguments), shows **the difference between the staged version of a file and the version of the file with those changes that are yet unstaged**. As we did not yet add any change to the staging area, the staged version of the file and the version corresponding the last commit are equivalent. Thus, `git diff` shows the differences among the unstaged version of the file and the version of the file corresponding the last commit:
 
 ```bash
 $ git diff
@@ -279,11 +281,11 @@ index 7dc68e2..46c3e91 100644
 +This is an **example** README.md file
 ```
 
-In our case, we only modified a single file, i.e., `README.md`, such that the we changed the previous contents of its first line ("`@@ -1 +1 @@`"), i.e., "`-This is an example README.md file`", by "`+This is an **example** README.md file`". Let us now add these changes to the staging area: 
+In our case, we only modified a single file, i.e., `README.md`, such that the we changed the previous contents of its first line ("`@@ -1 +1 @@`"), i.e., "`-This is an example README.md file`", by "`+This is an **example** README.md file`". Let us now add these changes to the staging area:
 ```bash
 $ git add README.md
 $ git diff
-$ 
+$
 ```
 
 **We can see that now the output `git diff` is empty**. This is because there is no difference between the unstaged version of `README.md` and the staged version. To be more precise, there are actually no unstaged changes pending to be added to the staging area. To see the difference between the staged changes and the previous version of the repository, i.e., the previous commit, we can use the following command:
@@ -306,7 +308,7 @@ $ nano README.md # Use nano to add a new line to README.md as shown below
 $ cat README.md
 This is an **example** README.md file
 We are writing it while following the second workshop of SCI1022
-$ 
+$
 ```
 
 If we invoke `git status`, we get the following:
@@ -333,13 +335,13 @@ that is, there are actually two different of sets of changes into `README.md` wi
 > Recall that `git diff` returns by default the difference between the staged version of a file and the version of the file with those changes that are yet unstaged. According to this, can you predict what will `git diff` output in the current scenario? Why? Run `git diff` and check whether your conclusion matches the actual result. Repeat the same exercise with `git diff --staged`.
 >
 > *__Exercise 4:__*
-> If we run `git diff commit_hash`, where `commit_hash` is the hash of a commit in the past, then Git reports the differences among the version of the file corresponding to the commit with commit hash `commit_hash` and the version of the file that includes both unstaged and staged changes. 
+> If we run `git diff commit_hash`, where `commit_hash` is the hash of a commit in the past, then Git reports the differences among the version of the file corresponding to the commit with commit hash `commit_hash` and the version of the file that includes both unstaged and staged changes.
 Retrieve the commit's hash of the last commit that we performed using `git log`, and use `git diff commit_hash` to confirm that behaviour of this latter command.
 ----
 
 At this point we are faced with two options (that are indeed pointed out by the very helpful output of `git status`). We can either discard unstaged changes, or add them to the staging area. We will opt for the first option. In order to do so, we have to use the `git checkout` Git command as follows:
 
-```bash 
+```bash
 $ git checkout -- README.md
 $ git status
 Changes to be committed:
@@ -364,7 +366,7 @@ $
 <a id="markdown-backing-up-and-shipping-the-local-repository-on-github" name="backing-up-and-shipping-the-local-repository-on-github"></a>
 
 
-In this section we are going to back up your local repository on GitHub and ship it to the public, i.e., anyone with an Internet connection is going to be able to access to its contents (and the project's history). Recall that one of the hallmarks of Git is that it allows you to ship your work to others, and to work collaboratively with them. While shipping means exposing your work (including to those who are going to be critical of it), it is the first step towards building collaborations. 
+In this section we are going to back up your local repository on GitHub and ship it to the public, i.e., anyone with an Internet connection is going to be able to access to its contents (and the project's history). Recall that one of the hallmarks of Git is that it allows you to ship your work to others, and to work collaboratively with them. While shipping means exposing your work (including to those who are going to be critical of it), it is the first step towards building collaborations.
 
 ### 1.8.1. Creating an account on GitHub
 <a id="markdown-creating-an-account-on-github" name="creating-an-account-on-github"></a>
@@ -399,7 +401,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-> *__Note:__* In the likely case you do not fully understand what the `ssh-keygen` command does, nor what do their flags and arguments mean, don't worry. It is important that you acquire the ability to follow a list of commands even without completely understanding them. If you are interested, you can read more about SSH keys [here](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh). 
+> *__Note:__* In the likely case you do not fully understand what the `ssh-keygen` command does, nor what do their flags and arguments mean, don't worry. It is important that you acquire the ability to follow a list of commands even without completely understanding them. If you are interested, you can read more about SSH keys [here](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh).
 
 > *__Note:__* When generating the private key above, we did not actually provide any passphrase, we just hit the Return key, which means no passphrase was supplied. However in general it is **highly recommended** to have a  passphrase. The passphrase is used as an additional protection of your private key in case it is stolen. In particular, it is used to cipher the contents of the private key before storing it into the `id_rsa` file. We did not actually use it for simplicity, i.e., in order to avoid Git prompting us for the passphrase in the command-line each time that we have to interact with GitHub.
 In any case, even with a passphrase, one can prevent Git from asking for it using the so-called [SSH Agent](https://en.wikipedia.org/wiki/Ssh-agent). The usage of SSH Agent is, however, out of the scope of this tutorial.
@@ -413,7 +415,7 @@ total 9
 -rw-r--r--+ 1 amar0078 Domain Users  743 Feb 24 21:53 id_rsa.pub
 ```
 
-The first file (`id_rsa`) contains the private key, while the second (`id_rsa.pub`) contains the public one.  **You should never expose nor send to anyone the private key** (note its very restrictive file permissions). On the other hand, the public key can be shared with anyone, i.e., GitHub in our case. 
+The first file (`id_rsa`) contains the private key, while the second (`id_rsa.pub`) contains the public one.  **You should never expose nor send to anyone the private key** (note its very restrictive file permissions). On the other hand, the public key can be shared with anyone, i.e., GitHub in our case.
 
 > *__Note:__* In the event that the permissions of `id_rsa` do not look like in the previous listing, you **MUST** force them manually using the following command: `chmod og-rwx ~/.ssh/id_rsa`. See [Section 1.4.2](./Unix-CLI.md#142-permissions).
 
@@ -449,12 +451,12 @@ Figure 3. Linking your public SSH key with your GitHub account. (Step 3)
 
 
  > *__Note:__* In general, the process so far with the SSH keys is a one-time process per computer, user on that computer, and GitHub account.
-However, as already mentioned several times before, the contents of the home directory might vary among different Cygwin terminal sessions, e.g., when you close a terminal and open a new one. In the particular case of Git, the consequence of this behaviour is that the SSH keys that you have generated on the `~/.ssh/` folder in a given session might not available in a different (future) session. In such a case, you have to generate a new pair of SSH keys and link the new public SSH key with your GitHub user again. 
+However, as already mentioned several times before, the contents of the home directory might vary among different Cygwin terminal sessions, e.g., when you close a terminal and open a new one. In the particular case of Git, the consequence of this behaviour is that the SSH keys that you have generated on the `~/.ssh/` folder in a given session might not available in a different (future) session. In such a case, you have to generate a new pair of SSH keys and link the new public SSH key with your GitHub user again.
 
 ### 1.8.3. Creating a new GitHub project (and associated Git repository)
 <a id="markdown-creating-a-new-github-project-and-associated-git-repository" name="creating-a-new-github-project-and-associated-git-repository"></a>
 
-To create a new project in GitHub (and an associated Git repository on the Cloud), log in and go to the GitHub user's home page (if you do not find it, then just insert https://github.com/ on the browser once you are logged in). You should see a similar screen to that in [Figure 4](#fig_github_home). 
+To create a new project in GitHub (and an associated Git repository on the Cloud), log in and go to the GitHub user's home page (if you do not find it, then just insert https://github.com/ on the browser once you are logged in). You should see a similar screen to that in [Figure 4](#fig_github_home).
 
 
 <a name="fig_github_home"></a> <img src="figures/start_a_project_github.png" alt="" width="100%"/><br>
@@ -470,7 +472,7 @@ After this process, our GitHub repository has been created. It can now be access
 <a name="fig_github_repo_quick_setup"></a> <img src="figures/github_repo_quick_setup.png" alt="" width="100%"/><br>
 Figure 6. A just created GitHub project.
 
-Essentially the page in [Figure 6](#fig_github_new_repo) is informing us that the GitHub Git repo is void. Besides, it offers us several possibilities in order to populate it. 
+Essentially the page in [Figure 6](#fig_github_new_repo) is informing us that the GitHub Git repo is void. Besides, it offers us several possibilities in order to populate it.
 
 ### 1.8.4. Pushing into the remote Git repository at GitHub
 <a id="markdown-pushing-into-the-remote-git-repository-at-github" name="pushing-into-the-remote-git-repository-at-github"></a>
@@ -498,7 +500,7 @@ means that we will be able to download any changes automatically when we run `gi
 If pushing succeeded, then, after re-loading `https://github.com/your_github_username/repository4sci1022` on your web browser, you should be able to see an screen similar to that shown in [Figure 7](#fig_github_after_push).
 
 <a name="fig_github_after_push"></a> <img src="figures/github_after_push.png" alt="" width="100%"/><br>
-Figure 7. The GitHub repository home page after pushing from the local Git repository created in the Cygwin terminal. 
+Figure 7. The GitHub repository home page after pushing from the local Git repository created in the Cygwin terminal.
 
 ----
 > *__Exercise 5:__*
@@ -509,7 +511,7 @@ Figure 7. The GitHub repository home page after pushing from the local Git repos
 ## 1.9. Cloning a remote repository
 <a id="markdown-cloning-a-remote-repository" name="cloning-a-remote-repository"></a>
 
-The first step to start contributing to a project (e.g., [a scientific computing software package](https://github.com/nschloe/awesome-scientific-computing)) hosted on a Cloud service such as GitHub,  consists on performing an operation referred to as "cloning a remote repository". This is achieved by means of the `git clone` command. This operation **fully copies all files and folders and project history stored in a remote repository into a new directory on the local file system**. This new directory becomes itself a full repository. (Recall, from [Section 1.1](#11-version-control-in-a-nutshell), that Git is a distributed VCS.) 
+The first step to start contributing to a project (e.g., [a scientific computing software package](https://github.com/nschloe/awesome-scientific-computing)) hosted on a Cloud service such as GitHub,  consists on performing an operation referred to as "cloning a remote repository". This is achieved by means of the `git clone` command. This operation **fully copies all files and folders and project history stored in a remote repository into a new directory on the local file system**. This new directory becomes itself a full repository. (Recall, from [Section 1.1](#11-version-control-in-a-nutshell), that Git is a distributed VCS.)
 
 One of the most useful features of Git is its ability to let us recover from errors that would otherwise be **catastrophic**. Perhaps the most serious mess that one can make is to (unintentionally) remove the local folder containing the Git repository. In our particular scenario, as we do not have local changes to be staged, staged changes, nor commits pending to be pushed to the remote repository at GitHub, this would not lead to lost work, as we can clone the remote version of the repository from GitHub. Therefore, let us (intentionally) remove our project's local Git repository (because of obvious reasons, **please be extremely careful** to ensure that you type exactly the commands in the next box):
 
@@ -535,12 +537,12 @@ $ ls
 $ cd repository4sci1022/
 $ cat README.md
 This is an **example** README.md file
-``` 
+```
 
-The first argument to the `git clone` command is the clone URL (yours will differ, replace `amartinhuertas` by your GitHub username). The clone URL of a project in GitHub can be obtained from the home page of the project, as shown in [Figure 8](#fig_github_clone_url).  
+The first argument to the `git clone` command is the clone URL (yours will differ, replace `amartinhuertas` by your GitHub username). The clone URL of a project in GitHub can be obtained from the home page of the project, as shown in [Figure 8](#fig_github_clone_url).
 
-<a name="fig_github_clone_url"></a> <img src="figures/github_clone_url.png" alt="" width="100%"/><br> 
-Figure 8. Obtaining the clone URL from the GitHub's repository home page. 
+<a name="fig_github_clone_url"></a> <img src="figures/github_clone_url.png" alt="" width="100%"/><br>
+Figure 8. Obtaining the clone URL from the GitHub's repository home page.
 
 By default, `git clone` uses the repository name for the local folder that it creates in order to hold the repository data, i.e., `repository4sci1022` in our case. This default behaviour can be overridden if one provides a second argument to `git clone` with the name desired for the local folder to be created as part of the cloning process.
 
@@ -556,7 +558,7 @@ By default, `git clone` uses the repository name for the local folder that it cr
 If you are working alone in your project, it is recommended that your Git workflow to be based on the commit+push cycle. Essentially, you do some local work, you commit that work (e.g., when you have made enough changes to start worrying about losing them), and then push that commit to **origin**, i.e., the (default) remote repository to which your local repository is linked with.  If you want some advice regarding the "when to make a commit" dilemma, we recommend, e.g., [this article](https://medium.com/walmartlabs/check-out-these-5-git-tips-before-your-next-commit-c1c7a5ae34d1), although there are many other articles discussing best practices related to this topic that you may easily find using Google.
 
 To illustrate the commit+push cycle, let us perform a pair of cycle iterations. In particular, let us add to the `README.md` file an image containing a portrait of [William Shakespeare](https://en.wikipedia.org/wiki/William_Shakespeare) that we will borrow from Wikipedia. To this end, we will create a new folder called `figures`, in the ls
-local Git repository where we will store the image with the portrait.  Then, we will add a link  to that image in the `README.md` file.  We will split this work into two commits, in the first we will add the folder and the image and, in the second, we will modify the `README.md` file. After each commit, we will be invoking `git push` to send our progress to the remote repository at GitHub.  
+local Git repository where we will store the image with the portrait.  Then, we will add a link  to that image in the `README.md` file.  We will split this work into two commits, in the first we will add the folder and the image and, in the second, we will modify the `README.md` file. After each commit, we will be invoking `git push` to send our progress to the remote repository at GitHub.
 
 The commands required to carry out the first steps (i.e., create the `figures` folder, download the image from the Internet into the new folder, add the whole folder to the staging area, commit, and push) are:
 
@@ -583,7 +585,7 @@ To github.com:amartinhuertas/repository4sci1022.git
  > *__Note:__* It is not strictly necessary to follow the commit+push cycle. You can, for example, perform 10 consecutive local commits, and then push them in one shot using a single `git push` command. However, we believe it is a good idea to get in the habit of pushing up to the remote repository frequently, as it serves as a guaranteed backup of the project while also allowing collaborators to "pull" in any
 changes, as we will see in the next section.
 
-In the last command, we explicitly tell `git push` to push the new commit to the **origin** remote repository. However, as mentioned before, origin is the default repository one interacts with if no remote repository is specified. Thus, if we replaced the `git push origin` by `git push` in the previous box we would be achieving exactly the same result. 
+In the last command, we explicitly tell `git push` to push the new commit to the **origin** remote repository. However, as mentioned before, origin is the default repository one interacts with if no remote repository is specified. Thus, if we replaced the `git push origin` by `git push` in the previous box we would be achieving exactly the same result.
 
 
 > *__Exercise 7:__*
@@ -606,7 +608,7 @@ $ git push
 ```
 
 > *__Exercise 8:__*
-By refreshing the GitHub repository in your browser, confirm the presence 
+By refreshing the GitHub repository in your browser, confirm the presence
 of Shakespeare's portrait on the home page of the project.
 
 ## 1.11. Working collaboratively
@@ -615,7 +617,7 @@ of Shakespeare's portrait on the home page of the project.
 ### 1.11.1. Branching
 <a id="markdown-branching" name="branching"></a>
 
-One of the most powerful features of Git is its ability to make **branches**, which you can think of as complete self-contained copies of the project data. With a branch you can make your changes to the project in isolation from the main version of the project, and then merge your changes in only when they are done. This is especially helpful when collaborating with other users; having a separate branch lets you make changes independently from other contributors, reducing the risk of accidental conflicts. Besides, for obvious reasons, when you collaborate in a third-party project, **it is very unlikely that you are allowed to directly push into the master version of the project**.  In the previous section we were allowed to do that only because we were project owners. 
+One of the most powerful features of Git is its ability to make **branches**, which you can think of as complete self-contained copies of the project data. With a branch you can make your changes to the project in isolation from the main version of the project, and then merge your changes in only when they are done. This is especially helpful when collaborating with other users; having a separate branch lets you make changes independently from other contributors, reducing the risk of accidental conflicts. Besides, for obvious reasons, when you collaborate in a third-party project, **it is very unlikely that you are allowed to directly push into the master version of the project**.  In the previous section we were allowed to do that only because we were project owners.
 
 We will use the addition of a second image to the `README.md` file as an example of how to use Git branches. Our first step is to use `git checkout` with the `-b` option, which makes a
 new branch and checks it out at the same time:
@@ -623,8 +625,8 @@ new branch and checks it out at the same time:
 ```
 $ git checkout -b add_shakespeare_sonnets
 Switched to a new branch 'add_shakespeare_sonnets'
-$ 
-``` 
+$
+```
 We have called the branch `add_shakespeare_sonnets` as we will include in the `README.md` file an image of the cover from the [1609's edition of Shake-Speares Sonnets](https://en.wikipedia.org/wiki/Shakespeare%27s_sonnets)  file.  Using the `git branch` command:
 
 ```
@@ -638,7 +640,7 @@ we can list all branches currently defined on the **local Git repository**. The 
 > *__Exercise 9:__* Download the image at hand from the Internet into the `figures/` folder, edit the `README.md` file to include the image downloaded in the previous step, add the new image and the changes of `README.md` to the staging area, and create a new commit.
 *Hint*: the image to be added is available at the following URL: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Sonnets1609titlepage.jpg/220px-Sonnets1609titlepage.jpg
 
-After this commit, the `add_shakespeare_sonnets` branch has diverged from `master`. The former branch contains a commit that the latter branch does not.  Since we have finished making changes, so we are ready to merge the  `add_shakespeare_sonnets` branch back into the `master` branch. Before merging, we can see the whole set of changes performed using `git diff`. 
+After this commit, the `add_shakespeare_sonnets` branch has diverged from `master`. The former branch contains a commit that the latter branch does not.  Since we have finished making changes, so we are ready to merge the  `add_shakespeare_sonnets` branch back into the `master` branch. Before merging, we can see the whole set of changes performed using `git diff`.
 We saw in [Section 1.7](#17-modifying-an-already-tracked-file-viewing-the-diff) that this command can be used to see the difference between the unstaged and the staged version of a file, but the same command can be
 used to show differences between branches. This particular command is of  the form `git diff branch-1 branch-2`, but if you leave the branch unspecified Git automatically reports the differences against the current branch. This means we can compare `add_shakespeare_sonnets` and `master` as follows:
 
@@ -650,7 +652,7 @@ index c88e36f..67275b2 100644
 +++ b/README.md
 @@ -3,3 +3,8 @@ This is an **example** README.md file
  ![fig_shakespeare](figures/shakespeare_portrait.jpg)
- 
+
  Figure 1. The Chandos portrait (held by the National Portrait Gallery, London)
 +
 +
@@ -679,10 +681,10 @@ Delta compression using up to 8 threads.
 Compressing objects: 100% (5/5), done.
 Writing objects: 100% (5/5), 24.58 KiB | 6.14 MiB/s, done.
 Total 5 (delta 0), reused 0 (delta 0)
-remote: 
+remote:
 remote: Create a pull request for 'add_shakespeare_sonnets' on GitHub by visiting:
 remote:      https://github.com/amartinhuertas/repository4sci1022/pull/new/add_shakespeare_sonnets
-remote: 
+remote:
 To github.com:amartinhuertas/repository4sci1022.git
  * [new branch]      add_shakespeare_sonnets -> add_shakespeare_sonnets
 ```
@@ -718,7 +720,7 @@ Figure 10. The PR page.
 
 You will see a big green button at the bottom that says "Merge pull request". Clicking this will merge your changes into the `master` branch. Sometimes you will be a co-owner or the sole owner of a Git repository, in which case you may not need to create a PR to merge your changes. However, it is still a best practice to make one so you can keep a more complete history of your updates and to make sure you always create a new branch when making changes.
 
-> *__Note:__* Sometimes it is not possible to automatically merge the PR. This means you are faced with a **merge conflict**. This happens when someone has made changes in the target branch of the PR (the `master` branch in our case) that conflict with your changes. In such an scenario, Git cannot figure out automatically which version to use. Therefore, you will have to manually tell Git which version to use.
+> *__Note:__* Sometimes it is not possible to automatically merge the PR. This means you are faced with a **merge conflict**. This happens when someone has made changes in the target branch of the PR (the `master` branch in our case) that conflict with your changes. Conflicts appear when changes have been made in *the same line* of a text file. In such an scenario, Git cannot figure out automatically which version to use. Therefore, you will have to manually tell Git which version to use.
 [Section 1.11.6](#1116-conflicting-changes) introduces the solution of conflicting changes.
 
 
@@ -789,7 +791,7 @@ Deleted branch add_shakespeare_sonnets (was 87919f2).
 
 ----
 > *__Exercise 14:__*
-> Write a Git command to confirm that the `add_shakespeare_sonnets` has been deleted from the local repository. 
+> Write a Git command to confirm that the `add_shakespeare_sonnets` has been deleted from the local repository.
 ----
 
 
@@ -800,7 +802,7 @@ Even though Git merge algorithms can often automatically figure out how to combi
 
 ```bash
 $ nano README.md
-$ cat README.md 
+$ cat README.md
 This is an example README.md file
 
 ![fig_shakespeare](figures/shakespeare_portrait.jpg)
@@ -818,7 +820,7 @@ $ git commit -m "The word example no longer in boldface at README.md"
  1 file changed, 2 insertions(+), 2 deletions(-)
 ```
 
-In the meantime, a collaborator of yours that **is not project owner**, is not happy either with the "example" word in boldface. He prefers it to be in italics. As he is not project owner, he is forced to propose the change as a pull-request (PR). 
+In the meantime, a collaborator of yours that **is not project owner**, is not happy either with the "example" word in boldface. He prefers it to be in italics. As he is not project owner, he is forced to propose the change as a pull-request (PR).
 
 ----
 > *__Exercise 15:__*
@@ -850,18 +852,18 @@ CONFLICT (content): Merge conflict in README.md
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-As indicated in the penultimate line, Git has detected a merge conflict after the pull. The set of files with merge conflicts still to be resolved can be printed on screen using `git status`. We can see the effect of this conflict by viewing the file `README.md` in `nano`, as shown in [Figure 11](#fig_nano_conflict). 
+As indicated in the penultimate line, Git has detected a merge conflict after the pull. The set of files with merge conflicts still to be resolved can be printed on screen using `git status`. We can see the effect of this conflict by viewing the file `README.md` in `nano`, as shown in [Figure 11](#fig_nano_conflict).
 
 <a name="fig_nano_conflict"></a> <img src="figures/nano_conflict.png" alt="" width="100%"/><br>
 Figure 11. A file with a merge conflict highlighted.
 
-The highlighted text in [Figure 11](#fig_nano_conflict) states that there are two conflicting versions of the first line of `README.md`. In the first, i.e., `HEAD` (our local version), the "example" word appears with no special format. In the second, i.e., the one corresponding to our collaborator's commit with hash `cebc330 ...` ,  the "example" word appears in italics. We prefer the word with no format, so that we manually solve the conflict by editing the `README.md` file, with the result shown in [Figure 12](#fig_nano_conflict_solved). 
+The highlighted text in [Figure 11](#fig_nano_conflict) states that there are two conflicting versions of the first line of `README.md`. In the first, i.e., `HEAD` (our local version), the "example" word appears with no special format. In the second, i.e., the one corresponding to our collaborator's commit with hash `cebc330 ...` ,  the "example" word appears in italics. We prefer the word with no format, so that we manually solve the conflict by editing the `README.md` file, with the result shown in [Figure 12](#fig_nano_conflict_solved).
 
 <a name="fig_nano_conflict_solved"></a> <img src="figures/nano_conflict_solved.png" alt="" width="100%"/><br>
 Figure 11. The file `README.md` with the merge conflict solved.
 
 After saving the file, we can commit the file with the conflict resolved, and, at this point, we are ready to push in to `master` (check it!).
-The local `master` branch in the local copy of the repository of our collaborator does not actually reflect this change. Therefore, the last step in our collaborator's workflow would be a `git pull origin master` command. 
+The local `master` branch in the local copy of the repository of our collaborator does not actually reflect this change. Therefore, the last step in our collaborator's workflow would be a `git pull origin master` command.
 
 
 ----
@@ -880,6 +882,6 @@ We recommend seeking out additional resources. The Internet is plenty of excelle
 
 * [Learn enough Git to be dangerous](https://www.learnenough.com/git-tutorial/getting_started) tutorial by [Michael Hart](https://www.michaelhartl.com/)
 * [Version Control with Git](https://swcarpentry.github.io/shell-novice/) workshop by [Software Carpentry](https://software-carpentry.org/lessons/index.html)
-* Free [Pro Git book](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub 
+* Free [Pro Git book](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub
 * [Git tutorials](https://www.atlassian.com/git/tutorials) by Atlassian  ([BitBucket](https://bitbucket.org/) developers)
 * [Tower Git tutorials](https://www.git-tower.com/learn/)
