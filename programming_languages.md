@@ -84,3 +84,10 @@ Extra functionality is provided by Mathworks through toolkits (at an extra cost)
 <a id="markdown-mathematica" name="mathematica"></a>
 
 `Wolfram Mathematica` is a proprietary program which is particularly well-suited for symbolic computations. It is an untyped language. It can be of interest for undergraduate students in mathematics and physics that require to make intensive use of symbolic computation. [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica) is less common in scientific computing and data science fields. On the downside, [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica) licenses are expensive.
+
+Paul Cally will be the workshop leader for Mathematica. He has shared with us a brief description about Mathematica:
+
+* It is a very flexible highly-integrated high-level language ideally suited to modern technical computing, covering symbolic algebra, calculus, statistics, data analysis, sophisticated graphics, easy access to extensive databases, and many other fields. (See https://www.wolfram.com/mathematica/)
+* It allows you to produce very sophisticated complex calculations with just a few lines of code.
+* Its Documentation Center contains over 150,000 examples covering Core Language & Structure, Data Manipulation & Analysis, Visualization & Graphics, Machine Learning, Symbolic & Numerical Computation, Higher Mathematical Computation, Strings & Text, Graphs & Networks, Images, Geometry, Sound & Video, Knowledge Representation & Natural Language, Time-Related Computation, Geographical Data & Computation, Scientific & Medical Data & Computation, Engineering Data & Computation, Financial Data & Computation, Social, Cultural & Linguistic Data, and more.
+* It seamlessly implements parallel computation.
