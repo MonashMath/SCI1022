@@ -62,9 +62,7 @@ The static vs. dynamic paradigms, code productivity and performance are serious 
 ## 1.2. The four elective modules
 <a id="markdown-the-four-elective-modules" name="the-four-elective-modules"></a>
 
-For all these reasons, SCI1022 includes four different workshops on three dynamically-typed languages, namely, [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)), [`MATLAB`](https://en.wikipedia.org/wiki/MATLAB), [`R`](https://en.wikipedia.org/wiki/R_(programming_language)), and an untyped language, [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica). Below, we provide a description of the four different languages that would help students to pick the ones that better fit their requirements.
-
-You can do your own research, in order to decide which is the right language for you. Below, I have briefly described them. There are different indices that measure the popularity of programming languages, e.g., the [TIOBE index](https://en.wikipedia.org/wiki/TIOBE_index). You can find the ranking [here](https://tiobe.com/tiobe-index/).
+For all these reasons, SCI1022 includes four different workshops on three dynamically-typed languages, namely, [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)), [`MATLAB`](https://en.wikipedia.org/wiki/MATLAB), [`R`](https://en.wikipedia.org/wiki/R_(programming_language)), and an untyped language, [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica). Below, we provide a description of the four different languages that would help students to pick the ones that better fit their requirements. You can do your own research, in order to decide which is the right language for you. There are also different indices that measure the _popularity_ of programming languages, e.g., the [TIOBE index](https://en.wikipedia.org/wiki/TIOBE_index). You can find the ranking [here](https://tiobe.com/tiobe-index/).
 
 ### 1.2.1. `Python`
 <a id="markdown-python" name="python"></a>
