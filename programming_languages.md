@@ -72,8 +72,8 @@ For all these reasons, SCI1022 includes four different workshops on three dynami
 ### 1.2.2. `MATLAB`
 <a id="markdown-matlab" name="matlab"></a>
 
-[`MATLAB`](https://en.wikipedia.org/wiki/MATLAB) is a commercial numerical computing environment that is easy to learn and use. It is very popular at undergraduate university programmes, especially in mathematics and some engineering disciplines. It might be easier for beginners. However, it is a proprietary language. The basic package comes with linear algebra, data processing and plotting tools.
-Extra functionality is provided by Mathworks through toolkits (at an extra cost).
+[`MATLAB`](https://en.wikipedia.org/wiki/MATLAB) is a commercial numerical computing environment that is easy to learn and use. It is very popular at undergraduate university programmes, especially in mathematics and some engineering disciplines. It might be easier for beginners. However, it is a proprietary language and one needs a license to use it. The basic package comes with linear algebra, data processing and plotting tools.
+Extra functionality is provided by Mathworks through toolkits (at an extra cost). Monash has a `MATLAB` site-license that allows **students** to install it on their personal computers (Mac, Windows or Linux).
 
 ### 1.2.3. `R`
 <a id="markdown-r" name="r"></a>
@@ -83,7 +83,7 @@ Extra functionality is provided by Mathworks through toolkits (at an extra cost)
 ### 1.2.4. `Mathematica`
 <a id="markdown-mathematica" name="mathematica"></a>
 
-`Wolfram Mathematica` is a proprietary program which is particularly well-suited for symbolic computations. It is an untyped language. It can be of interest for undergraduate students in mathematics and physics that require to make intensive use of symbolic computation. [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica) is less common in scientific computing and data science fields. On the downside, [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica) licenses are expensive.
+`Wolfram Mathematica` is a proprietary program which is particularly well-suited for symbolic computations. It is an untyped language. It can be of interest for undergraduate students in mathematics and physics that require to make intensive use of symbolic computation. [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica) is less common in scientific computing and data science fields. On the downside, one needs a [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica) license to use it. Monash has a `Mathematica` site-license that allows **students** to install it on their personal computers.
 
 Paul Cally will be the workshop leader for Mathematica. He has shared with us a brief description about Mathematica:
 
