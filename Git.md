@@ -301,7 +301,7 @@ index 7dc68e2..46c3e91 100644
 +This is an **example** README.md file
 ```
 
-Let us now add a new line to `README.md` **before commiting**:
+Let us now add a new line to `README.md` **before committing**:
 
 ```bash
 $ nano README.md # Use nano to add a new line to README.md as shown below
@@ -328,7 +328,7 @@ Changes not staged for commit:
         modified:   README.md
 ```
 
-that is, there are actually two different of sets of changes into `README.md` with respect to the last commit. On the one hand, we have the changes that have been already staged (recall that we put "example" in bold face, and that we stagged that change), and the ones that are not staged (recall that we have added a new line to the file and that we did not staged it).
+that is, there are actually two different of sets of changes into `README.md` with respect to the last commit. On the one hand, we have the changes that have been already staged (recall that we put "example" in bold face, and that we staged that change), and the ones that are not staged (recall that we have added a new line to the file and that we did not staged it).
 
 ----
 > *__Exercise 3:__*
@@ -868,8 +868,8 @@ The local `master` branch in the local copy of the repository of our collaborato
 
 ----
 > *__Final exercise:__*
-> Create a PR in the GitHub repository available at the following URL: https://github.com/amartinhuertas/SCI1022_git_final_exercise. The PR should include a single commit with a version of the `README.md` file containing a link to the GitHub repository you have created along the session. The line to add should be of the form: "Given name family name's GitHub repository is available [here](URL of your repo goes here)", where "Given name family name" is replaced with your actual name. This link will allow us evaluate your progress with the tutorial. *Hint: As you cannot push a branch into a GitHub repository which is not owned by you (as far as the owner does not explictly allow you do that) you have to find an alternative way from the one presented in this section in order to carry out the PR. In particular, a PR can be sent to a repository you do not own (nor have write permission) by using a special kind of GitHub repository which is referred to as "forked repository" . The basic idea is that GitHub allows PRs from a branch of the forked repository to a branch of the original repository. You can learn more about this [here](https://guides.github.com/activities/forking/) and [here](https://www.youtube.com/watch?v=yr6IzOGoMsQ). 
-The first article requires command-line intervention, while the second video explains how to do the PR from a forked repository enterely from the GitHub web interface. For simplicity, if you prefer, you can solve the exercise using the approach described in the video.*
+> Create a PR in the GitHub repository available at the following URL: https://github.com/amartinhuertas/SCI1022_git_final_exercise. The PR should include a single commit with a version of the `README.md` file containing a link to the GitHub repository you have created along the session. The line to add should be of the form: "Given name family name's GitHub repository is available [here](URL of your repo goes here)", where "Given name family name" is replaced with your actual name. This link will allow us evaluate your progress with the tutorial. *Hint: As you cannot push a branch into a GitHub repository which is not owned by you (as far as the owner does not explicitly allow you do that) you have to find an alternative way from the one presented in this section in order to carry out the PR. In particular, a PR can be sent to a repository you do not own (nor have write permission) by using a special kind of GitHub repository which is referred to as "forked repository" . The basic idea is that GitHub allows PRs from a branch of the forked repository to a branch of the original repository. You can learn more about this [here](https://guides.github.com/activities/forking/) and [here](https://www.youtube.com/watch?v=yr6IzOGoMsQ). 
+The first article requires command-line intervention, while the second video explains how to do the PR from a forked repository entirely from the GitHub web interface. For simplicity, if you prefer, you can solve the exercise using the approach described in the video.*
 ----
 
 ## 1.12. Conclusions and further references
