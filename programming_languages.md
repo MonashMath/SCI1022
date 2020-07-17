@@ -64,30 +64,4 @@ The static vs. dynamic paradigms, code productivity and performance are serious 
 
 For all these reasons, SCI1022 includes four different workshops on three dynamically-typed languages, namely, [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)), [`MATLAB`](https://en.wikipedia.org/wiki/MATLAB), [`R`](https://en.wikipedia.org/wiki/R_(programming_language)), and an untyped language, [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica). Below, we provide a description of the four different languages that would help students to pick the ones that better fit their requirements. You can do your own research, in order to decide which is the right language for you. There are also different indices that measure the _popularity_ of programming languages, e.g., the [TIOBE index](https://en.wikipedia.org/wiki/TIOBE_index). You can find the ranking [here](https://tiobe.com/tiobe-index/).
 
-### 1.2.1. `Python`
-<a id="markdown-python" name="python"></a>
 
-[`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)) is one the most popular languages for scientific coding, especially for data science. It is widely used both in academia and industry because of its simplicity and flexibility. [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)) is an object-oriented language, and probably the best one for learning this programming paradigm. Python is general purpose and can be used in any scientific discipline, from computational mathematics and physics to data science. [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)) is a community-driven open source project, with thousands of freely available packages in almost any discipline.
-
-### 1.2.2. `MATLAB`
-<a id="markdown-matlab" name="matlab"></a>
-
-[`MATLAB`](https://en.wikipedia.org/wiki/MATLAB) is a commercial numerical computing environment that is easy to learn and use. It is very popular at undergraduate university programmes, especially in mathematics and some engineering disciplines. It might be easier for beginners. However, it is a proprietary language and one needs a license to use it. The basic package comes with linear algebra, data processing and plotting tools.
-Extra functionality is provided by Mathworks through toolkits (at an extra cost). Monash has a `MATLAB` site-license that allows Monash students to install it on their personal computers.
-
-### 1.2.3. `R`
-<a id="markdown-r" name="r"></a>
-
-[`R`](https://en.wikipedia.org/wiki/R_(programming_language)) is an open source language and environment for statistical computing and graphics. [`R`](https://en.wikipedia.org/wiki/R_(programming_language)) provides a wide variety of statistical and graphical techniques, and is highly extensible. It is widely used in data science and applications, e.g., in biology or chemistry. In the field of data science, one can find a freely available package for almost anything.
-
-### 1.2.4. `Mathematica`
-<a id="markdown-mathematica" name="mathematica"></a>
-
-`Wolfram Mathematica` is a proprietary program which is particularly well-suited for symbolic computations. It is an untyped language. It can be of interest for undergraduate students in mathematics and physics that require to make intensive use of symbolic computation. [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica) is less common in scientific computing and data science fields. On the downside, one needs a [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica) license to use it. Monash has a `Mathematica` site-license that allows Monash students to install it on their personal computers.
-
-Paul Cally will be the workshop leader for Mathematica. He has shared with us a brief description about Mathematica:
-
-* It is a very flexible highly-integrated high-level language ideally suited to modern technical computing, covering symbolic algebra, calculus, statistics, data analysis, sophisticated graphics, easy access to extensive databases, and many other fields. (See https://www.wolfram.com/mathematica/)
-* It allows you to produce very sophisticated complex calculations with just a few lines of code.
-* Its Documentation Center contains over 150,000 examples covering Core Language & Structure, Data Manipulation & Analysis, Visualization & Graphics, Machine Learning, Symbolic & Numerical Computation, Higher Mathematical Computation, Strings & Text, Graphs & Networks, Images, Geometry, Sound & Video, Knowledge Representation & Natural Language, Time-Related Computation, Geographical Data & Computation, Scientific & Medical Data & Computation, Engineering Data & Computation, Financial Data & Computation, Social, Cultural & Linguistic Data, and more.
-* It seamlessly implements parallel computation.
