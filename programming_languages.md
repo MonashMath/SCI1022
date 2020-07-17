@@ -84,4 +84,4 @@ Below is a very short description of the four languages being offered. More deta
 ### 1.2.4. `Mathematica`
 <a id="markdown-mathematica" name="mathematica"></a>
 
-`Wolfram Mathematica` is a proprietary program which is particularly well-suited for symbolic computations. It is an untyped language. It can be of interest for undergraduate students in mathematics and physics that require to make intensive use of symbolic computation. [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica). Monash has a `Mathematica` site-license that allows Monash students to install it on their personal computers.
+[`Wolfram Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica) is a proprietary program which is particularly well-suited for symbolic computations. It is an untyped language. It can be of interest for undergraduate students in mathematics and physics which require to make intensive use of symbolic computation. . Monash has a `Mathematica` site-license that allows Monash students to install it on their personal computers.
