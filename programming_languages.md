@@ -16,7 +16,7 @@
 # 1. A brief overview of programming languages and the elective modules: `R`, `Python`, `MATLAB` and `Mathematica` (*20 min*).  
 <a id="markdown-a-brief-overview-of-programming-languages-and-the-elective-modules-r-python-matlab-and-mathematica-20-min" name="a-brief-overview-of-programming-languages-and-the-elective-modules-r-python-matlab-and-mathematica-20-min"></a>
 
-A [programming language](https://en.wikipedia.org/wiki/Programming_language) consists of instructions for computers. Like natural languages, [programming languages](https://en.wikipedia.org/wiki/Comparison_of_programming_languages) are formal languages which conform to rules for syntax and semantics. They allow scientists and engineers to implement [algorithms](https://en.wikipedia.org/wiki/Algorithm).
+A [programming language](https://en.wikipedia.org/wiki/Programming_language) consists of instructions for computers. Like natural languages, [programming languages](https://en.wikipedia.org/wiki/Comparison_of_programming_languages) are formal languages which conform to rules for syntax and semantics. They allow scientists and engineers to implement [algorithms](https://en.wikipedia.org/wiki/Algorithm). 
 
 
 ## 1.1. A taxonomy of programming languages: static versus dynamic languages
