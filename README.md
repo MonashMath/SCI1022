@@ -8,10 +8,10 @@ This repository includes the material for the first two weeks (Unix command-line
 
 Material for the initial mandatory workshops (8 hours of computer lab in total).
 
-1. A, Introduction to programming languages and the elective modules: [`R`](https://en.wikipedia.org/wiki/R_(programming_language)), [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)), [`MATLAB`](https://en.wikipedia.org/wiki/MATLAB) and [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica) (*20 min*).<br>[[HTML]](./introduction.md) [[PDF]](https://github.com/MonashMath/SCI1022/blob/master/programming_languages.pdf)
+1. A, Introduction to programming languages and the elective modules: [`R`](https://en.wikipedia.org/wiki/R_(programming_language)), [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)), [`MATLAB`](https://en.wikipedia.org/wiki/MATLAB) and [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica) (*20 min*).<br>[[HTML]](./introduction.md)
 2. Introduction to the [Unix](https://en.wikipedia.org/wiki/Unix) command-line (*5h*).<br> 
 [[HTML]](./Unix-CLI.md) [[PDF]](https://github.com/MonashMath/SCI1022/blob/master/Unix-CLI.pdf)
-3. Introduction to [Version control](https://en.wikipedia.org/wiki/Version_control) using [Git](https://git-scm.com/) (*2h 40min*). <br>[[HTML]](./Git.md) [[PDF]](https://github.com/MonashMath/SCI1022/blob/master/Git.pdf)
+3. Introduction to [Version control](https://en.wikipedia.org/wiki/Version_control) using [Git](https://git-scm.com/) (*2h 40min*). <br>[[HTML]](./Git.md)
 
 ## Lectures Schedule (initial mandatory workshops)
 
