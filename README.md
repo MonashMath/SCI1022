@@ -12,12 +12,3 @@ Material for the initial mandatory workshops (8 hours of computer lab in total).
 2. Introduction to the [Unix](https://en.wikipedia.org/wiki/Unix) command-line (*5h*).<br> 
 [[HTML]](./Unix-CLI.md)
 3. Introduction to [Version control](https://en.wikipedia.org/wiki/Version_control) using [Git](https://git-scm.com/) (*2h 40min*). <br>[[HTML]](./Git.md)
-
-## Lectures Schedule (initial mandatory workshops)
-
-The week of 09/03/2020-13/03/2020 will be online. We ask the students to follow by their own the [Unix shell](./Unix-CLI.md) (5h).
-
-The second week, we will solve questions about the Unix shell. Next, we will start working with Git. 
-
- * 16/03/2020 (2h) -  [Introduction to programming languages](./programming_languages.md) (~20 min). Start with [Git](./Git.md) (~1h 40min)
-* 17/03/2020 (2h) - Finish [Git](./Git.md) (2h)
