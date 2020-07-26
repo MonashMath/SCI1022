@@ -232,8 +232,6 @@ A new file of name `sentences.txt` is created in the current directory if it did
 
 In any case, we strongly encourage you to avoid copy & paste as a general rule, but to type the commands yourself in order to better familiarise yourself with them. 
 
-> *__Note:__* If you are using the light version of MoVE, copy & paste is a bit more involved. See [MoVE users' manual](https://www.monash.edu/learning-teaching/innovation/user-guides/move-user-guide) for more details.  
-
 We can inspect the contents of the new file using the `cat` command as follows:
 ```bash
 $ cat sentences.txt
