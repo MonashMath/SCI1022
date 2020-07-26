@@ -8,7 +8,7 @@ This repository includes the material for the first two weeks (Unix command-line
 
 Material for the initial mandatory workshops (8 hours of computer lab in total).
 
-1. A, Introduction to programming languages and the elective modules: [`R`](https://en.wikipedia.org/wiki/R_(programming_language)), [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)), [`MATLAB`](https://en.wikipedia.org/wiki/MATLAB) and [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica) (*20 min*).<br>[[HTML]](./introduction.md)
+1. A, Introduction to programming languages and the elective modules: [`R`](https://en.wikipedia.org/wiki/R_(programming_language)), [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)), [`MATLAB`](https://en.wikipedia.org/wiki/MATLAB) and [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica).<br>[[HTML]](./introduction.md)
 2. Introduction to computational science.<br> 
 [[HTML]](./computational-science.md)
 2. Introduction to the [Unix](https://en.wikipedia.org/wiki/Unix) command-line (*5h*).<br> 
