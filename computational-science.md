@@ -6,7 +6,7 @@ A new scientific tool has emerged during the last 50 years, which has radically 
 
 With computational science algorithms, we can predict phenomena that are too expensive, too complex, too dangerous or even impossible to observe in real life. For this reason, computational science is often called _predictive science_. Preliminary designs and optimisation of [aircrafts](https://www.youtube.com/watch?v=-D5N_OnZ_Tg) or F1 cars are carried out in virtual wind tunnels (scientific programs that simulate turbulent flows and structures). The protective shielding of efficient [fusion reactors](https://www.iter.org/mach/Blanket) is also simulated using supercomputers, since there are no experimental facilities in the World to perform these experiments (the ITER project is still in the way). Nowadays, the synergy between experimental, theoretical and computational science is essential for the advancement of science. The importance of computational models is also of critical importance in engineering, and we usually call this area [_computational science and engineering_](https://en.wikipedia.org/wiki/Computational_engineering) or CSE.
 
-CSE is the field that develops _computational models and algorithms_ to simulate phenomena in science and engineering. We can also talk about computational finance or computational sociology to put some examples. It is a quite multidisplinary field, which involves:
+CSE is the field that develops _computational models and algorithms_ to simulate phenomena in science and engineering. We can also talk about computational finance or computational sociology to put some examples. It is a quite multidisciplinary field, which involves:
 
 * mathematics, 
 
@@ -49,7 +49,7 @@ Numerical methods for the approximation of PDEs (finite difference, finite eleme
 
 ![Meshes in a mantle convection simulation from this [source](http://mathis.colorado.edu/szhong/papers/BursteddeGhattasGurnisEtAl08.pdf)](figs-cs/mantle-convection-mesh.png)
 
-Now, the unknowns are not functions but values (velocity, pressure and temperature) at the nodes of this mesh. Thus, our unknow is just an array of real numbers. On the other hand, instead of derivatives of functions, we replace these operators by simple equations. E.g., a derivative 
+Now, the unknowns are not functions but values (velocity, pressure and temperature) at the nodes of this mesh. Thus, our unknown is just an array of real numbers. On the other hand, instead of derivatives of functions, we replace these operators by simple equations. E.g., a derivative 
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{\mathrm{d}f}{\mathrm{d}x}&space;=&space;f(x&plus;h)-f(x)&plus;\mathrm{error}(h)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{\mathrm{d}f}{\mathrm{d}x}&space;=&space;f(x&plus;h)-f(x)&plus;\mathrm{error}(h)" title="\frac{\mathrm{d}f}{\mathrm{d}x} = f(x+h)-f(x)+\mathrm{error}(h)" /></a>
 
@@ -65,7 +65,7 @@ After all this process, we are able to predict mantle convection using computers
 
 The software libraries that solve PDEs are pretty complex, and can easily involve millions of lines of code. Many of these software libraries are open source, you can take a look at the code, download it for free, use it and even modify it for your needs. Most of these codes can be found in open repository servers like `GitHub`. Here, you can find one of the scientific software projects I lead, [Gridap](https://github.com/gridap/Gridap.jl) and [how to use it](https://github.com/gridap/Tutorials).
 
-In this unit, we do not have the knowledge yet to consider so complex scientific algorithms, but instead, we will go through the basics of scientific programming, and apply these concepts to (far simpler) scientific problems. These are the very same tools that are being used in these more complex appications, and hopefully, all this introduction will motivate you to get into this field. 
+In this unit, we do not have the knowledge yet to consider so complex scientific algorithms, but instead, we will go through the basics of scientific programming, and apply these concepts to (far simpler) scientific problems. These are the very same tools that are being used in these more complex applications, and hopefully, all this introduction will motivate you to get into this field. 
 
 If you are interested in numerical methods for differential equations, you could consider enrolling in MTH2051.
 
