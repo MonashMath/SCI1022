@@ -3,17 +3,21 @@
 
 A computer is made of different devices, called _hardware_ (the central processing unit or CPU, memory devices as the RAM main memory or hard disk, output devices as a screen or printer, etc). The CPU or _central process unit_ is the core of the computer and the one that runs programs. Modern CPUs are _microprocessors_. Then, we have the main memory, or _random-access memory_ or _RAM_. This memory can be quickly accessed by the CPU at any (random) location, but is _volatile_ (temporary) memory that is used while running a program and erased when shutting off a machine. The _hard disk_ is a secondary storage device that holds data in a persistent (long term) way. Programs are usually stored in this device, and loaded to RAM as needed. Then, we have input devices (keyboard, mouse, etc) and output devices (screen, printer, etc).
 
-Computer memory is split into cells called _bytes_. It is the minimum unit of memory you can address in a computer. A bit contais eight _bits_ and used to encode a single number or character. A _bit_ represents a _binary digit_ (i.e., 0 or 1). Thus, each bit is a two-state device (0 or 1), which can have different physical representations (a positive or negative charge, two directions or magnetisation or polarisation, etc).
+Computer memory is split into cells called _bytes_. It is the minimum unit of memory you can address in a computer. A bit contais eight _bits_ and used to encode a single number or character. A _bit_ represents a _binary digit_ (i.e., 0 or 1). Thus, each bit is a two-state device (0 or 1), which can have different physical representations (a positive or negative charge, two directions or magnetisation or polarisation, etc). It is related to the 0 (off) and 1 (on) in [switches](https://en.wikipedia.org/wiki/Power_symbol). You can understand a
 
-> *__Note:__ If you are not familiar with binary numbers or base-2 numerals, let me provide a short introduction. In the binary system, the only digits are 0 and 1 (in the decimal system you are used to there are 10 digits, i.e., 0,1,2,3,4,5,6,7,8,9). We all know that the number 12304 in the decimal system is 10000+2000+3000+4 or analogously, 1\*10^4+2\*10^3+3\*10^2+0\*10^1+4\*10^0. So, the number 10110 is 1\*2^4+0\*10^3+1\*10^2+1\*10^1+0\*10^0, which in decimal system is 22.* 
+> *__Note:__ If you are not familiar with [binary numbers](https://en.wikipedia.org/wiki/Binary_number) or base-2 numerals, let me provide a short introduction. In the binary system, the only digits are 0 and 1 (in the decimal system you are used to there are 10 digits, i.e., 0,1,2,3,4,5,6,7,8,9). We all know that the number 12304 in the decimal system is 10000+2000+3000+4 or analogously, 1\*10^4+2\*10^3+3\*10^2+0\*10^1+4\*10^0. So, the number 10110 is 1\*2^4+0\*10^3+1\*10^2+1\*10^1+0\*10^0, which in decimal system is 22.* 
 
-> *__Exercise:__ What is the largest number that can be stored with 8 bits (1 byte)? It is 11111111 in binary system, which represents 2^0+2^1+2^2+2^3+2^4+2^5+2^6+2^7 = 255. This is used a 8-bit representation. If you need to store larger numbers, you will use 2-bytes or 16-bit (representing numbers till 65535), 32-bits, 64-bites, etc.*
+> *__Exercise:__ What is the largest number that can be stored with 8 bits (1 byte)? It is 11111111 in binary system, which represents 2^0+2^1+2^2+2^3+2^4+2^5+2^6+2^7 = 255. With 8 bits you can represent the 256 integers 0, 1, ..., 255. If you need to store larger numbers, you will use 2-bytes or 16-bit (representing integers till 65535), 32-bits, 64-bits, etc.*
 
-Not only numbers but _anything_ stored in a computer is written in terms of 0s and 1s. E.g., each alphabet character is represented by a number stored in the computer as a set of bites. This translation between characters and numbers is called a _character set_. The most famous character set is _ASCII_ (in which A is 65 or 01000001, B is 66 or 1, C is 67, ...). However, ASCII only represents 128 English letters, some punctuation marks and other additional characters. _Unicode_ was developed in the 1990s to overcome this limitation, which represents languages for many languages in the world and is becoming the standard character set.
+> *__Note:__ The previous exercise assumes you are only interested in zero and positive integers (a.k.a. unsigned). If you want to represent positive and negative numbers (a.k.a. signed), we conceptually need to keep one bit for the sign, limiting the maximum number we can represent. See [here](https://en.wikipedia.org/wiki/Integer_(computer_science)) for more details.*
+
+> *__Note:__ Real numbers (a.k.a. _floating point_ numbers) are also represented in a computer using a binary base. In a nutshell, we write our number in [scientific notation](https://en.wikipedia.org/wiki/Scientific_notation), e.g., 120.95 is 1.2095 x 10^2 or simply 1.2095E2, using some bits for the binary representation of the exponent, other set of bits for the so-called _significant_, and one bit for the sign. Reals or floats are usually stored using 64-bits.*
+
+Not only numbers but _anything_ stored in a computer is written in terms of 0s and 1s. E.g., each alphabet character is represented by a number stored in the computer as a set of bites. This translation between characters and numbers is called a _character set_. The most famous character set is _ASCII_ (in which A is 65 or 01000001, B is 66 or 1, C is 67, ...). However, ASCII only represents 128 English letters, some punctuation marks and other additional characters (it uses 7 bits of a byte, thus it can only represent 128 characters). _Unicode_ was developed in the 1990s to overcome this limitation, which represents languages for many languages in the world and is becoming the standard character set (it uses 16 bits, and thus can represent 65535 characters).
 
 > *__Exercise:__ Google ASCII codes to find the numeric representation of symbols in a computer. Next, take a look at the Unicode list of characters.*
 
-But we can go much further than numbers and characters in a computer, as you know. We can transform many things into _digital data_ (a bite-based representation). An image in a computer is nothing but an array of numbers, in which each number in the matrix represents a color for each pixel in your screen (those tiny dots). Colors are thus represent by a numeric code. The same idea applies for sounds and _samples_.
+But we can go much further than numbers and characters in a computer, as you know. We can transform many things into _digital data_ (a bite-based representation). An image in a computer is nothing but an array of numbers, in which each number in the matrix represents a color for each pixel in your screen (those tiny dots). Colors are thus represent by a numeric code. One can consider 8 bits per pixel (256 colors), 16 bits per pixel (65536 colors), 24 bits per pixel (16777216 colors, also known as _true color_), etc. The same idea applies for sounds and _samples_.
 
 
 # Programs
@@ -95,7 +99,7 @@ if n>3 :
 print("Hello!")
 ```
 
-# Compilers vs. interpreters
+## Compilers vs. interpreters
 
 As commented above, high-level languages must be translated into machine code in order to be executed. There are two big families of high-level languages: _compiled_ languages and _interpreted_ languages. The difference between them is the _translator_, which in the first case is a _compiler_ and in the second one is an _interpreter_. As we note below, this is not the only possible classification of programming languages.
 
@@ -103,7 +107,7 @@ A compiler translates the _whole_ high-level language program into a machine cod
 
 The high-level language written by the programmer (you) is the _source code_. It is written using a text editor to create raw text file(s). The programmer makes use of a compiler to translate the source code or an interpreter to translate and execute it. If the code contains syntax errors (bugs), the compiler or debugger will return a syntax error, and the programmer has to fix it to proceed any further. A code can also contain other kinds of errors, e.g., mathematical errors (you are not really computing what you should). These errors are silent errors that a compiler or debugger cannot detect, and many times are hard to find. The process of finding errors (bugs) in a code is called _debugging_. Programmers have at their disposal tools to navigate through their codes in the search of bugs, called _debuggers_. Debugging is a tedious but common part of programming.
 
-# Dynamic vs static languages
+## Dynamic vs static languages
 
 In this section we consider another taxonomy of programming languages accordingly to the way data types of variables are handled. Accordingly to this taxonomy, a language can be either *statically-typed* or *dynamically-typed*, or *static* or *dynamic*, respectively, for short. Generally speaking, static codes are compiled and dynamic codes are interpreted, and you can think that static-compiled and dynamic-interpreted are the same at this level.
 
@@ -136,7 +140,7 @@ In this unit, we will focus on dynamic languages, since the performance hit is n
 
 The static vs. dynamic paradigms, code productivity and performance are serious issues to be considered when creating scientific software projects. There is no *the best* alternative, since it is very case-dependent. Analogously, it is hard to decide which is *the best* static or dynamic programming language, since it depends on the type of work to be performed. 
 
-# Just-in-time compilation
+## Just-in-time compilation
 
 In fact, new programming languages are being created to solve the drawbacks of existing approaches. There is a third family of programming languages that are compiled in run-time. This is called just-in-time (JIT) compilation. A JIT compiler is somewhere between a static compiler (because it compiles blocks of code being used in a run) and an interpreted (because it compiles in run-time).
 
@@ -145,7 +149,7 @@ In fact, new programming languages are being created to solve the drawbacks of e
 # The four elective modules
 <a id="markdown-the-four-elective-modules" name="the-four-elective-modules"></a>
 
-For all these reasons, SCI1022 includes four different workshops on three dynamically-typed languages, namely, [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)), [`MATLAB`](https://en.wikipedia.org/wiki/MATLAB), [`R`](https://en.wikipedia.org/wiki/R_(programming_language)), and an untyped language, [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica). Below, we provide a description of the four different languages that would help students to pick the ones that better fit their requirements. You can do your own research, in order to decide which is the right language for you. There are also different indices that measure the _popularity_ of programming languages, e.g., the [TIOBE index](https://en.wikipedia.org/wiki/TIOBE_index). You can find the ranking [here](https://tiobe.com/tiobe-index/).
+SCI1022 includes four different workshops on three dynamically-typed languages, namely, [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)), [`MATLAB`](https://en.wikipedia.org/wiki/MATLAB), [`R`](https://en.wikipedia.org/wiki/R_(programming_language)), and an untyped language, [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica). Below, we provide a description of the four different languages that would help students to pick the ones that better fit their requirements. You can do your own research, in order to decide which is the right language for you. There are also different indices that measure the _popularity_ of programming languages, e.g., the [TIOBE index](https://en.wikipedia.org/wiki/TIOBE_index). You can find the ranking [here](https://tiobe.com/tiobe-index/).
 
 Below is a very short description of the four languages being offered. More detailed information can be found in the respective Moodle pages.
 
