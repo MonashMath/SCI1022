@@ -13,7 +13,7 @@ Material for the initial mandatory workshops (8 hours of computer lab in total).
 [[HTML]](./computational-science.md)
 
 
-# Optional material
+## Optional material
 
 Even though we consider very useful for a science student to know about Git version-control system and be familiar with `GitHub`, we do not have the time in the unit to explain these concepts. For interested students, we have created this introduction to Git _that is not part of the course but optional reading._
 
