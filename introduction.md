@@ -1,7 +1,7 @@
 
 # Introduction to computers
 
-A computer is made of different devices, called _hardware_ (the central processing unit or CPU, memory devices as the RAM main memory or hard disk, output devices as a screen or printer, etc). The CPU or _central process unit_ is the core of the computer and the one that runs programs. Modern CPUs are _microprocessors_. Then, we have the main memory, or _random-access memory_ or _RAM_. This memory can be quickly accessed by the CPU at any (random) location, but is _volatile_ (temporary) memory that is used while running a program and erased when shutting off a machine. The _hard disk_ is a secondary storage device that holds data in a persistent (long term) way. Programs are usually stored in this device, and loaded to RAM as needed. Then, we have input devices (keyboard, mouse, etc) and output devices (screen, printer, etc).
+A [computer](https://en.wikipedia.org/wiki/Computer) is made of different devices, called _hardware_ (the central processing unit or CPU, memory devices as the RAM main memory or hard disk, output devices as a screen or printer, etc). The [CPU](https://en.wikipedia.org/wiki/Computer#Central_processing_unit_(CPU)) or _central process unit_ is the core of the computer and the one that runs programs. Modern CPUs are _microprocessors_. Then, we have the main memory, or _random-access memory_ or _RAM_. This memory can be quickly accessed by the CPU at any (random) location, but is _volatile_ (temporary) memory that is used while running a program and erased when shutting off a machine. The _hard disk_ is a secondary storage device that holds data in a persistent (long term) way. Programs are usually stored in this device, and loaded to RAM as needed. Then, we have input devices (keyboard, mouse, etc) and output devices (screen, printer, etc).
 
 Computer memory is split into cells called _bytes_. It is the minimum unit of memory you can address in a computer. A bit contais eight _bits_ and used to encode a single number or character. A _bit_ represents a _binary digit_ (i.e., 0 or 1). Thus, each bit is a two-state device (0 or 1), which can have different physical representations (a positive or negative charge, two directions or magnetisation or polarisation, etc). It is related to the 0 (off) and 1 (on) in [switches](https://en.wikipedia.org/wiki/Power_symbol). You can understand a
 
@@ -24,13 +24,10 @@ But we can go much further than numbers and characters in a computer, as you kno
 
 As you probably know, computers can do lots of different things for you, because they can be _programmed_. The program is __a collection of instructions that can be executed by the CPU to perform a specific task.__ Each __instruction__ tells the CPU to perform a basic operation. 
 
-The CPU is an electronic device that has been designed to carry out _some very specific_ operations. A CPU works as a 3-step _instruction cycle_: 1) an instruction is _fetched_ from memory; 2) the instruction is _decoded_; 3) the instruction is _executed_. 
+The CPU is an electronic device that has been designed to carry out _some very specific_ operations. A CPU works in [_instruction cycles_](https://en.wikipedia.org/wiki/Instruction_cycle): 1) an instruction is _fetched_ from memory; 2) the instruction is _decoded_; 3) the instruction is _executed_. 
 The kind of instructions that an CPU can perform is very limited. It can perform _arithmetic operations_ (addition, subtraction, multiplication or division of two numbers), _memory operations_ (reading a piece of memory or moving data from one location to another) and _logical operations_ (test whether two values are equal). However, CPUs can perform these operations extremely fast. 
 
 Computers only understand _machine code_ (a list of 0s and 1s, the _machine language_). Each basic operation a CPU can perform can be expressed in machine language (via a binary structure, 0s and 1s). The set of _CPU_ instructions is the _CPU instruction set_ (which differs from one brand to another, e.g., the one for Intel is different from the one for AMD).
-
-__TBD__
-FIGURE fetch-decode-execute cycle
 
 A computer requires _software_ (collection of programs) to run. We can distinguish among _system software_ (the operating system, e.g., Windows, macOS, Linux, assemblers, compilers, interpreters) and _applications_ (Zoom, Chrome, Word, Acrobat, etc). In this unit, we will be focused on scientific programming, i.e., programs that solve scientific problems.
 
@@ -101,11 +98,28 @@ print("Hello!")
 
 ## Compilers vs. interpreters
 
-As commented above, high-level languages must be translated into machine code in order to be executed. There are two big families of high-level languages: _compiled_ languages and _interpreted_ languages. The difference between them is the _translator_, which in the first case is a _compiler_ and in the second one is an _interpreter_. As we note below, this is not the only possible classification of programming languages.
+As commented above, high-level languages must be translated into machine code in order to be executed. There are two big families of high-level languages: _compiled_ languages and _interpreted_ languages. The difference between them is the _translator_, which in the first case is a [_compiler_](https://en.wikipedia.org/wiki/Compiler) and in the second one is an [_interpreter_](https://en.wikipedia.org/wiki/Interpreter_(computing)). As we note below, this is not the only possible classification of programming languages.
 
 A compiler translates the _whole_ high-level language program into a machine code program (an _executable_). The machine program is created _before run-time_ (i.e., execution), and it can be then executed as many times as one wants. `C`, `C++` or `FORTRAN` are compiled languages. On the contrary, an interpreter reads each individual instruction in a high-level program, translates it to a machine code, executes, and proceeds to do the same of the next instruction; translation is during run-time. They do not create an executable, and must translate the code every time they are run. `Python`, `Matlab`, `R` and `Mathematica` are an interpreted languages.
 
-The high-level language written by the programmer (you) is the _source code_. It is written using a text editor to create raw text file(s). The programmer makes use of a compiler to translate the source code or an interpreter to translate and execute it. If the code contains syntax errors (bugs), the compiler or debugger will return a syntax error, and the programmer has to fix it to proceed any further. A code can also contain other kinds of errors, e.g., mathematical errors (you are not really computing what you should). These errors are silent errors that a compiler or debugger cannot detect, and many times are hard to find. The process of finding errors (bugs) in a code is called _debugging_. Programmers have at their disposal tools to navigate through their codes in the search of bugs, called _debuggers_. Debugging is a tedious but common part of programming.
+The high-level language written by the programmer (you) is the _source code_. It is written using a text editor to create raw text file(s). The programmer may make use of a compiler to translate the source code or an interpreter to translate and execute it. If the code contains syntax errors (bugs), the compiler or debugger will return a syntax error (in compilation time), and the programmer has to fix it to proceed any further. As an example, when trying to compile this `C` code, the compiler will throw an error the addition if integers and strings is not defined, even though the code would never execute the rogue instruction.
+```c
+int age1 = 10;
+char str[] = "hello";
+int my_age
+if (age1 > 10)
+{
+   my_age = age1+str;
+}
+```
+When using an interpreter, the errors will be triggered during run-time (execution time). n this `Python` code (which makes use of an interpreter), we will be able to go through this code without any issue, because the rogue line will never be executed.
+```python
+age1 = 10
+str = "hello"
+if age1 > 10:
+  my_age = age1+str
+```
+A code can also contain other kinds of errors, e.g., mathematical errors (you are not really computing what you should). These errors are silent errors that a compiler or debugger cannot detect, and many times are hard to find. The process of finding errors (bugs) in a code is called _debugging_. Programmers have at their disposal tools to navigate through their codes in the search of bugs, called _debuggers_. Debugging is a tedious but common part of programming.
 
 ## Dynamic vs static languages
 
