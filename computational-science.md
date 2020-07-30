@@ -47,7 +47,7 @@ You don't really need to understand these equations at this stage. Our unknowns 
 
 Numerical methods for the approximation of PDEs (finite difference, finite element, etc) transform this system of equations into a set of _linear systems_ of equations. In order to do that, in the case of PDE-governed models, numerical methods rely on meshes (e.g., triangulations). 
 
-![Meshes in a mantle convection simulation from this [source](http://mathis.colorado.edu/szhong/papers/BursteddeGhattasGurnisEtAl08.pdf)](figs-cs/mantle-convection-mesh.png)
+![Meshes in a mantle convection simulation from http://mathis.colorado.edu/szhong/papers/BursteddeGhattasGurnisEtAl08.pdf](figs-cs/mantle-convection-mesh.png)
 
 Now, the unknowns are not functions but values (velocity, pressure and temperature) at the nodes of this mesh. Thus, our unknown is just an array of real numbers. On the other hand, instead of derivatives of functions, we replace these operators by simple equations. E.g., a derivative 
 
