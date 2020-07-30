@@ -45,9 +45,9 @@ Let us consider a very complex problem in geosciences, the _mantle convection_ i
 
 You don't really need to understand these equations at this stage. Our unknowns are the velocity, pressure, and temperature in the Earth's mantle. These equations are just impossible to solve analytically (unless very simple PDEs on very simple domains). As commented above, computers are not that clever and can just do basic arithmetical and logical operations. To solve PDEs is certainly something computers (but also humans) cannot do in general. As a result we humans have to find models that are _close_ to the differential equations but _only_ involve basic (but probably a huge number!) arithmetic operations that can be carried out by a supercomputer. Thus, what we can do is to _approximate__ the solution of these equations is to _approximate_ it using computers.
 
-Numerical methods for the approximation of PDEs (finite difference, finite element, etc) transform this system of equations into a set of _linear systems_ of equations. In order to do that, in the case of PDE-governed models, numerical methods rely on meshes (e.g., triangulations). 
+Numerical methods for the approximation of PDEs (finite difference, finite element, etc) transform this system of equations into a set of _linear systems_ of equations. In order to do that, in the case of PDE-governed models, numerical methods rely on meshes (e.g., triangulations) that can be found in this [source](http://mathis.colorado.edu/szhong/papers/BursteddeGhattasGurnisEtAl08.pdf). 
 
-![Meshes in a mantle convection simulation from http://mathis.colorado.edu/szhong/papers/BursteddeGhattasGurnisEtAl08.pdf](figs-cs/mantle-convection-mesh.png)
+![Meshes in a mantle convection simulation](figs-cs/mantle-convection-mesh.png)
 
 Now, the unknowns are not functions but values (velocity, pressure and temperature) at the nodes of this mesh. Thus, our unknown is just an array of real numbers. On the other hand, instead of derivatives of functions, we replace these operators by simple equations. E.g., a derivative 
 
