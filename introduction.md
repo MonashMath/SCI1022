@@ -25,7 +25,9 @@ But we can go much further than numbers and characters in a computer, as you kno
 As you probably know, computers can do lots of different things for you, because they can be _programmed_. The program is __a collection of instructions that can be executed by the CPU to perform a specific task.__ Each __instruction__ tells the CPU to perform a basic operation. 
 
 The CPU is an electronic device that has been designed to carry out _some very specific_ operations. A CPU works in [_instruction cycles_](https://en.wikipedia.org/wiki/Instruction_cycle): 1) an instruction is _fetched_ from memory; 2) the instruction is _decoded_; 3) the instruction is _executed_. 
-The kind of instructions that an CPU can perform is very limited. It can perform _arithmetic operations_ (addition, subtraction, multiplication or division of two numbers), _memory operations_ (reading a piece of memory or moving data from one location to another) and _logical operations_ (test whether two values are equal). However, CPUs can perform these operations extremely fast. 
+The kind of instructions that an CPU can perform is very limited. 
+
+The CPU can perform __basic arithmetic operations__ (addition, subtraction, multiplication or division of two numbers), __memory operations__ reading a piece of memory or moving data from one location to another) and __logical operations__ (test whether two values are equal). However, CPUs can perform these operations extremely fast. 
 
 Computers only understand _machine code_ (a list of 0s and 1s, the _machine language_). Each basic operation a CPU can perform can be expressed in machine language (via a binary structure, 0s and 1s). The set of _CPU_ instructions is the _CPU instruction set_ (which differs from one brand to another, e.g., the one for Intel is different from the one for AMD).
 
