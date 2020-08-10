@@ -6,7 +6,7 @@ As mentioned there, it is **indispensable** that you are able to set up a Python
 
 **Only as a temporary fallback solution**, I have created an executable environment on the cloud for week 2 of the course. The only thing that you need is to click on the `binder` badges  below to launch the Jupyter notebooks on your browser. This way you do not need _anything_ locally on your computer. Be patient, the start up of the Jupyter notebook _can take a considerable amount of time_ the first time.
 
-As mentioned above, this is only a temporary fallback solution for the first week of the workshop. **If you are still having issues/struggling with your local installation**, please let us know 
+As mentioned above, this is only a temporary fallback solution for the second week of the unit. **If you are still having issues/struggling with your local installation**, please let us know 
 ASAP through the appropriate Moodle forum, and we will look for a solution. 
 
 Please, take into account the following warnings when working with `binder`. 
