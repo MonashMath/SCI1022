@@ -26,5 +26,6 @@ Please, take into account the following warnings when working with `binder`.
 
 ## Workshop 2 (Week 3) Jupyter notebook
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MonashMath/SCI1022/master?filepath=S2-2020-Python-Workshops%2FWS1%2FPython_WS2_Collatz_conjecture.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://hub.gke.mybinder.org/user/monashmath-sci1022-wie77hja/notebooks/S2-2020-Python-Workshops/WS2/Python_WS2_Collatz_conjecture.ipynb)
+
 
