@@ -23,3 +23,8 @@ Please, take into account the following warnings when working with `binder`.
 ## Workshop 1 (Week 2) Jupyter notebook
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MonashMath/SCI1022/master?filepath=S2-2020-Python-Workshops%2FWS1%2FPython_WS1_Classifying_vertebrates.ipynb)
+
+## Workshop 2 (Week 3) Jupyter notebook
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MonashMath/SCI1022/master?filepath=S2-2020-Python-Workshops%2FWS1%2FPython_WS2_Collatz_conjecture.ipynb)
+
