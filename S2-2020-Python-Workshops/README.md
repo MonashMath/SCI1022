@@ -28,4 +28,9 @@ Please, take into account the following warnings when working with `binder`.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MonashMath/SCI1022/master?filepath=S2-2020-Python-Workshops%2FWS2%2FPython_WS2_Collatz_conjecture.ipynb)
 
+## Workshop 3 (Week 4) Jupyter notebook
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MonashMath/SCI1022/master?filepath=S2-2020-Python-Workshops%2FWS3%2FPython_WS3_1D_Motion_uniform_gravitational_field.ipynb)
+
+
 
