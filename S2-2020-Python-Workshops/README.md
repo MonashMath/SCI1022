@@ -32,5 +32,12 @@ Please, take into account the following warnings when working with `binder`.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MonashMath/SCI1022/master?filepath=S2-2020-Python-Workshops%2FWS3%2FPython_WS3_1D_Motion_uniform_gravitational_field.ipynb)
 
+## Workshop 8 (Week 9) Jupyter notebook
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MonashMath/SCI1022/master?filepath=S2-2020-Python-Workshops%2FWS8%2FPython_WS8_From_genes_to_proteins.ipynb)
+
+
+
+
 
 
