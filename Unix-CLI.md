@@ -151,17 +151,17 @@ In all cases, the solution is the same: to hit "`Ctrl-C`". If this technique sti
 
 
 ------
-> *__Exercise 2:__* Run the commands in [Figure 8](#fig_list_commands), one after the other, and confirm that you can cancel them and get out of trouble by hitting "`Ctrl-C`".
+> *__Exercise 1:__* Run the commands in [Figure 8](#fig_list_commands), one after the other, and confirm that you can cancel them and get out of trouble by hitting "`Ctrl-C`".
 ------
 
-The shell includes a very useful command to get comprehensive information about other commands. The name of this command is `man` (short for "manual"), but it is not at your disposal if you are using the git-shell provided by `Miniconda`. It takes as an argument the name of the command we want help about. For example, the result of running `man echo` is shown in [Figure 9](#fig_echo_command_output). If you are in a macOS or Linux environment you can try to use it. If your are using Windows, you can take a look at the manual in this [link](http://man.he.net/). A much shorter description for a given command is `--help`. E.g., if you write `cat --help` you will get some info about the `cat` command. `echo` is an exception, you would need to write `help echo`.
+The shell includes a very useful command to get comprehensive information about other commands. The name of this command is `man` (short for "manual"), but it is not at your disposal if you are using the git-shell provided by `Miniconda`. It takes as an argument the name of the command we want help about. For example, the result of running `man echo` is shown in [Figure 9](#fig_echo_command_output). If you are in a macOS or Linux environment you can try to use it. If your are using Windows, you can take a look at the manual in this [link](http://man.he.net/). A much shorter description for a given command is `--help`, which is also available in `Miniconda`. E.g., if you write `cat --help` you will get some info about the `cat` command. `echo` is an exception, you would need to write `help echo`.
 
 
 <a name="fig_echo_command_output"></a><img src="figures/echo_command_output.png" alt="" width="100%"/><br>
 Figure 9. The output of `man echo` as displayed in a Linux terminal.
 
 ------
-> *__Exercise 3:__* Go over the man page or help of the `echo` command, and identify the option that lets you avoid printing the newline character at the end of the string received as the argument to `echo`. Print the "hello, world" message, with and without the option.  Is the difference among these two as expected? Note that the position of the option matters. What happens if you put the option at the end? Why?
+> *__Exercise 2:__* Go over the man page or help of the `echo` command, and identify the option that let you avoid printing the newline character at the end of the string received as the argument to `echo`. Print the "hello, world" message, with and without the option.  Is the difference among these two as expected? Note that the position of the option matters. What happens if you put the option at the end? Why?
 ------
 
 
@@ -172,17 +172,17 @@ The shell (recall that we are using the `bash` shell) provides several features 
 
 
 ------
-> *__Exercise 4:__* Use the up arrow in order to print the messages “cold”, “cord”, “word”,  “ward”, "hard" without retyping `echo` each time.
+> *__Exercise 3:__* Use the up arrow in order to print the messages “cold”, “cord”, “word”,  “ward”, "hard" without retyping `echo` each time.
 
 ### 1.1.5. Clearing screen
 <a id="markdown-clearing-screen" name="clearing-screen"></a>
 
 The `clear` command can be used in order to clean up the output down to the bottom of the window by clearing the terminal screen. This can be useful, e.g., if you have been experimenting with a command, with a number of error messages in the path towards understanding it, and you then want to give it a clean new try. A key combination with the same result as `clear` is `Ctrl+L`. 
 
-On the other hand, when we are done with a terminal window and you feel ready to end the current session, you can use the `exit` command or the `Ctrl+D` key combination.
+On the other hand, when you want to end the current session, you can use the `exit` command or the `Ctrl+D` key combination.
 
 ------
-> *__Exercise 6:__* Open a new terminal, write some commands in it, then clear the screen, and exit from the terminal.
+> *__Exercise 4:__* Open a new terminal, write some commands in it, then clear the screen, and exit from the terminal.
 ------
 
 ### 1.1.6. The Unix file system
@@ -193,8 +193,6 @@ In this tutorial we will learn basic commands for manipulating **files** (create
 <a name="fig_unix_file_system"></a> 
 <img src="figures/unix_file_system.png" alt="" width="100%"/><br>
 Figure 11. Illustration of the Unix file system. Terminal nodes (also known as leaves) are either files (e.g., `cp`, `ksh`, or `passwd`) or directories (e.g., `lib`). Terminal directories are void directories, i.e., directories without files and (sub)directories. Later on we will learn commands that will let us distinguish whether a given item of the file system is actually a file or a directory, or to check whether a directory is empty or not.
-
-> *__Note:__* the `tree` command outputs on screen the directory tree which is rooted at the current working directory. If you have a macOS or Linux terminal, run the command to check it. Unfortunately, it is not available in the `git-bash` provided by `Miniconda`. If you do not understand the output right now, no problem, you will at the end of this tutorial.
 
 ## 1.2. Files
 <a id="markdown-files" name="files"></a>
@@ -259,6 +257,8 @@ By the way, to get this command, you may use the up arrow key in order to avoid 
 ### 1.2.2. Input redirection
 <a id="markdown-input-redirection" name="input-redirection"></a>
 
+`cat` (from concatenate) is a very popular command that allows us to create files, view their content, or concatenate files. and redirect output in terminal or files.
+
 Many commands that print to standard output (e.g., `cat`, or `echo`) get the information to be printed from the so-called **standard input** when they are called **without arguments**. By default, the standard input is connected to the keyboard of your machine. For example, if you type
 
 ```bash
@@ -277,10 +277,12 @@ Reasonable particular on my it in sympathize.
 
 Can you grasp why `cat` is generating such an output on screen?
 
+In any case, you don't really need to use `cat <` to see the content of a file, `cat` is enough, and this is how you are going to use it most of the time. For instance, `cat file1 file2` shows the concatenation of the content of two files.
+
 ----
 > *__Exercise 7:__*
 > 1. Using output redirection, create two files called `sentence_1.txt` and `sentence_2.txt` containing the first and second lines of our reference text.
->  2. Replicate the original `sentences.txt` (containing the first two lines if the text) using `cat` with combined input+output redirection. Call the new file `sentences_backup.txt`. Check using `cat` that the contents of `sentences.txt` and `sentences_backup.txt` are identical. 
+>  2. Replicate the original `sentences.txt` (containing the first two lines if the text) using `cat`. Call the new file `sentences_backup.txt`. Check using `cat` that the contents of `sentences.txt` and `sentences_backup.txt` are identical. 
 > 3. Read the manual page of `diff` and repeat the last operation of the previous item automatically using the `diff` command. **Hint**: `diff` simply outputs nothing whenever the files are identical.
 > 4. Use `cat` to combine the contents of `sentence_1.txt` and `sentence_2.txt` in reverse order using a **single** command, to create the file `sentences_reversed.txt`. **Hint**: The `cat`command can take multiple arguments.
 ----
@@ -335,8 +337,7 @@ $ ls -l sentence*
 By now, you don't have to worry about most of the fields output by `ls -l` (we will go back to this in [Section 1.4](#14-file-and-directory-permissions)), but note that the long form lists a date and a time (timestamp in computer science parlance) that indicates the last time the file was modified. The number before the date is the *size* of the file, measured in [bytes](https://en.wikipedia.org/wiki/Byte).
 
 
-
-A second powerful `ls` variant is `ls -r -t -l`, which lists the long form of each file or directory in reversed order of how recently it was modified (*reversed* so that the most recently modified entries appear at the bottom of the screen for easy inspection). This is particularly useful when there are a lot of files in the directory but you want to identify the ones that were recently modified. An example is as follows:
+A second powerful `ls` variant is `ls -t -l`, which lists the long form of each file or directory ordered by modification date, above the newest and at the bottom the oldest. `ls -r -t -l` do the same in reverse order. This is particularly useful when there are a lot of files in the directory but you want to identify the ones that were recently modified. An example is as follows:
 
 ```bash
 $ ls -rtl sentence*
@@ -394,14 +395,14 @@ This name comes from the fact that the command is used, in the most general case
 Rename `sentences.txt` as `first_two_sentences.txt`. Check that the command succeeded. Try to rename a file as an existing file. What behaviour do you observe? 
 ----
 
-Finally, files are deleted with `rm`. **Be careful!:** this command is highly dangerous, there is **NO UNDO**.
+Finally, files are deleted with `rm`. **Be careful!:** this command is highly dangerous, there is **NO UNDO**. **NEVER TRY** `rm -rf /` (and close friends). It is the nuclear button of the shell, it would delete everything!
 
 ----
 > *__Exercise 13:__*
 Delete the  `first_two_sentences.txt` file. Confirm that the command has the desired effect.
 ----
 
-> *__Note:__* A major goal of this subject (actually of its [second module](Git.md)) is that you start using a distributed version control system on a daily basis in order to systematically trace the changes that you perform into your files (e.g., source codes in a computer programming language, documents, reports, articles, figures, etc.). Such systems allow you to keep a mirror (clone) of your files on the Cloud (e.g., [GitHub](https://www.github.com) or [GitLab](https://www.gitlab.com)). Although it is still possible to loose data using version control, the probability and amount of data loss are minimized if one keeps to a systematic and appropriate workflow.
+> *__Note:__* A major goal *not covered this year 2020* of this subject (actually of its [second module](Git.md)) is that you start using a distributed version control system on a daily basis in order to systematically trace the changes that you perform into your files (e.g., source codes in a computer programming language, documents, reports, articles, figures, etc.). Such systems allow you to keep a mirror (clone) of your files on the Cloud (e.g., [GitHub](https://www.github.com) or [GitLab](https://www.gitlab.com)). Although it is still possible to loose data using version control, the probability and amount of data loss are minimized if one keeps to a systematic and appropriate workflow.
 
 ## 1.3. Directories
 <a id="markdown-directories" name="directories"></a>
@@ -532,7 +533,7 @@ If relative paths do not start from the root directory, then, where do they star
 
 ----
 > *__Exercise 22:__*
- Change the current work directory to your home directory. Type the `ls -l bin/file` command. What do you get on screen? Why? Repeat the same operation with the root directory and compare to the previous results.
+ Change the current work directory to your home directory. Type the `ls -l bin/ls` command. What do you get on screen? Why? Repeat the same operation with the root directory and compare to the previous results.
 ----
 
 There are two special ways of navigating across the file system that are worth mentioning. The first is changing to the **parent** directory of the current working directory, which is denoted as `..` (two dots):
@@ -671,8 +672,7 @@ Explain why you should **NEVER** type the command `rm -rf ~` into a terminal win
 > 1. Make a directory `test` with a subdirectory `test_child`, then rename the latter as `test_descendent`.
 > 2. Copy all the files in `txt_files`, *with* directory, into `test`.
 > 3. Copy all the files in `txt_files`, *without* directory, into `test_descendent`.
-> 4. Execute `tree` with the `test` folder as an argument to confirm that the result is as expected.
-> 5. Remove `test` and everything in it using a single command.
+> 4. Remove `test` and everything in it using a single command.
 ----
 
 ## 1.4. File and directory permissions
@@ -688,7 +688,7 @@ In this section you will learn how to give users on your system
 
 
 
-Even though this section is quite important, it cannot f you are using `git-bash`, you will see that what is explained here is not what y
+Even though this section is quite important, it cannot f you are using `git-bash`, you will see that what is explained here is not what you observe in your shell. You can follow the discussion and run the commands, but they don't have any effect at all.
 
 Unix files and folders have **permissions**. The permissions of a file or directory indicate **who can do what with such file or folder**. Actions that can be performed on a file or folder fall into three main categories:
 - reading `r`: any access to a file or folder  that does not change it (e.g., displaying).
