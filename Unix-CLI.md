@@ -82,7 +82,7 @@ Figure 3. The terminal icon in Ubuntu's Linux Dock.
 
 In this tutorial, however, we assume that you are working on your own desktop, laptop, or tablet, and **_that you do not necessarily have an installed working version of a Unix-type OS_** such as, e.g., macOS or Ubuntu Linux. 
 
-To be updated by Alberto for Miniconda
+If you have Windows 10, then we will use the `Git Bash` terminal. In order to execute this terminal, type "Git Bash" on the Windows 10 search bar to find it, and then click on the Git Bash icon that just appears after search. You may also go the video available [here](https://lms.monash.edu/mod/folder/view.php?id=7562695), and watch from 9:50 to 10:23. 
 
 ### 1.1.3. Typing our first commands. Looking for help using `--help`
 <a id="markdown-typing-our-first-commands-looking-for-help-using-man" name="typing-our-first-commands-looking-for-help-using-man"></a>
