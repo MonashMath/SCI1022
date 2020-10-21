@@ -7,27 +7,22 @@
 ## Submission instructions
 
 Write an e-mail with the following structure:
- * **To**: `davidr.lee@monash.edu`
- * **Subject**: Assignment Unix shell and Git Intro
+ * **To**: `santiago.badia@monash.edu`
+ * **Subject**: [SCI1022] Assignment Unix shell and Git Intro
  * **Body**: 
     ```
      First name(s) Given name(s)
-     <URL to remote GitHub project>
     ```
 
-where `<URL to remote GitHub project>` is the URL of the remote Git repository at GitHub that you have to create along the assignment in order to gather the answers to the questions formulated below (more details can be found in the following sections).
+with an attached file in which you gather the answers to the questions formulated below (more details can be found in the following sections).
 
 ## Assignment instructions/recommendations
 
-Complete the tasks in the "Assignment statement" section below **in sequence**. The answers must be written down in a text file named  "`<username>_sci1022_assignment_answer.txt`", where `<username>` is your username at the Cygwin command-line environment. (Recall that one may use the `whoami` command to get the `username` printed on screen.) You must take the following instructions into consideration:
+Complete the tasks in the "Assignment statement" section below **in sequence**. The answers must be written down in a text file named  "`<surname>_sci1022_assignment_answer.txt`", where `<username>` is your surname. You must take the following instructions into consideration:
 
 * You have to write down the commands that you executed to solve the task, as well as the output that you got printed on screen for each of the different commands. 
 
-* The text file where you have to write down your answers must be tracked from the beginning by Git in a **local repository/folder** located at  `~/Documents/<username>_sci1022_assignment_answer`. You are free to decide how to split your work into commits, but a reasonable strategy is to have one commit each time you complete a new task.
-
-* You must create a public repository at GitHub named `<username>_sci1022_assignment_answer`, and push there the contents of your local Git repository (ideally after each commit to minimize the probability of losing work).
-
-We recommend a workflow based on three Gygwin terminal windows. In the first terminal window you can edit your answers using `nano`. The second one can be devoted to Git-related tasks. Finally, you can use the third one to execute the commands required to complete the different tasks.
+We recommend a workflow based on two terminal windows. In the first terminal window you can edit your answers using `nano`. The second one can be used to execute the commands required to complete the different tasks.
 
 ## Assignment statement
 
