@@ -252,6 +252,14 @@ Reasonable particular on my it in sympathize.
 ```
 By the way, to get this command, you may use the up arrow key in order to avoid typing `cat sentences.txt` all over again. If you did this, well done! If not, don't worry, you will soon learn, after suffering how time consuming retyping commands (particularly large ones) can be. You can also use cat for multiple arguments. `cat file1 file2` shows the concatenation of the content of two files.
 
+The output redirection can also be combined with `cat`. For instance, if you want to create (or overwrite) `sentences_new.txt` with the content of an existing file `sentences.txt` you can do the following:
+
+```bash
+$ cat sentences.txt > sentences_new.txt
+```
+
+Instead of showing the content of `sentences.txt` on the screen, it is re-directed to `sentences_new.txt`. As above, using `>>` instead of `>` you would not overwrite `sentences_new.txt` if it would exist but just append the text at the end.
+
 ----
 > *__Exercise 5:__*
 > 1. Using output redirection, create two files called `sentence_1.txt` and `sentence_2.txt` containing the first and second lines of our reference text.
