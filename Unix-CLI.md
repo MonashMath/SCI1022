@@ -254,7 +254,7 @@ Reasonable particular on my it in sympathize.
 
 By the way, to get this command, you may use the up arrow key in order to avoid typing `cat sentences.txt` all over again. If you did this, well done! If not, don't worry, you will soon learn, after suffering how time consuming retyping commands (particularly large ones) can be.
 
-### 1.2.2. Input redirection
+<!-- ### 1.2.2. Input redirection
 <a id="markdown-input-redirection" name="input-redirection"></a>
 
 `cat` (from concatenate) is a very popular command that allows us to create files, view their content, or concatenate files. and redirect output in terminal or files.
@@ -277,8 +277,9 @@ Reasonable particular on my it in sympathize.
 
 Can you grasp why `cat` is generating such an output on screen?
 
-In any case, you don't really need to use `cat <` to see the content of a file, `cat` is enough, and this is how you are going to use it most of the time. For instance, `cat file1 file2` shows the concatenation of the content of two files.
+In any case, you don't really need to use `cat <` to see the content of a file, `cat` is enough, and this is how you are going to use it most of the time. For instance, `cat file1 file2` shows the concatenation of the content of two files. -->
 
+You can also use cat for multiple arguments. `cat file1 file2` shows the concatenation of the content of two files.
 ----
 > *__Exercise 5:__*
 > 1. Using output redirection, create two files called `sentence_1.txt` and `sentence_2.txt` containing the first and second lines of our reference text.
