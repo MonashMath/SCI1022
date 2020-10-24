@@ -14,11 +14,10 @@
         - [1.1.6. The Unix file system](#116-the-unix-file-system)
     - [1.2. Files](#12-files)
         - [1.2.1. Output redirection and appending](#121-output-redirection-and-appending)
-        - [1.2.2. Input redirection](#122-input-redirection)
-        - [1.2.3. Listing files: the `ls` command](#123-listing-files-the-ls-command)
-        - [1.2.4. "Hidden" files](#124-hidden-files)
-        - [1.2.5. "Touching" files](#125-touching-files)
-        - [1.2.6. Copying, renaming, and deleting files](#126-copying-renaming-and-deleting-files)
+        - [1.2.2. Listing files: the `ls` command](#123-listing-files-the-ls-command)
+        - [1.2.3. "Hidden" files](#124-hidden-files)
+        - [1.2.4. "Touching" files](#125-touching-files)
+        - [1.2.5. Copying, renaming, and deleting files](#126-copying-renaming-and-deleting-files)
     - [1.3. Directories](#13-directories)
         - [1.3.1. Directory structure](#131-directory-structure)
         - [1.3.2. Creating directories](#132-creating-directories)
@@ -251,35 +250,8 @@ $ cat sentences.txt
 Arrived compass prepare an on as.
 Reasonable particular on my it in sympathize.
 ```
+By the way, to get this command, you may use the up arrow key in order to avoid typing `cat sentences.txt` all over again. If you did this, well done! If not, don't worry, you will soon learn, after suffering how time consuming retyping commands (particularly large ones) can be. You can also use cat for multiple arguments. `cat file1 file2` shows the concatenation of the content of two files.
 
-By the way, to get this command, you may use the up arrow key in order to avoid typing `cat sentences.txt` all over again. If you did this, well done! If not, don't worry, you will soon learn, after suffering how time consuming retyping commands (particularly large ones) can be.
-
-<!-- ### 1.2.2. Input redirection
-<a id="markdown-input-redirection" name="input-redirection"></a>
-
-`cat` (from concatenate) is a very popular command that allows us to create files, view their content, or concatenate files. and redirect output in terminal or files.
-
-Many commands that print to standard output (e.g., `cat`, or `echo`) get the information to be printed from the so-called **standard input** when they are called **without arguments**. By default, the standard input is connected to the keyboard of your machine. For example, if you type
-
-```bash
-$ cat
-```
-
-then `cat` enters in a state in which it is expecting that you introduce the contents of the file to be printed from the keyboard. It in particular prints to the standard output the whole text introduced so far each time that you press the Return key. Once you have finished writing, you can hit `^D` (as always, this means hold pressed the `Ctrl` key followed by the key labelled as `D`), that tells `cat` that you do not want to enter additional characters. At this point, try to type (or copy & paste) the first sentence of our reference text, and then hit `^D` to see what we are talking about.
-
-**Input redirection** is a feature of the shell that lets you unplug the standard input of a command from the keyboard, and plug it into a file. In other words, the contents that the command would expect from the keyboard are read from the contents of a file instead. Input redirection is denoted by `<`. An example of input redirection using the `sentences.txt` file generated above is as follows:
-
-```bash
-$ cat < sentences.txt
-Arrived compass prepare an on as.
-Reasonable particular on my it in sympathize.
-```
-
-Can you grasp why `cat` is generating such an output on screen?
-
-In any case, you don't really need to use `cat <` to see the content of a file, `cat` is enough, and this is how you are going to use it most of the time. For instance, `cat file1 file2` shows the concatenation of the content of two files. -->
-
-You can also use cat for multiple arguments. `cat file1 file2` shows the concatenation of the content of two files.
 ----
 > *__Exercise 5:__*
 > 1. Using output redirection, create two files called `sentence_1.txt` and `sentence_2.txt` containing the first and second lines of our reference text.

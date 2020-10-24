@@ -1,0 +1,36 @@
+1. We run `echo "My name is Mary" > intro.txt`. Which of the following answers is true:
+
+A. If `intro.txt` does not exist, it creates a new text file named `intro.txt` in the current directory, with only one line of text, "My name is Mary"
+B. We can find a text file in the current directory such that its last line is "My name is Mary"
+C. It throws an error, we should use `>>` instead
+D. None of the above is true
+
+2. We run `echo d1.py d2.py d3.py > all.py` in the current directory, in which I have my three assignments `d1.py`, `d2.py`, `d3.py`. Which of the following answers is true:
+
+A. `all.py` is a text file with the content `d1.pv d2.py d3.py`
+B. `all.py` is a text file with the text in `d1.pv`, `d2.pv` and `d3.pv`
+C. I should have used `echo` instead of `cat` if I wanted to have the result in B.
+D. It throws an error, we should use `>>` instead 
+
+3. 3. We run `mv *.tex myfiles/`
+
+A. If `myfiles` exist, any file that ends with `.tex` is moved to that folder
+B. If `myfiles` exist, any file that contains `.tex` is moved to that folder
+C. If `myfiles` exist, any file that starts with `.tex` is moved to that folder
+D. If `myfiles` does not exist, it will throw an error
+
+4. If I run mkdir `~/myfiles`
+
+A. I am creating a new folder in the current directory
+B. I am creating a new folder in the home directory
+C. I am creating a new folder in the root directory
+D. If `myfiles` exists, it will throw an error
+
+5. *Don't run what comes next in your computer, just try to infer the consequences.* 
+As a joke, I run `rm -rf ~/` in my friend's computer terminal
+
+A. I have erased all the files in the system
+B. I have just erased the files that were in the home directory, but not the other folders and their content
+C. I have just erased the home directory and absolutely everything inside
+D. The computer shows a prompt before removing each file, and I have to write `y` every time
+

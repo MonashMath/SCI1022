@@ -1,0 +1,178 @@
+git help
+
+git config --global user.name "Santiago Badia"
+git config --global user.email "santiago.badia@monash.edu"
+git config --global core.editor "nano"
+
+git config --list --show-origin
+
+cd ~/Documents/
+mkdir myproject
+cd myproject
+git init
+
+# Ex 1
+ls -la
+
+nano README.md
+# Use nano here to add the contents to README.md shown below
+#This is an example README.md file
+cat README.md
+
+git status
+
+git add README.md
+git status
+git commit -m "First commit of myproject with a preliminary version of a README.md file"
+
+git status
+
+git log
+
+# Ex 2
+echo "My file 1" > file1.txt
+echo "My file 2" > file2.txt
+
+git add file1.txt
+git status
+
+git commit -m "File 1 added to staging area"
+
+git add fie2.txt
+git commit
+# Nano opens, put a commit message, Ctrl-S (save) Ctrl-X (exit) in Nano
+
+git log
+
+nano README.md
+# Modify the file as follows
+#This is an **example** README.md file 
+cat README.md
+
+git status
+git diff
+
+git add README.md
+git diff
+
+git diff --staged
+
+nano README.md 
+# Use nano to add a new line to README.md as shown below
+#This is an **example** README.md file
+#We are writing it while following the second workshop of SCI1022
+cat README.md  
+
+git status
+
+# Ex 3
+git diff
+git diff --staged
+
+#Ex 4
+git log # get previous commit hash
+git diff "commit_hash"
+
+git checkout -- README.md
+git status
+cat README.md
+
+git commit -m "New commit with the new READMe.md changes"
+
+# Sect. 1.8
+# Create a github account
+# Connecting to Github with SSH keys
+ssh-keygen -t rsa -b 4096 -C "santiago.badia@monash.edu"
+# Follow instructions in GitHub (see tutorial)
+
+# Ex 5 
+# Work in GitHub
+
+cd ~/Documents/
+rm -Rf myproject
+
+cd ~/Documents/
+git clone git@github.com:... # from Github
+cd yourrepos/
+cat README.md
+
+# Ex 6 (I would skip it)
+
+cd ~/Documents/mysci1022repos/
+mkdir figures
+curl https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/220px-Shakespeare.jpg -o figures/shakespeare_portrait.jpg
+git add figures
+git commit -m "Added W. Shakespeare's portrait image file"
+git push origin
+
+#Ex 7 (github)
+
+cd ~/Documents/mysci1022repos/
+nano README.md # To get the content below
+cat README.md
+# This is an **example** README.md file
+#
+# ![fig_shakespeare](figures/shakespeare_portrait.jpg)
+# Figure 1. The Chandos portrait (held by the National Portrait Gallery, London)
+
+git add README.md
+git commit -m "Added Shakespeare's image to README.md"
+
+#Ex 8 (github)
+
+git checkout -b add_shakespeare_sonnets
+git branch
+
+# Ex 9
+cd ~/Documents/mysci1022project.
+curl https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Sonnets1609titlepage.jpg/220px-Sonnets1609titlepage.jpg -o figures/sonnets.jpg
+echo "![fig_shakespeare](figures/sonnets.jpg)" >> README.md
+git add README.md
+git commit -m "Adding sonnets"
+git push
+
+git diff master
+
+git push origin add_shakespeare_sonnets
+
+# Ex 10 (in github)
+# Ex 11 (in github)
+
+git checkout master
+git log
+git pull origin master
+
+# Ex 13
+git log
+
+git branch -d add_shakespeare_sonnets
+
+# Ex 14
+git branch -a
+
+nano README.md # Eliminate *'s'
+cat README.md
+
+git add README.md
+git commit -m "The word example no longer in boldface at README.md"
+# Do not push!!!
+
+# Ex 15 (quite a lot of work...)
+
+cd ~/Documents
+mkdir mycollaboratorproject
+cd mycollaboratorproject
+git clone ... # From github
+git checkout -b mcollaboratorbranch
+nano README.md # Do italics _xxx_
+git add -u
+git commit -m "Italics"
+git push
+# Now proceed to merge to master in Github
+
+cd ~/Documents/mysci1022repos/
+git pull origin master
+# Solve conflicts in nano
+
+# Final exercise at home...
+
