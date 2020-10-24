@@ -280,7 +280,7 @@ Can you grasp why `cat` is generating such an output on screen?
 In any case, you don't really need to use `cat <` to see the content of a file, `cat` is enough, and this is how you are going to use it most of the time. For instance, `cat file1 file2` shows the concatenation of the content of two files.
 
 ----
-> *__Exercise 7:__*
+> *__Exercise 5:__*
 > 1. Using output redirection, create two files called `sentence_1.txt` and `sentence_2.txt` containing the first and second lines of our reference text.
 >  2. Replicate the original `sentences.txt` (containing the first two lines if the text) using `cat`. Call the new file `sentences_backup.txt`. Check using `cat` that the contents of `sentences.txt` and `sentences_backup.txt` are identical. 
 > 3. Read the manual page of `diff` and repeat the last operation of the previous item automatically using the `diff` command. **Hint**: `diff` simply outputs nothing whenever the files are identical.
@@ -317,7 +317,7 @@ sentence_1.txt  sentence_2.txt  sentences.txt  sentences_backup.txt  sentences_r
 > *__Note:__* It is important to understand that `ls` does not get `sentence*` as an argument. It gets the result of the shell expanding it. If you want to explicitly pass `sentence*` as an argument to the current command, you have to prepend the escape character `\` right before `*`
 
 ----
-> *__Exercise 8:__*
+> *__Exercise 6:__*
 > 1. What is the output of the `ls sentence\*` command. Why?
 > 2. What is the output of the `echo sentence*` command. Why?
 > 3. Write a command to output all files ending with `.txt`
@@ -356,7 +356,7 @@ The three flags can be compacted in a single flag using `-rtl`, i.e., `ls -r -t 
 The Unix file system has the concept of “hidden files (and directories)”. A hidden file is not listed by default by `ls`. Hidden files are characterized by their name starting with a dot `.`, and are commonly used for things like storing user preferences and low-level configuration files. In order to display hidden files and directories, we need to pass `ls` the `-a` flag. 
 
 ----
-> *__Exercise 9:__*
+> *__Exercise 7:__*
 Use `ls -a` on the current directory. Can you observe any hidden files? What are their names?
 ----
 
@@ -366,7 +366,7 @@ Use `ls -a` on the current directory. Can you observe any hidden files? What are
 The `touch` command can be used in order to create an **empty** new file. It takes as an argument the name of the file to be created. If the specified name already exists, then the `touch` command updates both the [access and modification timestamps](https://linuxize.com/post/linux-touch-command/) of the file to the current time, i.e., the last time a file was accessed/opened by some command and the last time the file's content was modified, respectively.
 
 ----
-> *__Exercise 10:__*
+> *__Exercise 8:__*
 Use `ls -l` command to get the modification timestamp of one of the files we have created along the session. Then, touch that file, and check that the file's timestamp has been updated.
 ----
 
@@ -382,7 +382,7 @@ $ cp file1 file2
 makes a copy of the contents of `file1` into a new file named `file2`. Note that if `file2` already exists, it will be overwritten by `file1` (so be careful!).
 
 ----
-> *__Exercise 11:__*
+> *__Exercise 9:__*
 Copy a file into another file. Confirm that the two files are equivalent.
 What happens with the contents of the copy if you change the original file after copying? Why?
 ----
@@ -391,14 +391,14 @@ A file can be renamed with `mv`, which is an abbreviation for "move".
 This name comes from the fact that the command is used, in the most general case, to move one file from a source to a target directory, possibly changing its name at the target directory. In the degenerated case in which the source and target directory are equivalent, then the command falls back to file renaming.
 
 ----
-> *__Exercise 12:__*
+> *__Exercise 10:__*
 Rename `sentences.txt` as `first_two_sentences.txt`. Check that the command succeeded. Try to rename a file as an existing file. What behaviour do you observe? 
 ----
 
 Finally, files are deleted with `rm`. **Be careful!:** this command is highly dangerous, there is **NO UNDO**. **NEVER TRY** `rm -rf /` (and close friends). It is the nuclear button of the shell, it would delete everything!
 
 ----
-> *__Exercise 13:__*
+> *__Exercise 11:__*
 Delete the  `first_two_sentences.txt` file. Confirm that the command has the desired effect.
 ----
 
@@ -422,7 +422,7 @@ bin/  dev/  etc/  home/  lib/  proc/  sbin/  tmp/  usr/  var/
 ```
 
 ----
-> *__Exercise 14:__*
+> *__Exercise 12:__*
 Try to figure out from the output of the previous command how many directories and files there are inside the root folder. Randomly choose one of the directories contained in the root folder and list its contents with the `ls` command using the **absolute path** of the directory selected.
 ----
 
@@ -432,17 +432,17 @@ The most important directory for a particular user is their **home directory**. 
 ----
 
 ----
-> *__Exercise 15:__*
+> *__Exercise 13:__*
 Determine the absolute path of your user's home directory and list its contents with the `ls` command.
 ----
 
 The home directory can also be denoted in an abbreviated fashion using the tilde character `~`. This character is typed by pressing the key located right at the left of the key labeled with the number 1 while holding pressed the `Shift` key. 
 
 ----
-> *__Exercise 16:__*
+> *__Exercise 14:__*
 List the contents of your user's home directory using the `ls` command and the `~` character. Check that the output matches the one of the previous exercise. Use the tilde character `~` to list the contents of a folder located at your user's home directory.
 
-> *__Exercise 17:__*
+> *__Exercise 15:__*
 Assume that your user name is `amar0078`. How do `/home/amar0078/Documents` and `~/Documents` differ (if they differ at all)? Check it replacing `amar0078` with your actual user's name.
 ----
 
@@ -451,7 +451,7 @@ In addition to user directories, every Unix system has **system directories** su
 > *__Note:__* In `git-bash`, users can write in the `/etc` folder
 
 ----
-> *__Exercise 18:__*
+> *__Exercise 16:__*
 If you are in macOS of Linux, try to create a void text file with name, say, `test.txt` in the `/etc` directory. Use the `touch` command for that purpose. What error message do you get? Why?
 ----
 
@@ -511,7 +511,7 @@ sentence_1.txt  sentence_2.txt  sentences_backup.txt  sentences_reversed.txt
 These last two steps of typing `pwd` to confirm the current working directory, and especially running `ls` to list the current working directory contents, are very frequent when using the Unix command-line.
  
 ----
-> *__Exercise 19:__*
+> *__Exercise 17:__*
 Look in the help info of `mkdir` for a flag to do the following: given a directory absolute path as an argument, create all intermediate folders which are required in order to complete such an absolute path in **a single command**. For example,  assuming that `~/dir1` does not exist, create `~/dir1`, `~/dir1/dir2`, and  `~/dir1/dir2/dir3` in a single command by providing the `~/dir1/dir2/dir3` absolute path as an argument. Confirm that the selected flag works with this example.
 ----
 
@@ -521,10 +521,10 @@ Look in the help info of `mkdir` for a flag to do the following: given a directo
 At the end of the previous section, we introduced the concept of **current working directory**. This is the directory within the file system tree at which the shell is currently positioned, and can be printed to screen using the `pwd` command. Note that the root directory is not the location where you start when you open a new terminal session. 
 
 ----
-> *__Exercise 20:__*
+> *__Exercise 18:__*
  Figure out which is the current working directory right after opening a new terminal.
 
-> *__Exercise 21:__*
+> *__Exercise 19:__*
  Explore how the prompt changes as you change the directory with the `cd` command. Infer which information the prompt is showing right before the `$` character.
 ----
 
@@ -532,7 +532,7 @@ Recall from [Section 1.3.1](#131-directory-structure), that a file or directory 
 If relative paths do not start from the root directory, then, where do they start? *From the current working directory.*
 
 ----
-> *__Exercise 22:__*
+> *__Exercise 20:__*
  Change the current work directory to your home directory. Type the `ls -l bin/ls` command. What do you get on screen? Why? Repeat the same operation with the root directory and compare to the previous results.
 ----
 
@@ -581,7 +581,7 @@ $ ls -a
 .  ..  sentences.txt
 ```
 ----
-> *__Exercise 23:__*
+> *__Exercise 21:__*
 Predict where you will be after `cd ./otherdir/..` and check to see if you were right.
 ----
 
@@ -600,7 +600,7 @@ $ cd -
 The usage of `cd -` is particularly useful when you have to alternate work between two directories, and you want to avoid typing the paths of these back and forth.
 
 ----
-> *__Exercise 24:__*
+> *__Exercise 22:__*
 > 1. Do `cd` and `cd ~` achieve the same effect? If yes, which effect?
 > 2. From wherever you are, create an empty file called `empty` in  `tex_files` using `touch` and whatever method you wish to specify the location of `txt_files`.
 > 3. Remove `empty` from the previous exercise using a different path from the one you used before. For example, if you used the absolute path `~/txt_files`, now use a relative path, or the other way round.)
@@ -665,10 +665,10 @@ $ ls dir2
 As the error message from `ls` indicates, our use of `rm -rf` made the whole directory disappear. **The powerful command `rm -rf` is thus to be used with extraordinary care, as there is no undo.**
 
 ----
-> *__Exercise 25:__*
+> *__Exercise 23:__*
 Explain why you should **NEVER** type the command `rm -rf ~` into a terminal window, not even as a joke.
 
-> *__Exercise 26:__*
+> *__Exercise 24:__*
 > 1. Make a directory `test` with a subdirectory `test_child`, then rename the latter as `test_descendent`.
 > 2. Copy all the files in `txt_files`, *with* directory, into `test`.
 > 3. Copy all the files in `txt_files`, *without* directory, into `test_descendent`.
@@ -732,7 +732,7 @@ For instance, `rw-r--r--` means that the owner can read and write a file,
 and that the owner’s group and everyone else can only read. Note that the list of permissions is preceded by either a `d` or a `-`. This character is not a permission, but rather signifies whether the permissions are for a directory, `d`, or a file, `-`.
 
 ----
-> *__Exercise 29:__*
+> *__Exercise 25:__*
 Create a new file on your home folder using `touch`. Determine which are the permissions of this file using `ls -l`. What users falling into the **other** class are allowed to do with the file?
 ----
 
@@ -749,17 +749,17 @@ $ chmod g+r,o-x file  # give group read permission
 In the examples above, one may use a directory instead of a file as well. The `man` page of `chmod` gives all options.
 
 ----
-> *__Exercise 30:__*
+> *__Exercise 26:__*
 Create a file `file` and do `chmod u-r file`. Can you now inspect its contents? Why? Make the file readable again.
 
-> *__Exercise 31:__*
+> *__Exercise 27:__*
 > Create a file `script.sh` with the following contents (use `cat` and output redirection):
 > ```shell
 > echo Hello world!
 >```
 >This is a minimal [`bash` shell script](https://en.wikibooks.org/wiki/Bash_Shell_Scripting#What_is_shell_scripting?). Type `./script.sh` (This is a command that one can use in order to try to execute the script.) Can you execute it? Why? Make it user-executable. Can you now execute it? Why?
 
-> *__Exercise 32:__*
+> *__Exercise 28:__*
 Create a new directory `new_dir` on your home folder. Determine which are the permissions of this new folder using `ls -ltd new_dir`. Take away execution permission from your user. Confirm that you actually took away that permission. Try to change current directory to `new_dir`. Does it work? If not, why not?
 ----
 
@@ -779,7 +779,7 @@ First, we will download a long text file from the Internet with the goal of unbu
 Although `curl` is not part of the core Unix command-line set, it is widely available in most Unix systems. In general, you can figure out whether a given command is installed in your system using the `which` command. The way to use it is to type `which` followed by the name of the program, in our case, `curl`. This command reports on screen the absolute path where the particular command is located, or void if it is not available. 
 
 ----
-> *__Exercise 33:__*
+> *__Exercise 29:__*
 Use `which` to determine the location of the `curl` command in your system. 
 ----
 
@@ -798,7 +798,7 @@ The result of running this command is `don_quixote.txt`, a file containing the a
 If you want to learn more about the `curl` command, you can type `curl -h`.
 
 ----
-> *__Exercise 34:__*
+> *__Exercise 30:__*
 > * Use `ls` to confirm that  `don_quixote.txt` exists on your system. How large is the file in bytes? (Recall from [Section 1.2.3](#123-listing-files-the-ls-command) that `ls -l` prints on screen a byte count.)
 > * The byte count is high enough that it is much better to display it in *megabytes* (a megabyte is equivalent to 1024 kilobytes, and a kilobyte in turn to 1024 bytes). By adding `-h` (“human-readable”) option to `ls`, determine the size of `don_quixote.txt` in megabytes.
 ----
@@ -809,7 +809,7 @@ If you want to learn more about the `curl` command, you can type `curl -h`.
 Two interrelated commands for inspecting files are `head` and `tail`. They let us viewing the beginning (head) and end (tail) of a file, respectively. In particular, the `head` command shows the first 10 lines of the file passed as an argument, while `tail` outputs the last 10 lines of the file. (Check it!)
 
 ----
-> *__Exercise 35:__*
+> *__Exercise 31:__*
 > The number of lines that `head` and `tail` show by default is 10. However, this number can be modified via an appropriate flag passed to the command. Use the manual pages of these two tools to determine such an option. Use it to display the first and last 5 lines of `don_quixote.txt`.
 ----
 
@@ -838,7 +838,7 @@ $ wc head_don_quixote.txt
 We see that there are 10 lines in `head_don_quixote.txt` (and 64 words and 378 bytes).
 
 ----
-> *__Exercise 36:__*
+> *__Exercise 32:__*
 > Determine how many lines, words, and bytes there are at the last 10 lines of `don_quixote.txt`.
 ----
 
@@ -852,7 +852,7 @@ $ head don_quixote.txt | wc
 This command runs `head don_quixote.txt` and then **pipes** the result through `wc` using the pipe symbol `|`. Recall from [Section 1.2.2](#122-input-redirection), that many Unix commands take their input from the standard input, i.e., the keyboard by default, when they are called without arguments. Using the pipe, we modify this default behaviour such that the standard output of the command before the pipe is redirected as standard input to the command after the pipe. This justifies why the command above generates the same output we had above with `wc head_don_quixote.txt`.
 
 ----
-> *__Exercise 37:__*
+> *__Exercise 33:__*
 > Write a command to extract the following paragraph from the head of `don_quixote.txt`:
   >   ```
   >   This eBook is for the use of anyone anywhere at no cost and with
@@ -868,7 +868,7 @@ This command runs `head don_quixote.txt` and then **pipes** the result through `
 The Unix command-line provides a very powerful tool for inspecting a file beyond its head and tail. This command is called `less`. In particular, it lets you navigate through the file in several useful ways, such as moving one line up or down with the arrow keys, pressing space bar to move a page down, `g` to go to the beginning of the file, `G` to the end of the file, etc. To quit `less`, type `q`.
 
 ----
-> *__Exercise 38:__*
+> *__Exercise 34:__*
 > Run `less` on `don_quixote.txt`. Go down three pages and then back up three pages. Go to the end of the file, then to the beginning, then quit.
 ----
 
@@ -877,7 +877,7 @@ Perhaps the most powerful aspect of `less` is the forward slash key `/`, which i
 Above we have covered the most useful navigational commands of `less`, but there are many others. At this point, if you are curious, you can find a longer list of commands at the [Wikipedia page of `less`](https://en.wikipedia.org/wiki/Less_(Unix)). We strongly encourage you to use `less` as **the tool** for looking at the contents of a file. Recall from [Section 1.1.3](#113-typing-our-first-commands-looking-for-help-using-man) that the navigation of man pages is actually managed under the hood by `less`. Thus, any familiarity that you gain with `less` automatically applies to the navigation of `man` pages as well.
 
 ----
-> *__Exercise 39:__*
+> *__Exercise 35:__*
 Search for the string “kingdom”. Go forward a few occurrences, then back a few occurrence again. Then go to the beginning of the file, and search for the string “Kingdom” (now starting with capital K, note that `less` is [case-sensitive](https://en.wikipedia.org/wiki/Case_sensitivity)). Count the occurrences of "Kingdom" by searching forward until you hit the end. Validate your count comparing it to the result of `grep Kingdom don_quixote.txt | wc -l`. (We will introduce `grep` in the next section).
 ----
 
@@ -904,7 +904,7 @@ The output of the command reports that there are 2 lines containing the string "
 in a different line, the result of the previous command would be 3 instead of 2. **This is because `grep` does not actually search for whole words, but for occurrences in the file of the characters of the input string in a row.** In other words, there is a match even if the string provided is a *substring* of a larger string in the file.
 
 ----
-> *__Exercise 40:__*
+> *__Exercise 36:__*
 >* Search for occurrences of the substring “the” using `grep` and pipe the result to `less`. Then, check using `less` search options, that lines containing the superstring "these" are also output by `grep`.
 >* Count the number of lines in which the substring “kingdom” and "kingdoms" appear. Why the first number is larger than the second?
 >* By comparing the output of `grep Kingdom don_quixote.txt | wc -l` and  `grep kingdom don_quixote.txt | wc -l` one may readily confirm that `grep` is **case-sensitive**. Look at the manual page of `grep` and search for an option that lets you perform case-insensitive matching. Count the number of case-insensitive appearances of "kingdom" and check that the result is nothing but the sum of the one provided by the previous two commands.
@@ -913,7 +913,7 @@ in a different line, the result of the previous command would be 3 instead of 2.
 The `grep` command becomes **extremely powerful** when combined with the so-called [**regular expressions**](https://en.wikipedia.org/wiki/Regular_expression). Regular expressions, however, are a quite advanced computer science topic which is out of scope of this introductory tutorial. 
 
 ----
-> *__Exercise 41:__*
+> *__Exercise 37:__*
 > * Search for “line number” in the manual page of `grep`. Construct a command to find the line numbers in `don_quixote.txt` where the string “Kingdom” appears.
 > * You should find that the last occurrence of “Kingdom” is on line 17356. Figure out how to go directly to this line when running `less don_quixote.txt`. *Hint*: if you type `1G` in `less`, you go to line 1. Similarly, `17G` goes to line 17, etc.
 > * By piping the output of `grep` to `head`, print out the first (and **only** the first) line in `don_quixote.txt` containing “Kingdom”.
@@ -970,7 +970,7 @@ $ ls test_file_tab_completion_bis
  ```
 
 ----
-> *__Exercise 42:__*
+> *__Exercise 38:__*
 Use Tab completion in order to get a list of all files  that start with the `ls` prefix. *Hint: type `ls` followed by two consecutive hits to Tab.*
 ----
 
@@ -1023,7 +1023,7 @@ Another very useful feature of the shell is that it keeps a record of the comman
    Hitting the right arrow to edit the command then puts the last `echo` command after our prompt and allow us to edit it (if desired) before hitting return to execute it.
 
 ----
-> *__Exercise 43:__*
+> *__Exercise 39:__*
 >* Write a command to count the number of commands that you have introduced so far.
 >* One smart use of `history` is to `grep` your commands to find useful ones you used before, with each command preceded by the corresponding number in the command history. Determine the command identifier for the first occurrence of `echo` in the command history.
 ----
@@ -1056,7 +1056,7 @@ Figure 13. Contents introduced in the `TODO.txt` file using `nano`.
 After entering the “WriteOut” (`^O`) command, `nano` will display a prompt on the status line to verify that you really want to write the file contents to the file system. Go ahead and press the `Enter` key, and `nano` will tell you how many lines of text it wrote on the status line. Notice also that the “Modified” indicator in the upper-right corner has disappeared because the file has been saved. At this point you can exit the nano program (`^X`) to go back to the shell prompt.  Now you have written a file, you can take a look at it with `less` or `cat`, or open it up again and edit it with `nano`.
 
 ----
-> *__Exercise 44:__*
+> *__Exercise 40:__*
 > Open `TODO.txt` and add manually the date of today in `dd/mm/yyyy` format to the top of the file and save the file. Exit `nano`, and check using `cat` that you successfully edited the file.
 ----
 
