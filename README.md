@@ -8,10 +8,16 @@ This repository includes the material for the Unix command-line. The workshop ma
 
 Material for the initial mandatory workshops (8 hours of computer lab in total).
 
+Week 1:
+
 1. An introduction to programming languages and the elective modules: [`R`](https://en.wikipedia.org/wiki/R_(programming_language)), [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)), [`MATLAB`](https://en.wikipedia.org/wiki/MATLAB) and [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica).<br>[[HTML]](./introduction.md)
 2. Introduction to computational science.<br> 
 [[HTML]](./computational-science.md)
 
+
+Week 12
+
+Introduction to the Unix shell. [[HTML]](https://github.com/MonashMath/SCI1022/blob/master/Unix-CLI.md)
 
 ## Optional material
 
