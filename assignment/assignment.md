@@ -1,20 +1,6 @@
 # Assignment Unix shell and Git intro
 
-## Due date 
-
-30/03/2020 **9:00AM AEST**
-
-## Submission instructions
-
-Write an e-mail with the following structure:
- * **To**: `santiago.badia@monash.edu`
- * **Subject**: [SCI1022] Assignment Unix shell and Git Intro
- * **Body**: 
-    ```
-     First name(s) Given name(s)
-    ```
-
-with an attached file in which you gather the answers to the questions formulated below (more details can be found in the following sections).
+Submit in the SCI1022 Moodle page a file in which you gather the answers to the questions formulated below (more details can be found in the following sections).
 
 ## Assignment instructions/recommendations
 
