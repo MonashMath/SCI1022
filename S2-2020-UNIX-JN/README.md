@@ -11,7 +11,7 @@ Please, take into account the following warnings when working with `binder`.
  
 ## Unix shell workshop (Week 12) Jupyter notebook
 
-[![Binder](https://mybinder.org/badge_logo.svg)]()
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MonashMath/SCI1022/master?filepath=S2-2020-UNIX-JN%2FUnix_shell.ipynb)
 
 
 
