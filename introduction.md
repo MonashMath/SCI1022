@@ -162,16 +162,17 @@ In fact, new programming languages are being created to solve the drawbacks of e
 
 [`Julia`](https://julialang.org/) deserves special mention in the frame of scientific coding. It is a dynamic language originated in 2011 at MIT that does not suffer the performance hit. It involves JIT compilation and the user can decide whether to annotate the type of a variable (in key places, for performance, like in static languages) or not (so-called _duck typing_, as in dynamic languages).
 
-# The four elective modules
-<a id="markdown-the-four-elective-modules" name="the-four-elective-modules"></a>
-
-SCI1022 includes four different workshops on three dynamically-typed languages, namely, [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)), [`MATLAB`](https://en.wikipedia.org/wiki/MATLAB), [`R`](https://en.wikipedia.org/wiki/R_(programming_language)), and an untyped language, [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica). Below, we provide a description of the four different languages that would help students to pick the ones that better fit their requirements. You can do your own research, in order to decide which is the right language for you. There are also different indices that measure the _popularity_ of programming languages, e.g., the [TIOBE index](https://en.wikipedia.org/wiki/TIOBE_index). You can find the ranking [here](https://tiobe.com/tiobe-index/).
-
-Below is a very short description of the four languages being offered. More detailed information can be found in the respective Moodle pages.
 
 ## `Python`
 
-[`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)) is the most popular languages for scientific coding, especially for data science. It is widely used both in academia and industry because of its simplicity and flexibility. [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)) is an object-oriented language, and probably the best one for learning this programming paradigm. Python is general purpose and can be used in any scientific discipline, from computational mathematics and physics to data science. [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)) is a community-driven open source project, with thousands of freely available packages in almost any discipline.
+SCI1022 includes four different workshops on three dynamically-typed languages, namely, [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)), [`MATLAB`](https://en.wikipedia.org/wiki/MATLAB), [`R`](https://en.wikipedia.org/wiki/R_(programming_language)), and an untyped language, [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica). `Python` is common to all students.  [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)) is the most popular languages for scientific coding, especially for data science. It is widely used both in academia and industry because of its simplicity and flexibility. [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)) is an object-oriented language, and probably the best one for learning this programming paradigm. Python is general purpose and can be used in any scientific discipline, from computational mathematics and physics to data science. [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)) is a community-driven open source project, with thousands of freely available packages in almost any discipline.
+
+# The three elective languages in SCI1022
+<a id="markdown-the-three-elective-modules" name="the-three-elective-modules"></a>
+
+Students must pick one additional module among `R`, `Matlab`, `Mathematica`. We provide a description of the three different languages that would help students to pick the one that better fits their requirements. You can do your own research, in order to decide which is the right language for you. There are also different indices that measure the _popularity_ of programming languages, e.g., the [TIOBE index](https://en.wikipedia.org/wiki/TIOBE_index). You can find the ranking [here](https://tiobe.com/tiobe-index/).
+
+Below is a very short description of the three languages. More detailed information can be found in the respective Moodle pages.
 
 ## `MATLAB`
 
@@ -184,4 +185,3 @@ Below is a very short description of the four languages being offered. More deta
 ## `Mathematica`
 
 [`Wolfram Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica) is a proprietary program which is particularly well-suited for symbolic computations. It is an untyped language. It can be of interest for undergraduate students in mathematics and physics which require to make intensive use of symbolic computation. Monash has a `Mathematica` site-license that allows Monash students to install it on their personal computers.
-
