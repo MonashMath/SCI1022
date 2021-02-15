@@ -163,7 +163,7 @@ In fact, new programming languages are being created to solve the drawbacks of e
 [`Julia`](https://julialang.org/) deserves special mention in the frame of scientific coding. It is a dynamic language originated in 2011 at MIT that does not suffer the performance hit. It involves JIT compilation and the user can decide whether to annotate the type of a variable (in key places, for performance, like in static languages) or not (so-called _duck typing_, as in dynamic languages).
 
 
-## `Python`
+# `Python`
 
 SCI1022 includes four different workshops on three dynamically-typed languages, namely, [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)), [`MATLAB`](https://en.wikipedia.org/wiki/MATLAB), [`R`](https://en.wikipedia.org/wiki/R_(programming_language)), and an untyped language, [`Mathematica`](https://en.wikipedia.org/wiki/Wolfram_Mathematica). `Python` is common to all students.  [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)) is the most popular languages for scientific coding, especially for data science. It is widely used both in academia and industry because of its simplicity and flexibility. [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)) is an object-oriented language, and probably the best one for learning this programming paradigm. Python is general purpose and can be used in any scientific discipline, from computational mathematics and physics to data science. [`Python`](https://en.wikipedia.org/wiki/Python_(programming_language)) is a community-driven open source project, with thousands of freely available packages in almost any discipline.
 
