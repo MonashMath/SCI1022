@@ -80,7 +80,7 @@ _start:
 ```
 whereas in an advanced and expressive up-to-date language (Python), it would just read
 ```
-print 'Hello world'
+print('Hello world')
 ```
 
 There are thousands of high-level programming languages. The first one was `FORTRAN`, which dates back to the 1950s, and still in use (in updated forms). `FORTRAN` was created for scientific applications (its name comes from FORmula TRANslator). The most popular languages nowadays are `C`/`C++`, `Java` and `Python`. `C` was created in the 70s, and its successor `C++` is from the 80s. `Java` is primarily used to create web applications. `Python` is a multi-purpose language that is very popular in science and industry. However, programming languages are evolving (new versions, like `Python 3.0` in 2008), new languages are born (like `Go` or `Julia`) and others are just disappearing (like `Basic`).
