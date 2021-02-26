@@ -114,7 +114,7 @@ if (age1 > 10)
    my_age = age1+str;
 }
 ```
-When using an interpreter, the errors will be triggered during run-time (execution time). n this `Python` code (which makes use of an interpreter), we will be able to go through this code without any issue, because the rogue line will never be executed.
+When using an interpreter, the errors will be triggered during run-time (execution time). In this `Python` code (which makes use of an interpreter), we will be able to go through this code without any issue, because the rogue line will never be executed.
 ```python
 age1 = 10
 str = "hello"
