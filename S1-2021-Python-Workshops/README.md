@@ -1,6 +1,6 @@
 # SCI1022 - Python Workshops Jupyter Notebooks - S2 2020
 
-The Python module of SCI1022 in S2 2020 is led by [@amartinhuertas](https://github.com/amartinhuertas) and [@lincolnturner](lincolnturner). For more details, go to the Moodle page of the module, available [here](https://lms.monash.edu/course/view.php?id=100198).
+The Python module of SCI1022 in S2 2020 is led by [@amartinhuertas](https://github.com/amartinhuertas) and [@lincolnturner](https://github.com/lincolnturner). For more details, go to the Moodle page of the module, available [here](https://lms.monash.edu/course/view.php?id=100198).
 
 As mentioned there, it is **indispensable** that you are able to set up a Python-based development environment in your Desktop or Laptop. To this end, you have to follow the instructions available at the Moodle page. If you have any issue during the process, you can write your question into the technical installation issues forum.
 
