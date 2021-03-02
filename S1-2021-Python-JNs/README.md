@@ -1,4 +1,4 @@
-# SCI1022 - Python Workshops Jupyter Notebooks - S2 2020
+# SCI1022 - Python Workshops Jupyter Notebooks - S1 2021
 
 The Python module of SCI1022 in S1 2021 is led by [@amartinhuertas](https://github.com/amartinhuertas) and [@lincolnturner](https://github.com/lincolnturner). For more details, go to the Moodle page of the module, available [here](https://lms.monash.edu/course/view.php?id=100198).
 
