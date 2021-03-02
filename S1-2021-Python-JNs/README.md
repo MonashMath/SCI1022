@@ -19,14 +19,10 @@ Please, take into account the following warnings when working with `binder`.
 ## Session 2 
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MonashMath/SCI1022/HEAD?filepath=S1-2021-Python-JNs%2FPython_S3_Basics_Preclass.ipynb
-) **Pre-class Jupyter Notebook Python Basics**
+) **Pre-class JN Python Basics**
 
 ## Session 3
 
-#[![Binder](https://mybinder.org/badge_logo.svg)]() **Pre-class Jupyter Notebook while loops**
-#[![Binder](https://mybinder.org/badge_logo.svg)]() **Pre-class Jupyter Notebook conditional statements**
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MonashMath/SCI1022/HEAD?filepath=S1-2021-Python-JNs%2FPython_S4_While_Loops_Preclass.ipynb) **Pre-class JN while loops**
 
-
-
-
-
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MonashMath/SCI1022/HEAD?filepath=S1-2021-Python-JNs%2FPython_S4_Conditional_Execution_Preclass.ipynb) **Pre-class JN conditional statements**
