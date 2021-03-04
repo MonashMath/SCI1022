@@ -16,12 +16,12 @@ Please, take into account the following warnings when working with `binder`.
 **this service has a (very) short inactivity timeout for sessions.**
  Going for a short break is likely to have your session ended before you get back. In such a case you can still download your work so far, but you may not be able to continue working on the same notebook but start instead from scratch. In order to cope for this issue, you have to read (and understand) the instructions available [here](https://discourse.jupyter.org/t/getting-your-notebook-after-your-binder-has-stopped/3268).
  
-## Session 2 
+## Session 3 
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MonashMath/SCI1022/HEAD?filepath=S1-2021-Python-JNs%2FPython_S3_Basics_Preclass.ipynb
 ) **Pre-class JN Python Basics**
 
-## Session 3
+## Session 4
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MonashMath/SCI1022/HEAD?filepath=S1-2021-Python-JNs%2FPython_S4_While_Loops_Preclass.ipynb) **Pre-class JN while loops**
 
