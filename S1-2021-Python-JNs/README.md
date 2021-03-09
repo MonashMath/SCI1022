@@ -21,8 +21,15 @@ Please, take into account the following warnings when working with `binder`.
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MonashMath/SCI1022/HEAD?filepath=S1-2021-Python-JNs%2FPython_S3_Basics_Preclass.ipynb
 ) **Pre-class JN Python Basics**
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MonashMath/SCI1022/HEAD?filepath=S1-2021-Python-JNs%2FPython_S3_Basics_Inclass.ipynb) 
+**In-class JN Python Basics**
+
+
 ## Session 4
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MonashMath/SCI1022/HEAD?filepath=S1-2021-Python-JNs%2FPython_S4_While_Loops_Preclass.ipynb) **Pre-class JN while loops**
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MonashMath/SCI1022/HEAD?filepath=S1-2021-Python-JNs%2FPython_S4_Conditional_Execution_Preclass.ipynb) **Pre-class JN conditional statements**
+
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MonashMath/SCI1022/HEAD?filepath=S1-2021-Python-JNs%2FPython_S4_While_and_If_Inclass.ipynb) **In-class JN while loops and conditional statements**
