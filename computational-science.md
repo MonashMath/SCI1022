@@ -63,11 +63,11 @@ The number of nodes in complex 3D problems (which is related to the number of eq
 
 After all this process, we are able to predict mantle convection using computers, as you can see in these [videos](https://aspect.geodynamics.org/gallery.html).
 
-The software libraries that solve PDEs are pretty complex, and can easily involve millions of lines of code. Many of these software libraries are open source, you can take a look at the code, download it for free, use it and even modify it for your needs. Most of these codes can be found in open repository servers like `GitHub`. Here, you can find one of the scientific software projects I lead, [Gridap](https://github.com/gridap/Gridap.jl) and [how to use it](https://github.com/gridap/Tutorials).
+The software libraries that solve PDEs are pretty complex, and can easily involve millions of lines of code. Many of these software libraries are open source, you can take a look at the code, download it for free, use it and even modify it for your needs. Most of these codes can be found in open repository servers like `GitHub`. Here, you can find one of the scientific software projects I lead, [Gridap](https://github.com/gridap/Gridap.jl). The mantle convection problem has been simulated with this [code](https://github.com/dealii/dealii).
 
-In this unit, we do not have the knowledge yet to consider so complex scientific algorithms, but instead, we will go through the basics of scientific programming, and apply these concepts to (far simpler) scientific problems. These are the very same tools that are being used in these more complex applications, and hopefully, all this introduction will motivate you to get into this field. 
+In this unit, we do not have the knowledge yet to consider so complex scientific algorithms, but instead, we will go through the basics of scientific programming, and apply these concepts to (far simpler) scientific problems. 
 
-If you are interested in numerical methods for differential equations, you could consider enrolling in MTH2051.
+If you want to learn more about the mathematics behind the simulation of these complex applications, i.e., numerical methods for differential equations, you could consider enrolling in MTH2051.
 
 
 
