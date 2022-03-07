@@ -1,6 +1,6 @@
-# SCI1022 - Python Workshops Jupyter Notebooks - S1 2021
+# SCI1022 - Python Workshops Jupyter Notebooks - S1 2022
 
-The Python module of SCI1022 in S1 2021 is led by [@amartinhuertas](https://github.com/amartinhuertas) and [@lincolnturner](https://github.com/lincolnturner). For more details, go to the Moodle page of the module, available [here](https://lms.monash.edu/course/view.php?id=100198).
+The Python module of SCI1022 in S1 2022 is led by [@amartinhuertas](https://github.com/amartinhuertas) and [@lincolnturner](https://github.com/lincolnturner). For more details, go to the Moodle page of the module, available [here](https://lms.monash.edu/course/view.php?id=134739).
 
 As mentioned there, it is **indispensable** that you are able to set up a Python-based development environment in your Desktop or Laptop. To this end, you have to follow the instructions available at the Moodle page. If you have any issue during the process, you can write your question into the technical installation issues forum.
 
